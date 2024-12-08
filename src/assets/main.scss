@@ -45,8 +45,6 @@
 
   //line height
 
-  --line-h-15: 1.5rem;
-
   //font style
   --f-st-upper: uppercase;
   --f-st-capt: capitalize;
@@ -55,6 +53,8 @@
   // line height
   --line-15: 1.5rem;
   --line-24: 2.38rem;
+  --line-27: 2.7rem;
+  --line-72: 7.2rem;
 }
 
 *,
@@ -67,6 +67,7 @@
   font-family: "Noto Kufi Arabic", sans-serif;
   font-style: normal;
   line-height: 1.6;
+  color: var(--col-white);
 }
 
 html {
@@ -79,6 +80,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--col-white) !important;
 }
 
 /* App Container */
@@ -133,7 +135,7 @@ button {
 /* Grid Utilities */
 .grd {
   display: grid;
-  gap: 3.2rem;
+  gap: 0rem;
 }
 
 .grd-2-col {
@@ -146,6 +148,47 @@ button {
 
 .grd-4-col {
   grid-template-columns: repeat(4, 1fr);
+}
+
+// reusable classes
+.head-primary {
+  font-size: var(--fs-40);
+  font-weight: var(--fw-700);
+  line-height: var(--line-72);
+  letter-spacing: -0.5px;
+}
+
+.head-secondary {
+  // color: var(--main-color);
+  // font-size: 4rem;
+  // line-height: 1.4;
+  // letter-spacing: -0.3px;
+  // font-weight: 900;
+}
+
+.head-tertiary {
+  // color: #505057;
+  // font-size: 1.6rem;
+  // font-weight: 400;
+  // margin-top: 1.4rem;
+  // letter-spacing: 0.03rem;
+}
+
+.body-desc-primary {
+  font-weight: var(--fw-400);
+  font-size: var(--fs-16);
+  line-height: var(--line-27);
+}
+.btn-round-primary {
+  padding: 1rem 2rem;
+  border-radius: 1000px;
+  font-weight: var(--fw-400);
+  font-size: var(--fs-16);
+  line-height: var(--line-27);
+  text-align: center;
+  color: #1c1c1a;
+  background-color: var(--col-white);
+  margin: 1rem 0 0;
 }
 
 /* Navbar */
@@ -166,7 +209,7 @@ button {
 
 // hero swiper
 .hero-swiper {
-  height: 800px;
+  height: 815px;
   .slide {
     position: relative;
     img {
@@ -174,14 +217,17 @@ button {
       height: auto;
       object-fit: contain;
       object-position: center;
-      backdrop-filter: brightness(0.1) blur(16px);
+      filter: brightness(0.7) blur(2px);
     }
     .hero-content {
+      height: 100%;
+      width: 100%;
       position: absolute;
-      top: 50%;
+      top: 0;
       left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: yellow;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
     }
   }
 }
