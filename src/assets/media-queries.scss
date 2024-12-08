@@ -1,0 +1,56 @@
+/**************************/
+/* BELOW 1344px (smaller desktops) */
+/**************************/
+@media (max-width: 84em) {
+  body {
+    background-color: yellow !important;
+  }
+}
+
+/**************************/
+/* BELOW 1200px (landscape Tablets) */
+/**************************/
+
+@media (max-width: 75em) {
+  /* html size to 9px */
+  //   html {
+  //     font-size: 56.25%;
+  //   }
+  body {
+    background-color: rgb(21, 255, 0) !important;
+  }
+}
+
+/**************************/
+/* BELOW 944px (Tablets) */
+/**************************/
+
+@media (max-width: 59em) {
+  //   html {
+  //     /* 8px / 16px = 0.5 = 50% */
+  //     font-size: 50%;
+  //   }
+  body {
+    background-color: rgb(255, 0, 149) !important;
+  }
+}
+
+/**************************/
+/* BELOW 704px (Smaller tablets) */
+/**************************/
+
+@media (max-width: 44em) {
+  body {
+    background-color: rgb(255, 0, 0) !important;
+  }
+}
+
+/**************************/
+/* BELOW 544px (Phones) */
+/**************************/
+
+@media (max-width: 34em) {
+  body {
+    background-color: rgb(0, 247, 255) !important;
+  }
+}

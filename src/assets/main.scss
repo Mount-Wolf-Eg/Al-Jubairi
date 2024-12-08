@@ -1,0 +1,165 @@
+/* Import external fonts and normalize styles */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
+:root {
+  // colors
+  --col-white: #fff;
+  --col-off-white: #f2f2f2;
+  --col-blk: #000;
+
+  --col-dark: #1c1c1a;
+  --col-light-dark: #2f2f2f;
+
+  --col-gray: #595959;
+  --col-gray-soft: #eaeaea;
+  --col-gray-md: #acacac;
+  --col-gray-dark: #8b8b8b;
+
+  --col-succes: #7aaf44;
+  --col-danger: #ba313e;
+
+  //font size
+  --fs-12: 1.2rem;
+  --fs-14: 1.4rem;
+  --fs-16: 1.6rem;
+  --fs-18: 1.8rem;
+  --fs-22: 2.2rem;
+  --fs-24: 2.4rem;
+  --fs-32: 3.2rem;
+  --fs-40: 4rem;
+
+  //font weight
+  --fw-100: 100;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+  --fw-900: 900;
+
+  // border radius
+  --brd-r-sm: 0.8rem;
+  --brd-r-md: 1.2rem;
+  --brd-r-lg: 1.6rem;
+  --brd-r-xl: 2.4rem;
+
+  //line height
+
+  --line-h-15: 1.5rem;
+
+  //font style
+  --f-st-upper: uppercase;
+  --f-st-capt: capitalize;
+  --f-st-norm: normal;
+
+  // line height
+  --line-15: 1.5rem;
+  --line-24: 2.38rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-family: "Noto Kufi Arabic", sans-serif;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1.6rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App Container */
+#app {
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 120rem !important;
+  padding: 1% 0;
+}
+
+/* Links */
+a:link,
+a:visited {
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Form Elements */
+input:focus {
+  outline: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+// dropdown menu
+.dropdown-menu {
+  .dropdown-item {
+  }
+}
+
+/* Flexbox Utilities */
+.flx-c {
+  display: flex;
+  flex-direction: column;
+}
+
+.flx-r {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Grid Utilities */
+.grd {
+  display: grid;
+  gap: 3.2rem;
+}
+
+.grd-2-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grd-3-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grd-4-col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Navbar */
+.navbar {
+  width: 100% !important;
+  backdrop-filter: brightness(0.9) blur(16px);
+  z-index: 999;
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        font-weight: var(--fw-400);
+        font-size: var(--fs-14);
+        line-height: var(--line-24);
+      }
+    }
+  }
+}
