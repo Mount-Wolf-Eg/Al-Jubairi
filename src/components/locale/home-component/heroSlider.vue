@@ -19,7 +19,7 @@
         <img
           src="/src/assets/images/PHN_1434.webp"
           style="
-            width: 100vw;
+            width: 100%;
             height: auto;
             object-fit: contain;
             object-position: center;

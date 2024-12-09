@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar navbar-expand-sm p-0"
+    class="navbar main-nav navbar-expand-sm p-0"
     style="position: absolute; top: 0; left: 0"
     :style="{
       backgroundColor: route.name === 'home' ? '' : 'white',
@@ -8,7 +8,7 @@
         route.name === 'home' ? 'var(--col-white)' : 'var(--col-light-dark)',
     }"
   >
-    <div class="container flex-r">
+    <div class="container flex-r align-items-center">
       <div
         class="collapse navbar-collapse col-4"
         id="navbarScroll"
@@ -81,10 +81,10 @@
         </ul>
       </div>
 
-      <div class="col-2 col-md-4 text-center">
-        <router-link class="navbar-brand" to="/"
+      <div class="col-2 col-lg-4 text-center">
+        <router-link class="navbar-brand p-0 m-0" to="/"
           ><svg
-            style="width: 70%; height: auto"
+            style="width: 70%; min-width: 11rem; height: auto"
             viewBox="0 0 241 56"
             :style="{
               fill:

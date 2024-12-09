@@ -1,6 +1,6 @@
 <template>
   <main>
-    <heroSlider />
+    <!-- <heroSlider /> -->
   </main>
 </template>
 <script setup>
