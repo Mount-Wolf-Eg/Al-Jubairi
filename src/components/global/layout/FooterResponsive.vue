@@ -3,13 +3,22 @@
     <div class="footer-img">
       <img
         src="/src/assets/images/sm-images/footerResp.jpg"
-        style="width: 100%; height: auto"
+        style="
+          width: 100%;
+          height: auto;
+          filter: brightness(0.5);
+          min-height: 300px;
+        "
         alt=""
       />
       <div class="footer-resp--text">
-        <p class="footer-title"></p>
-        <p class="footer-text"></p>
-        <button class="footer-btn"></button>
+        <p class="footer-title">احجز استشارتك القانونية</p>
+        <p class="footer-text">
+          حرصًا منا على متابعة المستجدات القانونية، ومنح الاستشارات أو التوصيات
+          أو الخدمات من قبل خبراء قانونيين، نسعد بخدمتكم، في جميع فروعنا، ساعات
+          العمل من الثامنة صباحًا إلى الخامسة مساءً.
+        </p>
+        <button class="main-btn">التواصل مع فريق الجبيري</button>
       </div>
     </div>
     <!-- logo col -->

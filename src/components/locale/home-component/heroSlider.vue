@@ -1,8 +1,7 @@
 <template>
-  <div>
+  <div class="hero-section">
     <swiper
-      class="swiper"
-      style="height: 90vh"
+      class="swiper h-100"
       :modules="modules"
       :space-between="30"
       :centered-slides="true"
@@ -15,7 +14,11 @@
       }"
       :speed="500"
     >
-      <swiper-slide v-for="(item, i) in 20" :key="i" class="slide">
+      <swiper-slide
+        v-for="(item, i) in 20"
+        :key="i"
+        class="slide bg-danger h-100 my-auto"
+      >
         <img
           src="/src/assets/images/PHN_1434.webp"
           style="
@@ -23,9 +26,22 @@
             height: auto;
             object-fit: contain;
             object-position: center;
+            filter: brightness(0.7);
           "
           alt=""
         />
+        <div class="hero-text">
+          <div class="w-75 mx-auto hero-text-box">
+            <p class="hero-title title-primary">خيارك الأول للتمثيل القانوني</p>
+            <p class="hero-desc">
+              بخبرة قانونية راسخة قدمنا الدعم للأفراد والشركات في المملكة لأكثر
+              من 15 عاماً. نحن هنا لتقديم استشارات مدروسة وحلول قانونية مبتكرة
+              لتحقيق العدالة في كافة القضايا، مع الالتزام بأعلى المعايير
+              الدولية.
+            </p>
+            <button class="main-btn">احجز استشارتك القانونية</button>
+          </div>
+        </div>
       </swiper-slide>
     </swiper>
   </div>
