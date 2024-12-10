@@ -11,6 +11,23 @@
   body {
     background-color: yellow !important;
   }
+
+  // about us
+  .about-us-sec {
+    .about-us--text {
+      width: 40%;
+    }
+    .about-us--content {
+      padding: 0 4rem;
+
+      .about-us-title {
+        font-size: var(--fs-32);
+      }
+      .about-us-parag {
+        font-size: var(--fs-16);
+      }
+    }
+  }
 }
 
 /**************************/
@@ -24,6 +41,22 @@
   }
   body {
     background-color: rgb(21, 255, 0) !important;
+  }
+  // about us
+  .about-us-sec {
+    .about-us--text {
+      width: 60%;
+    }
+    .about-us--content {
+      padding: 0 4rem;
+
+      .about-us-title {
+        font-size: var(--fs-32);
+      }
+      .about-us-parag {
+        font-size: var(--fs-16);
+      }
+    }
   }
 }
 
@@ -70,11 +103,28 @@
       }
     }
   }
-  /*hero section*/
   .legal-expertise {
     width: 95%;
     .expertise-text {
       text-align: center;
+    }
+  }
+  // about us
+  .about-us-sec {
+    .about-us--text {
+      width: 80%;
+      right: 10%;
+    }
+    .about-us--content {
+      padding: 0 4rem;
+      text-align: center;
+
+      .about-us-title {
+        font-size: var(--fs-20);
+      }
+      .about-us-parag {
+        font-size: var(--fs-12);
+      }
     }
   }
   .footer--text {
@@ -85,10 +135,10 @@
 }
 
 /**************************/
-/* BELOW 704px (Smaller tablets) */
+/* BELOW 768px (Smaller tablets) */
 /**************************/
 
-@media (max-width: 44em) {
+@media (max-width: 48em) {
   body {
     background-color: rgb(255, 0, 0) !important;
   }
@@ -108,7 +158,14 @@
       font-size: var(--fs-9);
     }
   }
-
+  // about us
+  .about-us-sec {
+    height: 63rem;
+    background-color: var(--col-dark);
+    .about-us--text {
+      display: none;
+    }
+  }
   .logo-col--hint {
     padding-inline-end: 5rem !important;
   }
@@ -133,7 +190,7 @@
 
   /*hero section*/
   .hero-section {
-    height: 63rem;
+    height: 56.3rem;
     .slider-box {
       .hero-text {
         padding: 0 2rem;
