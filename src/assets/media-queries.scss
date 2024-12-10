@@ -70,6 +70,13 @@
       }
     }
   }
+  /*hero section*/
+  .legal-expertise {
+    width: 95%;
+    .expertise-text {
+      text-align: center;
+    }
+  }
   .footer--text {
     .footer-text {
       width: 90% !important;
@@ -101,6 +108,7 @@
       font-size: var(--fs-9);
     }
   }
+
   .logo-col--hint {
     padding-inline-end: 5rem !important;
   }
@@ -136,6 +144,12 @@
           }
         }
       }
+    }
+  } /*hero section*/
+  .legal-expertise {
+    width: 95%;
+    .expertise-text {
+      width: 80%;
     }
   }
 }
