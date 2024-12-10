@@ -18,8 +18,10 @@
         alt=""
       />
       <div class="about-us--content">
-        <p class="about-us-title">تعرف أكثر على الجبيري للمحاماة</p>
-        <p class="about-us-parag">
+        <p class="about-us-title head-secondary">
+          تعرف أكثر على الجبيري للمحاماة
+        </p>
+        <p class="about-us-parag body-desc-secondary">
           الجبيري للمحاماة تعد من أبرز الشركات القانونية في المملكة منذ تأسسنا
           في عام 2010م، اكتسبنا سمعة وثقة كبيرة بفضل الخبرة الراسخة والاحترافية
           في تقديم الاستشارات والخدمات القانونية على الصعيد المحلي والدولي.
@@ -66,8 +68,10 @@
       alt=""
     />
     <div class="about-us--content d-block d-md-none">
-      <p class="about-us-title">تعرف أكثر على الجبيري للمحاماة</p>
-      <p class="about-us-parag">
+      <p class="about-us-title head-secondary">
+        تعرف أكثر على الجبيري للمحاماة
+      </p>
+      <p class="about-us-parag body-desc-secondary">
         الجبيري للمحاماة تعد من أبرز الشركات القانونية في المملكة منذ تأسسنا في
         عام 2010م، اكتسبنا سمعة وثقة كبيرة بفضل الخبرة الراسخة والاحترافية في
         تقديم الاستشارات والخدمات القانونية على الصعيد المحلي والدولي. استندنا

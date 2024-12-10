@@ -8,8 +8,8 @@
         alt=""
       />
       <div class="footer--text">
-        <p class="footer-title">احجز استشارتك القانونية</p>
-        <p class="footer-text">
+        <p class="footer-title head-secondary">احجز استشارتك القانونية</p>
+        <p class="footer-text body-desc-secondary">
           حرصًا منا على متابعة المستجدات القانونية، ومنح الاستشارات أو التوصيات
           أو الخدمات من قبل خبراء قانونيين، نسعد بخدمتكم، في جميع فروعنا، ساعات
           العمل من الثامنة صباحًا إلى الخامسة مساءً.

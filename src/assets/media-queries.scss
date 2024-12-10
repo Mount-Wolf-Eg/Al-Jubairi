@@ -11,21 +11,28 @@
   body {
     background-color: yellow !important;
   }
-
-  // about us
-  .about-us-sec {
+  /**************/
+  /*   global  */
+  /************/
+  .head-secondary {
+    font-size: var(--fs-32);
+  }
+  .body-desc-secondary {
+    font-size: var(--fs-16);
+  }
+  about us .about-us-sec {
     .about-us--text {
       width: 40%;
     }
     .about-us--content {
       padding: 0 4rem;
 
-      .about-us-title {
-        font-size: var(--fs-32);
-      }
-      .about-us-parag {
-        font-size: var(--fs-16);
-      }
+      // .about-us-title {
+      //   font-size: var(--fs-32);
+      // }
+      // .about-us-parag {
+      //   font-size: var(--fs-16);
+      // }
     }
   }
 }
@@ -42,6 +49,15 @@
   body {
     background-color: rgb(21, 255, 0) !important;
   }
+  /**************/
+  /*   global  */
+  /************/
+  .head-secondary {
+    font-size: var(--fs-32);
+  }
+  .body-desc-secondary {
+    font-size: var(--fs-16);
+  }
   // about us
   .about-us-sec {
     .about-us--text {
@@ -50,12 +66,12 @@
     .about-us--content {
       padding: 0 4rem;
 
-      .about-us-title {
-        font-size: var(--fs-32);
-      }
-      .about-us-parag {
-        font-size: var(--fs-16);
-      }
+      // .about-us-title {
+      //   font-size: var(--fs-32);
+      // }
+      // .about-us-parag {
+      //   font-size: var(--fs-16);
+      // }
     }
   }
 }
@@ -109,6 +125,15 @@
       text-align: center;
     }
   }
+  /**************/
+  /*   global  */
+  /************/
+  .head-secondary {
+    font-size: var(--fs-20);
+  }
+  .body-desc-secondary {
+    font-size: var(--fs-12);
+  }
   // about us
   .about-us-sec {
     .about-us--text {
@@ -119,12 +144,12 @@
       padding: 0 4rem;
       text-align: center;
 
-      .about-us-title {
-        font-size: var(--fs-20);
-      }
-      .about-us-parag {
-        font-size: var(--fs-12);
-      }
+      // .about-us-title {
+      //   font-size: var(--fs-20);
+      // }
+      // .about-us-parag {
+      //   font-size: var(--fs-12);
+      // }
     }
   }
   .footer--text {
