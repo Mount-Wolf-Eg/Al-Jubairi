@@ -182,21 +182,26 @@
       display: none;
     }
   }
-  .support-parralax {
-    .parralax-img {
-      &:not(:first-child) {
-        margin-top: -3rem !important;
-      }
-      img {
-        min-height: 40rem !important;
-      }
-      .parralax-text {
-        text-align: center;
-        padding: 0 3rem;
-        position: absolute;
-        top: 40%;
-        right: 0% !important;
-        width: 100% !important;
+  .support-sec {
+    .support-sec-box {
+      text-align: center;
+    }
+    .support-parralax {
+      .parralax-img {
+        &:not(:first-child) {
+          margin-top: -3rem !important;
+        }
+        img {
+          min-height: 40rem !important;
+        }
+        .parralax-text {
+          text-align: center !important;
+          padding: 0 3rem;
+          position: absolute;
+          top: 40%;
+          right: 0% !important;
+          width: 100% !important;
+        }
       }
     }
   }
@@ -261,8 +266,8 @@
         min-height: 50rem !important;
       }
       .parralax-text {
-        text-align: center;
-        padding: 0 3rem;
+        text-align: center !important;
+        padding: 0 2rem !important;
         position: absolute;
         top: 40%;
         right: 0% !important;
