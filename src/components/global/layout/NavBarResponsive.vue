@@ -215,8 +215,8 @@
                 id="demo"
                 class="collapse"
                 style="
-                  margin-top: -3rem;
-                  margin-bottom: 3rem;
+                  margin-top: -1rem;
+                  margin-bottom: 1rem;
                   padding-inline-start: 2rem !important;
                 "
               >
@@ -302,8 +302,8 @@
                 id="demo1"
                 class="collapse"
                 style="
-                  margin-top: -3rem;
-                  margin-bottom: 3rem;
+                  margin-top: -1rem;
+                  margin-bottom: 1rem;
                   padding-inline-start: 2rem !important;
                 "
               >

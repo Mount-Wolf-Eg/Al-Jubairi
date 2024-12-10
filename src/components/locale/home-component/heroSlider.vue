@@ -32,14 +32,14 @@
         />
         <div class="hero-text">
           <div class="w-75 mx-auto hero-text-box">
-            <p class="hero-title title-primary">خيارك الأول للتمثيل القانوني</p>
-            <p class="hero-desc">
+            <p class="hero-title head-primary">خيارك الأول للتمثيل القانوني</p>
+            <p class="hero-desc body-desc-primary">
               بخبرة قانونية راسخة قدمنا الدعم للأفراد والشركات في المملكة لأكثر
               من 15 عاماً. نحن هنا لتقديم استشارات مدروسة وحلول قانونية مبتكرة
               لتحقيق العدالة في كافة القضايا، مع الالتزام بأعلى المعايير
               الدولية.
             </p>
-            <button class="main-btn">احجز استشارتك القانونية</button>
+            <button class="btn-round-primary">احجز استشارتك القانونية</button>
           </div>
         </div>
       </swiper-slide>
