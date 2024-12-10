@@ -33,7 +33,7 @@
         <div class="hero-text">
           <div class="w-75 mx-auto hero-text-box">
             <p class="hero-title head-primary">خيارك الأول للتمثيل القانوني</p>
-            <p class="hero-desc body-desc-primary">
+            <p class="hero-desc body-desc-primary col col-lg-5">
               بخبرة قانونية راسخة قدمنا الدعم للأفراد والشركات في المملكة لأكثر
               من 15 عاماً. نحن هنا لتقديم استشارات مدروسة وحلول قانونية مبتكرة
               لتحقيق العدالة في كافة القضايا، مع الالتزام بأعلى المعايير
