@@ -14,7 +14,7 @@
           أو الخدمات من قبل خبراء قانونيين، نسعد بخدمتكم، في جميع فروعنا، ساعات
           العمل من الثامنة صباحًا إلى الخامسة مساءً.
         </p>
-        <button class="main-btn">التواصل مع فريق الجبيري</button>
+        <button class="btn-round-primary">التواصل مع فريق الجبيري</button>
       </div>
     </div>
     <div class="container">

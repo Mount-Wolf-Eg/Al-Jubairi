@@ -81,7 +81,7 @@
         </ul>
       </div>
 
-      <div class="col-2 col-lg-4 text-center">
+      <div class="col col-md-4 text-center">
         <router-link class="navbar-brand p-0 m-0" to="/"
           ><svg
             style="width: 70%; min-width: 11rem; height: auto"
