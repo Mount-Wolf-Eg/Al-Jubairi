@@ -81,10 +81,10 @@
         </ul>
       </div>
 
-      <div class="col col-md-4 text-center">
+      <div class="col col-md text-center">
         <router-link class="navbar-brand p-0 m-0" to="/"
           ><svg
-            style="width: 70%; min-width: 11rem; height: auto"
+            style="width: 100%; min-width: 10rem; height: auto"
             viewBox="0 0 241 56"
             :style="{
               fill:
