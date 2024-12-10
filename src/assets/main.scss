@@ -382,6 +382,39 @@ button {
   }
 }
 /**********************/
+/*  achievements section */
+/********************/
+.achievements-sec {
+  background-color: #191919;
+  padding: 5rem 0;
+  .achievements-sec--title {
+    color: var(--col-white);
+    padding-bottom: 5rem;
+  }
+  .achievements {
+    .achieve {
+      flex: 1 !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center !important;
+      align-items: center !important;
+      color: var(--col-white);
+      margin: 3rem 0;
+      .achieve-text {
+        font-size: var(--fs-14);
+        font-weight: var(--fw-400) !important;
+        line-height: var(--line-24);
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+  .read-more-btn {
+    padding: 5rem 0 0;
+  }
+}
+/**********************/
 /*   footer section   */
 /********************/
 footer.full-footer {
@@ -513,16 +546,16 @@ footer.resp-footer {
       color: var(--col-white);
       gap: 2rem;
       .footer-title {
-        font-weight: var(--fw-700);
-        font-size: var(--fs-20) !important;
-        line-height: var(--line-36);
+        // font-weight: var(--fw-700);
+        // font-size: var(--fs-20) !important;
+        // line-height: var(--line-36);
       }
       .footer-text {
         text-align: justify;
         width: 70%;
-        font-weight: var(--fw-400);
-        font-size: var(--fs-12);
-        line-height: var(--line-20);
+        // font-weight: var(--fw-400);
+        // font-size: var(--fs-12);
+        // line-height: var(--line-20);
         margin: 0;
       }
     }
