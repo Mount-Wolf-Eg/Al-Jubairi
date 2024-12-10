@@ -16,12 +16,7 @@
       <div class="parralax-img">
         <img
           src="/src/assets/images/bg-images/parralax1.jpg"
-          style="
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            object-position: center;
-          "
+          style="width: 100%; object-fit: cover; object-position: center"
           alt=""
         />
         <div class="parralax-text">
@@ -67,12 +62,7 @@
         <div class="parralax-img">
           <img
             src="/src/assets/images/bg-images/parralax2.jpg"
-            style="
-              width: 100%;
-              height: auto;
-              object-fit: cover;
-              object-position: center;
-            "
+            style="width: 100%; object-fit: cover; object-position: center"
             alt=""
           />
           <div class="parralax-text">
@@ -119,12 +109,7 @@
         <div class="parralax-img">
           <img
             src="/src/assets/images/bg-images/parralax3.jpg"
-            style="
-              width: 100%;
-              height: auto;
-              object-fit: cover;
-              object-position: center;
-            "
+            style="width: 100%; object-fit: cover; object-position: center"
             alt=""
           />
           <div class="parralax-text">
