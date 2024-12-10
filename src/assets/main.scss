@@ -337,15 +337,10 @@ button {
 
     .about-us-title {
       color: var(--col-white);
-      // font-weight: var(--fw-700);
-      // font-size: var(--fs-32);
-      // line-height: var(--line-54);
     }
     .about-us-parag {
       color: var(--col-white);
-      // font-weight: var(--fw-300);
-      // line-height: var(--line-27);
-      // font-size: var(--fs-16);
+
       text-align: justify;
     }
   }
@@ -360,6 +355,28 @@ button {
     }
     .support-sec--text {
       text-align: justify;
+    }
+  }
+  .support-parralax {
+    padding: 5rem 0;
+    .parralax-img {
+      position: sticky;
+      top: 10px;
+      border-radius: 2.2rem;
+      overflow: hidden;
+      &:not(:first-child) {
+        margin-top: -5rem;
+      }
+      img {
+        position: relative;
+      }
+      .parralax-text {
+        position: absolute;
+        top: 40%;
+        right: 10%;
+        width: 40%;
+        color: var(--col-white);
+      }
     }
   }
 }
@@ -385,15 +402,10 @@ footer.full-footer {
       text-align: center;
       gap: 2rem;
       .footer-title {
-        // font-weight: var(--fw-700);
-        // font-size: var(--fs-32) !important;
-        // line-height: var(--line-54);
       }
       .footer-text {
         text-align: justify;
-        // font-weight: var(--fw-400);
-        // font-size: var(--fs-16);
-        // line-height: var(--line-27);
+
         margin: 0;
         width: 50%;
         margin: 0 auto;
