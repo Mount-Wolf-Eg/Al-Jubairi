@@ -14,7 +14,15 @@
     <div class="about-us--text d-none d-md-block">
       <img
         src="/src/assets/images/sm-images/Group.png"
-        style="position: absolute; top: 0; left: 0; width: 50%; height: auto"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50%;
+          max-width: 20rem;
+          height: auto;
+          max-height: 50%;
+        "
         alt=""
       />
       <div class="about-us--content">

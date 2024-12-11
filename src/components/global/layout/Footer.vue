@@ -178,7 +178,7 @@
           </ul>
         </div>
       </div>
-      <div class="footer--terms grd grd-2-col">
+      <div class="footer--terms grd grd-2-col w-100">
         <div class="terms-item">
           © 2025 جميع الحقوق محفوظة - بواسطة
           <a href="#" class="link">Mount Wolf</a>

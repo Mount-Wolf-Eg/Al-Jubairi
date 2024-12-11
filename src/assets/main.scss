@@ -38,6 +38,7 @@
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
+  --fw-600: 600;
   --fw-700: 700;
   --fw-900: 900;
 
@@ -59,6 +60,7 @@
   --line-20: 2rem;
   --line-24: 2.38rem;
   --line-27: 2.72rem;
+  --line-30: 3rem;
   --line-36: 3.6rem;
   --line-54: 5.4rem;
   --line-72: 7.2rem;
@@ -173,6 +175,7 @@ button {
     font-weight: var(--fw-500);
     line-height: var(--line-24);
     color: var(--col-white);
+    text-decoration: underline;
   }
   .read-more-icon {
     background-color: var(--col-white);
@@ -415,6 +418,121 @@ button {
   }
 }
 /**********************/
+/*   journey section   */
+/********************/
+.our-journey-sec {
+  padding: 5rem 0;
+  .our-journey-sec--title {
+    color: var(--col-dark);
+    margin-bottom: 5rem;
+  }
+  .sv-box {
+    width: 18rem;
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/**********************/
+/*   latest section   */
+/********************/
+.latest-news-sec {
+  padding: 5rem 0;
+  .latest-news-sec--title {
+    color: var(--col-dark);
+    margin-bottom: 5rem;
+  }
+  .latest-news-text {
+    .date {
+      font-weight: var(--fw-400);
+      font-size: var(--fs-12);
+      line-height: var(--line-20);
+      color: var(--col-gray-dark);
+    }
+    .latest-news-text--title {
+      font-weight: var(--fw-700);
+      font-size: var(--fs-20);
+      line-height: var(--line-36);
+    }
+    .latest-news-text--parag {
+      color: var(--col-gray-dark);
+      font-weight: var(--fw-300);
+      font-size: var(--fs-14);
+      line-height: var(--line-24);
+      text-align: justify;
+      padding-inline-end: 3rem;
+    }
+    .latest-news--link {
+      color: var(--col-dark) !important;
+      text-decoration: underline;
+      font-size: var(--fs-16);
+      font-weight: var(--fw-500);
+      line-height: var(--line-27);
+    }
+  }
+}
+/**********************/
+/*   question section   */
+/********************/
+.questions-sec {
+  padding: 5rem 0;
+  background-color: var(--col-gray-soft);
+  .questions-sec--title {
+    padding-bottom: 3rem;
+  }
+  .accordion {
+    .accordion-item {
+      border: none !important;
+      background-color: transparent;
+    }
+    .accordion-header {
+      border-bottom: 1px solid #59595933;
+      button {
+        border: none !important;
+        background-color: transparent;
+        font-size: var(--fs-18);
+        line-height: var(--line-30);
+        color: var(--col-dark);
+        font-weight: var(--fw-400);
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+    .accordion-body {
+      font-size: var(--fs-18);
+      line-height: var(--line-30);
+      font-weight: var(--fw-300);
+      text-align: justify;
+      color: var(--col-gray);
+    }
+  }
+}
+/**********************/
+/*   clients section   */
+/********************/
+.our-clients {
+  padding: 5rem 0;
+  text-align: center;
+  .our-clients--title {
+    font-weight: var(--fw-600);
+    color: var(--col-dark);
+    font-size: var(--fs-20);
+    line-height: var(--line-27);
+    margin-bottom: 2rem;
+  }
+  .our-clients--text {
+    font-weight: var(--fw-400);
+    color: var(--col-gray);
+    font-size: var(--fs-16);
+    line-height: var(--line-27);
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+/**********************/
 /*   footer section   */
 /********************/
 footer.full-footer {
@@ -439,7 +557,6 @@ footer.full-footer {
       }
       .footer-text {
         text-align: justify;
-
         margin: 0;
         width: 50%;
         margin: 0 auto;
@@ -546,16 +663,11 @@ footer.resp-footer {
       color: var(--col-white);
       gap: 2rem;
       .footer-title {
-        // font-weight: var(--fw-700);
-        // font-size: var(--fs-20) !important;
-        // line-height: var(--line-36);
       }
       .footer-text {
         text-align: justify;
         width: 70%;
-        // font-weight: var(--fw-400);
-        // font-size: var(--fs-12);
-        // line-height: var(--line-20);
+
         margin: 0;
       }
     }

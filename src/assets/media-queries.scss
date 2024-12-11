@@ -72,7 +72,7 @@
     font-size: 56.25%;
   }
   body {
-    background-color: rgba(255, 0, 149, 0.384) !important;
+    background-color: rgba(47, 0, 255, 0.384) !important;
   }
   /************************/
   /*       globacl       */
@@ -203,6 +203,61 @@
           width: 100% !important;
         }
       }
+    }
+  }
+  // latest news
+  .latest-news-sec {
+    padding: 3rem 0;
+    .latest-news-sec--title {
+      margin-bottom: 3rem;
+    }
+    .latest-news-text {
+      .date {
+      }
+      .latest-news-text--title {
+        font-size: var(--fs-14);
+        line-height: var(--line-20);
+      }
+      .latest-news-text--parag {
+        font-size: var(--fs-12);
+        line-height: var(--line-20);
+        padding-inline-end: 0rem;
+      }
+    }
+  }
+  /**********************/
+  /*   question section   */
+  /********************/
+  .questions-sec {
+    padding: 3rem 0;
+    .questions-sec--title {
+      padding-bottom: 2rem;
+    }
+    .accordion {
+      .accordion-header {
+        button {
+          font-size: var(--fs-14);
+          line-height: var(--line-23);
+        }
+      }
+      .accordion-body {
+        font-size: var(--fs-12);
+        line-height: var(--line-20);
+      }
+    }
+  }
+  // our clients
+  .our-clients {
+    padding: 3rem 0;
+
+    .our-clients--title {
+      font-size: var(--fs-20);
+      line-height: var(--line-36);
+    }
+    .our-clients--text {
+      font-size: var(--fs-12);
+      line-height: var(--line-20);
+      width: 100%;
     }
   }
   .logo-col--hint {
