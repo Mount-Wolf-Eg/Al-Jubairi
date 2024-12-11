@@ -11,6 +11,10 @@ import "swiper/css"; // Core Swiper styles
 import "swiper/css/navigation"; // Optional: Navigation module styles
 import "swiper/css/pagination"; // Optional: Pagination module styles
 
+// toastification
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
+
 // language
 import { createI18n } from "vue-i18n";
 import AR from "./locale/AR.json";
@@ -34,6 +38,7 @@ const i18n = createI18n({
 
 app.use(createPinia());
 app.use(router);
+app.use(Toast);
 app.use(i18n);
 
 app.mount("#app");
