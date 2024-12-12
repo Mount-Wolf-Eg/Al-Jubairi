@@ -191,6 +191,7 @@ button {
 // dropdown menu
 .dropdown-menu {
   .dropdown-item {
+    color: var(--col-light-dark) !important;
   }
 }
 
@@ -325,7 +326,7 @@ button {
     top: 0;
     right: 18%;
     height: 100%;
-    width: 25%;
+    width: 35%;
     background-color: var(--col-dark);
   }
   .about-us--content {

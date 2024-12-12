@@ -22,11 +22,11 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white)'
-                    : 'var(--col-light-dark)',
+                    ? 'var(--col-white) !important'
+                    : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to=""
+              to="about"
               >عن الجبيرى</router-link
             >
           </li>
@@ -35,8 +35,8 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white)'
-                    : 'var(--col-light-dark)',
+                    ? 'var(--col-white) !important'
+                    : 'var(--col-light-dark) !important',
               }"
               class="nav-link dropdown-toggle"
               href="#"
@@ -56,8 +56,8 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white)'
-                    : 'var(--col-light-dark)',
+                    ? 'var(--col-white) !important'
+                    : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
               to=""
@@ -70,8 +70,8 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white)'
-                    : 'var(--col-light-dark)',
+                    ? 'var(--col-white) !important'
+                    : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
               to=""
@@ -219,8 +219,8 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white)'
-                    : 'var(--col-light-dark)',
+                    ? 'var(--col-white) !important'
+                    : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
               to=""
@@ -233,8 +233,8 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white)'
-                    : 'var(--col-light-dark)',
+                    ? 'var(--col-white) !important'
+                    : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
               to=""
@@ -247,8 +247,8 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white)'
-                    : 'var(--col-light-dark)',
+                    ? 'var(--col-white) !important'
+                    : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
               to=""
@@ -261,8 +261,8 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white)'
-                    : 'var(--col-light-dark)',
+                    ? 'var(--col-white) !important'
+                    : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
               to=""
@@ -280,8 +280,8 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white)'
-                    : 'var(--col-light-dark)',
+                    ? 'var(--col-white) !important'
+                    : 'var(--col-light-dark) !important',
               }"
             >
               {{ lang }}

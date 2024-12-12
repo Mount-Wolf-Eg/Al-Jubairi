@@ -5,14 +5,25 @@ import axiosInstance from "./axios_instance";
 
 export const usePageStore = defineStore("pageStore", {
   state: () => ({
-    pageSections: [],
+    home: [],
+    about: [],
+    services: [],
+    team_work: [],
+    achievement: [],
+    community: [],
+    jobs: [],
+    blogs: [],
+    contact_us: [],
+    terms: [],
+    privacy: [],
   }),
   actions: {
-    async getPageData() {
+    async getPageData(pageName) {
+      let loading = true;
       await axiosInstance
-        .get(`${mainStore().apiLink}/admin/Categories/all`)
+        .get(`${mainStore().apiLink}/website/pages/${pageName}`)
         .then((res) => {
-          this.allblogs = res.data.data;
+          this[pageName] = res.data.data;
         })
         .catch((err) => {
           let errorMessage = "Something went wrong, please try again";
@@ -24,6 +35,10 @@ export const usePageStore = defineStore("pageStore", {
             }
           }
           mainStore().showAlert(errorMessage, 2);
+        })
+        .finally(() => {
+          loading = false;
+          return loading;
         });
     },
   },

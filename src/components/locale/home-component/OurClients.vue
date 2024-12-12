@@ -1,10 +1,14 @@
 <template>
   <div class="our-clients container">
-    <p class="our-clients--title">عملاء الشركة</p>
+    <p class="our-clients--title">
+      {{ props.secData.title }}
+      عملاء الشركة
+    </p>
     <p
       class="our-clients--text body-desc-secondary"
       style="text-align: center !important"
     >
+      {{ props.secData.desc }}
       حازت الجبيري للمحاماة على ثقة أكبر الشركات الإقليمية، والشركات العائلية،
       والشركات العالمية والمحلية، إلى جانب المؤسسات المالية الدولية ووكالاتها،
       والسفارات الأجنبية العالمية.
@@ -38,13 +42,23 @@
         :Lazy="true"
       >
         <!-- resources -->
-        <swiper-slide v-for="(slide, i) in 20" :key="i">
+        <swiper-slide v-for="(slide, i) in props.secData.items.data" :key="i">
           <div class="tetimonial-card w-100 h-100">
             <div
               class="d-flex justify-content-center align-items-center"
               style="width: 23.6rem; height: 12rem"
             >
-              <svg
+              <img
+                :src="slide.image.media"
+                style="
+                  height: 70%;
+                  width: auto;
+                  object-fit: contain;
+                  object-position: center;
+                "
+                :alt="slide.image.alt"
+              />
+              <!-- <svg
                 style="
                   height: 70%;
                   width: auto;
@@ -103,7 +117,7 @@
                   d="M162.924 12.7861C161.346 14.3564 158.036 18.2924 158.795 23.0033C159.79 29.1336 174.192 49.8003 184.83 49.8003C190.019 49.8003 194.04 45.9078 198.149 39.8007C189.371 47.5827 167.226 35.9054 162.924 12.7861Z"
                   fill="#00A19B"
                 />
-              </svg>
+              </svg> -->
             </div>
           </div>
         </swiper-slide>
@@ -140,6 +154,18 @@ const breakpoints = {
     spaceBetween: 30,
   },
 };
+
+import { onMounted } from "vue";
+
+const props = defineProps({
+  secData: {
+    type: Object,
+    default: () => {
+      return {};
+    },
+    Required: false,
+  },
+});
 </script>
 
 <style lang="scss" scoped></style>

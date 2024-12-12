@@ -1,12 +1,32 @@
 <template>
   <div class="our-journey-sec">
     <p class="our-journey-sec--title head-secondary text-center">
-      محطات مضيئة في رحلتنا القانونية
+      <!-- محطات مضيئة في رحلتنا القانونية -->
+      {{ props.secData.title }}
     </p>
     <div
       class="our-journey-helpers container flx-r flex-wrap justify-content-between align-items-center"
     >
-      <div class="sv-box">
+      <div
+        class="sv-box"
+        v-for="(item, i) in props.secData.items.data"
+        :key="i"
+      >
+        <img
+          :src="item.image.media"
+          style="
+            max-width: 9rem;
+            max-height: 11.6rem;
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+          "
+          :alt="item.image.alt"
+        />
+      </div>
+
+      <!-- <div class="sv-box">
         <svg
           width="116"
           height="90"
@@ -222,11 +242,22 @@
             />
           </defs>
         </svg>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+const props = defineProps({
+  secData: {
+    type: Object,
+    default: () => {
+      return {};
+    },
+    Required: false,
+  },
+});
+</script>
 
 <style lang="scss" scoped></style>

@@ -20,11 +20,12 @@
   .body-desc-secondary {
     font-size: var(--fs-16);
   }
-  about us .about-us-sec {
+  .about-us-sec {
     .about-us--text {
-      width: 40%;
+      width: 50%;
     }
     .about-us--content {
+      overflow: auto;
       padding: 0 4rem;
     }
   }

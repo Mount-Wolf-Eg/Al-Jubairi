@@ -8,7 +8,15 @@ const router = createRouter({
       name: "home",
       component: () => import("@/views/HomeView.vue"),
       meta: {
-        title: "Mount Wolf",
+        title: "Al Jubairi",
+      },
+    },
+    {
+      path: "/about",
+      name: "About",
+      component: () => import("@/views/AboutUs.vue"),
+      meta: {
+        title: "About Us",
       },
     },
     // {
@@ -45,4 +53,5 @@ router.beforeEach((to, from, next) => {
   document.title = to.meta.title;
   next();
 });
+
 export default router;

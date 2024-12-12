@@ -1,11 +1,49 @@
 <template>
   <div class="questions-sec px-5 px-md-0">
     <p class="questions-sec--title head-secondary text-center">
-      بعض الأسئلة القانونية المتكررة وإجاباتها
+      <!-- بعض الأسئلة القانونية المتكررة وإجاباتها -->
+      {{ props.secData.title }}
     </p>
     <div class="container">
       <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
+        <div
+          class="accordion-item"
+          v-for="(item, i) in props.secData.items.data"
+        >
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              :data-bs-target="`#collapse${i}`"
+              aria-expanded="true"
+              :aria-controls="`collapse${i}`"
+            >
+              {{ item.title }}
+              <!-- كيف تقدم الاستشارة القانونية؟ -->
+            </button>
+          </h2>
+          <div
+            :id="`collapse${i}`"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              {{ item.description }}
+              <!-- - الاستشارة القانونيَّة: تعني طلب الحصول على الرأي القانوني، فيما
+              يتعلق بمسألة موضوع خلاف أو نزاع معين؛ من أجل بيان وجهة نظر القانون
+              في المسألة القانونيَّة، أو النزاع الذي تم عرضه على القضاء أو سيعرض
+              عليه مُستقبلًا، وذلك بهدف ضمان حقوق كافة الأطراف. - دراسة القضية:
+              تقدم الخدمة للعميل -سواء أكان فردًا أم شركة -، مستنداً شاملاً
+              لتفاصيل القضية وجوانبها والجهة المعنيَّة بها، إضافة إلى الموقف
+              القانوني في القضية؛ في سبيل التمهيد لأيسر الطرق وإتاحة اتخاذ أفضل
+              الخيارات التي توفر على العميل عناء البحث وتكاليف الأخطاء المحتملة
+              في تكييف الدعوى. -->
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="accordion-item">
           <h2 class="accordion-header">
             <button
               class="accordion-button"
@@ -36,6 +74,7 @@
             </div>
           </div>
         </div>
+
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button
@@ -97,7 +136,7 @@
               في تكييف الدعوى.
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <button class="read-more-btn my-3 my-md-5">
         <p style="color: var(--col-dark)">اعرف المزيد</p>
@@ -134,6 +173,18 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+
+const props = defineProps({
+  secData: {
+    type: Object,
+    default: () => {
+      return {};
+    },
+    Required: false,
+  },
+});
+</script>
 
 <style lang="scss" scoped></style>
