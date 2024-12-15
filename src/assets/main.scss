@@ -188,6 +188,38 @@ button {
   }
 }
 
+/****************/
+/* breadcrump */
+/****************/
+.bread-crump {
+  padding: 3rem 0;
+  .breadcrumb-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    & * {
+      font-size: var(--fs-14);
+      font-weight: var(--fw-400);
+      line-height: var(--line-24);
+      color: var(--col-gray-dark) !important;
+    }
+  }
+
+  .breadcrumb-item:last-child {
+    a {
+      color: #fff !important ;
+    }
+  }
+  .bread-text {
+    width: 50%;
+  }
+}
+.inside-page {
+  background-color: #fff;
+  border-top-left-radius: var(--fs-40);
+  border-top-right-radius: var(--fs-40);
+}
 // dropdown menu
 .dropdown-menu {
   .dropdown-item {

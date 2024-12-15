@@ -1,7 +1,10 @@
 <template>
   <!--                   start footer           -->
   <footer class="full-footer">
-    <div class="footer-img">
+    <div
+      class="footer-img"
+      :style="{ display: route.name === 'home' ? 'block' : 'none' }"
+    >
       <img
         src="/src/assets/images/sm-images/footer.jpg"
         style="width: 100%; height: auto; min-height: 300px"
@@ -197,7 +200,8 @@
 </template>
 
 <script setup>
-import router from "@/router";
+import { useRoute } from "vue-router";
+const route = useRoute();
 </script>
 
 <style lang="scss" scoped></style>

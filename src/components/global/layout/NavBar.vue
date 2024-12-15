@@ -3,6 +3,7 @@
     class="navbar main-nav navbar-expand-sm p-0"
     style="position: absolute; top: 0; left: 0"
     :style="{
+      position: route.name === 'home' ? 'absolute' : 'static',
       backgroundColor: route.name === 'home' ? '' : 'white',
       color:
         route.name === 'home' ? 'var(--col-white)' : 'var(--col-light-dark)',
@@ -47,8 +48,16 @@
               خدماتنا
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <router-link class="dropdown-item" to="services"
+                  >Action</router-link
+                >
+              </li>
+              <li>
+                <router-link class="dropdown-item" to="services"
+                  >Action</router-link
+                >
+              </li>
             </ul>
           </li>
           <li class="nav-item">

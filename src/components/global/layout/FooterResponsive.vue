@@ -1,6 +1,9 @@
 <template>
   <footer class="resp-footer">
-    <div class="footer-img">
+    <div
+      class="footer-img"
+      :style="{ display: route.name === 'home' ? 'block' : 'none' }"
+    >
       <img
         src="/src/assets/images/sm-images/footerResp.jpg"
         style="
@@ -257,6 +260,9 @@
   </footer>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRoute } from "vue-router";
+const route = useRoute();
+</script>
 
 <style lang="scss" scoped></style>

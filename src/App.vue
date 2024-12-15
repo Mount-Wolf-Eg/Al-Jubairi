@@ -1,7 +1,9 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
+import { useRoute } from "vue-router";
 import MainLayout from "./components/global/layout/MainLayout.vue";
+const route = useRoute();
 
 onMounted(() => {
   if (sessionStorage.getItem("lang") == null)
@@ -9,7 +11,10 @@ onMounted(() => {
 });
 </script>
 <template>
-  <main style="flex: 1; width: 100vw">
+  <main
+    style="flex: 1; width: 100vw"
+    :style="{ background: route.name === 'home' ? '#fff ' : '#151516' }"
+  >
     <MainLayout>
       <RouterView />
     </MainLayout>

@@ -19,6 +19,14 @@ const router = createRouter({
         title: "About Us",
       },
     },
+    {
+      path: "/services",
+      name: "Services",
+      component: () => import("@/views/ServicesPage.vue"),
+      meta: {
+        title: "Services Page",
+      },
+    },
     // {
     //   path: "/nested",
     //   name: "Nested",
