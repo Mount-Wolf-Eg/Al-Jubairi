@@ -4,6 +4,7 @@
       :secData="getSecData('slider')"
       :secData2="getSecData('excellence')"
     />
+    <excellence :secData="getSecData('excellence')" />
     <AboutUs :secData="getSecData('more_about')" />
     <Support :secData="getSecData('services')" />
     <Achievements />
@@ -17,6 +18,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import heroSlider from "@/components/locale/home-component/heroSlider.vue";
+import excellence from "@/components/locale/home-component/excellence.vue";
 import AboutUs from "@/components/locale/home-component/AboutUs.vue";
 import Support from "@/components/locale/home-component/Support.vue";
 import Achievements from "@/components/locale/home-component/Achievements.vue";

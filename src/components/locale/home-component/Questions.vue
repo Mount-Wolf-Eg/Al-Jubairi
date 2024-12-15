@@ -8,7 +8,7 @@
       <div class="accordion" id="accordionExample">
         <div
           class="accordion-item"
-          v-for="(item, i) in props.secData.items.data.slice(0, 3)"
+          v-for="(item, i) in props.secData.items?.data?.slice(0, 3)"
         >
           <h2 class="accordion-header">
             <button
