@@ -69,7 +69,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to=""
+              to="our-team"
             >
               فريق العمل
             </router-link>

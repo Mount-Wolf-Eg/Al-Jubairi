@@ -24,7 +24,15 @@ const router = createRouter({
       name: "Services",
       component: () => import("@/views/ServicesPage.vue"),
       meta: {
-        title: "Services Page",
+        title: "Services",
+      },
+    },
+    {
+      path: "/our-team",
+      name: "Team",
+      component: () => import("@/views/OurTeam.vue"),
+      meta: {
+        title: "Team",
       },
     },
     // {
