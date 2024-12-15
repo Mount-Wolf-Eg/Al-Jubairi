@@ -83,7 +83,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to=""
+              to="achievement"
               >الانجازات</router-link
             >
           </li>

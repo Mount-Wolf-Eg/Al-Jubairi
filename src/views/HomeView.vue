@@ -56,13 +56,3 @@ onMounted(async () => {
   isLoading.value = false;
 });
 </script>
-<!--  "slider",
-      "excellence",
-      "more_about",
-      "services",
-      "achievement_statistics",
-      "certificates",
-      "last_news",
-      "freq_questions",
-      "clients",
-      "reservation", -->

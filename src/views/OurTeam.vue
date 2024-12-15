@@ -2,15 +2,41 @@
   <main v-if="!isLoading">
     <BreadCrump
       :crump="crump"
-      :secTitle="about.page.data.title"
-      :secDesc="about.page.data.desc"
+      :secTitle="team_work.page.data.title"
+      :secDesc="team_work.page.data.desc"
     ></BreadCrump>
-
     <div class="inside-page">
-      <AboutUsInfo :secData="getSecData('more_about')" />
-      <Achievements />
-      <excellence :secData="getSecData('excellence')" />
-      <OurJourney :secData="getSecData('certificates')" />
+      <div class="container">
+        <div
+          class="px-5 px-md-0 d-flex flex-column flex-md-row gap-5 justify-content-between align-items-center"
+        >
+          <div
+            class="employees"
+            v-for="(item, i) in team_work.sections?.data[0]?.items?.data"
+            :key="i"
+            @click="$router.push(`/employee-data/${item.id}`)"
+          >
+            <img
+              :src="item?.image?.media"
+              style="
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                object-position: center;
+              "
+              :alt="item?.image?.alt"
+            />
+            <div class="employees-data">
+              <p class="employees-name">
+                {{ item.name }}
+              </p>
+              <p class="employees-title">
+                {{ item.title }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
   <div v-else>Loading...</div>
@@ -18,24 +44,24 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
-import AboutUsInfo from "@/components/locale/about-component/AboutUsInfo.vue";
-import Achievements from "@/components/locale/about-component/Achievements.vue";
-import excellence from "@/components/locale/about-component/excellence.vue";
-import OurJourney from "@/components/locale/about-component/OurJourney.vue";
 
-const crump = ref([{ name: "عن الجبيري", rout: "/about" }]);
+const crump = ref([{ name: "فريق العمل", rout: "/our-team" }]);
 
 // store
 import { usePageStore } from "@/stores/pagesStore";
 import { storeToRefs } from "pinia";
 const pageStore = usePageStore();
-const { about } = storeToRefs(pageStore);
+const { team_work } = storeToRefs(pageStore);
 
 const isLoading = ref(true);
 
 const getSecData = (sectionType) => {
-  if (about.value && about.value.sections && about.value.sections.data) {
-    const section = about.value.sections.data.find(
+  if (
+    team_work.value &&
+    team_work.value.sections &&
+    team_work.value.sections.data
+  ) {
+    const section = team_work.value.sections.data.find(
       (sec) => sec.type === sectionType
     );
     return section ? section : {};
@@ -45,11 +71,11 @@ const getSecData = (sectionType) => {
 
 onMounted(async () => {
   if (
-    !about.value ||
-    !about.value.sections ||
-    about.value.sections.data.length === 0
+    !team_work.value ||
+    !team_work.value.sections ||
+    team_work.value.sections.data.length === 0
   ) {
-    await pageStore.getPageData("about");
+    await pageStore.getPageData("team_work");
   }
 
   isLoading.value = false;

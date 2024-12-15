@@ -35,6 +35,23 @@ const router = createRouter({
         title: "Team",
       },
     },
+    {
+      path: "/employee-data/:id",
+      name: "Employee",
+      component: () =>
+        import("@/components/locale/team-component/employee.vue"),
+      meta: {
+        title: "Employee",
+      },
+    },
+    {
+      path: "/achievement",
+      name: "Achievement",
+      component: () => import("@/views/Achievements.vue"),
+      meta: {
+        title: "Achievement",
+      },
+    },
     // {
     //   path: "/nested",
     //   name: "Nested",

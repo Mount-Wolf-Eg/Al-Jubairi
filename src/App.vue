@@ -13,7 +13,14 @@ onMounted(() => {
 <template>
   <main
     style="flex: 1; width: 100vw"
-    :style="{ background: route.name === 'home' ? '#fff ' : '#151516' }"
+    :style="{
+      background:
+        route.name === 'home' ||
+        route.name === 'Employee' ||
+        route.name === 'Achievement'
+          ? '#fff '
+          : '#151516',
+    }"
   >
     <MainLayout>
       <RouterView />
