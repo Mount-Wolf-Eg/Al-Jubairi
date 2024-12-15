@@ -9,7 +9,7 @@
     >
       <div
         class="sv-box"
-        v-for="(item, i) in props.secData.items.data"
+        v-for="(item, i) in props.secData.items.data.slice(0, 6)"
         :key="i"
       >
         <img

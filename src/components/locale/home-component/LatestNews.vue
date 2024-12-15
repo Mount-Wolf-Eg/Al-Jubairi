@@ -38,7 +38,12 @@
       >
         <p class="date">
           <!-- 2 أبريل 2025 -->
-          {{ props.secData?.items?.data[0]?.date }}
+
+          {{
+            moment(new Date(props.secData?.items?.data[0]?.created_at)).format(
+              "LL"
+            )
+          }}
         </p>
         <p class="latest-news-text--title">
           <!-- كيف تسجل علامتك التجارية في المملكة -->
@@ -96,6 +101,10 @@
 
 <script setup>
 import { onMounted } from "vue";
+import moment from "moment";
+import "moment/locale/ar";
+
+moment.locale("ar");
 
 const props = defineProps({
   secData: {

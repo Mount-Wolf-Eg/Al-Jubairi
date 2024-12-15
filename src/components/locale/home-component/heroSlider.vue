@@ -1,19 +1,40 @@
 <template>
   <div class="hero-section">
     <swiper
-      class="swiper h-100"
-      :modules="modules"
-      :space-between="30"
-      :centered-slides="true"
-      :navigation="false"
-      :loop="true"
-      :effect="'fade'"
+      effect="fade"
       :autoplay="{
-        delay: 2000,
+        delay: 500,
         disableOnInteraction: false,
       }"
-      :speed="500"
+      class="swiper h-100"
+      :modules="modules"
+      :pagination="{
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        clickable: true,
+      }"
+      :slides-per-view="1"
+      :Autoplay="{
+        delay: 500,
+        disableOnInteraction: false,
+        waitForTransition: true,
+      }"
+      :space-between="10"
+      :navigation="{
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }"
+      :preload-images="false"
+      :Lazy="true"
+      :centered-slides="true"
     >
+      <!--  
+        :speed="500"
+        
+      :effect="'fade'"
+        :navigation="false"
+        :loop="true"
+      -->
       <swiper-slide
         v-for="(item, i) in props.secData.items.data"
         :key="i"
@@ -57,7 +78,7 @@
   >
     <div
       class="d-flex align-items-center justify-content-center flex-column flex-md-row gap-3 gap-md-5"
-      v-for="(item, i) in props.secData2.items.data"
+      v-for="(item, i) in props.secData2.items.data.slice(0, 3)"
       :key="i"
     >
       <img
@@ -136,10 +157,8 @@
 // Corrected imports for Swiper
 import { Pagination, Navigation, Autoplay, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { onMounted, watch } from "vue";
-
-// Modules for Swiper
 const modules = [Navigation, Autoplay, EffectFade];
+
 const props = defineProps({
   secData: {
     type: Object,
