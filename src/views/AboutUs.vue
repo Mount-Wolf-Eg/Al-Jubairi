@@ -1,11 +1,55 @@
 <template>
-  <main>
-    <BreadCrump :crump="crump" :secTitle="'one'" :secDesc="'two'"></BreadCrump>
+  <main v-if="!isLoading">
+    <BreadCrump
+      :crump="crump"
+      :secTitle="about.page.data.title"
+      :secDesc="about.page.data.desc"
+    ></BreadCrump>
+
+    <div class="inside-page">
+      <Achievements />
+      <excellence :secData="getSecData('excellence')" />
+      <OurJourney :secData="getSecData('certificates')" />
+    </div>
   </main>
+  <div v-else>Loading...</div>
 </template>
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
+import Achievements from "@/components/locale/about-component/Achievements.vue";
+import excellence from "@/components/locale/about-component/excellence.vue";
+import OurJourney from "@/components/locale/about-component/OurJourney.vue";
 
-const crump = ref([{ name: "about us", rout: "/about" }]);
+const crump = ref([{ name: "عن الجبيري", rout: "/about" }]);
+
+// store
+import { usePageStore } from "@/stores/pagesStore";
+import { storeToRefs } from "pinia";
+const pageStore = usePageStore();
+const { about } = storeToRefs(pageStore);
+
+const isLoading = ref(true);
+
+const getSecData = (sectionType) => {
+  if (about.value && about.value.sections && about.value.sections.data) {
+    const section = about.value.sections.data.find(
+      (sec) => sec.type === sectionType
+    );
+    return section ? section : {};
+  }
+  return {};
+};
+
+onMounted(async () => {
+  if (
+    !about.value ||
+    !about.value.sections ||
+    about.value.sections.data.length === 0
+  ) {
+    await pageStore.getPageData("about");
+  }
+
+  isLoading.value = false;
+});
 </script>
