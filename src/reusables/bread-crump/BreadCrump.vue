@@ -1,6 +1,6 @@
 <template>
   <div class="bread-crump">
-    <div class="container">
+    <div class="container px-5 px-xl-0">
       <nav aria-label="breadcrumb ">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">

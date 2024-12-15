@@ -221,6 +221,7 @@ button {
   border-top-left-radius: var(--fs-40);
   border-top-right-radius: var(--fs-40);
 }
+
 // dropdown menu
 .dropdown-menu {
   .dropdown-item {
@@ -566,6 +567,39 @@ button {
     margin: 0 auto;
   }
 }
+/**********************/
+/*   about page   */
+/********************/
+.about-us-info {
+  .about-info--box {
+    margin: 5rem 0;
+    .text-editor {
+      ol,
+      ul {
+        padding-inline-start: 1.2rem;
+      }
+
+      h2,
+      h1 {
+        font-weight: var(--fw-600);
+        font-size: var(--fs-20);
+        line-height: var(--line-27);
+        margin-bottom: 2rem;
+        &:not(:first-of-type) {
+          margin-top: 4rem;
+        }
+      }
+      p,
+      li {
+        font-weight: var(300);
+        font-size: var(--fs-16);
+        line-height: var(--line-27);
+        text-align: justify;
+      }
+    }
+  }
+}
+
 /**********************/
 /*   footer section   */
 /********************/

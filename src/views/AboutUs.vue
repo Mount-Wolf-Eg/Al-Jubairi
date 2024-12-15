@@ -7,6 +7,7 @@
     ></BreadCrump>
 
     <div class="inside-page">
+      <AboutUsInfo :secData="getSecData('more_about')" />
       <Achievements />
       <excellence :secData="getSecData('excellence')" />
       <OurJourney :secData="getSecData('certificates')" />
@@ -17,6 +18,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
+import AboutUsInfo from "@/components/locale/about-component/AboutUsInfo.vue";
 import Achievements from "@/components/locale/about-component/Achievements.vue";
 import excellence from "@/components/locale/about-component/excellence.vue";
 import OurJourney from "@/components/locale/about-component/OurJourney.vue";
