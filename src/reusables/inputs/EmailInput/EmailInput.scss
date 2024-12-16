@@ -1,0 +1,33 @@
+.email-box {
+  .email-label {
+    color: var(--col-dark);
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .input-container {
+    position: relative;
+
+    .email-icon {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    input {
+      padding: 8px 40px 8px 16px;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--col-gray-soft);
+      font-size: 14px;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+    }
+  }
+}

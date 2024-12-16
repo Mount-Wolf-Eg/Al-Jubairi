@@ -55,7 +55,7 @@ const router = createRouter({
     {
       path: "/community",
       name: "Community",
-      component: () => import("@/views/Community.vue"),
+      component: () => import("@/views/community/Community.vue"),
       meta: {
         title: "Community",
       },
