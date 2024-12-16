@@ -1,6 +1,7 @@
 <template>
   <div class="about-us-sec w-100">
     <img
+      loading="lazy"
       class="d-none d-md-block"
       src="/src/assets/images/bg-images/about.jpg"
       style="
@@ -13,6 +14,7 @@
     />
     <div class="about-us--text d-none d-md-block">
       <img
+        loading="lazy"
         src="/src/assets/images/sm-images/Group.png"
         style="
           position: absolute;
@@ -72,6 +74,7 @@
     </div>
 
     <img
+      loading="lazy"
       class="d-block d-md-none"
       src="/src/assets/images/sm-images/Group.png"
       style="position: absolute; top: 0; left: 20px; width: 30%; height: auto"

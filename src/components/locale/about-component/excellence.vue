@@ -8,6 +8,7 @@
       :key="i"
     >
       <img
+        loading="lazy"
         style="max-width: 6.4rem; max-height: 6.4rem; width: 100%; height: auto"
         :src="item.image.media"
         :alt="item.image.alt"

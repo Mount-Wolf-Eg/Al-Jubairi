@@ -27,7 +27,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to="about"
+              to="/about"
               >عن الجبيرى</router-link
             >
           </li>
@@ -49,12 +49,12 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <router-link class="dropdown-item" to="services"
+                <router-link class="dropdown-item" to="/services"
                   >Action</router-link
                 >
               </li>
               <li>
-                <router-link class="dropdown-item" to="services"
+                <router-link class="dropdown-item" to="/services"
                   >Action</router-link
                 >
               </li>
@@ -69,7 +69,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to="our-team"
+              to="/our-team"
             >
               فريق العمل
             </router-link>
@@ -83,7 +83,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to="achievement"
+              to="/achievement"
               >الانجازات</router-link
             >
           </li>
@@ -232,7 +232,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to=""
+              to="/"
             >
               المجتمع</router-link
             >
@@ -246,7 +246,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to=""
+              to="/"
             >
               التوظيف</router-link
             >
@@ -260,7 +260,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to=""
+              to="/"
             >
               المدونه</router-link
             >
@@ -274,7 +274,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to=""
+              to="/"
             >
               تواصل معنا</router-link
             >

@@ -57,6 +57,7 @@
         </svg>
       </button>
       <img
+        loading="lazy"
         class="mt-3"
         :src="userImg"
         alt=""

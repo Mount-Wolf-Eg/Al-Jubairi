@@ -6,6 +6,7 @@
       :style="{ display: route.name === 'home' ? 'block' : 'none' }"
     >
       <img
+        loading="lazy"
         src="/src/assets/images/sm-images/footer.jpg"
         style="width: 100%; height: auto; min-height: 300px"
         alt=""

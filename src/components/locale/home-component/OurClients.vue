@@ -49,6 +49,7 @@
               style="width: 23.6rem; height: 12rem"
             >
               <img
+                loading="lazy"
                 :src="slide.image.media"
                 style="
                   height: 70%;

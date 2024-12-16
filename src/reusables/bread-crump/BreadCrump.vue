@@ -13,7 +13,7 @@
       </nav>
       <div class="bread-text">
         <p class="bread-title head-primary">{{ secTitle }}</p>
-        <p class="bread-desc body-desc-primary">
+        <p class="bread-desc body-desc-primary mx-auto">
           {{ secDesc }}
         </p>
       </div>

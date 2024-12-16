@@ -15,9 +15,7 @@ onMounted(() => {
     style="flex: 1; width: 100vw"
     :style="{
       background:
-        route.name === 'home' ||
-        route.name === 'Employee' ||
-        route.name === 'Achievement'
+        route.name === 'home' || route.name === 'Employee'
           ? '#fff '
           : '#151516',
     }"

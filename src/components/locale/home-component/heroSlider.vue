@@ -43,6 +43,7 @@
         <div class="slider-box h-100 row">
           <!-- src="/src/assets/images/PHN_1434.webp" -->
           <img
+            loading="lazy"
             :src="item.image.media"
             style="
               width: 100%;

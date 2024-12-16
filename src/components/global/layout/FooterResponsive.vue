@@ -5,6 +5,7 @@
       :style="{ display: route.name === 'home' ? 'block' : 'none' }"
     >
       <img
+        loading="lazy"
         src="/src/assets/images/sm-images/footerResp.jpg"
         style="
           width: 100%;

@@ -12,6 +12,7 @@
         class="flex-r w-100 align-items-center justify-content-center"
       >
         <img
+          loading="lazy"
           :src="props.secData?.items?.data[0]?.image.media"
           style="
             width: 100%;
@@ -21,7 +22,8 @@
           "
           :alt="props.secData?.items?.data[0]?.image.alt"
         />
-        <!-- <img
+        <!-- <img       loading="lazy"
+
           src="/src/assets/images/sm-images/Whatnew.png"
           style="
             width: 100%;

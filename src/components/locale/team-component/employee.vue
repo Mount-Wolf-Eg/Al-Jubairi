@@ -6,6 +6,7 @@
       <div class="row mx-0 px-3 px-md-0 gap-5">
         <div class="col-6 col-md-3 mx-auto mx-md-0">
           <img
+            loading="lazy"
             :src="singleItem.image.media"
             style="
               width: 100%;
@@ -34,7 +35,7 @@
 </template>
 
 <script setup>
-import { onBeforeMount, ref } from "vue";
+import { onBeforeUnmount, onMounted, ref } from "vue";
 import { usePageStore } from "@/stores/pagesStore";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import { storeToRefs } from "pinia";
@@ -45,14 +46,16 @@ const { singleItem } = storeToRefs(usePageStore());
 const isLoading = ref(true);
 const crump = ref([
   { name: "فريق العمل", rout: "/our-team" },
-  { name: "اسم المحامي", rout: "/our-team" },
+  { name: "اسم المحامي", rout: "" },
 ]);
-
-onBeforeMount(async () => {
+onMounted(async () => {
   if (!route.params.id) router.push({ name: "our-team" });
   await usePageStore().getItemData(route.params.id);
   if (singleItem.value.length == 0) router.push({ name: "our-team" });
   isLoading.value = false;
+});
+onBeforeUnmount(() => {
+  singleItem.value = "";
 });
 </script>
 

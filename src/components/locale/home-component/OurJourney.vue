@@ -13,6 +13,7 @@
         :key="i"
       >
         <img
+          loading="lazy"
           :src="item.image.media"
           style="
             max-width: 9rem;

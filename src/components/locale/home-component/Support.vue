@@ -21,6 +21,7 @@
         :key="i"
       >
         <img
+          loading="lazy"
           :src="item.image.media"
           style="width: 100%; object-fit: cover; object-position: center"
           :alt="item.image.alt"
@@ -66,7 +67,8 @@
       </div>
 
       <!-- <div class="parralax-img">
-        <img
+        <img       loading="lazy"
+
           src="/src/assets/images/bg-images/parralax1.jpg"
           style="width: 100%; object-fit: cover; object-position: center"
           alt=""
@@ -112,7 +114,8 @@
       </div>
       <div class="parralax-img">
         <div class="parralax-img">
-          <img
+          <img       loading="lazy"
+
             src="/src/assets/images/bg-images/parralax2.jpg"
             style="width: 100%; object-fit: cover; object-position: center"
             alt=""
@@ -159,7 +162,8 @@
       </div>
       <div class="parralax-img">
         <div class="parralax-img">
-          <img
+          <img       loading="lazy"
+
             src="/src/assets/images/bg-images/parralax3.jpg"
             style="width: 100%; object-fit: cover; object-position: center"
             alt=""

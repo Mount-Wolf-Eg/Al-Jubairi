@@ -14,9 +14,10 @@
             class="employees"
             v-for="(item, i) in team_work.sections?.data[0]?.items?.data"
             :key="i"
-            @click="$router.push(`/employee-data/${item.id}`)"
+            @click="$router.push({ name: 'Employee', params: { id: item.id } })"
           >
             <img
+              loading="lazy"
               :src="item?.image?.media"
               style="
                 width: 100%;

@@ -153,6 +153,12 @@ button {
   font-size: var(--fs-16);
   text-align: justify;
 }
+.body-desc-tertiary {
+  font-weight: var(--fw-400);
+  line-height: var(--line-24);
+  font-size: var(--fs-14);
+  text-align: justify;
+}
 .btn-round-primary {
   padding: 1.3rem 2.2rem;
   border-radius: 1000px;
@@ -193,6 +199,9 @@ button {
 /****************/
 .bread-crump {
   padding: 3rem 0;
+  .bread-text {
+    width: 50%;
+  }
   .breadcrumb-item {
     display: flex;
     justify-content: center;
@@ -202,21 +211,18 @@ button {
       font-size: var(--fs-14);
       font-weight: var(--fw-400);
       line-height: var(--line-24);
-      color: var(--col-dark) !important;
+      color: var(--col-gray-dark) !important;
     }
   }
 
   .breadcrumb-item::before {
-    color: #000 !important;
+    color: #fff !important;
   }
 
   .breadcrumb-item:last-child {
     a {
       color: #ccc !important ;
     }
-  }
-  .bread-text {
-    width: 50%;
   }
 }
 .inside-page {
@@ -671,7 +677,36 @@ button {
     }
   }
 }
+/**********************/
+/* Achieve page      */
+/********************/
+.achieve-page-sec {
+  position: relative;
 
+  .achieve {
+    border-radius: 0.8rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    margin-bottom: 5rem;
+    .achieve-title {
+      font-size: var(--fs-20);
+      font-weight: var(--fw-700);
+      line-height: var(--line-27);
+      margin-top: 2rem;
+    }
+    .achieve-desc {
+      margin: 2rem 0;
+      font-size: var(--fs-14);
+      font-weight: var(--fw-400);
+      line-height: var(--line-24);
+      text-align: justified;
+    }
+  }
+  .achieve-box {
+    position: sticky;
+    top: 10px;
+  }
+}
 /**********************/
 /*   footer section   */
 /********************/

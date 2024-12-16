@@ -2,6 +2,7 @@
   <div class="about-us-info">
     <div class="container px-0">
       <img
+        loading="lazy"
         style="
           width: 100%;
           height: auto;
@@ -39,10 +40,6 @@ const props = defineProps({
     },
     Required: false,
   },
-});
-
-onMounted(() => {
-  console.log(props.secData.items.data);
 });
 </script>
 
