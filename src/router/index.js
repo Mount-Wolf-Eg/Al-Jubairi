@@ -52,6 +52,14 @@ const router = createRouter({
         title: "Achievement",
       },
     },
+    {
+      path: "/community",
+      name: "Community",
+      component: () => import("@/views/Community.vue"),
+      meta: {
+        title: "Community",
+      },
+    },
     // {
     //   path: "/nested",
     //   name: "Nested",
