@@ -321,6 +321,45 @@
       width: 100%;
     }
   }
+  // our sectors
+  .sector-sec {
+    padding: 3rem 0;
+
+    .sectors-title {
+      font-size: var(--fs-20);
+      line-height: var(--line-36);
+    }
+    .sectors-text {
+      font-size: var(--fs-12);
+      line-height: var(--line-20);
+      width: 100%;
+    }
+
+    .sectors-box {
+      margin-top: 2rem;
+
+      .sector-info {
+        margin-bottom: 2rem;
+        min-width: 100%;
+
+        .sector-hover-box {
+          .sector-box {
+            .sector-hover-title {
+              font-size: var(--fs-18);
+              line-height: var(--line-36);
+              margin: 0 auto;
+            }
+          }
+          .sector-hover-body {
+            font-size: var(--fs-10);
+            line-height: var(--line-20);
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
   .logo-col--hint {
     padding-inline-end: 5rem !important;
   }

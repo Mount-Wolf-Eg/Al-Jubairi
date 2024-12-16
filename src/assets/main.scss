@@ -708,6 +708,81 @@ button {
   }
 }
 /**********************/
+/*   sctors section   */
+/********************/
+.sector-sec {
+  padding: 5rem 0;
+  text-align: center;
+  .sectors-title {
+    font-weight: var(--fw-600);
+    color: var(--col-dark);
+    font-size: var(--fs-20);
+    line-height: var(--line-27);
+    margin-bottom: 2rem;
+  }
+  .sectors-text {
+    font-weight: var(--fw-400);
+    color: var(--col-gray);
+    font-size: var(--fs-16);
+    line-height: var(--line-27);
+    width: 50%;
+    margin: 0 auto;
+  }
+  .sectors-box {
+    margin-top: 5rem;
+
+    .sector-info {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 42.2rem;
+      min-width: 50rem;
+      border-radius: 0.8rem;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+        rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+      margin-bottom: 5rem;
+      &:hover .sector-hover-box {
+        top: 50%;
+      }
+      .sector-hover-box {
+        background-color: #595959ad;
+        position: absolute;
+        left: 0;
+        top: calc(100% - 8.4rem);
+        height: 100%;
+        width: 100%;
+        transition: all 0.5s;
+        .sector-box {
+          height: 8.4rem;
+          padding: 2rem;
+          width: fit-content;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          .sector-hover-title {
+            font-size: var(--fs-20);
+            font-weight: var(--fw-700);
+            line-height: var(--line-36);
+            color: var(--col-white);
+          }
+        }
+        .sector-hover-body {
+          font-size: var(--fs-12);
+          font-weight: var(--fw-400);
+          line-height: var(--line-36);
+          color: var(--col-white);
+          text-align: justify;
+        }
+      }
+    }
+  }
+}
+
+/**********************/
 /*   footer section   */
 /********************/
 footer.full-footer {
