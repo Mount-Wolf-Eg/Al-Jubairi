@@ -52,6 +52,23 @@ const router = createRouter({
         title: "Achievement",
       },
     },
+    {
+      path: "/blogs",
+      name: "Blogs",
+      component: () => import("@/views/Blog.vue"),
+      meta: {
+        title: "Blogs",
+      },
+    },
+    {
+      path: "/blog-data/:id",
+      name: "BlogDetail",
+      component: () =>
+        import("@/components/locale/blog-component/blogInfo.vue"),
+      meta: {
+        title: "Blog",
+      },
+    },
     // {
     //   path: "/nested",
     //   name: "Nested",

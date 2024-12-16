@@ -321,6 +321,25 @@
       width: 100%;
     }
   }
+
+  // blog
+  .blog-item {
+    min-width: 100%;
+    .blog-text {
+      height: 50%;
+
+      .blog-date {
+        font-size: var(--fs-10);
+      }
+      .blog-title {
+        font-size: var(--fs-16);
+      }
+      .blog-desc {
+        font-size: var(--fs-12);
+      }
+    }
+  }
+
   // our sectors
   .sector-sec {
     padding: 3rem 0;
