@@ -8,5 +8,23 @@
   "button": {
     "submit": "Submit",
     "cancel": "Cancel"
+  },
+  "form": {
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Enter your first name here",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Enter your last name here",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "phone": "Phone Number",
+    "phonePlaceholder": "Enter your phone number",
+    "inquiryType": "Inquiry Type",
+    "inquiryTypePlaceholder": "Select inquiry type",
+    "subject": "Subject",
+    "subjectPlaceholder": "Enter subject here",
+    "message": "Message",
+    "messagePlaceholder": "Write your message here",
+    "media": "cv",
+    "required": "Please enter"
   }
 }

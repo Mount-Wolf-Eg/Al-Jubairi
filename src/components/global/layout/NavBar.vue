@@ -232,7 +232,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to="/"
+              to="/community"
             >
               المجتمع</router-link
             >
@@ -246,7 +246,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to="/"
+              to="/employment"
             >
               التوظيف</router-link
             >
@@ -274,7 +274,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to="/"
+              to="/contact"
             >
               تواصل معنا</router-link
             >
