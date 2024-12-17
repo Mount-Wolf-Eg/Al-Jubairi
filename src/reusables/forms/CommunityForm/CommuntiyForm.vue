@@ -133,7 +133,6 @@ const validateForm = () => {
       errors.value[key] = ""; // Reset errors
       // Skip validation for optional fields if formType is 'employment'
       if (
-        props.formType !== "employment" &&
         !formData.value[key].trim() &&
         !["inquiryType", "subject", "message"].includes(key)
       ) {
