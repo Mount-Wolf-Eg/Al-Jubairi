@@ -13,7 +13,7 @@
     border: 1px solid var(--col-gray-soft);
     font-size: 14px;
     transition: border-color 0.3s;
-
+    height: 100px;
     &:focus {
       border-color: #007bff;
       outline: none;

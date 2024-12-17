@@ -3,59 +3,66 @@
     <div class="d-flex">
       <InputField
         v-model="formData.firstName"
-        label="الاسم الأول *"
-        holder="أدخل اسمك هنا"
+        :label="$t('form.firstName') + ' *'"
+        :holder="$t('form.firstNamePlaceholder')"
         required
+        :error="errors.firstName"
       />
       <InputField
         v-model="formData.lastName"
-        label="الاسم الأخير *"
-        holder="أدخل اسم العائلة هنا"
+        :label="$t('form.lastName') + ' *'"
+        :holder="$t('form.lastNamePlaceholder')"
         required
+        :error="errors.lastName"
       />
     </div>
     <EmailInput
       v-model="formData.email"
-      label="البريد الإلكتروني *"
-      holder="أدخل بريدك الإلكتروني"
-      required
+      :label="$t('form.email') + ' *'"
+      :holder="$t('form.emailPlaceholder')"
+      :error="errors.email"
     />
     <PhoneInput
       v-model="formData.phone"
-      label="رقم الجوال *"
-      holder="أدخل رقم الجوال"
+      :label="$t('form.phone') + ' *'"
+      :holder="$t('form.phonePlaceholder')"
       required
       :countryCode="true"
+      :error="errors.phone"
     />
     <Select
       :select="{
-        placeholder: 'اختر نوع الاستفسار',
-        label: 'نوع الاستفسار*',
+        placeholder: $t('form.inquiryTypePlaceholder'),
+        label: $t('form.inquiryType') + ' *',
         options: inquiryTypes,
         change: (val) => {
           formData.inquiryType = val;
         },
       }"
+      :error="errors.inquiryType"
     />
     <InputField
       v-model="formData.subject"
-      label="الموضوع *"
-      holder="أدخل الموضوع هنا"
+      :label="$t('form.subject') + ' *'"
+      :holder="$t('form.subjectPlaceholder')"
       required
+      :error="errors.subject"
     />
     <TextArea
       v-model="formData.message"
-      label="رسالة *"
-      holder="اكتب رسالتك هنا"
+      :label="$t('form.message') + ' *'"
+      :holder="$t('form.messagePlaceholder')"
       required
+      :error="errors.message"
     />
     <div class="d-flex justify-content-end">
-      <button type="submit">إرسال</button>
+      <button type="submit">{{ $t("button.submit") }}</button>
     </div>
   </form>
 </template>
 
 <script setup>
+import { useI18n } from "vue-i18n";
 import { ref } from "vue";
 import InputField from "@/reusables/inputs/InputField/InputField.vue";
 import TextArea from "@/reusables/inputs/TextArea/TextArea.vue";
@@ -63,7 +70,19 @@ import Select from "@/reusables/inputs/Select/Select.vue";
 import PhoneInput from "@/reusables/inputs/PhoneInput/PhoneInput.vue";
 import EmailInput from "@/reusables/inputs/EmailInput/EmailInput.vue";
 
+const { t } = useI18n();
+
 const formData = ref({
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  inquiryType: "",
+  subject: "",
+  message: "",
+});
+
+const errors = ref({
   firstName: "",
   lastName: "",
   email: "",
@@ -79,8 +98,23 @@ const inquiryTypes = [
   { value: "شكاوى", label: "شكاوى" },
 ];
 
+const validateForm = () => {
+  let valid = true;
+  Object.keys(errors.value).forEach((key) => {
+    errors.value[key] = ""; // Reset errors
+    if (!formData.value[key].trim()) {
+      errors.value[key] = t("form.required") + " " + t(`form.${key}`);
+      valid = false;
+    }
+  });
+  return valid;
+};
+
 const handleSubmit = () => {
-  console.log(formData.value);
+  if (validateForm()) {
+    console.log(formData.value);
+    // Proceed with form submission (e.g., API call)
+  }
 };
 </script>
 

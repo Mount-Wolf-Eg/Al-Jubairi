@@ -6,13 +6,17 @@
       type="text"
       :placeholder="holder"
       :value="modelValue"
+      :class="{ ' border-danger': error }"
       @input="updateValue($event.target.value)"
     ></textarea>
+    <div class="d-flex justify-content-between">
+      <span v-if="error" class="text-danger">{{ error }}</span>
+      <p>(250/0) حرفً ابحد أقصى</p>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
 const emits = defineEmits(["textData", "update:modelValue"]);
 
 const props = defineProps({
@@ -26,11 +30,15 @@ const props = defineProps({
     required: false,
     default: "",
   },
-
   label: {
     type: String,
     required: false,
     default: () => "",
+  },
+  error: {
+    type: String,
+    required: false,
+    default: "",
   },
 });
 

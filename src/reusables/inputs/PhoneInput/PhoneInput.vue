@@ -4,10 +4,12 @@
     <vue-tel-input
       v-model="phone"
       :preferred-countries="['SA', 'US', 'GB']"
-      :placeholder="holder"
+      :inputOptions="{ placeholder: holder }"
       required
       class="vue-tel-input"
+      :class="{ ' border-danger': error }"
     />
+    <span v-if="error" class="text-danger">{{ error }}</span>
   </div>
 </template>
 
@@ -28,6 +30,11 @@ const props = defineProps({
   holder: {
     type: String,
     required: true,
+  },
+  error: {
+    type: String,
+    required: false,
+    default: "",
   },
 });
 

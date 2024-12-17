@@ -18,4 +18,7 @@
       outline: none;
     }
   }
+  select[value=""] {
+    color: var(--col-gray-soft) !important;
+  }
 }

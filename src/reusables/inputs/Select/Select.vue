@@ -3,7 +3,11 @@
     <label class="select-label" v-if="props.select.label">{{
       props.select.label
     }}</label>
-    <select v-model="selectedValue" @change="handleChange">
+    <select
+      v-model="selectedValue"
+      @change="handleChange"
+      :class="{ ' border-danger': error }"
+    >
       <option disabled value="">{{ props.select.placeholder }}</option>
       <option
         v-for="option in props.select.options"
@@ -13,6 +17,7 @@
         {{ option.label }}
       </option>
     </select>
+    <span v-if="error" class="text-danger">{{ error }}</span>
   </div>
 </template>
 
@@ -23,6 +28,11 @@ const props = defineProps({
   select: {
     type: Object,
     required: true,
+  },
+  error: {
+    type: String,
+    required: false,
+    default: "",
   },
 });
 

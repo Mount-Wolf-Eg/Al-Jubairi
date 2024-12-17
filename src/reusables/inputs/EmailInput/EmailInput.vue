@@ -13,13 +13,13 @@
         type="email"
         class="inpt form-inpt"
         :placeholder="holder"
-        :class="appear"
+        :class="{ ' border-danger': error }"
         :value="modelValue"
         :disabled="disable"
         id="email-field"
         @input="updateValue($event.target.value)"
-        required
       />
+      <span v-if="error" class="text-danger">{{ error }}</span>
     </div>
   </div>
 </template>
@@ -40,11 +40,6 @@ const props = defineProps({
     required: false,
     default: "",
   },
-  appear: {
-    type: String,
-    required: false,
-    default: "",
-  },
   disable: {
     type: Boolean,
     required: false,
@@ -54,6 +49,11 @@ const props = defineProps({
     type: String,
     required: false,
     default: () => "",
+  },
+  error: {
+    type: String,
+    required: false,
+    default: "",
   },
 });
 
