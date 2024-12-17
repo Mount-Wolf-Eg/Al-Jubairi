@@ -153,6 +153,7 @@
   //   /* 8px / 16px = 0.5 = 50% */
   //   font-size: 50%;
   // }
+
   html {
     font-size: 62.5%;
   }
@@ -270,6 +271,40 @@
     background-color: var(--col-dark);
     .about-us--text {
       display: none;
+    }
+  }
+  /**********************/
+  /*  achievements section */
+  /********************/
+  .achievements-sec {
+    .achievements-sec--title {
+      padding-bottom: 0rem;
+    }
+    .achievements {
+      .achieve {
+        margin: 2rem 0;
+        &.ach-icon {
+          width: 10px !important;
+          overflow: hidden;
+        }
+        .sv-icon {
+          width: 6rem;
+          height: 6rem;
+        }
+        .achieve--num {
+          font-size: var(--fs-14) !important;
+          line-height: var(--line-20) !important;
+          font-weight: 700 !important;
+        }
+        .achieve-text {
+          font-size: var(--fs-10);
+          font-weight: var(--fw-400) !important;
+          line-height: 1.4rem;
+        }
+      }
+    }
+    .read-more-btn {
+      padding: 5rem 0 0;
     }
   }
   .support-sec {

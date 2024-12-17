@@ -8,8 +8,7 @@
         <div class="achieve"></div>
         <div class="achieve">
           <svg
-            width="64"
-            height="64"
+            class="sv-icon"
             viewBox="0 0 64 64"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -57,8 +56,7 @@
         </div>
         <div class="achieve">
           <svg
-            width="64"
-            height="64"
+            class="sv-icon"
             viewBox="0 0 64 64"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -109,8 +107,7 @@
         <div class="d-flex flex-row">
           <div class="achieve">
             <svg
-              width="64"
-              height="64"
+              class="sv-icon"
               viewBox="0 0 64 64"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -158,8 +155,7 @@
           </div>
           <div class="achieve">
             <svg
-              width="64"
-              height="64"
+              class="sv-icon"
               viewBox="0 0 64 64"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -206,10 +202,9 @@
           </div>
         </div>
         <div class="d-flex flex-row" style="border: 1px solid #fff">
-          <div class="achieve">
+          <div class="achieve ach-icon">
             <svg
-              width="139"
-              height="219"
+              style="width: 13.9rem; height: 21.9rem"
               viewBox="0 0 139 219"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -233,8 +228,7 @@
         <div class="d-flex flex-row">
           <div class="achieve">
             <svg
-              width="64"
-              height="64"
+              class="sv-icon"
               viewBox="0 0 64 64"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -282,8 +276,7 @@
           </div>
           <div class="achieve">
             <svg
-              width="64"
-              height="64"
+              class="sv-icon"
               viewBox="0 0 64 64"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -334,8 +327,7 @@
         <div class="achieve"></div>
         <div class="achieve">
           <svg
-            width="64"
-            height="64"
+            class="sv-icon"
             viewBox="0 0 64 64"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -383,8 +375,7 @@
         </div>
         <div class="achieve">
           <svg
-            width="64"
-            height="64"
+            class="sv-icon"
             viewBox="0 0 64 64"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -440,8 +431,7 @@
       <p>اعرف المزيد</p>
       <div class="read-more-icon">
         <svg
-          width="24"
-          height="24"
+          class="sv-icon"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

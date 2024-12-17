@@ -596,6 +596,11 @@ button {
       align-items: center !important;
       color: var(--col-white);
       margin: 3rem 0;
+      .sv-icon {
+        width: 6.4rem;
+        height: 6.4rem;
+      }
+
       .achieve-text {
         font-size: var(--fs-14);
         font-weight: var(--fw-400) !important;
