@@ -1,50 +1,27 @@
 <template>
   <div class="hero-section">
     <swiper
-      effect="fade"
-      :autoplay="{
-        delay: 500,
-        disableOnInteraction: false,
-      }"
       class="swiper h-100"
       :modules="modules"
-      :pagination="{
-        el: '.swiper-pagination',
-        dynamicBullets: true,
-        clickable: true,
-      }"
-      :slides-per-view="1"
-      :Autoplay="{
-        delay: 500,
-        disableOnInteraction: false,
-        waitForTransition: true,
-      }"
-      :space-between="10"
-      :navigation="{
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }"
-      :preload-images="false"
-      :Lazy="true"
+      :space-between="30"
       :centered-slides="true"
-    >
-      <!--  
-        :speed="500"
-        
+      :navigation="false"
+      :loop="true"
       :effect="'fade'"
-        :navigation="false"
-        :loop="true"
-      -->
+      :autoplay="{
+        delay: 2000,
+        disableOnInteraction: false,
+      }"
+      :speed="500"
+    >
       <swiper-slide
-        v-for="(item, i) in props.secData.items.data"
+        v-for="(item, i) in 20"
         :key="i"
         class="slide bg-danger h-100"
       >
         <div class="slider-box h-100 row">
-          <!-- src="/src/assets/images/PHN_1434.webp" -->
           <img
-            loading="lazy"
-            :src="item.image.media"
+            src="/src/assets/images/PHN_1434.webp"
             style="
               width: 100%;
               height: 100%;
@@ -52,20 +29,18 @@
               object-position: center;
               filter: brightness(0.7);
             "
-            :alt="item.image.alt"
+            alt=""
           />
           <div class="hero-text">
             <div class="hero-text-box">
               <p class="hero-title head-primary">
-                <!-- خيارك الأول للتمثيل القانوني -->
-                {{ item.title }}
+                خيارك الأول للتمثيل القانوني
               </p>
               <p class="hero-desc body-desc-primary">
-                {{ item.desc }}
-                <!-- بخبرة قانونية راسخة قدمنا الدعم للأفراد والشركات في المملكة
+                بخبرة قانونية راسخة قدمنا الدعم للأفراد والشركات في المملكة
                 لأكثر من 15 عاماً. نحن هنا لتقديم استشارات مدروسة وحلول قانونية
                 مبتكرة لتحقيق العدالة في كافة القضايا، مع الالتزام بأعلى
-                المعايير الدولية. -->
+                المعايير الدولية.
               </p>
               <button class="btn-round-primary">احجز استشارتك القانونية</button>
             </div>
@@ -80,17 +55,9 @@
 // Corrected imports for Swiper
 import { Pagination, Navigation, Autoplay, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
-const modules = [Navigation, Autoplay, EffectFade];
 
-const props = defineProps({
-  secData: {
-    type: Object,
-    default: () => {
-      return {};
-    },
-    Required: false,
-  },
-});
+// Modules for Swiper
+const modules = [Navigation, Autoplay, EffectFade];
 </script>
 
 <style lang="scss" scoped></style>

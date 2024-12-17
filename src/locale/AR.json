@@ -8,23 +8,5 @@
   "button": {
     "submit": "إرسال",
     "cancel": "إلغاء"
-  },
-  "form": {
-    "firstName": "الاسم الأول",
-    "firstNamePlaceholder": "أدخل اسمك هنا",
-    "lastName": "الاسم الأخير",
-    "lastNamePlaceholder": "أدخل اسم العائلة هنا",
-    "email": "البريد الإلكتروني",
-    "emailPlaceholder": "أدخل بريدك الإلكتروني",
-    "phone": "رقم الجوال",
-    "phonePlaceholder": "أدخل رقم الجوال",
-    "inquiryType": "نوع الاستفسار",
-    "inquiryTypePlaceholder": "اختر نوع الاستفسار",
-    "subject": "الموضوع",
-    "subjectPlaceholder": "أدخل الموضوع هنا",
-    "message": "رسالة",
-    "messagePlaceholder": "اكتب رسالتك هنا",
-    "media": "السيرة الذاتية",
-    "required": "من فضلك قم بإدخال"
   }
 }

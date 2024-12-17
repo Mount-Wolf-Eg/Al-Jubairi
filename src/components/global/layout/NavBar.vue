@@ -3,7 +3,6 @@
     class="navbar main-nav navbar-expand-sm p-0"
     style="position: absolute; top: 0; left: 0"
     :style="{
-      position: route.name === 'home' ? 'absolute' : 'static',
       backgroundColor: route.name === 'home' ? '' : 'white',
       color:
         route.name === 'home' ? 'var(--col-white)' : 'var(--col-light-dark)',
@@ -16,18 +15,18 @@
         style="width: fit-content"
       >
         <ul
-          class="navbar-nav navbar-nav-scroll w-100 flex-c align-items-center justify-content-center justify-content-lg-around gap-2"
+          class="navbar-nav navbar-nav-scroll w-100 flex-c align-items-center justify-content-between"
         >
           <li class="nav-item">
             <router-link
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white) !important'
-                    : 'var(--col-light-dark) !important',
+                    ? 'var(--col-white)'
+                    : 'var(--col-light-dark)',
               }"
               class="nav-link"
-              to="/about"
+              to=""
               >عن الجبيرى</router-link
             >
           </li>
@@ -36,8 +35,8 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white) !important'
-                    : 'var(--col-light-dark) !important',
+                    ? 'var(--col-white)'
+                    : 'var(--col-light-dark)',
               }"
               class="nav-link dropdown-toggle"
               href="#"
@@ -48,16 +47,8 @@
               خدماتنا
             </a>
             <ul class="dropdown-menu">
-              <li>
-                <router-link class="dropdown-item" to="/services"
-                  >Action</router-link
-                >
-              </li>
-              <li>
-                <router-link class="dropdown-item" to="/services"
-                  >Action</router-link
-                >
-              </li>
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -65,11 +56,11 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white) !important'
-                    : 'var(--col-light-dark) !important',
+                    ? 'var(--col-white)'
+                    : 'var(--col-light-dark)',
               }"
               class="nav-link"
-              to="/our-team"
+              to=""
             >
               فريق العمل
             </router-link>
@@ -79,21 +70,21 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white) !important'
-                    : 'var(--col-light-dark) !important',
+                    ? 'var(--col-white)'
+                    : 'var(--col-light-dark)',
               }"
               class="nav-link"
-              to="/achievement"
+              to=""
               >الانجازات</router-link
             >
           </li>
         </ul>
       </div>
 
-      <div class="col col-md text-center">
+      <div class="col col-md-4 text-center">
         <router-link class="navbar-brand p-0 m-0" to="/"
           ><svg
-            style="width: 100%; min-width: 10rem; height: auto"
+            style="width: 70%; min-width: 11rem; height: auto"
             viewBox="0 0 241 56"
             :style="{
               fill:
@@ -221,18 +212,18 @@
         style="width: fit-content"
       >
         <ul
-          class="navbar-nav navbar-nav-scroll w-100 flex-c align-items-center justify-content-center justify-content-lg-around gap-2"
+          class="navbar-nav navbar-nav-scroll w-100 flex-c align-items-center justify-content-between"
         >
           <li class="nav-item">
             <router-link
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white) !important'
-                    : 'var(--col-light-dark) !important',
+                    ? 'var(--col-white)'
+                    : 'var(--col-light-dark)',
               }"
               class="nav-link"
-              to="/community"
+              to=""
             >
               المجتمع</router-link
             >
@@ -242,11 +233,11 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white) !important'
-                    : 'var(--col-light-dark) !important',
+                    ? 'var(--col-white)'
+                    : 'var(--col-light-dark)',
               }"
               class="nav-link"
-              to="/employment"
+              to=""
             >
               التوظيف</router-link
             >
@@ -256,11 +247,11 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white) !important'
-                    : 'var(--col-light-dark) !important',
+                    ? 'var(--col-white)'
+                    : 'var(--col-light-dark)',
               }"
               class="nav-link"
-              to="/"
+              to=""
             >
               المدونه</router-link
             >
@@ -270,11 +261,11 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white) !important'
-                    : 'var(--col-light-dark) !important',
+                    ? 'var(--col-white)'
+                    : 'var(--col-light-dark)',
               }"
               class="nav-link"
-              to="/contact"
+              to=""
             >
               تواصل معنا</router-link
             >
@@ -289,8 +280,8 @@
               :style="{
                 color:
                   route.name === 'home'
-                    ? 'var(--col-white) !important'
-                    : 'var(--col-light-dark) !important',
+                    ? 'var(--col-white)'
+                    : 'var(--col-light-dark)',
               }"
             >
               {{ lang }}

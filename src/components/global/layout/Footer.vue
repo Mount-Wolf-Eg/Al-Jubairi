@@ -1,19 +1,15 @@
 <template>
   <!--                   start footer           -->
   <footer class="full-footer">
-    <div
-      class="footer-img"
-      :style="{ display: route.name === 'home' ? 'block' : 'none' }"
-    >
+    <div class="footer-img">
       <img
-        loading="lazy"
         src="/src/assets/images/sm-images/footer.jpg"
         style="width: 100%; height: auto; min-height: 300px"
         alt=""
       />
       <div class="footer--text">
-        <p class="footer-title head-secondary">احجز استشارتك القانونية</p>
-        <p class="footer-text body-desc-secondary">
+        <p class="footer-title">احجز استشارتك القانونية</p>
+        <p class="footer-text">
           حرصًا منا على متابعة المستجدات القانونية، ومنح الاستشارات أو التوصيات
           أو الخدمات من قبل خبراء قانونيين، نسعد بخدمتكم، في جميع فروعنا، ساعات
           العمل من الثامنة صباحًا إلى الخامسة مساءً.
@@ -182,7 +178,7 @@
           </ul>
         </div>
       </div>
-      <div class="footer--terms grd grd-2-col w-100">
+      <div class="footer--terms grd grd-2-col">
         <div class="terms-item">
           © 2025 جميع الحقوق محفوظة - بواسطة
           <a href="#" class="link">Mount Wolf</a>
@@ -201,8 +197,7 @@
 </template>
 
 <script setup>
-import { useRoute } from "vue-router";
-const route = useRoute();
+import router from "@/router";
 </script>
 
 <style lang="scss" scoped></style>

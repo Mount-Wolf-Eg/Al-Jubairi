@@ -1,11 +1,7 @@
 <template>
   <footer class="resp-footer">
-    <div
-      class="footer-img"
-      :style="{ display: route.name === 'home' ? 'block' : 'none' }"
-    >
+    <div class="footer-img">
       <img
-        loading="lazy"
         src="/src/assets/images/sm-images/footerResp.jpg"
         style="
           width: 100%;
@@ -16,8 +12,8 @@
         alt=""
       />
       <div class="footer-resp--text">
-        <p class="footer-title head-secondary">احجز استشارتك القانونية</p>
-        <p class="footer-text body-desc-secondary">
+        <p class="footer-title">احجز استشارتك القانونية</p>
+        <p class="footer-text">
           حرصًا منا على متابعة المستجدات القانونية، ومنح الاستشارات أو التوصيات
           أو الخدمات من قبل خبراء قانونيين، نسعد بخدمتكم، في جميع فروعنا، ساعات
           العمل من الثامنة صباحًا إلى الخامسة مساءً.
@@ -261,9 +257,6 @@
   </footer>
 </template>
 
-<script setup>
-import { useRoute } from "vue-router";
-const route = useRoute();
-</script>
+<script setup></script>
 
 <style lang="scss" scoped></style>
