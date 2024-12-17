@@ -2,8 +2,8 @@
   <main v-if="!isLoading">
     <BreadCrump
       :crump="crump"
-      :secTitle="'تواصل معنا'"
-      :secDesc="'نحن مستعدون للاستماع إلى احتياجاتك وتقديم الدعم القانوني الذي تستحقه.'"
+      :secTitle="contact_us?.page?.data?.title"
+      :secDesc="contact_us?.page?.data?.desc"
     ></BreadCrump>
     <section class="inside-page d-flex justify-content-center flex-wrap gap-5">
       <div class="contact-info">
