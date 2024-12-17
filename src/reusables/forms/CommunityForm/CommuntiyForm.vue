@@ -147,18 +147,29 @@ const validateForm = () => {
 
 const handleSubmit = async () => {
   if (validateForm()) {
-    const contactData = {
-      first_name: formData.value.firstName,
-      last_name: formData.value.lastName,
-      phone_code: "966",
-      phone: formData.value.phone,
-      email: formData.value.email,
-      title: formData.value.subject,
-      content: formData.value.message,
-      type: props.formType,
-      for: formData.value.inquiryType,
-      "file[media]": formData.value.media,
-    };
+    const contactData =
+      props.formType == "employment"
+        ? {
+            first_name: formData.value.firstName,
+            last_name: formData.value.lastName,
+            phone_code: "966",
+            phone: formData.value.phone,
+            email: formData.value.email,
+            content: formData.value.message,
+            type: props.formType,
+            "file[media]": formData.value.media,
+          }
+        : {
+            first_name: formData.value.firstName,
+            last_name: formData.value.lastName,
+            phone_code: "966",
+            phone: formData.value.phone,
+            email: formData.value.email,
+            title: formData.value.subject,
+            content: formData.value.message,
+            type: props.formType,
+            for: formData.value.inquiryType,
+          };
 
     const response = await contactStore.submitContactForm(contactData);
 
