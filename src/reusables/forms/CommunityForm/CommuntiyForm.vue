@@ -69,8 +69,10 @@ import TextArea from "@/reusables/inputs/TextArea/TextArea.vue";
 import Select from "@/reusables/inputs/Select/Select.vue";
 import PhoneInput from "@/reusables/inputs/PhoneInput/PhoneInput.vue";
 import EmailInput from "@/reusables/inputs/EmailInput/EmailInput.vue";
+import { useContactStore } from "@/stores/contactStore";
 
 const { t } = useI18n();
+const contactStore = useContactStore();
 
 const formData = ref({
   firstName: "",
@@ -93,9 +95,9 @@ const errors = ref({
 });
 
 const inquiryTypes = [
-  { value: "استفسار عام", label: "استفسار عام" },
-  { value: "دعم فني", label: "دعم فني" },
-  { value: "شكاوى", label: "شكاوى" },
+  { value: "suggestion", label: "اقتراح" },
+  { value: "other", label: "أخرى" },
+  { value: "complaint", label: "شكوى" },
 ];
 
 const validateForm = () => {
@@ -110,10 +112,21 @@ const validateForm = () => {
   return valid;
 };
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
   if (validateForm()) {
-    console.log(formData.value);
-    // Proceed with form submission (e.g., API call)
+    const contactData = {
+      first_name: formData.value.firstName,
+      last_name: formData.value.lastName,
+      phone_code: "966",
+      phone: formData.value.phone,
+      email: formData.value.email,
+      title: formData.value.subject,
+      content: formData.value.message,
+      type: "community",
+      for: formData.value.inquiryType,
+    };
+
+    await contactStore.submitContactForm(contactData);
   }
 };
 </script>
