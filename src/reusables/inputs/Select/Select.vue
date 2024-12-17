@@ -43,6 +43,4 @@ const handleChange = () => {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "./Select.scss";
-</style>
+<style lang="scss" scoped src="./Select.scss"></style>

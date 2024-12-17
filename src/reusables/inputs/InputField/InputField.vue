@@ -53,6 +53,4 @@ const updateValue = (value) => {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "./InputField.scss";
-</style>
+<style lang="scss" scoped src="./InputField.scss"></style>

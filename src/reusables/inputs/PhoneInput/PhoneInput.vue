@@ -54,6 +54,4 @@ watch(phone, (newValue) => {
 });
 </script>
 
-<style scoped>
-@import "./PhoneInput.scss";
-</style>
+<style scoped src="./PhoneInput.scss"></style>

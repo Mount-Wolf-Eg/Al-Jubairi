@@ -46,6 +46,4 @@ onMounted(async () => {
 });
 </script>
 
-<style lang="scss">
-@import "./Community.scss";
-</style>
+<style lang="scss" src="./Community.scss"></style>

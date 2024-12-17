@@ -47,6 +47,4 @@ const updateValue = (value) => {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "./TextArea.scss";
-</style>
+<style lang="scss" scoped src="./TextArea.scss"></style>
