@@ -17,6 +17,7 @@ export const usePageStore = defineStore("pageStore", {
     terms: [],
     privacy: [],
     singleItem: [],
+    singleSec: [],
   }),
   actions: {
     async getPageData(pageName) {
@@ -48,6 +49,29 @@ export const usePageStore = defineStore("pageStore", {
         .get(`${mainStore().apiLink}/website/items/${itemId}`)
         .then((res) => {
           this.singleItem = res.data.data;
+        })
+        .catch((err) => {
+          let errorMessage = "Something went wrong, please try again";
+
+          if (err.response && err.response.data && err.response.data.errors) {
+            const errorArray = Object.values(err.response.data.errors);
+            if (errorArray.length > 0 && errorArray[0][0]) {
+              errorMessage = errorArray[0][0];
+            }
+          }
+          mainStore().showAlert(errorMessage, 2);
+        })
+        .finally(() => {
+          loading = false;
+          return loading;
+        });
+    },
+    async getSecData(secName) {
+      let loading = true;
+      await axiosInstance
+        .get(`${mainStore().apiLink}/website/sections/${secName}`)
+        .then((res) => {
+          this.singleSec = res.data.data;
         })
         .catch((err) => {
           let errorMessage = "Something went wrong, please try again";

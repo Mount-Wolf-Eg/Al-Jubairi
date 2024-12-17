@@ -41,7 +41,7 @@
           وشهادات علمية رفيعة في مختلف التخصصات القانونية. مما ساهم في تميزنا في
           تقديم خدمات قانونية وفقاً للمعايير الدولية والأساليب الحديثة. -->
         </p>
-        <button class="read-more-btn">
+        <button class="read-more-btn" @click="$router.push({ name: 'About' })">
           <p>اعرف المزيد</p>
           <div class="read-more-icon">
             <svg

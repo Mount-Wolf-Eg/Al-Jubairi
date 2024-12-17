@@ -12,7 +12,9 @@
         </ol>
       </nav>
       <div class="bread-text">
-        <p class="bread-title head-primary">{{ secTitle }}</p>
+        <p class="bread-title head-secondary" style="color: var(--col-white)">
+          {{ secTitle }}
+        </p>
         <p class="bread-desc body-desc-primary mx-auto">
           {{ secDesc }}
         </p>
