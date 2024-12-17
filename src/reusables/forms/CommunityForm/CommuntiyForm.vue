@@ -58,6 +58,7 @@
     <div class="d-flex justify-content-end">
       <button type="submit">{{ $t("button.submit") }}</button>
     </div>
+    <SuccessModal :isVisible="isModalVisible" @close="isModalVisible = false" />
   </form>
 </template>
 
@@ -70,6 +71,7 @@ import Select from "@/reusables/inputs/Select/Select.vue";
 import PhoneInput from "@/reusables/inputs/PhoneInput/PhoneInput.vue";
 import EmailInput from "@/reusables/inputs/EmailInput/EmailInput.vue";
 import { useContactStore } from "@/stores/contactStore";
+import SuccessModal from "@/reusables/modals/SuccessModal.vue";
 
 const { t } = useI18n();
 const contactStore = useContactStore();
@@ -93,6 +95,8 @@ const errors = ref({
   subject: "",
   message: "",
 });
+
+const isModalVisible = ref(false);
 
 const inquiryTypes = [
   { value: "suggestion", label: "اقتراح" },
@@ -126,7 +130,23 @@ const handleSubmit = async () => {
       for: formData.value.inquiryType,
     };
 
-    await contactStore.submitContactForm(contactData);
+    const response = await contactStore.submitContactForm(contactData);
+
+    // Show the modal only if the response is successful
+    if (response) {
+      isModalVisible.value = true;
+
+      // Reset the form data
+      formData.value = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        inquiryType: "",
+        subject: "",
+        message: "",
+      };
+    }
   }
 };
 </script>
