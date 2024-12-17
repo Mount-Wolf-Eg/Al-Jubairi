@@ -5,7 +5,7 @@
       :secTitle="'تواصل معنا'"
       :secDesc="'نحن مستعدون للاستماع إلى احتياجاتك وتقديم الدعم القانوني الذي تستحقه.'"
     ></BreadCrump>
-    <section class="inside-page d-flex justify-content-center gap-5">
+    <section class="inside-page d-flex justify-content-center flex-wrap gap-5">
       <div class="contact-info">
         <h2>نحن هنا لخدمتكم!</h2>
         <p>
@@ -19,7 +19,7 @@
         <p>الهاتف: +966 (11) 44 88 7878</p>
       </div>
       <div class="form-container">
-        <CommuntiyForm formType="contact" />
+        <CommuntiyForm formType="contact_us" />
       </div>
     </section>
   </main>
