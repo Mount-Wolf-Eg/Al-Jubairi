@@ -20,10 +20,14 @@ export const usePageStore = defineStore("pageStore", {
     singleSec: [],
   }),
   actions: {
-    async getPageData(pageName) {
+    async getPageData(pageName, page) {
       let loading = true;
       await axiosInstance
-        .get(`${mainStore().apiLink}/website/pages/${pageName}`)
+        .get(
+          `${mainStore().apiLink}/website/pages/${pageName}?items_page=${
+            page ? page : ""
+          }`
+        )
         .then((res) => {
           this[pageName] = res.data.data;
         })

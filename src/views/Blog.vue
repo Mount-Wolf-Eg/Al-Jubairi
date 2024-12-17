@@ -49,6 +49,32 @@
           </div>
         </div>
       </div>
+      <div
+        class="d-flex justify-content-center align-items-center"
+        aria-label="Page navigation example"
+      >
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="text-danger page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item">
+            <a class="text-danger page-link" href="#">1</a>
+          </li>
+          <li class="page-item active">
+            <a class="text-danger page-link" href="#"
+              >2 <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="page-item">
+            <a class="text-danger page-link" href="#">3</a>
+          </li>
+          <li class="page-item">
+            <a class="text-danger page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </div>
+      <button @click="goTO()" class="">got ot</button>
+      {{ blogs.sections.data[0].items.pagination }}
     </div>
   </main>
   <div v-else>Loading...</div>
@@ -87,6 +113,19 @@ onMounted(async () => {
   ) {
     await pageStore.getPageData("blogs");
   }
+  console.log(blogs.value.sections.data[0].items.pagination);
+
   isLoading.value = false;
 });
+
+const goTO = async () => {
+  await pageStore.getPageData("blogs", "2");
+};
 </script>
+<style lang="scss" scoped>
+.pagination {
+  li {
+    color: black;
+  }
+}
+</style>
