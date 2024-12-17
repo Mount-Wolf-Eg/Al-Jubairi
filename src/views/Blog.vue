@@ -87,7 +87,6 @@ onMounted(async () => {
   ) {
     await pageStore.getPageData("blogs");
   }
-  console.log(blogs.value);
   isLoading.value = false;
 });
 </script>

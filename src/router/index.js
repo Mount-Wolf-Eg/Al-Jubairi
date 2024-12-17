@@ -28,6 +28,15 @@ const router = createRouter({
       },
     },
     {
+      path: "/services/service/:id",
+      name: "serviceData",
+      component: () =>
+        import("@/components/locale/service-component/ServiceData.vue"),
+      meta: {
+        title: "Service Data",
+      },
+    },
+    {
       path: "/our-team",
       name: "Team",
       component: () => import("@/views/OurTeam.vue"),
@@ -53,6 +62,15 @@ const router = createRouter({
       },
     },
     {
+      path: "/achievement/case/:id",
+      name: "AchieveData",
+      component: () =>
+        import("@/components/locale/achievement-compnent/AchieveData.vue"),
+      meta: {
+        title: "Achieve Data",
+      },
+    },
+    {
       path: "/blogs",
       name: "Blogs",
       component: () => import("@/views/Blog.vue"),
@@ -67,6 +85,15 @@ const router = createRouter({
         import("@/components/locale/blog-component/blogInfo.vue"),
       meta: {
         title: "Blog",
+      },
+    },
+    {
+      path: "/all-questions",
+      name: "Questions",
+      component: () =>
+        import("@/components/locale/questions-component/AllQuestions.vue"),
+      meta: {
+        title: "Questions",
       },
     },
     // {

@@ -67,6 +67,7 @@
     <button
       style="align-self: flex-start !important"
       class="read-more-btn py-3 py-md-5 px-5 px-md-0"
+      @click="$router.push({ name: 'Blogs' })"
     >
       <p style="color: var(--col-dark) !important">عرض جميع الأخبار</p>
       <div

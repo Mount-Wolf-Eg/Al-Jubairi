@@ -433,7 +433,10 @@
       </div>
     </div>
 
-    <button class="read-more-btn mx-auto">
+    <button
+      class="read-more-btn mx-auto"
+      @click="$router.push({ name: 'Achievement' })"
+    >
       <p>اعرف المزيد</p>
       <div class="read-more-icon">
         <svg

@@ -1,5 +1,5 @@
 <template>
-  <main v-if="!isLoading">
+  <main v-if="!isLoading" class="home-view">
     <heroSlider
       :secData="getSecData('slider')"
       :secData2="getSecData('excellence')"
@@ -12,6 +12,7 @@
     <LatestNews :secData="getSecData('last_news')" />
     <Questions :secData="getSecData('freq_questions')" />
     <OurClients :secData="getSecData('clients')" />
+    <SocialData />
   </main>
   <div v-else>Loading...</div>
 </template>
@@ -26,6 +27,7 @@ import OurJourney from "@/components/locale/home-component/OurJourney.vue";
 import LatestNews from "@/components/locale/home-component/LatestNews.vue";
 import Questions from "@/components/locale/home-component/Questions.vue";
 import OurClients from "@/components/locale/home-component/OurClients.vue";
+import SocialData from "@/components/locale/custom-components/SocialData.vue";
 
 // store
 import { usePageStore } from "@/stores/pagesStore";
