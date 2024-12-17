@@ -41,8 +41,9 @@
         :breakpoints="breakpoints"
         :Lazy="true"
       >
+        {{ props.secData }}
         <!-- resources -->
-        <swiper-slide v-for="(slide, i) in props.secData.items.data" :key="i">
+        <swiper-slide v-for="(slide, i) in props.secData?.items?.data" :key="i">
           <div class="tetimonial-card w-100 h-100">
             <div
               class="d-flex justify-content-center align-items-center"
