@@ -39,3 +39,15 @@ form {
       hue-rotate(338deg) brightness(97%) contrast(92%);
   }
 }
+.branch-info {
+  margin-bottom: 1.5rem;
+  h3 {
+    color: var(--col-gray-dark);
+  }
+  a {
+    color: var(--col-light-dark) !important;
+  }
+  .address-link {
+    text-decoration: underline;
+  }
+}

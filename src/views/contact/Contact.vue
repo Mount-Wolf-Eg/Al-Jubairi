@@ -23,11 +23,33 @@
             <img :src="getIcon(setting.key)" alt="Social Icon" />
           </a>
         </div>
-        <h3>فروعنا:</h3>
-        <p>الخبر: 2107 طريق الملك فهد، عمارة العساف، 34111، الصندوق: 8471</p>
-        <p>الهاتف: +966 (13) 894 8788</p>
-        <p>الرياض: 3449 طريق الملك فهد، عمارة الفلاح، 13521</p>
-        <p>الهاتف: +966 (11) 44 88 7878</p>
+        <h3 v-if="branches.length > 0" class="mt-5 mb-5 fw-bold">فروعنا:</h3>
+        <div v-for="branch in branches" :key="branch.id" class="branch-info">
+          <h3 class="fw-bold mb-4">{{ branch.title }}</h3>
+          <p class="d-flex gap-2 mb-3">
+            <img src="/src/assets/icons/location.svg" />
+            <a
+              :href="`https://www.google.com/maps?q=${branch.lat},${branch.lng}`"
+              target="_blank"
+              class="address-link"
+            >
+              {{ branch.address }}
+            </a>
+          </p>
+          <p class="d-flex gap-2">
+            <img src="/src/assets/icons/phone.svg" />
+            <a :href="`tel:+${branch.phone_code}${branch.phone}`">
+              +{{ branch.phone_code }} {{ branch.phone }}
+            </a>
+            -
+            <a
+              v-if="branch.additional_phone"
+              :href="`tel:+${branch.additional_phone_code}${branch.additional_phone}`"
+            >
+              +{{ branch.additional_phone_code }} {{ branch.additional_phone }}
+            </a>
+          </p>
+        </div>
       </div>
       <div class="form-container">
         <CommuntiyForm formType="contact_us" />
@@ -49,7 +71,7 @@ const crump = ref([{ name: "تواصل معنا", rout: "/contact" }]);
 const pageStore = usePageStore();
 const settingsStore = useSettingsStore();
 const { contact_us } = storeToRefs(pageStore);
-const { settings } = storeToRefs(settingsStore);
+const { settings, branches } = storeToRefs(settingsStore);
 const isLoading = ref(true);
 
 onMounted(async () => {
