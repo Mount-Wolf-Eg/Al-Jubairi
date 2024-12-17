@@ -274,7 +274,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to="/"
+              to="/contact"
             >
               تواصل معنا</router-link
             >
