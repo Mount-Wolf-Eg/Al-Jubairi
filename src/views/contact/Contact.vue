@@ -7,10 +7,9 @@
     ></BreadCrump>
     <section class="inside-page d-flex justify-content-center flex-wrap gap-5">
       <div class="contact-info">
-        <h2>نحن هنا لخدمتكم!</h2>
+        <h2>{{ contact_us?.sections?.data?.[0]?.title }}</h2>
         <p>
-          إذا كان لديك أي استفسارات أو طلبات، لا تتردد في التواصل معنا عبر أحد
-          الطرق التالية:
+          {{ contact_us?.sections?.data?.[0]?.desc }}
         </p>
         <h3>فروعنا:</h3>
         <p>الخبر: 2107 طريق الملك فهد، عمارة العساف، 34111، الصندوق: 8471</p>
