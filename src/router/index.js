@@ -68,6 +68,14 @@ const router = createRouter({
         title: "Contact",
       },
     },
+    {
+      path: "/employment",
+      name: "Employment",
+      component: () => import("@/views/Employment.vue"),
+      meta: {
+        title: "Employment",
+      },
+    },
     // {
     //   path: "/nested",
     //   name: "Nested",

@@ -5,14 +5,12 @@
         v-model="formData.firstName"
         :label="$t('form.firstName') + ' *'"
         :holder="$t('form.firstNamePlaceholder')"
-        required
         :error="errors.firstName"
       />
       <InputField
         v-model="formData.lastName"
         :label="$t('form.lastName') + ' *'"
         :holder="$t('form.lastNamePlaceholder')"
-        required
         :error="errors.lastName"
       />
     </div>
@@ -26,11 +24,11 @@
       v-model="formData.phone"
       :label="$t('form.phone') + ' *'"
       :holder="$t('form.phonePlaceholder')"
-      required
       :countryCode="true"
       :error="errors.phone"
     />
     <Select
+      v-if="formType !== 'employment'"
       :select="{
         placeholder: $t('form.inquiryTypePlaceholder'),
         label: $t('form.inquiryType') + ' *',
@@ -43,25 +41,24 @@
     />
     <InputField
       v-model="formData.subject"
+      v-if="formType !== 'employment'"
       :label="$t('form.subject') + ' *'"
       :holder="$t('form.subjectPlaceholder')"
-      required
       :error="errors.subject"
     />
-    <TextArea
-      v-model="formData.message"
-      :label="$t('form.message') + ' *'"
-      :holder="$t('form.messagePlaceholder')"
-      required
-      :error="errors.message"
-    />
     <FileUpload
-      v-if="formData.inquiryType === 'employment'"
+      v-if="formType === 'employment'"
       v-model="formData.media"
       :label="$t('form.uploadCV') + ' *'"
       :error="errors.media"
-      required
     />
+    <TextArea
+      v-model="formData.message"
+      :label="$t('form.message') + (formType !== 'employment' ? ' *' : '')"
+      :holder="$t('form.messagePlaceholder')"
+      :error="errors.message"
+    />
+
     <div class="d-flex justify-content-end">
       <button type="submit">{{ $t("button.submit") }}</button>
     </div>
@@ -123,17 +120,27 @@ const inquiryTypes = [
 
 const validateForm = () => {
   let valid = true;
-  Object.keys(errors.value).forEach((key) => {
-    errors.value[key] = ""; // Reset errors
-    if (!formData.value[key].trim()) {
-      errors.value[key] = t("form.required") + " " + t(`form.${key}`);
-      valid = false;
-    }
-  });
-
-  if (formData.value.inquiryType === "employment" && !formData.value.media) {
-    errors.value.media = t("form.required") + " " + t("form.uploadCV");
-    valid = false;
+  if (props.formType !== "employment") {
+    Object.keys(errors.value).forEach((key) => {
+      errors.value[key] = ""; // Reset errors
+      if (key !== "media" && !formData.value[key].trim()) {
+        errors.value[key] = t("form.required") + " " + t(`form.${key}`);
+        valid = false;
+      }
+    });
+  } else {
+    Object.keys(errors.value).forEach((key) => {
+      errors.value[key] = ""; // Reset errors
+      // Skip validation for optional fields if formType is 'employment'
+      if (
+        props.formType !== "employment" &&
+        !formData.value[key].trim() &&
+        !["inquiryType", "subject", "message"].includes(key)
+      ) {
+        errors.value[key] = t("form.required") + " " + t(`form.${key}`);
+        valid = false;
+      }
+    });
   }
 
   return valid;
@@ -151,7 +158,7 @@ const handleSubmit = async () => {
       content: formData.value.message,
       type: props.formType,
       for: formData.value.inquiryType,
-      media: formData.value.media,
+      "file[media]": formData.value.media,
     };
 
     const response = await contactStore.submitContactForm(contactData);

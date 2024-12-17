@@ -246,7 +246,7 @@
                     : 'var(--col-light-dark) !important',
               }"
               class="nav-link"
-              to="/"
+              to="/employment"
             >
               التوظيف</router-link
             >

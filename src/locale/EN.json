@@ -24,6 +24,7 @@
     "subjectPlaceholder": "Enter subject here",
     "message": "Message",
     "messagePlaceholder": "Write your message here",
+    "media": "cv",
     "required": "Please enter"
   }
 }
