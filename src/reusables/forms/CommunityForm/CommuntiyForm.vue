@@ -64,7 +64,7 @@
 
 <script setup>
 import { useI18n } from "vue-i18n";
-import { ref } from "vue";
+import { ref, defineProps } from "vue";
 import InputField from "@/reusables/inputs/InputField/InputField.vue";
 import TextArea from "@/reusables/inputs/TextArea/TextArea.vue";
 import Select from "@/reusables/inputs/Select/Select.vue";
@@ -75,6 +75,13 @@ import SuccessModal from "@/reusables/modals/SuccessModal.vue";
 
 const { t } = useI18n();
 const contactStore = useContactStore();
+
+const props = defineProps({
+  formType: {
+    type: String,
+    default: "community", // Default value
+  },
+});
 
 const formData = ref({
   firstName: "",
@@ -126,7 +133,7 @@ const handleSubmit = async () => {
       email: formData.value.email,
       title: formData.value.subject,
       content: formData.value.message,
-      type: "community",
+      type: props.formType,
       for: formData.value.inquiryType,
     };
 

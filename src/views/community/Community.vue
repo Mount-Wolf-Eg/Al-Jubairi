@@ -14,7 +14,7 @@
           يرجى ملء النموذج أدناه للحصول على معلومات حول خدماتنا القانونية أو
           لطلب استشارة.
         </p>
-        <CommuntiyForm />
+        <CommuntiyForm formType="community" />
       </div>
     </section>
   </main>
