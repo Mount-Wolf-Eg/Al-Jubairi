@@ -167,8 +167,6 @@ const props = defineProps({
     Required: false,
   },
 });
-
-console.log("clients", props.secData);
 </script>
 
 <style lang="scss" scoped></style>

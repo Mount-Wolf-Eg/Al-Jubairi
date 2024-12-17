@@ -153,6 +153,7 @@
   //   /* 8px / 16px = 0.5 = 50% */
   //   font-size: 50%;
   // }
+
   html {
     font-size: 62.5%;
   }
@@ -193,6 +194,71 @@
       }
     }
   }
+
+  /***************************/
+  /*      contact modal     */
+  /*************************/
+  .socials {
+    .social-container {
+      width: 4rem;
+
+      ul {
+        li {
+          width: 4rem;
+
+          &:first-of-type {
+            margin-top: 0.5rem;
+          }
+          &:last-of-type {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+    .contact-container {
+      cursor: pointer;
+
+      .call-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4rem;
+        height: 4rem;
+      }
+      .call-text {
+        width: 8rem;
+        height: 4rem;
+        font-size: var(--fs-14);
+      }
+    }
+    .contact-form {
+      width: 80vw;
+      height: 57.1rem;
+      min-width: 20rem !important;
+      max-width: 40rem;
+
+      left: 5rem;
+
+      .contact {
+        .up-sec {
+          padding: 2rem;
+        }
+      }
+      .start-title {
+        font-size: var(--fs-14);
+        line-height: var(--line-20);
+      }
+      .start-desc {
+        font-size: var(--fs-12);
+        line-height: var(--line-20);
+      }
+      .start-btn {
+        font-size: var(--fs-14);
+        line-height: var(--line-20);
+      }
+    }
+  }
+
   // nav bar
   .main-nav {
     .nav-link {
@@ -205,6 +271,40 @@
     background-color: var(--col-dark);
     .about-us--text {
       display: none;
+    }
+  }
+  /**********************/
+  /*  achievements section */
+  /********************/
+  .achievements-sec {
+    .achievements-sec--title {
+      padding-bottom: 0rem;
+    }
+    .achievements {
+      .achieve {
+        margin: 2rem 0;
+        &.ach-icon {
+          width: 10px !important;
+          overflow: hidden;
+        }
+        .sv-icon {
+          width: 6rem;
+          height: 6rem;
+        }
+        .achieve--num {
+          font-size: var(--fs-14) !important;
+          line-height: var(--line-20) !important;
+          font-weight: 700 !important;
+        }
+        .achieve-text {
+          font-size: var(--fs-10);
+          font-weight: var(--fw-400) !important;
+          line-height: 1.4rem;
+        }
+      }
+    }
+    .read-more-btn {
+      padding: 5rem 0 0;
     }
   }
   .support-sec {
@@ -321,6 +421,26 @@
       width: 100%;
     }
   }
+
+  // blog
+  .blog-item {
+    min-width: 100%;
+    height: 50rem !important;
+    .blog-text {
+      height: 50%;
+
+      .blog-date {
+        font-size: var(--fs-10);
+      }
+      .blog-title {
+        font-size: var(--fs-16);
+      }
+      .blog-desc {
+        font-size: var(--fs-12);
+      }
+    }
+  }
+
   // our sectors
   .sector-sec {
     padding: 3rem 0;
@@ -359,7 +479,34 @@
       }
     }
   }
+  // achieve card
+  .achieve-card {
+    .achieve-card--title {
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .achieve-card--desc {
+      text-align: center;
+      margin-bottom: 0;
+    }
+  }
+  //service card
+  .service-card {
+    height: 30rem;
+    width: 100% !important;
 
+    .service-card--title {
+      font-size: var(--fs-18);
+      line-height: var(--line-36);
+      margin: 0 auto;
+    }
+  }
+  .more-blogs {
+    .more-blogs--title {
+      text-align: center;
+    }
+  }
+  // hint
   .logo-col--hint {
     padding-inline-end: 5rem !important;
   }

@@ -32,7 +32,13 @@
               <p class="achieve-desc">
                 {{ item.desc }}
               </p>
-              <button class="read-more-btn my-3 my-md-5">
+              <button
+                @click="
+                  $router.push({ name: 'AchieveData', params: { id: item.id } })
+                "
+                class="read-more-btn my-3 my-md-5"
+                v-if="item.has_items"
+              >
                 <p style="color: var(--col-dark)">اعرف المزيد</p>
                 <div
                   class="read-more-icon"
@@ -82,6 +88,7 @@ const props = defineProps({
     Required: false,
   },
 });
+console.log(props.secData);
 </script>
 
 <style lang="scss" scoped></style>
