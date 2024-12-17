@@ -8,7 +8,72 @@ const router = createRouter({
       name: "home",
       component: () => import("@/views/HomeView.vue"),
       meta: {
-        title: "Mount Wolf",
+        title: "Al Jubairi",
+      },
+    },
+    {
+      path: "/about",
+      name: "About",
+      component: () => import("@/views/AboutUs.vue"),
+      meta: {
+        title: "About Us",
+      },
+    },
+    {
+      path: "/services",
+      name: "Services",
+      component: () => import("@/views/ServicesPage.vue"),
+      meta: {
+        title: "Services",
+      },
+    },
+    {
+      path: "/our-team",
+      name: "Team",
+      component: () => import("@/views/OurTeam.vue"),
+      meta: {
+        title: "Team",
+      },
+    },
+    {
+      path: "/employee-data/:id",
+      name: "Employee",
+      component: () =>
+        import("@/components/locale/team-component/employee.vue"),
+      meta: {
+        title: "Employee",
+      },
+    },
+    {
+      path: "/achievement",
+      name: "Achievement",
+      component: () => import("@/views/Achievements.vue"),
+      meta: {
+        title: "Achievement",
+      },
+    },
+    {
+      path: "/community",
+      name: "Community",
+      component: () => import("@/views/community/Community.vue"),
+      meta: {
+        title: "Community",
+      },
+    },
+    {
+      path: "/contact",
+      name: "Contact",
+      component: () => import("@/views/contact/Contact.vue"),
+      meta: {
+        title: "Contact",
+      },
+    },
+    {
+      path: "/employment",
+      name: "Employment",
+      component: () => import("@/views/Employment.vue"),
+      meta: {
+        title: "Employment",
       },
     },
     // {
@@ -45,4 +110,5 @@ router.beforeEach((to, from, next) => {
   document.title = to.meta.title;
   next();
 });
+
 export default router;

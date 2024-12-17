@@ -1,30 +1,15 @@
 <template>
-  <div class="responsive-nav">
-    <div class="resp-nav py-2" style="position: absolute; top: 0; left: 0">
-      <div class="container flx-r justify-content-between align-items-center">
-        <button
-          class="btn"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#staticBackdrop"
-          aria-controls="staticBackdrop"
-        >
-          <svg
-            style="width: 2.4rem; height: 2.4rem"
-            :style="{
-              fill:
-                route.name === 'home'
-                  ? 'var(--col-white)'
-                  : 'var(--col-light-dark)',
-            }"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-          >
-            <path
-              d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
-            />
-          </svg>
-        </button>
+  <div class="responsive-nav" style="background-color: #fff">
+    <div
+      class="resp-nav"
+      :style="{
+        position: route.name === 'home' ? 'absolute' : 'static',
+      }"
+      style="top: 0; left: 0"
+    >
+      <div
+        class="container flx-r justify-content-between align-items-centerp-2"
+      >
         <div>
           <router-link class="navbar-brand" to="/"
             ><svg
@@ -149,6 +134,29 @@
             </svg>
           </router-link>
         </div>
+        <button
+          class="btn"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#staticBackdrop"
+          aria-controls="staticBackdrop"
+        >
+          <svg
+            style="width: 2.4rem; height: 2.4rem"
+            :style="{
+              fill:
+                route.name === 'home'
+                  ? 'var(--col-white)'
+                  : 'var(--col-light-dark)',
+            }"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+            />
+          </svg>
+        </button>
       </div>
     </div>
     <div
@@ -159,12 +167,12 @@
       aria-labelledby="staticBackdropLabel"
     >
       <img
+        loading="lazy"
         src="/src/assets/images/sm-images/Group.png"
         style="position: absolute; top: 0; left: 0"
         alt=""
       />
       <div class="offcanvas-header">
-        <!-- <h5 class="offcanvas-title" id="staticBackdropLabel"></h5> -->
         <button
           type="button"
           class="btn-close"
@@ -185,10 +193,14 @@
       <div class="offcanvas-body">
         <ul class="navbar-items">
           <li>
-            <router-link class="nav-link" to="">الصفحة الرئيسية</router-link>
+            <router-link class="nav-link" to="/">
+              <span data-bs-dismiss="offcanvas" aria-label="Close">
+                الصفحة الرئيسية
+              </span>
+            </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to="">عن الجبيرى</router-link>
+            <router-link class="nav-link" to="/about">عن الجبيرى</router-link>
           </li>
 
           <li>
@@ -199,7 +211,10 @@
                 data-bs-toggle="collapse"
                 data-bs-target="#demo"
               >
-                خدماتنا
+                <span data-bs-dismiss="offcanvas" aria-label="Close">
+                  خدماتنا
+                </span>
+
                 <svg
                   fill="#fff"
                   xmlns="http://www.w3.org/2000/svg"
@@ -220,29 +235,66 @@
                   padding-inline-start: 2rem !important;
                 "
               >
-                <li class="nav-sub-item pb-4">one</li>
-                <li class="nav-sub-item pb-4">two</li>
+                <li>
+                  <router-link class="nav-sub-item pb-4" to="/services">
+                    <span data-bs-dismiss="offcanvas" aria-label="Close">
+                      خدماتنا
+                    </span>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link class="nav-sub-item pb-4" to="/services">
+                    <span data-bs-dismiss="offcanvas" aria-label="Close">
+                      خدماتنا
+                    </span>
+                  </router-link>
+                </li>
+                <!-- <li class="nav-sub-item pb-4">two</li> -->
               </ul>
             </ul>
           </li>
 
           <li>
-            <router-link class="nav-link" to=""> فريق العمل </router-link>
+            <router-link class="nav-link" to="/our-team">
+              <span data-bs-dismiss="offcanvas" aria-label="Close">
+                فريق العمل
+              </span>
+            </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to="">الانجازات</router-link>
+            <router-link class="nav-link" to="/achievement">
+              <span data-bs-dismiss="offcanvas" aria-label="Close">
+                الانجازات
+              </span>
+            </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to=""> المجتمع</router-link>
+            <router-link class="nav-link" to="">
+              <span data-bs-dismiss="offcanvas" aria-label="Close">
+                المجتمع
+              </span>
+            </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to=""> التوظيف</router-link>
+            <router-link class="nav-link" to="">
+              <span data-bs-dismiss="offcanvas" aria-label="Close">
+                التوظيف
+              </span>
+            </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to=""> المدونه</router-link>
+            <router-link class="nav-link" to="">
+              <span data-bs-dismiss="offcanvas" aria-label="Close">
+                المدونه
+              </span>
+            </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to=""> تواصل معنا</router-link>
+            <router-link class="nav-link" to="">
+              <span data-bs-dismiss="offcanvas" aria-label="Close">
+                تواصل معنا
+              </span>
+            </router-link>
           </li>
 
           <li>

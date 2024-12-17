@@ -1,10 +1,25 @@
 <script setup>
+import { onMounted, ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
+import { useRoute } from "vue-router";
 import MainLayout from "./components/global/layout/MainLayout.vue";
+const route = useRoute();
+
+onMounted(() => {
+  if (sessionStorage.getItem("lang") == null)
+    sessionStorage.setItem("lang", "ar");
+});
 </script>
-<!-- include="Home,About" route names -->
 <template>
-  <main style="flex: 1">
+  <main
+    style="flex: 1; width: 100vw"
+    :style="{
+      background:
+        route.name === 'home' || route.name === 'Employee'
+          ? '#fff '
+          : '#151516',
+    }"
+  >
     <MainLayout>
       <RouterView />
     </MainLayout>
