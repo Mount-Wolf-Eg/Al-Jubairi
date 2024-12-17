@@ -133,8 +133,8 @@ const validateForm = () => {
       errors.value[key] = ""; // Reset errors
       // Skip validation for optional fields if formType is 'employment'
       if (
-        !formData.value[key].trim() &&
         !["inquiryType", "subject", "message"].includes(key)
+        && !formData.value[key].trim() 
       ) {
         errors.value[key] = t("form.required") + " " + t(`form.${key}`);
         valid = false;
