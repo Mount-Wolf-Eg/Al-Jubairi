@@ -44,5 +44,5 @@ onMounted(async () => {
 </script>
 
 <style lang="scss">
-@import "./Community/Community.scss"; // You can keep the same styles
+@import "./community/Community.scss"; // You can keep the same styles
 </style>
