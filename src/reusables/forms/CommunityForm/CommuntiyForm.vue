@@ -55,6 +55,13 @@
       required
       :error="errors.message"
     />
+    <FileUpload
+      v-if="formData.inquiryType === 'employment'"
+      v-model="formData.media"
+      :label="$t('form.uploadCV') + ' *'"
+      :error="errors.media"
+      required
+    />
     <div class="d-flex justify-content-end">
       <button type="submit">{{ $t("button.submit") }}</button>
     </div>
@@ -72,6 +79,7 @@ import PhoneInput from "@/reusables/inputs/PhoneInput/PhoneInput.vue";
 import EmailInput from "@/reusables/inputs/EmailInput/EmailInput.vue";
 import { useContactStore } from "@/stores/contactStore";
 import SuccessModal from "@/reusables/modals/SuccessModal.vue";
+import FileUpload from "@/reusables/inputs/FileUpload/FileUpload.vue";
 
 const { t } = useI18n();
 const contactStore = useContactStore();
@@ -91,6 +99,7 @@ const formData = ref({
   inquiryType: "",
   subject: "",
   message: "",
+  media: "",
 });
 
 const errors = ref({
@@ -101,6 +110,7 @@ const errors = ref({
   inquiryType: "",
   subject: "",
   message: "",
+  media: "",
 });
 
 const isModalVisible = ref(false);
@@ -120,6 +130,12 @@ const validateForm = () => {
       valid = false;
     }
   });
+
+  if (formData.value.inquiryType === "employment" && !formData.value.media) {
+    errors.value.media = t("form.required") + " " + t("form.uploadCV");
+    valid = false;
+  }
+
   return valid;
 };
 
@@ -135,6 +151,7 @@ const handleSubmit = async () => {
       content: formData.value.message,
       type: props.formType,
       for: formData.value.inquiryType,
+      media: formData.value.media,
     };
 
     const response = await contactStore.submitContactForm(contactData);
@@ -152,6 +169,7 @@ const handleSubmit = async () => {
         inquiryType: "",
         subject: "",
         message: "",
+        media: "",
       };
     }
   }
