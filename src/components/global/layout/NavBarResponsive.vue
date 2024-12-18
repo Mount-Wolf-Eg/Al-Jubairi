@@ -11,7 +11,27 @@
         class="container flx-r justify-content-between align-items-centerp-2"
       >
         <div>
-          <router-link class="navbar-brand" to="/"
+          <router-link
+            v-if="
+              settings?.setting.find((el) => el.key == 'header_logo'?.value)
+            "
+            class="navbar-brand"
+            to="/"
+          >
+            <img
+              :src="
+                settings?.setting.find((el) => el.key == 'header_logo'?.value)
+              "
+              style="
+                width: 13.7rem;
+                height: 3.2rem;
+                object-fit: contain;
+                object-position: center;
+              "
+              alt="brand logo"
+            />
+          </router-link>
+          <router-link v-else class="navbar-brand" to="/"
             ><svg
               style="width: 13.7rem; height: 3.2rem"
               viewBox="0 0 241 56"
@@ -394,6 +414,9 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import { useSettingsStore } from "@/stores/settingStore";
+import { storeToRefs } from "pinia";
+const { settings } = storeToRefs(useSettingsStore());
 const route = useRoute();
 const lang = ref("AR");
 

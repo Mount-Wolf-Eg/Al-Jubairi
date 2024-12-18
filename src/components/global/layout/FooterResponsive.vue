@@ -4,17 +4,33 @@
       class="footer-img"
       :style="{ display: route.name === 'home' ? 'block' : 'none' }"
     >
-      <img
-        loading="lazy"
-        src="/src/assets/images/sm-images/footerResp.jpg"
-        style="
-          width: 100%;
-          height: auto;
-          filter: brightness(0.5);
-          min-height: 300px;
-        "
-        alt=""
-      />
+      <span>
+        <img
+          v-if="settings?.setting.find((el) => el.key == 'footer_logo'?.value)"
+          loading="lazy"
+          :src="settings?.setting.find((el) => el.key == 'footer_logo'?.value)"
+          style="
+            width: 100%;
+            height: auto;
+            filter: brightness(0.5);
+            min-height: 300px;
+          "
+          alt="footer logo"
+        />
+        <img
+          v-else
+          loading="lazy"
+          src="/src/assets/images/sm-images/footerResp.jpg"
+          style="
+            width: 100%;
+            height: auto;
+            filter: brightness(0.5);
+            min-height: 300px;
+          "
+          alt="footer logo"
+        />
+      </span>
+
       <div class="footer-resp--text">
         <p class="footer-title head-secondary">{{ $t("button.Book") }}</p>
         <p class="footer-text body-desc-secondary">
@@ -259,6 +275,9 @@
 </template>
 
 <script setup>
+import { useSettingsStore } from "@/stores/settingStore";
+import { storeToRefs } from "pinia";
+const { settings } = storeToRefs(useSettingsStore());
 import { useRoute } from "vue-router";
 const route = useRoute();
 </script>
