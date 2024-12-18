@@ -101,9 +101,7 @@ const props = defineProps({
     Required: false,
   },
 });
-onMounted(() => {
-  console.log(props.secData);
-});
+ 
 </script>
 
 <style lang="scss" scoped></style>

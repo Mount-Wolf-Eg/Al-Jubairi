@@ -68,7 +68,6 @@ onMounted(async () => {
   await usePageStore().getItemData(route.params.id);
   if (singleItem.value.length == 0) router.push({ name: "Achievement" });
   data.value = singleItem.value.title;
-  console.log(singleItem.value);
   isLoading.value = false;
 });
 
