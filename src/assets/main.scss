@@ -562,7 +562,7 @@ button {
     top: 0;
     right: 18%;
     height: 100%;
-    width: 35%;
+    width: 48rem;
     background-color: var(--col-dark);
   }
   .about-us--content {
@@ -580,8 +580,12 @@ button {
     }
     .about-us-parag {
       color: var(--col-white);
-
       text-align: justify;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      line-clamp: 8;
+      -webkit-box-orient: vertical;
     }
   }
 }

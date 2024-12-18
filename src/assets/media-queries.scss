@@ -22,7 +22,9 @@
   }
   .about-us-sec {
     .about-us--text {
-      width: 50%;
+      width: 48rem !important;
+      overflow: hidden !important ;
+      right: 5%;
     }
     .about-us--content {
       overflow: auto;
@@ -55,7 +57,8 @@
   // about us
   .about-us-sec {
     .about-us--text {
-      width: 60%;
+      width: 48rem !important;
+      right: 5%;
     }
     .about-us--content {
       padding: 0 4rem;
@@ -126,8 +129,11 @@
   // about us
   .about-us-sec {
     .about-us--text {
-      width: 80%;
-      right: 10%;
+      .about-us--text {
+        width: 40rem !important;
+        overflow: hidden !important ;
+        right: 5%;
+      }
     }
     .about-us--content {
       padding: 0 4rem;
