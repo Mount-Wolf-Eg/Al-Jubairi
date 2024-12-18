@@ -3,7 +3,7 @@
   "menu": {
     "home": "Home",
     "about": "About Us",
-    "about-jubairi": "About Jubairi",
+    "about-jubairi": "About Al-Jubairi",
     "services": "Services",
     "team": "Team",
     "achievements": "Achievements",
@@ -38,7 +38,7 @@
   },
   "footer": {
     "footer-text": "We are committed to continuing to develop and improve our services, and to provide legal advice to our clients. We would be delighted to serve you and your business needs.",
-    "footer-desc": "At Al-Jubeiri Law Firm, we have achieved a prestigious position in providing legal services, based on our vision that combines strict adherence to legal standards and adherence to human values, which reflects our approach to achieving justice and meeting the needs of our clients with professionalism and ethics.",
+    "footer-desc": "At Al-Jubairi Law Firm, we have achieved a prestigious position in providing legal services, based on our vision that combines strict adherence to legal standards and adherence to human values, which reflects our approach to achieving justice and meeting the needs of our clients with professionalism and ethics.",
     "company": "Company",
     "more": "Explore more",
     "Services": "Services"

@@ -330,8 +330,10 @@ html[dir="ltr"] .read-more-icon svg {
     font-weight: var(--fw-400);
     font-size: var(--fs-14);
     line-height: var(--line-24);
+    padding: 0;
   }
 }
+
 /**********************/
 /*   responsive nav  */
 /********************/
@@ -1299,7 +1301,7 @@ footer.full-footer {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 1.8rem;
+      gap: 1.5rem;
       font-size: var(--fs-12);
       font-weight: var(--fw-400);
     }

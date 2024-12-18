@@ -30,12 +30,12 @@ import FooterResponsive from "./FooterResponsive.vue";
 const showResponsiveHeader = ref(false);
 
 onMounted(() => {
-  window.innerWidth <= 577
+  window.innerWidth <= 668
     ? (showResponsiveHeader.value = true)
     : (showResponsiveHeader.value = false);
 }),
   (window.onresize = () => {
-    window.innerWidth <= 577
+    window.innerWidth <= 668
       ? (showResponsiveHeader.value = true)
       : (showResponsiveHeader.value = false);
   });
