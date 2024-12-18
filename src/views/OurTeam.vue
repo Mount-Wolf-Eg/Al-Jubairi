@@ -20,15 +20,16 @@
               loading="lazy"
               :src="item?.image?.media"
               style="
-                width: 100%;
-                height: auto;
+                width: 23rem;
+                height: 24.5rem;
+
                 object-fit: contain;
                 object-position: center;
               "
               :alt="item?.image?.alt"
             />
             <div class="employees-data">
-              <p class="employees-name">
+              <p class="employees-name mb-2">
                 {{ item.name }}
               </p>
               <p class="employees-title">
@@ -83,3 +84,18 @@ onMounted(async () => {
   isLoading.value = false;
 });
 </script>
+<style lang="scss" scoped>
+html[dir="ltr"] .employees-data {
+  transform: rotate(0) scaleY(0);
+}
+html[dir="ltr"] .employees-data {
+  transform: rotate(180deg) scaleY(-1);
+}
+
+html[dir="ltr"] .employees-data {
+  transform: rotate(0);
+}
+html[dir="rtl"] .employees-data {
+  transform: rotate(0);
+}
+</style>

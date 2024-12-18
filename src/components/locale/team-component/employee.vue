@@ -19,7 +19,7 @@
             :alt="singleItem.image?.alt"
           />
         </div>
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md">
           <p class="employee-name head-secondary m-0">
             {{ singleItem.name }}
           </p>

@@ -873,6 +873,7 @@ html[dir="ltr"] .read-more-icon svg {
 .about-us-info {
   .about-info--box {
     margin: 5rem 0;
+
     .text-editor {
       ol,
       ul {
@@ -881,7 +882,6 @@ html[dir="ltr"] .read-more-icon svg {
           color: var(--col-gray);
         }
       }
-
       h2,
       h1,
       h3 {
@@ -889,7 +889,7 @@ html[dir="ltr"] .read-more-icon svg {
         font-size: var(--fs-20);
         line-height: var(--line-27);
         margin-bottom: 2rem;
-        color: var(--col-dark);
+        color: var(--col-dark) !important;
         strong {
           color: var(--col-dark);
         }
@@ -901,7 +901,8 @@ html[dir="ltr"] .read-more-icon svg {
       p,
       li {
         strong {
-          color: var(--col-gray);
+          color: var(--col-dark);
+          font-size: var(--fs-20);
         }
         color: var(--col-gray);
         font-weight: var(300);
@@ -927,28 +928,33 @@ html[dir="ltr"] .read-more-icon svg {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
+
   .employees-data {
     position: absolute;
     right: 0;
     bottom: 0;
     background-color: #151516;
-    width: 90%;
-    height: 8.1rem;
+    width: 22rem;
+    min-height: 8.1rem;
     border-radius: 2rem 2rem 2rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
     color: var(--col-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     .employees-name {
+      text-align: center;
+      width: fit-content;
       font-size: var(--fs-16);
       font-weight: var(--fw-600);
       line-height: var(--line-24);
       text-decoration: underline;
     }
     .employees-title {
+      text-align: center;
       font-weight: var(--fw-300);
+      width: fit-content;
       font-size: var(--fs-12);
       line-height: var(--line-15);
     }
