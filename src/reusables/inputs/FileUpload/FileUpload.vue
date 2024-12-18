@@ -9,7 +9,7 @@
       </div>
     </label>
     <input
-      class="style-17 img-field-st border-none"
+      class="style-17 img-field-st d-none"
       type="file"
       :id="`file-upload-${props.for}`"
       @change="handleFileChange"
@@ -72,6 +72,7 @@
 
 <script setup>
 import { ref } from "vue";
+import { useFileUploadStore } from "@/stores/fileUploadStore";
 
 const userImg = ref("");
 const fileName = ref("");
@@ -103,8 +104,8 @@ const props = defineProps({
     required: false,
   },
 });
-
-const handleFileChange = (event) => {
+const fileUploadStore = useFileUploadStore();
+const handleFileChange = async (event) => {
   const uploadedFile = event.target.files[0];
   if (!uploadedFile) {
     resetFile();
@@ -117,29 +118,23 @@ const handleFileChange = (event) => {
     return;
   }
 
-  const fileType = uploadedFile.type;
-  if (fileType.includes("image")) {
-    const reader = new FileReader();
-    reader.readAsDataURL(uploadedFile);
-    reader.addEventListener("load", (e) => {
-      userImg.value = e.currentTarget.result;
-      fileName.value = "";
-    });
-  } else if (
-    fileType === "application/pdf" ||
-    fileType ===
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-  ) {
-    userImg.value = "";
-    fileName.value = uploadedFile.name;
-  } else {
-    resetFile();
-    mainStore().showAlert("unsupported file types", 2);
-    return;
-  }
-
+  const formData = new FormData();
+  formData.append("file", uploadedFile);
+  formData.append("attachment_type", "file");
+  formData.append("model", "contacts");
   file.value = uploadedFile;
-  emits("update:modelValue", file.value);
+  try {
+    const response = await fileUploadStore.uploadFile(formData);
+    userImg.value = uploadedFile.type.includes("image")
+      ? URL.createObjectURL(uploadedFile)
+      : "";
+    fileName.value = uploadedFile.type.includes("image")
+      ? ""
+      : uploadedFile.name;
+    emits("update:modelValue", response?.data);
+  } catch (error) {
+    console.error("Error uploading file:", error);
+  }
 };
 
 const removeFile = () => {
