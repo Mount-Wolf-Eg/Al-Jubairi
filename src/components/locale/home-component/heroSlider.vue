@@ -28,20 +28,12 @@
       :Lazy="true"
       :centered-slides="true"
     >
-      <!--  
-        :speed="500"
-        
-      :effect="'fade'"
-        :navigation="false"
-        :loop="true"
-      -->
       <swiper-slide
         v-for="(item, i) in props.secData.items.data"
         :key="i"
         class="slide bg-danger h-100"
       >
         <div class="slider-box h-100 row">
-          <!-- src="/src/assets/images/PHN_1434.webp" -->
           <img
             loading="lazy"
             :src="item.image.media"
@@ -57,15 +49,10 @@
           <div class="hero-text">
             <div class="hero-text-box">
               <p class="hero-title head-primary">
-                <!-- خيارك الأول للتمثيل القانوني -->
                 {{ item.title }}
               </p>
               <p class="hero-desc body-desc-primary">
                 {{ item.desc }}
-                <!-- بخبرة قانونية راسخة قدمنا الدعم للأفراد والشركات في المملكة
-                لأكثر من 15 عاماً. نحن هنا لتقديم استشارات مدروسة وحلول قانونية
-                مبتكرة لتحقيق العدالة في كافة القضايا، مع الالتزام بأعلى
-                المعايير الدولية. -->
               </p>
               <button class="btn-round-primary">احجز استشارتك القانونية</button>
             </div>

@@ -1,14 +1,11 @@
 <template>
   <main v-if="!isLoading" class="home-view">
-    <heroSlider
-      :secData="getSecData('slider')"
-      :secData2="getSecData('excellence')"
-    />
-    <excellence :secData="getSecData('excellence')" />
+    <heroSlider :secData="getSecData('slider')" />
+    <excellence :secData="getSecData3('excellence')" />
     <AboutUs :secData="getSecData('more_about')" />
-    <Support :secData="getSecData('services')" />
+    <Support :secData="getSecData2('services')" />
     <Achievements />
-    <OurJourney :secData="getSecData('certificates')" />
+    <OurJourney :secData="getSecData3('certificates')" />
     <LatestNews :secData="getSecData('last_news')" />
     <Questions :secData="getSecData('freq_questions')" />
     <OurClients :secData="getSecData('clients')" />
@@ -33,7 +30,7 @@ import SocialData from "@/components/locale/custom-components/SocialData.vue";
 import { usePageStore } from "@/stores/pagesStore";
 import { storeToRefs } from "pinia";
 const pageStore = usePageStore();
-const { home } = storeToRefs(pageStore);
+const { home, services, about, blogs } = storeToRefs(pageStore);
 
 const isLoading = ref(true);
 
@@ -47,6 +44,28 @@ const getSecData = (sectionType) => {
   return {};
 };
 
+const getSecData2 = (sectionType) => {
+  if (
+    services.value &&
+    services.value.sections &&
+    services.value.sections.data
+  ) {
+    const section = services.value.sections.data.find(
+      (sec) => sec.type === sectionType
+    );
+    return section ? section : {};
+  }
+  return {};
+};
+const getSecData3 = (sectionType) => {
+  if (about.value && about.value.sections && about.value.sections.data) {
+    const section = about.value.sections.data.find(
+      (sec) => sec.type === sectionType
+    );
+    return section ? section : {};
+  }
+  return {};
+};
 onMounted(async () => {
   if (
     !home.value ||
@@ -55,6 +74,29 @@ onMounted(async () => {
   ) {
     await pageStore.getPageData("home");
   }
+  if (
+    !services.value ||
+    !services.value.sections ||
+    services.value.sections.data.length === 0
+  ) {
+    await pageStore.getPageData("services");
+  }
+  if (
+    !about.value ||
+    !about.value.sections ||
+    about.value.sections.data.length === 0
+  ) {
+    await pageStore.getPageData("about");
+  }
+
+  if (
+    !blogs.value ||
+    !blogs.value.sections ||
+    blogs.value.sections.data.length === 0
+  ) {
+    await pageStore.getPageData("blogs");
+  }
+  console.log(blogs.value.sections.data[0]);
   isLoading.value = false;
 });
 </script>
