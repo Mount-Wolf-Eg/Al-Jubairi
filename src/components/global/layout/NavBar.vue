@@ -16,7 +16,7 @@
         style="width: fit-content"
       >
         <ul
-          class="navbar-nav navbar-nav-scroll w-100 flex-c align-items-center justify-content-center gap-2"
+          class="navbar-nav navbar-nav-scroll w-100 flex-c align-items-center justify-content-center gap-2 gap-lg-4"
         >
           <li class="nav-item">
             <router-link
@@ -249,7 +249,7 @@
         style="width: fit-content"
       >
         <ul
-          class="navbar-nav navbar-nav-scroll w-100 flex-c align-items-center justify-content-center gap-2"
+          class="navbar-nav navbar-nav-scroll w-100 flex-c align-items-center justify-content-center gap-2 gap-lg-4"
         >
           <li class="nav-item">
             <router-link

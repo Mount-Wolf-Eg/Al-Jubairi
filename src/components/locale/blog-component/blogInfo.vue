@@ -20,12 +20,13 @@
           />
         </div>
         <div class="col-12">
-          <p class="employee-name head-secondary">
-            {{ singleItem.name }}
+          <p class="main-date">
+            {{ moment(new Date(singleItem.created_at)).format("LL") }}
           </p>
-          <p class="employee-title">
+          <p class="employee-name head-secondary">
             {{ singleItem.title }}
           </p>
+
           <div class="html-content text-editor" v-html="singleItem.desc"></div>
         </div>
       </div>
@@ -45,7 +46,8 @@
             <div
               class="blog-content w-100 h-100"
               @click="
-                $router.push({ name: 'BlogDetail', params: { id: item.id } })
+                console.log(item.id);
+                $router.push({ name: 'BlogDetail', params: { id: item.id } });
               "
             >
               <div class="blog-img">
@@ -70,7 +72,7 @@
 
                 <div
                   class="html-content blog-desc text-editor"
-                  v-html="item.desc"
+                  v-html="item.desc?.slice(0, 300)"
                 ></div>
               </div>
             </div>
@@ -125,7 +127,6 @@ import { usePageStore } from "@/stores/pagesStore";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import { storeToRefs } from "pinia";
 import moment from "moment";
-
 import { useRoute, useRouter } from "vue-router";
 const route = useRoute();
 const router = useRouter();
@@ -165,6 +166,13 @@ onMounted(async () => {
 onBeforeUnmount(() => {
   singleItem.value = "";
 });
+
+watch(
+  () => route.params.id,
+  (newVal) => {
+    window.location.reload();
+  }
+);
 </script>
 
 <style lang="scss" scoped></style>

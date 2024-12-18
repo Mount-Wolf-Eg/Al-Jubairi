@@ -10,7 +10,7 @@
       <div class="container">
         <div class="row gap-5 px-0 mx-2 mx-md-0">
           <div
-            class="blog-item col-12 col-md p-0 mx-0 my-3"
+            class="blog-item col-12 p-0 mx-0 my-3"
             v-for="(item, i) in blogs.sections.data[0]?.items?.data"
             :key="i"
           >
@@ -27,7 +27,7 @@
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    object-position: center;
+                    object-position: top;
                   "
                   :alt="item.image?.alt"
                 />
@@ -91,3 +91,9 @@ onMounted(async () => {
   isLoading.value = false;
 });
 </script>
+<style lang="scss" scoped>
+.blog-item {
+  width: 38.4rem !important;
+  height: 56.3rem !important;
+}
+</style>

@@ -1,8 +1,8 @@
 <template>
   <div class="latest-news-sec container ">
     <p class="latest-news-sec--title head-secondary text-center">
-      {{ props.secData.title }}
-    </p>
+      {{ props.secData.title }} 
+     </p>
     <div
       class="latest-news-box d-flex flex-column flex-md-row justify-content-between align-items-start gap-5 px-5 px-md-0"
     >
