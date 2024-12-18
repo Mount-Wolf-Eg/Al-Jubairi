@@ -2,16 +2,12 @@
   <div class="sector-sec">
     <p class="sectors-title">
       {{ props.secData.title }}
-      عملاء الشركة
     </p>
     <p
       class="sectors-text body-desc-secondary"
       style="text-align: center !important"
     >
       {{ props.secData.desc }}
-      حازت الجبيري للمحاماة على ثقة أكبر الشركات الإقليمية، والشركات العائلية،
-      والشركات العالمية والمحلية، إلى جانب المؤسسات المالية الدولية ووكالاتها،
-      والسفارات الأجنبية العالمية.
     </p>
     <div class="sectors-box container">
       <div class="row col-12 px-0 mx-auto d-flex justify-content-between gap-5">
