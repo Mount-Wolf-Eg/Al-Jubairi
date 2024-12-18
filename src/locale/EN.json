@@ -25,6 +25,7 @@
     "message": "Message",
     "messagePlaceholder": "Write your message here",
     "media": "cv",
-    "required": "Please enter"
+    "required": "Please enter",
+    "uploadCV": "Curriculum vitae (CV)"
   }
 }

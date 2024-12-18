@@ -25,6 +25,7 @@
     "message": "رسالة",
     "messagePlaceholder": "اكتب رسالتك هنا",
     "media": "السيرة الذاتية",
-    "required": "من فضلك قم بإدخال"
+    "required": "من فضلك قم بإدخال",
+    "uploadCV": " سيرة ذاتية (CV)"
   }
 }

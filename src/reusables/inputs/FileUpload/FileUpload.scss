@@ -1,0 +1,61 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+
+  .spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid rgba(4, 119, 190, 0.2);
+    border-top-color: #0477be;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.upload-field {
+  margin: 1rem 0 0;
+  position: relative;
+  border-radius: 1.2rem;
+  border: 1px solid #0477be;
+  padding: 0.5rem;
+  background-color: #f4f3f3;
+
+  input {
+    width: 35% !important;
+    background-color: #f4f3f3;
+    color: transparent;
+    border: 1px solid #0477be;
+    font-size: 0.8rem;
+  }
+
+  label {
+    width: 65% !important;
+    cursor: pointer;
+    padding: 1rem 0;
+  }
+}
+
+.file-preview {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+
+  .file-icon {
+    font-size: 2rem;
+  }
+
+  .file-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #464a61;
+  }
+}
