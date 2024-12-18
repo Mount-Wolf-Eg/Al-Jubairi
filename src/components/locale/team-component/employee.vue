@@ -20,10 +20,10 @@
           />
         </div>
         <div class="col-12 col-md-3">
-          <p class="employee-name">
+          <p class="employee-name head-secondary m-0">
             {{ singleItem.name }}
           </p>
-          <p class="employee-title">
+          <p class="employee-title m-0">
             {{ singleItem.title }}
           </p>
           <div class="html-content text-editor" v-html="singleItem.desc"></div>

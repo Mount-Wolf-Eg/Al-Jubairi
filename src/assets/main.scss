@@ -761,6 +761,7 @@ button {
   background-color: var(--col-gray-soft);
   .questions-sec--title {
     padding-bottom: 3rem;
+    color: var(--col-dark);
   }
   .accordion {
     .accordion-item {
@@ -921,6 +922,9 @@ button {
   }
   .employee-title {
     color: var(--col-dark);
+    font-size: var(--fs-16);
+    font-weight: var(--fw-400);
+    line-height: var(--line-27);
   }
 
   .text-editor {
