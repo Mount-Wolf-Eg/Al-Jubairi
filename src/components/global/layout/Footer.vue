@@ -212,10 +212,10 @@
           <a href="#" class="link">Mount Wolf</a>
         </div>
         <div class="flx-r gap-5" style="margin-inline-start: auto">
-          <router-link class="terms-item link" to="">{{
+          <router-link class="terms-item link" to="/terms-conditions">{{
             $t("terms.terms")
           }}</router-link>
-          <router-link class="terms-item link" to="">{{
+          <router-link class="terms-item link" to="/privacy-policy">{{
             $t("terms.conditions")
           }}</router-link>
         </div>

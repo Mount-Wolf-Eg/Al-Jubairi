@@ -11,7 +11,9 @@
     <OurClients :secData="getSecData('clients')" />
     <SocialData />
   </main>
-  <main v-else><SplashScreen /></main>
+  <main v-else>
+    <SplashScreen />
+  </main>
 </template>
 <script setup>
 import { ref, onMounted } from "vue";

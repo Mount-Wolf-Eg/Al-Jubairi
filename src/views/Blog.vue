@@ -11,7 +11,7 @@
         <div class="row gap-5 px-0 mx-2 mx-md-0">
           <div
             class="blog-item col-12 col-md p-0 mx-0 my-3"
-            v-for="(item, i) in blogs.sections.data[0].items.data"
+            v-for="(item, i) in blogs.sections.data[0]?.items?.data"
             :key="i"
           >
             <div

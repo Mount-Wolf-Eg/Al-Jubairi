@@ -120,6 +120,22 @@ const router = createRouter({
         title: "Questions",
       },
     },
+    {
+      path: "/terms-conditions",
+      name: "Terms",
+      component: () => import("@/views/TermsConditions.vue"),
+      meta: {
+        title: "Terms-Conditions",
+      },
+    },
+    {
+      path: "/privacy-policy",
+      name: "Privacy",
+      component: () => import("@/views/PrivacyPolicy.vue"),
+      meta: {
+        title: "Privacy-Policy",
+      },
+    },
     // {
     //   path: "/nested",
     //   name: "Nested",

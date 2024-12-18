@@ -26,8 +26,19 @@
             class="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">
+            <div class="accordion-body" style="position: relative">
               {{ item.desc }}
+
+              <!-- <button
+                style="width: fit-content; margin: 0; padding: 0"
+                class="accordion-button body-close start-0"
+                aria-label="Close"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse0"
+                aria-expanded="false"
+                aria-controls="collapse0"
+              ></button> -->
             </div>
           </div>
         </div>
@@ -82,6 +93,10 @@ const props = defineProps({
     Required: false,
   },
 });
+
+const closeAccordion = (i) => {
+  console.log(i);
+};
 </script>
 
 <style lang="scss" scoped></style>
