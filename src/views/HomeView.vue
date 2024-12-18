@@ -106,7 +106,6 @@ onMounted(async () => {
   ) {
     await pageStore.getPageData("blogs");
   }
-  console.log(blogs.value.sections?.data[0]?.items?.data?.slice(-1));
   isLoading.value = false;
 });
 </script>

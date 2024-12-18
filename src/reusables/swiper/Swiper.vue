@@ -86,9 +86,7 @@ const breakpoints = {
             class="quick-view-container overflow-hidden w-100 position-relative"
             style="height: 25rem; min-height: 150px"
           >
-            <div
-              style="width: 50rem; height: 50rem; background-color: red"
-            ></div>
+            <div style="width: 50rem; height: 50rem"></div>
           </div>
         </div>
       </swiper-slide>

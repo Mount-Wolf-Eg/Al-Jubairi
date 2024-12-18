@@ -9,7 +9,7 @@
           <li class="breadcrumb-item" v-for="(item, i) in crump" :key="i">
             <router-link :to="item.rout">{{
               item.name.length > 30
-                ? $t(item.name.slice(0, 30)) + "..."
+                ? $t(item.name?.slice(0, 30)) + "..."
                 : $t(item.name)
             }}</router-link>
           </li>

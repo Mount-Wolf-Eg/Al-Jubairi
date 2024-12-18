@@ -220,7 +220,7 @@ button {
   }
 
   .breadcrumb-item::before {
-    color: #fff !important;
+    color: #8a8a8a !important;
   }
 
   .breadcrumb-item:last-child {
@@ -687,6 +687,43 @@ button {
     color: var(--col-dark);
     margin-bottom: 5rem;
   }
+  .text-editor {
+    ol,
+    ul {
+      padding-inline-start: 1.2rem;
+      strong {
+        color: var(--col-gray);
+      }
+    }
+
+    h2,
+    h1,
+    h3 {
+      font-weight: var(--fw-600);
+      font-size: var(--fs-20);
+      line-height: var(--line-27);
+      margin-bottom: 2rem;
+      color: var(--col-dark);
+      strong {
+        color: var(--col-dark);
+      }
+
+      &:not(:first-of-type) {
+        margin-top: 4rem;
+      }
+    }
+    p,
+    li {
+      strong {
+        color: var(--col-gray);
+      }
+      color: var(--col-gray);
+      font-weight: var(300);
+      font-size: var(--fs-16);
+      line-height: var(--line-27);
+      text-align: justify;
+    }
+  }
   .latest-news-text {
     .date {
       font-weight: var(--fw-400);
@@ -698,9 +735,9 @@ button {
       font-weight: var(--fw-700);
       font-size: var(--fs-20);
       line-height: var(--line-36);
+      color: var(--col-dark);
     }
     .latest-news-text--parag {
-      color: var(--col-gray-dark);
       font-weight: var(--fw-300);
       font-size: var(--fs-14);
       line-height: var(--line-24);
@@ -798,25 +835,41 @@ button {
       ol,
       ul {
         padding-inline-start: 1.2rem;
+        strong {
+          color: var(--col-gray);
+        }
       }
 
       h2,
-      h1 {
+      h1,
+      h3 {
         font-weight: var(--fw-600);
         font-size: var(--fs-20);
         line-height: var(--line-27);
         margin-bottom: 2rem;
+        color: var(--col-dark);
+        strong {
+          color: var(--col-dark);
+        }
+
         &:not(:first-of-type) {
           margin-top: 4rem;
         }
       }
       p,
       li {
+        strong {
+          color: var(--col-gray);
+        }
+        color: var(--col-gray);
         font-weight: var(300);
         font-size: var(--fs-16);
         line-height: var(--line-27);
         text-align: justify;
       }
+    }
+    .about-info--title {
+      color: var(--col-dark);
     }
   }
 }
@@ -863,28 +916,48 @@ button {
 /*   employee section   */
 /********************/
 .employee-view {
+  .employee-name {
+    color: var(--col-dark);
+  }
+  .employee-title {
+    color: var(--col-dark);
+  }
+
   .text-editor {
     ol,
     ul {
       padding-inline-start: 1.2rem;
+      strong {
+        color: var(--col-gray);
+      }
     }
 
     h2,
-    h1 {
+    h1,
+    h3,
+    h4,
+    h5 {
       font-weight: var(--fw-600);
       font-size: var(--fs-20);
       line-height: var(--line-27);
       margin-bottom: 2rem;
+      strong {
+        color: var(--col-dark);
+      }
       &:not(:first-of-type) {
         margin-top: 4rem;
       }
     }
     p,
     li {
+      strong {
+        color: var(--col-gray);
+      }
       font-weight: var(300);
       font-size: var(--fs-16);
       line-height: var(--line-27);
       text-align: justify;
+      color: var(--col-gray);
     }
   }
 }
@@ -1052,6 +1125,9 @@ button {
 }
 .more-blogs {
   background-color: #eaeaea;
+  .more-blogs--title {
+    color: var(--col-dark);
+  }
 }
 /**********************/
 /*   achieve card page   */

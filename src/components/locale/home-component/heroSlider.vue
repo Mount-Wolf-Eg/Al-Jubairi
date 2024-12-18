@@ -15,6 +15,7 @@
           dynamicBullets: true,
           clickable: true,
         }"
+        :loop="true"
         :slides-per-view="1"
         :Autoplay="{
           delay: 2000,
@@ -33,7 +34,7 @@
         <swiper-slide
           v-for="(item, i) in props.secData.items.data"
           :key="i"
-          class="slide bg-danger h-100"
+          class="slide h-100"
         >
           <div class="slider-box h-100 row">
             <img

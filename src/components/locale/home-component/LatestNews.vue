@@ -1,5 +1,5 @@
 <template>
-  <div class="latest-news-sec container">
+  <div class="latest-news-sec container ">
     <p class="latest-news-sec--title head-secondary text-center">
       {{ props.secData.title }}
     </p>
@@ -8,18 +8,18 @@
     >
       <div
         style="flex: 0.5; border-radius: 0.8rem; overflow: hidden"
-        class="flex-r w-100 align-items-center justify-content-center bg-info"
+        class="flex-r w-100 align-items-center justify-content-center "
       >
         <img
           loading="lazy"
-          :src="props.secData?.items?.data.slice(-1)[0]?.image?.media"
+          :src="props.secData?.items?.data?.slice(-1)[0]?.image?.media"
           style="
             width: 100%;
             height: auto;
             object-fit: cover;
             object-position: center;
           "
-          :alt="props.secData?.items?.data.slice(-1)[0]?.image?.alt"
+          :alt="props.secData?.items?.data?.slice(-1)[0]?.image?.alt"
         />
       </div>
       <div
@@ -29,17 +29,17 @@
         <p class="date">
           {{
             moment(
-              new Date(props.secData?.items?.data.slice(-1)[0]?.created_at)
+              new Date(props.secData?.items?.data?.slice(-1)[0]?.created_at)
             ).format("LL")
           }}
         </p>
         <p class="latest-news-text--title">
-          {{ props.secData?.items?.data.slice(-1)[0]?.title }}
+          {{ props.secData?.items?.data?.slice(-1)[0]?.title }}
         </p>
         <p class="latest-news-text--parag">
              <div
             class="html-content text-editor"
-            v-html="props.secData?.items?.data.slice(-1)[0]?.desc?.slice(0,500)"
+            v-html="props.secData?.items?.data?.slice(-1)[0]?.desc?.slice(0,500)"
           ></div>
          </p>
         <a href="#" class="latest-news--link">{{ $t("button.know-more") }}</a>
