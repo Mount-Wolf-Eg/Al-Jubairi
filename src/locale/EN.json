@@ -13,7 +13,9 @@
     "faq": "Questions",
     "summary": "Summary",
     "get-Contact": "Get in Touch",
-    "contact": "Contact"
+    "contact": "Contact",
+    "blog-name": "Blog Name",
+    "lawyer-name": "Lawyer's name"
   },
   "button": {
     "submit": "Submit",
@@ -22,6 +24,14 @@
     "know-more": "Know More",
     "show-all": "Show All News",
     "contact-team": "Contact Our Team"
+  },
+  "modal": {
+    "call-now": "Call Now",
+    "welcome": "Welcome to our site!",
+    "modal-text": "If you have any questions about our services, please do not hesitate to contact us. We are here to serve you!",
+    "start-now": "Start the conversation now",
+    "start-hint": "We usually respond within a few minutes.",
+    "send-msg": "Send us a message..."
   },
   "title": {
     "numbers": "What do our numbers say about our success?"

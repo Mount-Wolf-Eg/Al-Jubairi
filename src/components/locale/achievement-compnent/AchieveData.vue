@@ -18,9 +18,9 @@
               class="d-flex flex-column flex-md-row align-items-center gap-3 gap-md-3 px-3 px-md-3 justify-content-start"
             >
               <img
-                :src="item.image.media"
+                :src="item.image?.media"
                 class="achieve-card--img"
-                :Lalt="item.image.alt"
+                :Lalt="item.image?.alt"
               />
               <div>
                 <p class="achieve-card--title head-primary">{{ item.title }}</p>
@@ -51,7 +51,7 @@ const { singleItem } = storeToRefs(pageStore);
 const data = ref("");
 
 const crump = ref([
-  { name: "الأنجازات", rout: "/achievement" },
+  { name: "menu.achievements", rout: "/achievement" },
   { name: data.value, rout: "/about" },
 ]);
 
@@ -59,7 +59,7 @@ const isLoading = ref(true);
 
 watch(data, (newData) => {
   crump.value = [
-    { name: "الأنجازات", rout: "/achievement" },
+    { name: "menu.achievements", rout: "/achievement" },
     { name: newData, rout: "/about" },
   ];
 });
@@ -69,7 +69,6 @@ onMounted(async () => {
   await usePageStore().getItemData(route.params.id);
   if (singleItem.value.length == 0) router.push({ name: "Achievement" });
   data.value = singleItem.value.title;
-  console.log(singleItem.value);
   isLoading.value = false;
 });
 

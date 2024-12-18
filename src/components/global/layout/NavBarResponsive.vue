@@ -195,15 +195,27 @@
           <li>
             <router-link class="nav-link" to="/">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                الصفحة الرئيسية
+                {{ $t("menu.home") }}
               </span>
             </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to="/about">عن الجبيرى</router-link>
+            <router-link class="nav-link" to="/about">
+              <span data-bs-dismiss="offcanvas" aria-label="Close"
+                >{{ $t("menu.about-jubairi") }}
+              </span></router-link
+            >
           </li>
 
           <li>
+            <router-link class="nav-link" to="/services">
+              <span data-bs-dismiss="offcanvas" aria-label="Close">
+                {{ $t("menu.services") }}
+              </span>
+            </router-link>
+          </li>
+
+          <!-- <li>
             <ul class="p-0">
               <button
                 type="button"
@@ -249,50 +261,49 @@
                     </span>
                   </router-link>
                 </li>
-                <!-- <li class="nav-sub-item pb-4">two</li> -->
-              </ul>
+               </ul>
             </ul>
-          </li>
+          </li> -->
 
           <li>
             <router-link class="nav-link" to="/our-team">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                فريق العمل
+                {{ $t("menu.team") }}
               </span>
             </router-link>
           </li>
           <li>
             <router-link class="nav-link" to="/achievement">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                الانجازات
+                {{ $t("menu.achievements") }}
               </span>
             </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to="">
+            <router-link class="nav-link" to="/community">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                المجتمع
+                {{ $t("menu.community") }}
               </span>
             </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to="">
+            <router-link class="nav-link" to="/employment">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                التوظيف
+                {{ $t("menu.employment") }}
               </span>
             </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to="">
+            <router-link class="nav-link" to="/blogs">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                المدونه
+                {{ $t("menu.blog") }}
               </span>
             </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to="">
+            <router-link class="nav-link" to="/contact">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                تواصل معنا
+                {{ $t("menu.get-Contact") }}
               </span>
             </router-link>
           </li>

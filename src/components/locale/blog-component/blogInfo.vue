@@ -7,7 +7,7 @@
         <div class="col-12">
           <img
             loading="lazy"
-            :src="singleItem.image.media"
+            :src="singleItem.image?.media"
             style="
               width: 100%;
               height: auto;
@@ -15,7 +15,7 @@
               object-position: center;
               max-width: 30rem;
             "
-            :alt="singleItem.image.alt"
+            :alt="singleItem.image?.alt"
           />
         </div>
         <div class="col-12">
@@ -49,14 +49,14 @@
             >
               <div class="blog-img">
                 <img
-                  :src="item.image.media"
+                  :src="item.image?.media"
                   style="
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
                     object-position: center;
                   "
-                  :alt="item.image.alt"
+                  :alt="item.image?.alt"
                 />
               </div>
               <div class="blog-text p-4">
@@ -117,7 +117,7 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from "vue";
+import { onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { usePageStore } from "@/stores/pagesStore";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import { storeToRefs } from "pinia";
@@ -128,10 +128,20 @@ const route = useRoute();
 const router = useRouter();
 const { singleItem, blogs } = storeToRefs(usePageStore());
 const isLoading = ref(true);
+const data = ref("");
+
 const crump = ref([
-  { name: "المدونه", rout: "/blogs" },
-  { name: "اسم المدونه", rout: "" },
+  { name: "menu.blog", rout: "/blogs" },
+  { name: "menu.blog-name", rout: "" },
 ]);
+
+watch(data, (newData) => {
+  crump.value = [
+    { name: "menu.blog", rout: "/blogs" },
+    { name: newData, rout: "/about" },
+  ];
+});
+
 onMounted(async () => {
   if (!route.params.id) router.push({ name: "Blogs" });
   await usePageStore().getItemData(route.params.id);
@@ -145,7 +155,7 @@ onMounted(async () => {
   ) {
     await usePageStore().getPageData("blogs");
   }
-  console.log(blogs.value);
+  data.value = singleItem.value.title;
 
   isLoading.value = false;
 });

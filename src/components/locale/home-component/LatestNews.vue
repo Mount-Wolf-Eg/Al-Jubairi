@@ -4,22 +4,22 @@
       {{ props.secData.title }}
     </p>
     <div
-      class="latest-news-box d-flex flex-column flex-md-row justify-content-between align-items-center gap-5 px-5 px-md-0"
+      class="latest-news-box d-flex flex-column flex-md-row justify-content-between align-items-start gap-5 px-5 px-md-0"
     >
       <div
-        style="flex: 1"
-        class="flex-r w-100 align-items-center justify-content-center"
+        style="flex: 0.5; border-radius: 0.8rem; overflow: hidden"
+        class="flex-r w-100 align-items-center justify-content-center bg-info"
       >
         <img
           loading="lazy"
-          :src="props.secData?.items?.data[0]?.image.media"
+          :src="props.secData?.items?.data.slice(-1)[0]?.image?.media"
           style="
             width: 100%;
             height: auto;
             object-fit: cover;
             object-position: center;
           "
-          :alt="props.secData?.items?.data[0]?.image.alt"
+          :alt="props.secData?.items?.data.slice(-1)[0]?.image?.alt"
         />
       </div>
       <div
@@ -28,17 +28,20 @@
       >
         <p class="date">
           {{
-            moment(new Date(props.secData?.items?.data[0]?.created_at)).format(
-              "LL"
-            )
+            moment(
+              new Date(props.secData?.items?.data.slice(-1)[0]?.created_at)
+            ).format("LL")
           }}
         </p>
         <p class="latest-news-text--title">
-          {{ props.secData?.items?.data[0]?.title }}
+          {{ props.secData?.items?.data.slice(-1)[0]?.title }}
         </p>
         <p class="latest-news-text--parag">
-          {{ props.secData?.items?.data[0]?.desc }}
-        </p>
+             <div
+            class="html-content text-editor"
+            v-html="props.secData?.items?.data.slice(-1)[0]?.desc?.slice(0,500)"
+          ></div>
+         </p>
         <a href="#" class="latest-news--link">{{ $t("button.know-more") }}</a>
       </div>
     </div>
@@ -97,6 +100,9 @@ const props = defineProps({
     },
     Required: false,
   },
+});
+onMounted(() => {
+  console.log(props.secData);
 });
 </script>
 

@@ -16,13 +16,13 @@
         alt=""
       />
       <div class="footer-resp--text">
-        <p class="footer-title head-secondary">احجز استشارتك القانونية</p>
+        <p class="footer-title head-secondary">{{ $t("button.Book") }}</p>
         <p class="footer-text body-desc-secondary">
-          حرصًا منا على متابعة المستجدات القانونية، ومنح الاستشارات أو التوصيات
-          أو الخدمات من قبل خبراء قانونيين، نسعد بخدمتكم، في جميع فروعنا، ساعات
-          العمل من الثامنة صباحًا إلى الخامسة مساءً.
+          {{ $t("footer.footer-text") }}
         </p>
-        <button class="btn-round-primary">التواصل مع فريق الجبيري</button>
+        <button class="btn-round-primary">
+          {{ $t("button.contact-team") }}
+        </button>
       </div>
     </div>
     <!-- logo col -->
@@ -54,10 +54,7 @@
         </svg>
       </router-link>
       <p class="resp-items--hint">
-        بلغنا في الجبيري للمحاماة مكانة مرموقة في تقديم الخدمات القانونية،
-        مستندين إلى رؤيتنا التي تجمع بين الالتزام الصارم بالمعايير القانونية
-        والتمسك بالقيم الإنسانية، مما يعكس أسلوبنا في تحقيق العدالة وتلبية
-        احتياجات عملائنا باحترافية وأخلاقية.
+        {{ $t("footer.footer-desc") }}
       </p>
       <ul class="resp-items">
         <li>
@@ -68,7 +65,7 @@
             data-bs-target="#demo3"
           >
             <p style="width: fit-content" class="m-0 p-0 resp-items--title">
-              الشركة
+              {{ $t("footer.company") }}
             </p>
             <svg
               fill="#fff"
@@ -83,28 +80,28 @@
           </button>
           <ul id="demo3" class="collapse" style="list-style: none">
             <li>
-              <router-link to="" class="nav-sub-item mt-4 pb-4"
-                >الصفحة الرئيسية</router-link
+              <router-link to="/" class="nav-sub-item mt-4 pb-4">{{
+                $t("menu.home")
+              }}</router-link>
+            </li>
+            <li>
+              <router-link to="/about" class="nav-sub-item pb-4"
+                >{{ $t("menu.about-jubairi") }}
+              </router-link>
+            </li>
+            <li>
+              <router-link to="/achievement" class="nav-sub-item pb-4">{{
+                $t("menu.achievements")
+              }}</router-link>
+            </li>
+            <li>
+              <router-link to="/our-team" class="nav-sub-item pb-4">
+                {{ $t("menu.team") }}</router-link
               >
             </li>
             <li>
-              <router-link to="" class="nav-sub-item pb-4"
-                >عن الجبيري</router-link
-              >
-            </li>
-            <li>
-              <router-link to="" class="nav-sub-item pb-4"
-                >الإنجازات</router-link
-              >
-            </li>
-            <li>
-              <router-link to="" class="nav-sub-item pb-4"
-                >فريق العمل</router-link
-              >
-            </li>
-            <li>
-              <router-link to="" class="nav-sub-item pb-4"
-                >التوظيف
+              <router-link to="/employment" class="nav-sub-item pb-4"
+                >{{ $t("menu.employment") }}
               </router-link>
             </li>
           </ul>
@@ -119,7 +116,7 @@
             data-bs-target="#demo4"
           >
             <p style="width: fit-content" class="m-0 p-0 resp-items--title">
-              استكشف المزيد
+              {{ $t("footer.more") }}
             </p>
             <svg
               fill="#fff"
@@ -134,30 +131,30 @@
           </button>
           <ul id="demo4" class="collapse" style="list-style: none">
             <li>
-              <router-link to="" class="nav-sub-item mt-4 pb-4"
-                >المجتمع
+              <router-link to="/community" class="nav-sub-item mt-4 pb-4"
+                >{{ $t("menu.community") }}
               </router-link>
             </li>
             <li>
-              <router-link to="" class="nav-sub-item mt-4 pb-4"
-                >المدونة</router-link
-              >
+              <router-link to="/blogs" class="nav-sub-item mt-4 pb-4">{{
+                $t("menu.blog")
+              }}</router-link>
             </li>
             <li>
-              <router-link to="" class="nav-sub-item mt-4 pb-4"
-                >الأسئلة المتكررة
+              <router-link to="/all-questions" class="nav-sub-item mt-4 pb-4">
+                {{ $t("menu.faq") }}
               </router-link>
             </li>
             <li>
-              <router-link to="" class="nav-sub-item mt-4 pb-4"
-                >تواصل معنا</router-link
-              >
+              <router-link to="/contact" class="nav-sub-item mt-4 pb-4"
+                >{{ $t("menu.get-Contact") }}
+              </router-link>
             </li>
-            <li>
+            <!-- <li>
               <router-link to="" class="nav-sub-item mt-4 pb-4"
-                >دليل الموقع</router-link
-              >
-            </li>
+                >{{ $t("menu.summary") }}
+              </router-link>
+            </li> -->
           </ul>
         </li>
       </ul>
@@ -170,7 +167,7 @@
             data-bs-target="#demo5"
           >
             <p style="width: fit-content" class="m-0 p-0 resp-items--title">
-              خدماتنا
+              {{ $t("footer.Services") }}
             </p>
             <svg
               fill="#fff"
@@ -255,7 +252,7 @@
       </ul>
     </div>
     <div class="footer-resp--terms">
-      © 2025 جميع الحقوق محفوظة - بواسطة
+      {{ $t("terms.copyright") }}
       <a href="#" class="link">Mount Wolf</a>
     </div>
   </footer>

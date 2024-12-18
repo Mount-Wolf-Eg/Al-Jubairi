@@ -22,8 +22,8 @@
                   object-fit: contain;
                   object-position: center;
                 "
-                :src="item.image.media"
-                :alt="item.image.alt"
+                :src="item.image?.media"
+                :alt="item.image?.alt"
               />
 
               <p class="achieve-title">
