@@ -4,22 +4,23 @@
       <BreadCrump :crump="crump" :secTitle="''" :secDesc="''"></BreadCrump>
 
       <div class="row mx-0 px-3 px-md-0 gap-5">
-        <div class="col-12">
+        <div class="container p-0">
           <img
             loading="lazy"
             :src="singleItem.image?.media"
             style="
               width: 100%;
               height: auto;
-              object-fit: contain;
-              object-position: center;
-              max-width: 30rem;
+              object-fit: cover;
+              object-position: top;
+              max-height: 60rem !important;
+              border-radius: 0.8rem;
             "
             :alt="singleItem.image?.alt"
           />
         </div>
         <div class="col-12">
-          <p class="employee-name">
+          <p class="employee-name head-secondary">
             {{ singleItem.name }}
           </p>
           <p class="employee-title">
@@ -80,7 +81,9 @@
           class="read-more-btn py-3 py-md-5 px-5 px-md-0"
           @click="$router.push({ name: 'Blogs' })"
         >
-          <p style="color: var(--col-dark) !important">عرض جميع الأخبار</p>
+          <p style="color: var(--col-dark) !important">
+            {{ $t("button.show-all") }}
+          </p>
           <div
             class="read-more-icon"
             style="background-color: var(--col-dark) !important"

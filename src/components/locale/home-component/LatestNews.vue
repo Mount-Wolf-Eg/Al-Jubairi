@@ -42,7 +42,9 @@
             v-html="props.secData?.items?.data?.slice(-1)[0]?.desc?.slice(0,500)"
           ></div>
          </p>
-        <a href="#" class="latest-news--link">{{ $t("button.know-more") }}</a>
+        <button  @click="
+                $router.push({ name: 'BlogDetail', params: { id: props.secData?.items?.data?.slice(-1)[0]?.id } })
+              "  class="latest-news--link">{{ $t("button.know-more") }}</button>
       </div>
     </div>
     <button
