@@ -28,10 +28,23 @@
               }"
               class="nav-link"
               to="/about"
-              >عن الجبيرى</router-link
+              >{{ $t("menu.about-jubairi") }}</router-link
             >
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item">
+            <router-link
+              :style="{
+                color:
+                  route.name === 'home'
+                    ? 'var(--col-white) !important'
+                    : 'var(--col-light-dark) !important',
+              }"
+              class="nav-link"
+              to="/services"
+              >{{ $t("menu.services") }}</router-link
+            >
+          </li>
+          <!-- <li class="nav-item dropdown">
             <a
               :style="{
                 color:
@@ -59,7 +72,7 @@
                 >
               </li>
             </ul>
-          </li>
+          </li> -->
           <li class="nav-item">
             <router-link
               :style="{
@@ -71,7 +84,7 @@
               class="nav-link"
               to="/our-team"
             >
-              فريق العمل
+              {{ $t("menu.team") }}
             </router-link>
           </li>
           <li class="nav-item">
@@ -84,7 +97,7 @@
               }"
               class="nav-link"
               to="/achievement"
-              >الانجازات</router-link
+              >{{ $t("menu.achievements") }}</router-link
             >
           </li>
         </ul>
@@ -234,7 +247,7 @@
               class="nav-link"
               to="/community"
             >
-              المجتمع</router-link
+              {{ $t("menu.community") }}</router-link
             >
           </li>
           <li class="nav-item">
@@ -248,7 +261,7 @@
               class="nav-link"
               to="/employment"
             >
-              التوظيف</router-link
+              {{ $t("menu.employment") }}</router-link
             >
           </li>
           <li class="nav-item">
@@ -262,7 +275,7 @@
               class="nav-link"
               to="/blogs"
             >
-              المدونه</router-link
+              {{ $t("menu.blog") }}</router-link
             >
           </li>
           <li class="nav-item">
@@ -276,8 +289,8 @@
               class="nav-link"
               to="/contact"
             >
-              تواصل معنا</router-link
-            >
+              {{ $t("menu.get-Contact") }}
+            </router-link>
           </li>
           <li class="nav-item dropdown">
             <a

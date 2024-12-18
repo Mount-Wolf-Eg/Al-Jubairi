@@ -2,16 +2,12 @@
   <div class="our-clients container">
     <p class="our-clients--title">
       {{ props.secData.title }}
-      عملاء الشركة
     </p>
     <p
       class="our-clients--text body-desc-secondary"
       style="text-align: center !important"
     >
       {{ props.secData.desc }}
-      حازت الجبيري للمحاماة على ثقة أكبر الشركات الإقليمية، والشركات العائلية،
-      والشركات العالمية والمحلية، إلى جانب المؤسسات المالية الدولية ووكالاتها،
-      والسفارات الأجنبية العالمية.
     </p>
     <div class="clients">
       <swiper
