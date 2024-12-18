@@ -13,7 +13,7 @@
         </p>
         <div class="social-links d-flex flex-wrap align-items-center gap-5">
           <a
-            v-for="setting in settings.filter(
+            v-for="setting in settings?.setting?.filter(
               (s) => !['header_logo', 'footer_logo', 'about'].includes(s.key)
             )"
             :key="setting.id"
@@ -23,8 +23,14 @@
             <img :src="getIcon(setting.key)" alt="Social Icon" />
           </a>
         </div>
-        <h3 v-if="branches.length > 0" class="mt-5 mb-5 fw-bold">فروعنا:</h3>
-        <div v-for="branch in branches" :key="branch.id" class="branch-info">
+        <h3 v-if="settings?.branches.length > 0" class="mt-5 mb-5 fw-bold">
+          فروعنا:
+        </h3>
+        <div
+          v-for="branch in settings?.branches"
+          :key="branch.id"
+          class="branch-info"
+        >
           <h3 class="fw-bold mb-4">{{ branch.title }}</h3>
           <p class="d-flex gap-2 mb-3">
             <img src="/src/assets/icons/location.svg" />
@@ -71,7 +77,8 @@ const crump = ref([{ name: "تواصل معنا", rout: "/contact" }]);
 const pageStore = usePageStore();
 const settingsStore = useSettingsStore();
 const { contact_us } = storeToRefs(pageStore);
-const { settings, branches } = storeToRefs(settingsStore);
+const { settings } = storeToRefs(settingsStore);
+
 const isLoading = ref(true);
 
 onMounted(async () => {
@@ -83,7 +90,8 @@ onMounted(async () => {
     await pageStore.getPageData("contact_us");
   }
 
-  await settingsStore.getSettingsData(); // Fetch settings data
+  await settingsStore.getSettings(); // Fetch settings data
+
   isLoading.value = false;
 });
 
