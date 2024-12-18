@@ -13,11 +13,17 @@
       type="file"
       :id="`file-upload-${props.for}`"
       @change="handleFileChange"
-      :disabled="disable"
+      :disabled="disable || loading"
       accept=".pdf,.docx,image/*"
     />
+    <!-- Show error -->
     <span v-if="error" class="text-danger">{{ error }}</span>
-    <span>
+    <!-- Upload Spinner -->
+    <div v-if="loading" class="spinner-container">
+      <div class="spinner"></div>
+    </div>
+    <!-- File Upload Icon -->
+    <span v-else>
       <svg
         style="width: 2rem; height: 2rem"
         viewBox="0 0 30 30"
@@ -34,6 +40,8 @@
       </svg>
     </span>
   </div>
+
+  <!-- Uploaded File Preview -->
   <div
     v-if="userImg || fileName"
     style="position: relative; width: fit-content; margin: 1rem 0"
@@ -77,6 +85,7 @@ import { useFileUploadStore } from "@/stores/fileUploadStore";
 const userImg = ref("");
 const fileName = ref("");
 const file = ref(null);
+const loading = ref(false); // Spinner state
 const emits = defineEmits(["update:modelValue"]);
 const props = defineProps({
   modelValue: {
@@ -105,6 +114,7 @@ const props = defineProps({
   },
 });
 const fileUploadStore = useFileUploadStore();
+
 const handleFileChange = async (event) => {
   const uploadedFile = event.target.files[0];
   if (!uploadedFile) {
@@ -118,11 +128,13 @@ const handleFileChange = async (event) => {
     return;
   }
 
+  loading.value = true; // Show spinner
   const formData = new FormData();
   formData.append("file", uploadedFile);
   formData.append("attachment_type", "file");
   formData.append("model", "contacts");
   file.value = uploadedFile;
+
   try {
     const response = await fileUploadStore.uploadFile(formData);
     userImg.value = uploadedFile.type.includes("image")
@@ -134,6 +146,8 @@ const handleFileChange = async (event) => {
     emits("update:modelValue", response?.data);
   } catch (error) {
     console.error("Error uploading file:", error);
+  } finally {
+    loading.value = false; // Hide spinner
   }
 };
 
@@ -150,6 +164,28 @@ const resetFile = () => {
 </script>
 
 <style lang="scss" scoped>
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+
+  .spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid rgba(4, 119, 190, 0.2);
+    border-top-color: #0477be;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .upload-field {
   margin: 1rem 0 0;
   position: relative;
@@ -170,13 +206,6 @@ const resetFile = () => {
     width: 65% !important;
     cursor: pointer;
     padding: 1rem 0;
-  }
-
-  svg {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
   }
 }
 
