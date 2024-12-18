@@ -18,6 +18,7 @@
             {{ item.desc }}
           </p>
           <button
+            v-if="item.has_items"
             class="read-more-btn"
             @click="
               $router.push({ name: 'serviceData', params: { id: item.id } })

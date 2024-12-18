@@ -25,7 +25,13 @@
           <p class="parralax-parag body-desc-secondary">
             {{ item.desc }}
           </p>
-          <button class="read-more-btn">
+          <button
+            v-if="item.has_items"
+            class="read-more-btn"
+            @click="
+              $router.push({ name: 'serviceData', params: { id: item.id } })
+            "
+          >
             <p>{{ $t("button.know-more") }}</p>
             <div class="read-more-icon">
               <svg
@@ -72,6 +78,7 @@ const props = defineProps({
     Required: false,
   },
 });
+console.log(props.secData);
 </script>
 
 <style lang="scss" scoped></style>
