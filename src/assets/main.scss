@@ -769,36 +769,36 @@ button {
     padding-bottom: 3rem;
     color: var(--col-dark);
   }
-  .accordion {
-    .accordion-item {
-      border-bottom: 1px solid #59595933 !important;
+}
+.accordion {
+  .accordion-item {
+    border-bottom: 1px solid #59595933 !important;
+    background-color: transparent;
+  }
+  .accordion-header {
+    border-bottom: 1px solid #59595933;
+    &:active {
+      background-color: transparent !important;
+    }
+    button {
+      border: none !important;
       background-color: transparent;
-    }
-    .accordion-header {
-      border-bottom: 1px solid #59595933;
-      &:active {
-        background-color: transparent !important;
-      }
-      button {
-        border: none !important;
-        background-color: transparent;
-        font-size: var(--fs-18);
-        line-height: var(--line-30);
-        color: var(--col-dark);
-        font-weight: var(--fw-400);
-        &:focus {
-          outline: none;
-          box-shadow: none;
-        }
-      }
-    }
-    .accordion-body {
       font-size: var(--fs-18);
       line-height: var(--line-30);
-      font-weight: var(--fw-300);
-      text-align: justify;
-      color: var(--col-gray);
+      color: var(--col-dark);
+      font-weight: var(--fw-400);
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
     }
+  }
+  .accordion-body {
+    font-size: var(--fs-18);
+    line-height: var(--line-30);
+    font-weight: var(--fw-300);
+    text-align: justify;
+    color: var(--col-gray);
   }
 }
 .accordion-button:not(.collapsed) {
