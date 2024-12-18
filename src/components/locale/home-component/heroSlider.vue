@@ -1,66 +1,71 @@
 <template>
-  <div class="hero-section">
-    <swiper
-      effect="fade"
-      :autoplay="{
-        delay: 500,
-        disableOnInteraction: false,
-      }"
-      class="swiper h-100"
-      :modules="modules"
-      :pagination="{
-        el: '.swiper-pagination',
-        dynamicBullets: true,
-        clickable: true,
-      }"
-      :slides-per-view="1"
-      :Autoplay="{
-        delay: 500,
-        disableOnInteraction: false,
-        waitForTransition: true,
-      }"
-      :space-between="10"
-      :navigation="{
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }"
-      :preload-images="false"
-      :Lazy="true"
-      :centered-slides="true"
-    >
-      <swiper-slide
-        v-for="(item, i) in props.secData.items.data"
-        :key="i"
-        class="slide bg-danger h-100"
+  <main>
+    <section class="hero-section">
+      <swiper
+        effect="fade"
+        :autoplay="{
+          delay: 2000,
+          disableOnInteraction: false,
+          waitForTransition: false,
+        }"
+        class="swiper h-100"
+        :modules="modules"
+        :pagination="{
+          el: '.swiper-pagination',
+          dynamicBullets: true,
+          clickable: true,
+        }"
+        :slides-per-view="1"
+        :Autoplay="{
+          delay: 2000,
+          disableOnInteraction: false,
+          waitForTransition: false,
+        }"
+        :space-between="10"
+        :navigation="{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }"
+        :preload-images="false"
+        :Lazy="true"
+        :centered-slides="true"
       >
-        <div class="slider-box h-100 row">
-          <img
-            loading="lazy"
-            :src="item.image.media"
-            style="
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              object-position: center;
-              filter: brightness(0.7);
-            "
-            :alt="item.image.alt"
-          />
-          <div class="hero-text">
-            <div class="hero-text-box">
-              <p class="hero-title head-primary">
-                {{ item.title }}
-              </p>
-              <p class="hero-desc body-desc-primary">
-                {{ item.desc }}
-              </p>
-              <button class="btn-round-primary">احجز استشارتك القانونية</button>
+        <swiper-slide
+          v-for="(item, i) in props.secData.items.data"
+          :key="i"
+          class="slide bg-danger h-100"
+        >
+          <div class="slider-box h-100 row">
+            <img
+              loading="lazy"
+              :src="item.image?.media"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                filter: brightness(0.7);
+              "
+              :alt="item.image?.alt"
+            />
+            <div class="hero-text">
+              <div class="hero-text-box">
+                <p class="hero-title head-primary">
+                  {{ item.title }}
+                </p>
+                <p class="hero-desc body-desc-primary">
+                  {{ item.desc }}
+                </p>
+                <button class="btn-round-primary">
+                  {{ $t("button.Book") }}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </swiper-slide>
-    </swiper>
-  </div>
+        </swiper-slide>
+      </swiper>
+    </section>
+  </main>
 </template>
 
 <script setup>

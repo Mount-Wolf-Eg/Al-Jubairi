@@ -22,14 +22,14 @@
             >
               <div class="blog-img">
                 <img
-                  :src="item.image.media"
+                  :src="item.image?.media"
                   style="
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
                     object-position: center;
                   "
-                  :alt="item.image.alt"
+                  :alt="item.image?.alt"
                 />
               </div>
               <div class="blog-text p-4">
@@ -51,15 +51,16 @@
       </div>
     </div>
   </main>
-  <div v-else>Loading...</div>
+  <main v-else><SplashScreen /></main>
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
 import moment from "moment";
 
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
+import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
 
-const crump = ref([{ name: "المدونة", rout: "/blogs" }]);
+const crump = ref([{ name: "menu.blog", rout: "/blogs" }]);
 
 // store
 import { usePageStore } from "@/stores/pagesStore";

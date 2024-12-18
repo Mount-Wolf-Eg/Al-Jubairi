@@ -1,7 +1,7 @@
 <template>
   <div class="achievements-sec">
     <p class="achievements-sec--title head-secondary text-center">
-      ماذا تقول أرقامنا عن نجاحنا؟
+      {{ $t("title.numbers") }}
     </p>
     <div class="achievements container mx-auto row">
       <div class="achieve-col col-3 my-auto">
@@ -365,7 +365,9 @@
       class="read-more-btn mx-auto"
       @click="$router.push({ name: 'Achievement' })"
     >
-      <p>اعرف المزيد</p>
+      <p>
+        {{ $t("button.know-more") }}
+      </p>
       <div class="read-more-icon">
         <svg
           class="sv-icon"

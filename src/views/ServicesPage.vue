@@ -10,14 +10,15 @@
       <Support :secData="getSecData('services')" />
     </div>
   </main>
-  <div v-else>Loading...</div>
+  <main v-else><SplashScreen /></main>
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import Support from "@/components/locale/service-component/Support.vue";
 
-const crump = ref([{ name: "خدماتنا", rout: "/services" }]);
+const crump = ref([{ name: "menu.services", rout: "/services" }]);
+import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
 
 // store
 import { usePageStore } from "@/stores/pagesStore";
