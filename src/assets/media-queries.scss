@@ -45,6 +45,12 @@
   body {
     // background-color: rgba(21, 255, 0, 0.349) !important;
   }
+  .legal-expertise {
+    width: 90%;
+    .expertise-text {
+      // text-align: center;
+    }
+  }
   /**************/
   /*   global  */
   /************/
@@ -110,9 +116,9 @@
     }
   }
   .legal-expertise {
-    width: 95%;
+    width: 97%;
     .expertise-text {
-      text-align: center;
+      // text-align: center;
     }
   }
   /**************/
@@ -483,6 +489,12 @@
           }
         }
       }
+    }
+  }
+  .legal-expertise {
+    width: 95%;
+    .expertise-text {
+      text-align: center;
     }
   }
   // achieve card
