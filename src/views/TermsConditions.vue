@@ -11,8 +11,12 @@
         <div class="terms">
           <div
             class="html-content text-editor"
-            v-html="terms?.sections?.data[0].items.data.desc"
+            v-html="
+              terms?.sections?.data[0]?.items?.data?.find((el) => (el.id = 148))
+                ?.desc
+            "
           ></div>
+          <!-- v-html="terms?.sections?.data[0].items.data.desc" -->
         </div>
       </div>
     </div>
@@ -53,7 +57,7 @@ onMounted(async () => {
   ) {
     await pageStore.getPageData("terms");
   }
-  console.log(terms);
+
   isLoading.value = false;
 });
 </script>

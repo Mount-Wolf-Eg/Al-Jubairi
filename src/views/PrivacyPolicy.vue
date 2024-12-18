@@ -7,11 +7,15 @@
     ></BreadCrump>
 
     <div class="inside-page">
-      <div class="container">
+      <div class="container px-5 px-md-0">
         <div class="privacy">
           <div
             class="html-content text-editor"
-            v-html="privacy?.sections?.data[0].items.data.desc"
+            v-html="
+              privacy?.sections?.data[0]?.items?.data?.find(
+                (el) => (el.id = 143)
+              )?.desc
+            "
           ></div>
         </div>
       </div>
