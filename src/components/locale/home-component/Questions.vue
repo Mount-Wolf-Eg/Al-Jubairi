@@ -36,7 +36,7 @@
         class="read-more-btn my-3 my-md-5"
         @click="$router.push({ name: 'Questions' })"
       >
-        <p style="color: var(--col-dark)">اعرف المزيد</p>
+        <p style="color: var(--col-dark)">{{ $t("button.know-more") }}</p>
         <div
           class="read-more-icon"
           style="background-color: var(--col-dark) !important"

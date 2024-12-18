@@ -2,66 +2,47 @@
   <div class="latest-news-sec container">
     <p class="latest-news-sec--title head-secondary text-center">
       {{ props.secData.title }}
-      <!-- أحدث الأخبار والنصائح القانونية -->
     </p>
     <div
-      class="latest-news-box d-flex flex-column flex-md-row justify-content-between align-items-center gap-5 px-5 px-md-0"
+      class="latest-news-box d-flex flex-column flex-md-row justify-content-between align-items-start gap-5 px-5 px-md-0"
     >
       <div
-        style="flex: 1"
-        class="flex-r w-100 align-items-center justify-content-center"
+        style="flex: 0.5; border-radius: 0.8rem; overflow: hidden"
+        class="flex-r w-100 align-items-center justify-content-center bg-info"
       >
         <img
           loading="lazy"
-          :src="props.secData?.items?.data[0]?.image.media"
+          :src="props.secData?.items?.data.slice(-1)[0]?.image?.media"
           style="
             width: 100%;
             height: auto;
             object-fit: cover;
             object-position: center;
           "
-          :alt="props.secData?.items?.data[0]?.image.alt"
+          :alt="props.secData?.items?.data.slice(-1)[0]?.image?.alt"
         />
-        <!-- <img       loading="lazy"
-
-          src="/src/assets/images/sm-images/Whatnew.png"
-          style="
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            object-position: center;
-          "
-          alt=""
-        /> -->
       </div>
       <div
         class="latest-news-text mt-auto flx-c align-items-start justify-content-end"
         style="flex: 1"
       >
         <p class="date">
-          <!-- 2 أبريل 2025 -->
-
           {{
-            moment(new Date(props.secData?.items?.data[0]?.created_at)).format(
-              "LL"
-            )
+            moment(
+              new Date(props.secData?.items?.data.slice(-1)[0]?.created_at)
+            ).format("LL")
           }}
         </p>
         <p class="latest-news-text--title">
-          <!-- كيف تسجل علامتك التجارية في المملكة -->
-          {{ props.secData?.items?.data[0]?.title }}
+          {{ props.secData?.items?.data.slice(-1)[0]?.title }}
         </p>
         <p class="latest-news-text--parag">
-          {{ props.secData?.items?.data[0]?.desc }}
-          <!-- يتبادر إلى الأذهان تساؤلًا مهما بشأن العلامات التجارية وهو ما هي
-          العلامة التجارية؟ وكيفية تسجيلها داخل المملكة العربية السعودية؟ وهل
-          تتمتع بحماية قانونية؟ قبل الإجابة على هذا السؤال، يجب أن نعرف أن الجهة
-          المعنية بتسجيل علامتك التجارية هي الهيئة السعودية للملكية الفكرية
-          والتي نشأت حديثا في عام 1439 هـ، وكان عدد العلامات التجارية المسجلة في
-          العام الماضي 2023 هو (28038) علامة تجارية وفق الموقع الرسمي للهيئة
-          السعودية للملكية الفكرية. -->
-        </p>
-        <a href="#" class="latest-news--link">إقرأ المزيد</a>
+             <div
+            class="html-content text-editor"
+            v-html="props.secData?.items?.data.slice(-1)[0]?.desc?.slice(0,500)"
+          ></div>
+         </p>
+        <a href="#" class="latest-news--link">{{ $t("button.know-more") }}</a>
       </div>
     </div>
     <button
@@ -69,7 +50,9 @@
       class="read-more-btn py-3 py-md-5 px-5 px-md-0"
       @click="$router.push({ name: 'Blogs' })"
     >
-      <p style="color: var(--col-dark) !important">عرض جميع الأخبار</p>
+      <p style="color: var(--col-dark) !important">
+        {{ $t("button.show-all") }}
+      </p>
       <div
         class="read-more-icon"
         style="background-color: var(--col-dark) !important"
@@ -117,6 +100,9 @@ const props = defineProps({
     },
     Required: false,
   },
+});
+onMounted(() => {
+  console.log(props.secData);
 });
 </script>
 

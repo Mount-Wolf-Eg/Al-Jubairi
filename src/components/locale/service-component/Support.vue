@@ -8,9 +8,9 @@
       >
         <img
           loading="lazy"
-          :src="item.image.media"
+          :src="item.image?.media"
           style="width: 100%; object-fit: cover; object-position: center"
-          :alt="item.image.alt"
+          :alt="item.image?.alt"
         />
         <div class="parralax-text">
           <p class="parralax-title head-secondary">{{ item.title }}</p>

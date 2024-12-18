@@ -50,14 +50,14 @@
             >
               <img
                 loading="lazy"
-                :src="slide.image.media"
+                :src="slide.image?.media"
                 style="
                   height: 70%;
                   width: auto;
                   object-fit: contain;
                   object-position: center;
                 "
-                :alt="slide.image.alt"
+                :alt="slide.image?.alt"
               />
               <!-- <svg
                 style="

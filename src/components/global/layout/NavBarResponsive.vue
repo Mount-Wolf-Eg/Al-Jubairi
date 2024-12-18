@@ -11,7 +11,27 @@
         class="container flx-r justify-content-between align-items-centerp-2"
       >
         <div>
-          <router-link class="navbar-brand" to="/"
+          <router-link
+            v-if="
+              settings?.setting.find((el) => el.key == 'header_logo'?.value)
+            "
+            class="navbar-brand"
+            to="/"
+          >
+            <img
+              :src="
+                settings?.setting.find((el) => el.key == 'header_logo'?.value)
+              "
+              style="
+                width: 13.7rem;
+                height: 3.2rem;
+                object-fit: contain;
+                object-position: center;
+              "
+              alt="brand logo"
+            />
+          </router-link>
+          <router-link v-else class="navbar-brand" to="/"
             ><svg
               style="width: 13.7rem; height: 3.2rem"
               viewBox="0 0 241 56"
@@ -195,15 +215,27 @@
           <li>
             <router-link class="nav-link" to="/">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                الصفحة الرئيسية
+                {{ $t("menu.home") }}
               </span>
             </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to="/about">عن الجبيرى</router-link>
+            <router-link class="nav-link" to="/about">
+              <span data-bs-dismiss="offcanvas" aria-label="Close"
+                >{{ $t("menu.about-jubairi") }}
+              </span></router-link
+            >
           </li>
 
           <li>
+            <router-link class="nav-link" to="/services">
+              <span data-bs-dismiss="offcanvas" aria-label="Close">
+                {{ $t("menu.services") }}
+              </span>
+            </router-link>
+          </li>
+
+          <!-- <li>
             <ul class="p-0">
               <button
                 type="button"
@@ -249,50 +281,49 @@
                     </span>
                   </router-link>
                 </li>
-                <!-- <li class="nav-sub-item pb-4">two</li> -->
-              </ul>
+               </ul>
             </ul>
-          </li>
+          </li> -->
 
           <li>
             <router-link class="nav-link" to="/our-team">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                فريق العمل
+                {{ $t("menu.team") }}
               </span>
             </router-link>
           </li>
           <li>
             <router-link class="nav-link" to="/achievement">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                الانجازات
+                {{ $t("menu.achievements") }}
               </span>
             </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to="">
+            <router-link class="nav-link" to="/community">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                المجتمع
+                {{ $t("menu.community") }}
               </span>
             </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to="">
+            <router-link class="nav-link" to="/employment">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                التوظيف
+                {{ $t("menu.employment") }}
               </span>
             </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to="">
+            <router-link class="nav-link" to="/blogs">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                المدونه
+                {{ $t("menu.blog") }}
               </span>
             </router-link>
           </li>
           <li>
-            <router-link class="nav-link" to="">
+            <router-link class="nav-link" to="/contact">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
-                تواصل معنا
+                {{ $t("menu.get-Contact") }}
               </span>
             </router-link>
           </li>
@@ -383,6 +414,9 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import { useSettingsStore } from "@/stores/settingStore";
+import { storeToRefs } from "pinia";
+const { settings } = storeToRefs(useSettingsStore());
 const route = useRoute();
 const lang = ref("AR");
 

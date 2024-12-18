@@ -40,13 +40,14 @@
       </div>
     </div>
   </main>
-  <div v-else>Loading...</div>
+  <main v-else><SplashScreen /></main>
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
+import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
 
-const crump = ref([{ name: "فريق العمل", rout: "/our-team" }]);
+const crump = ref([{ name: "menu.team", rout: "/our-team" }]);
 
 // store
 import { usePageStore } from "@/stores/pagesStore";
