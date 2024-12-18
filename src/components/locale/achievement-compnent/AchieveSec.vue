@@ -22,8 +22,8 @@
                   object-fit: contain;
                   object-position: center;
                 "
-                :src="item.image.media"
-                :alt="item.image.alt"
+                :src="item.image?.media"
+                :alt="item.image?.alt"
               />
 
               <p class="achieve-title">
@@ -88,7 +88,6 @@ const props = defineProps({
     Required: false,
   },
 });
-console.log(props.secData);
 </script>
 
 <style lang="scss" scoped></style>

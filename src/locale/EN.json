@@ -3,11 +3,50 @@
   "menu": {
     "home": "Home",
     "about": "About Us",
-    "contact": "Contact"
+    "about-jubairi": "About Jubairi",
+    "services": "Services",
+    "team": "Team",
+    "achievements": "Achievements",
+    "community": "Community",
+    "employment": "Employment",
+    "blog": "Blog",
+    "faq": "Questions",
+    "summary": "Summary",
+    "get-Contact": "Get in Touch",
+    "contact": "Contact",
+    "blog-name": "Blog Name",
+    "lawyer-name": "Lawyer's name"
   },
   "button": {
     "submit": "Submit",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "Book": "Book your legal consultations",
+    "know-more": "Know More",
+    "show-all": "Show All News",
+    "contact-team": "Contact Our Team"
+  },
+  "modal": {
+    "call-now": "Call Now",
+    "welcome": "Welcome to our site!",
+    "modal-text": "If you have any questions about our services, please do not hesitate to contact us. We are here to serve you!",
+    "start-now": "Start the conversation now",
+    "start-hint": "We usually respond within a few minutes.",
+    "send-msg": "Send us a message..."
+  },
+  "title": {
+    "numbers": "What do our numbers say about our success?"
+  },
+  "footer": {
+    "footer-text": "We are committed to continuing to develop and improve our services, and to provide legal advice to our clients. We would be delighted to serve you and your business needs.",
+    "footer-desc": "At Al-Jubeiri Law Firm, we have achieved a prestigious position in providing legal services, based on our vision that combines strict adherence to legal standards and adherence to human values, which reflects our approach to achieving justice and meeting the needs of our clients with professionalism and ethics.",
+    "company": "Company",
+    "more": "Explore more",
+    "Services": "Services"
+  },
+  "terms": {
+    "terms": "privacy policy",
+    "conditions": "terms & conditions",
+    "copyright": "© 2025 All Rights Reserved - By"
   },
   "form": {
     "firstName": "First Name",

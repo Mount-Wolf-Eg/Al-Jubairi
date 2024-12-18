@@ -13,7 +13,7 @@
       <OurClients :secData="getSecData2('clients')" />
     </div>
   </main>
-  <div v-else>Loading...</div>
+  <main v-else><SplashScreen /></main>
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
@@ -22,8 +22,9 @@ import AchieveSec from "@/components/locale/achievement-compnent/AchieveSec.vue"
 import Achievements from "@/components/locale/achievement-compnent/Achievements.vue";
 import SectorsSec from "@/components/locale/achievement-compnent/SectorsSec.vue";
 import OurClients from "@/components/locale/achievement-compnent/OurClients.vue";
+import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
 
-const crump = ref([{ name: "الأنجازات", rout: "/achievement" }]);
+const crump = ref([{ name: "menu.achievements", rout: "/achievement" }]);
 
 // store
 import { usePageStore } from "@/stores/pagesStore";

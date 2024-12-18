@@ -8,9 +8,9 @@
       >
         <img
           loading="lazy"
-          :src="item.image.media"
+          :src="item.image?.media"
           style="width: 100%; object-fit: cover; object-position: center"
-          :alt="item.image.alt"
+          :alt="item.image?.alt"
         />
         <div class="parralax-text">
           <p class="parralax-title head-secondary">{{ item.title }}</p>
@@ -18,6 +18,7 @@
             {{ item.desc }}
           </p>
           <button
+            v-if="item.has_items"
             class="read-more-btn"
             @click="
               $router.push({ name: 'serviceData', params: { id: item.id } })
@@ -69,7 +70,6 @@ const props = defineProps({
     Required: false,
   },
 });
-console.log(props.secData);
 </script>
 
 <style lang="scss" scoped></style>

@@ -13,7 +13,7 @@
       <OurJourney :secData="getSecData('certificates')" />
     </div>
   </main>
-  <div v-else>Loading...</div>
+  <main v-else><SplashScreen /></main>
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
@@ -22,8 +22,9 @@ import AboutUsInfo from "@/components/locale/about-component/AboutUsInfo.vue";
 import Achievements from "@/components/locale/about-component/Achievements.vue";
 import excellence from "@/components/locale/about-component/excellence.vue";
 import OurJourney from "@/components/locale/about-component/OurJourney.vue";
+import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
 
-const crump = ref([{ name: "عن الجبيري", rout: "/about" }]);
+const crump = ref([{ name: "menu.about-jubairi", rout: "/about" }]);
 
 // store
 import { usePageStore } from "@/stores/pagesStore";

@@ -102,7 +102,7 @@ const isLoading = ref(true);
 
 watch(data, (newData) => {
   crump.value = [
-    { name: "الأنجازات", rout: "/achievement" },
+    { name: "menu.achievements", rout: "/achievement" },
     { name: newData, rout: "/about" },
   ];
 });
@@ -111,7 +111,6 @@ onMounted(async () => {
   await usePageStore().getSecData("freq_questions");
   if (singleSec.value.length == 0) router.push({ name: "home" });
   data.value = singleSec.value.title;
-  console.log(singleSec.value);
   isLoading.value = false;
 });
 

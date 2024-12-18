@@ -1,7 +1,7 @@
 /*all*/
 @media (min-width: 84.1em) {
   body {
-    background-color: rgba(255, 60, 0, 0.103) !important;
+    // background-color: rgba(255, 60, 0, 0.103) !important;
   }
 }
 /**************************/
@@ -9,7 +9,7 @@
 /**************************/
 @media (max-width: 84em) {
   body {
-    background-color: rgba(255, 255, 0, 0.336) !important;
+    // background-color: rgba(255, 255, 0, 0.336) !important;
   }
   /**************/
   /*   global  */
@@ -22,7 +22,9 @@
   }
   .about-us-sec {
     .about-us--text {
-      width: 50%;
+      width: 48rem !important;
+      overflow: hidden !important ;
+      right: 5%;
     }
     .about-us--content {
       overflow: auto;
@@ -41,7 +43,13 @@
     font-size: 56.25%;
   }
   body {
-    background-color: rgba(21, 255, 0, 0.349) !important;
+    // background-color: rgba(21, 255, 0, 0.349) !important;
+  }
+  .legal-expertise {
+    width: 90%;
+    .expertise-text {
+      // text-align: center;
+    }
   }
   /**************/
   /*   global  */
@@ -55,7 +63,8 @@
   // about us
   .about-us-sec {
     .about-us--text {
-      width: 60%;
+      width: 48rem !important;
+      right: 5%;
     }
     .about-us--content {
       padding: 0 4rem;
@@ -73,7 +82,7 @@
     font-size: 56.25%;
   }
   body {
-    background-color: rgba(47, 0, 255, 0.384) !important;
+    // background-color: rgba(47, 0, 255, 0.384) !important;
   }
   /************************/
   /*       globacl       */
@@ -100,6 +109,7 @@
           align-items: center;
           gap: 1rem;
           .hero-desc {
+            text-align: center;
             width: 70%;
           }
         }
@@ -107,9 +117,9 @@
     }
   }
   .legal-expertise {
-    width: 95%;
+    width: 97%;
     .expertise-text {
-      text-align: center;
+      // text-align: center;
     }
   }
   /**************/
@@ -126,8 +136,11 @@
   // about us
   .about-us-sec {
     .about-us--text {
-      width: 80%;
-      right: 10%;
+      .about-us--text {
+        width: 40rem !important;
+        overflow: hidden !important ;
+        right: 5%;
+      }
     }
     .about-us--content {
       padding: 0 4rem;
@@ -147,7 +160,7 @@
 
 @media (max-width: 48em) {
   body {
-    background-color: rgba(255, 0, 0, 0.473) !important;
+    // background-color: rgba(255, 0, 0, 0.473) !important;
   }
   // html {
   //   /* 8px / 16px = 0.5 = 50% */
@@ -479,6 +492,12 @@
       }
     }
   }
+  .legal-expertise {
+    width: 95%;
+    .expertise-text {
+      text-align: center;
+    }
+  }
   // achieve card
   .achieve-card {
     .achieve-card--title {
@@ -526,7 +545,7 @@
     font-size: 62.5%;
   }
   body {
-    background-color: rgba(0, 247, 255, 0.39) !important;
+    // background-color: rgba(0, 247, 255, 0.39) !important;
   }
   .read-more-btn {
     .read-more-icon {

@@ -30,19 +30,14 @@
       <div class="about-us--content">
         <p class="about-us-title head-secondary">
           {{ props.secData.items.data[0].title }}
-          <!-- تعرف أكثر على الجبيري للمحاماة -->
         </p>
         <p class="about-us-parag body-desc-secondary">
           {{ props.secData.items.data[0].desc }}
-          <!-- الجبيري للمحاماة تعد من أبرز الشركات القانونية في المملكة منذ تأسسنا
-          في عام 2010م، اكتسبنا سمعة وثقة كبيرة بفضل الخبرة الراسخة والاحترافية
-          في تقديم الاستشارات والخدمات القانونية على الصعيد المحلي والدولي.
-          استندنا إلى نخبة من أبرز المحامين في المملكة، بخبرة مهنية واسعة
-          وشهادات علمية رفيعة في مختلف التخصصات القانونية. مما ساهم في تميزنا في
-          تقديم خدمات قانونية وفقاً للمعايير الدولية والأساليب الحديثة. -->
         </p>
         <button class="read-more-btn" @click="$router.push({ name: 'About' })">
-          <p>اعرف المزيد</p>
+          <p>
+            {{ $t("button.know-more") }}
+          </p>
           <div class="read-more-icon">
             <svg
               width="24"
@@ -82,20 +77,13 @@
     />
     <div class="about-us--content d-block d-md-none">
       <p class="about-us-title head-secondary">
-        <!-- تعرف أكثر على الجبيري للمحاماة -->
         {{ props.secData.items.data[0].title }}
       </p>
       <p class="about-us-parag body-desc-secondary">
-        <!--    الجبيري للمحاماة تعد من أبرز الشركات القانونية في المملكة منذ تأسسنا في
-        عام 2010م، اكتسبنا سمعة وثقة كبيرة بفضل الخبرة الراسخة والاحترافية في
-        تقديم الاستشارات والخدمات القانونية على الصعيد المحلي والدولي. استندنا
-        إلى نخبة من أبرز المحامين في المملكة، بخبرة مهنية واسعة وشهادات علمية
-        رفيعة في مختلف التخصصات القانونية. مما ساهم في تميزنا في تقديم خدمات
-        قانونية وفقاً للمعايير الدولية والأساليب الحديثة. -->
         {{ props.secData.items.data[0].desc }}
       </p>
       <button class="read-more-btn">
-        <p>اعرف المزيد</p>
+        <p>{{ $t("button.know-more") }}</p>
         <div class="read-more-icon">
           <svg
             width="24"

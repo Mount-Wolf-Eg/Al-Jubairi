@@ -7,7 +7,7 @@
         <div class="col-6 col-md-3 mx-auto mx-md-0">
           <img
             loading="lazy"
-            :src="singleItem.image.media"
+            :src="singleItem.image?.media"
             style="
               width: 100%;
               height: auto;
@@ -16,14 +16,14 @@
               max-width: 30rem;
               filter: saturate(0);
             "
-            :alt="singleItem.image.alt"
+            :alt="singleItem.image?.alt"
           />
         </div>
         <div class="col-12 col-md-3">
-          <p class="employee-name">
+          <p class="employee-name head-secondary m-0">
             {{ singleItem.name }}
           </p>
-          <p class="employee-title">
+          <p class="employee-title m-0">
             {{ singleItem.title }}
           </p>
           <div class="html-content text-editor" v-html="singleItem.desc"></div>
@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from "vue";
+import { onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { usePageStore } from "@/stores/pagesStore";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import { storeToRefs } from "pinia";
@@ -44,14 +44,25 @@ const route = useRoute();
 const router = useRouter();
 const { singleItem } = storeToRefs(usePageStore());
 const isLoading = ref(true);
+const data = ref("");
+
 const crump = ref([
-  { name: "فريق العمل", rout: "/our-team" },
-  { name: "اسم المحامي", rout: "" },
+  { name: "menu.team", rout: "/our-team" },
+  { name: "menu.lawyer-name", rout: "" },
 ]);
+
+watch(data, (newData) => {
+  crump.value = [
+    { name: "menu.team", rout: "/our-team" },
+    { name: newData, rout: "" },
+  ];
+});
+
 onMounted(async () => {
   if (!route.params.id) router.push({ name: "our-team" });
   await usePageStore().getItemData(route.params.id);
   if (singleItem.value.length == 0) router.push({ name: "our-team" });
+  data.value = singleItem.value.title;
   isLoading.value = false;
 });
 onBeforeUnmount(() => {

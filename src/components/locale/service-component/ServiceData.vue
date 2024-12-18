@@ -18,9 +18,9 @@
               class="d-flex flex-column align-items-center gap-3 justify-content-between h-100 p-4"
             >
               <img
-                :src="item.image.media"
+                :src="item.image?.media"
                 class="service-card--img"
-                :Lalt="item.image.alt"
+                :Lalt="item.image?.alt"
               />
               <div class="text-center">
                 <p class="service-card--title">{{ item.title }}</p>
@@ -50,7 +50,7 @@ const { singleItem } = storeToRefs(pageStore);
 const data = ref("");
 
 const crump = ref([
-  { name: "الأنجازات", rout: "/achievement" },
+  { name: "menu.achievements", rout: "/achievement" },
   { name: data.value, rout: "/about" },
 ]);
 
@@ -58,7 +58,7 @@ const isLoading = ref(true);
 
 watch(data, (newData) => {
   crump.value = [
-    { name: "الأنجازات", rout: "/achievement" },
+    { name: "menu.achievements", rout: "/achievement" },
     { name: newData, rout: "/about" },
   ];
 });
@@ -68,7 +68,6 @@ onMounted(async () => {
   await usePageStore().getItemData(route.params.id);
   if (singleItem.value.length == 0) router.push({ name: "Achievement" });
   data.value = singleItem.value.title;
-  console.log(singleItem.value);
   isLoading.value = false;
 });
 

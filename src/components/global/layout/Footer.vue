@@ -5,20 +5,31 @@
       class="footer-img"
       :style="{ display: route.name === 'home' ? 'block' : 'none' }"
     >
-      <img
-        loading="lazy"
-        src="/src/assets/images/sm-images/footer.jpg"
-        style="width: 100%; height: auto; min-height: 300px"
-        alt=""
-      />
+      <span>
+        <img
+          v-if="settings?.setting.find((el) => el.key == 'footer_logo'?.value)"
+          loading="lazy"
+          :src="settings?.setting.find((el) => el.key == 'footer_logo'?.value)"
+          style="width: 100%; height: auto; min-height: 300px"
+          alt="brand logo"
+        />
+        <img
+          v-else
+          loading="lazy"
+          src="/src/assets/images/sm-images/footer.jpg"
+          style="width: 100%; height: auto; min-height: 300px"
+          alt="brand logo"
+        />
+      </span>
+
       <div class="footer--text">
-        <p class="footer-title head-secondary">احجز استشارتك القانونية</p>
+        <p class="footer-title head-secondary">{{ $t("button.Book") }}</p>
         <p class="footer-text body-desc-secondary">
-          حرصًا منا على متابعة المستجدات القانونية، ومنح الاستشارات أو التوصيات
-          أو الخدمات من قبل خبراء قانونيين، نسعد بخدمتكم، في جميع فروعنا، ساعات
-          العمل من الثامنة صباحًا إلى الخامسة مساءً.
+          {{ $t("footer.footer-text") }}
         </p>
-        <button class="btn-round-primary">التواصل مع فريق الجبيري</button>
+        <button class="btn-round-primary">
+          {{ $t("button.contact-team") }}
+        </button>
       </div>
     </div>
     <div class="container">
@@ -52,10 +63,7 @@
             </svg>
           </router-link>
           <p class="logo-col--hint">
-            بلغنا في الجبيري للمحاماة مكانة مرموقة في تقديم الخدمات القانونية،
-            مستندين إلى رؤيتنا التي تجمع بين الالتزام الصارم بالمعايير القانونية
-            والتمسك بالقيم الإنسانية، مما يعكس أسلوبنا في تحقيق العدالة وتلبية
-            احتياجات عملائنا باحترافية وأخلاقية.
+            {{ $t("footer.footer-desc") }}
           </p>
 
           <ul class="social-icons">
@@ -112,56 +120,72 @@
 
         <!-- company col -->
         <div class="nav-col">
-          <p class="footer-heading">الشركة</p>
+          <p class="footer-heading">{{ $t("footer.company") }}</p>
 
           <ul class="footer-nav">
             <li>
-              <router-link to="" class="footer-link"
-                >الصفحة الرئيسية</router-link
-              >
+              <router-link to="/" class="footer-link">{{
+                $t("menu.home")
+              }}</router-link>
             </li>
             <li>
-              <router-link to="" class="footer-link">عن الجبيري</router-link>
+              <router-link to="/about" class="footer-link">{{
+                $t("menu.about-jubairi")
+              }}</router-link>
             </li>
             <li>
-              <router-link to="" class="footer-link">الإنجازات</router-link>
+              <router-link to="/achievement" class="footer-link">{{
+                $t("menu.achievements")
+              }}</router-link>
             </li>
             <li>
-              <router-link to="" class="footer-link">فريق العمل</router-link>
+              <router-link to="/our-team" class="footer-link">{{
+                $t("menu.team")
+              }}</router-link>
             </li>
             <li>
-              <router-link to="" class="footer-link">التوظيف </router-link>
+              <router-link to="/employment" class="footer-link"
+                >{{ $t("menu.employment") }}
+              </router-link>
             </li>
           </ul>
         </div>
 
         <!-- support col -->
         <div class="nav-col">
-          <p class="footer-heading">استكشف المزيد</p>
+          <p class="footer-heading">{{ $t("footer.more") }}</p>
 
           <ul class="footer-nav">
             <li>
-              <router-link to="" class="footer-link">المجتمع </router-link>
-            </li>
-            <li>
-              <router-link to="" class="footer-link">المدونة</router-link>
-            </li>
-            <li>
-              <router-link to="" class="footer-link"
-                >الأسئلة المتكررة
+              <router-link to="/community" class="footer-link"
+                >{{ $t("menu.community") }}
               </router-link>
             </li>
             <li>
-              <router-link to="" class="footer-link">تواصل معنا</router-link>
+              <router-link to="/blogs" class="footer-link">{{
+                $t("menu.blog")
+              }}</router-link>
             </li>
             <li>
-              <router-link to="" class="footer-link">دليل الموقع</router-link>
+              <router-link to="/all-questions" class="footer-link">{{
+                $t("menu.faq")
+              }}</router-link>
             </li>
+            <li>
+              <router-link to="/contact" class="footer-link">{{
+                $t("menu.get-Contact")
+              }}</router-link>
+            </li>
+            <!-- <li>
+              <router-link to="" class="footer-link">{{
+                $t("menu.summary")
+              }}</router-link>
+            </li> -->
           </ul>
         </div>
         <!-- support col -->
         <div class="nav-col">
-          <p class="footer-heading">خدماتنا</p>
+          <p class="footer-heading">{{ $t("footer.Services") }}</p>
 
           <ul class="footer-nav">
             <li>
@@ -184,14 +208,16 @@
       </div>
       <div class="footer--terms grd grd-2-col w-100">
         <div class="terms-item">
-          © 2025 جميع الحقوق محفوظة - بواسطة
+          {{ $t("terms.copyright") }}
           <a href="#" class="link">Mount Wolf</a>
         </div>
         <div class="flx-r gap-5" style="margin-inline-start: auto">
-          <router-link class="terms-item link" to=""
-            >سياسية الخصوصية</router-link
-          >
-          <router-link class="terms-item link" to="">شروط الخدمة</router-link>
+          <router-link class="terms-item link" to="/terms-conditions">{{
+            $t("terms.terms")
+          }}</router-link>
+          <router-link class="terms-item link" to="/privacy-policy">{{
+            $t("terms.conditions")
+          }}</router-link>
         </div>
       </div>
     </div>
@@ -202,6 +228,9 @@
 
 <script setup>
 import { useRoute } from "vue-router";
+import { useSettingsStore } from "@/stores/settingStore";
+import { storeToRefs } from "pinia";
+const { settings } = storeToRefs(useSettingsStore());
 const route = useRoute();
 </script>
 

@@ -1,3 +1,4 @@
+import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import { mainStore } from "./mainStore";
 import axiosInstance from "./axios_instance";
@@ -5,16 +6,17 @@ import axiosInstance from "./axios_instance";
 export const useSettingsStore = defineStore("settingsStore", {
   state: () => ({
     settings: [],
-    branches: [],
+    // branches: [],
   }),
   actions: {
-    async getSettingsData() {
+    async getSettings() {
       let loading = true;
       await axiosInstance
         .get(`${mainStore().apiLink}/website/settings`)
         .then((res) => {
-          this.settings = res.data.data.setting;
-          this.branches = res.data.data.branches;
+          // this.settings = res.data.data.setting;
+          // this.branches = res.data.data.branches;
+          this.settings = res.data.data;
         })
         .catch((err) => {
           let errorMessage = "Something went wrong, please try again";
