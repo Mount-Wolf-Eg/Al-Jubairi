@@ -5,12 +5,23 @@
       class="footer-img"
       :style="{ display: route.name === 'home' ? 'block' : 'none' }"
     >
-      <img
-        loading="lazy"
-        src="/src/assets/images/sm-images/footer.jpg"
-        style="width: 100%; height: auto; min-height: 300px"
-        alt=""
-      />
+      <span>
+        <img
+          v-if="settings?.setting.find((el) => el.key == 'footer_logo'?.value)"
+          loading="lazy"
+          :src="settings?.setting.find((el) => el.key == 'footer_logo'?.value)"
+          style="width: 100%; height: auto; min-height: 300px"
+          alt="brand logo"
+        />
+        <img
+          v-else
+          loading="lazy"
+          src="/src/assets/images/sm-images/footer.jpg"
+          style="width: 100%; height: auto; min-height: 300px"
+          alt="brand logo"
+        />
+      </span>
+
       <div class="footer--text">
         <p class="footer-title head-secondary">{{ $t("button.Book") }}</p>
         <p class="footer-text body-desc-secondary">
@@ -217,6 +228,9 @@
 
 <script setup>
 import { useRoute } from "vue-router";
+import { useSettingsStore } from "@/stores/settingStore";
+import { storeToRefs } from "pinia";
+const { settings } = storeToRefs(useSettingsStore());
 const route = useRoute();
 </script>
 

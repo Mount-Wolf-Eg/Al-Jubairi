@@ -2,7 +2,7 @@
   <main class="socials">
     <div class="social-container" style="direction: ltr !important">
       <ul>
-        <li>
+        <li v-if="showApear('instagram') != 'false'">
           <a v-if="showApear('instagram')" :href="showApear('instagram')">
             <svg
               style="width: 2.4rem; height: 2.6rem"
@@ -25,7 +25,7 @@
             </svg>
           </a>
         </li>
-        <li v-if="showApear('linkedin')">
+        <li v-if="showApear('linkedin') != 'false'">
           <a :href="showApear('linkedin')">
             <svg
               width="24"
@@ -41,8 +41,8 @@
             </svg>
           </a>
         </li>
-        <li>
-          <a v-if="showApear('x')" :href="showApear('x')">
+        <li v-if="showApear('x') != 'false'">
+          <a :href="showApear('x')">
             <svg
               width="24"
               height="25"
@@ -57,8 +57,8 @@
             </svg>
           </a>
         </li>
-        <li>
-          <a v-if="showApear('tiktok')" :href="showApear('tiktok')">
+        <li v-if="showApear('tiktok') != 'false'">
+          <a :href="showApear('tiktok')">
             <svg
               width="24"
               height="25"
@@ -74,8 +74,8 @@
           </a>
         </li>
 
-        <li>
-          <a v-if="showApear('youtube')" :href="showApear('youtube')">
+        <li v-if="showApear('youtube') != 'false'">
+          <a :href="showApear('youtube')">
             <svg
               width="24"
               height="25"
@@ -90,8 +90,9 @@
             </svg>
           </a>
         </li>
-        <li>
-          <a v-if="showApear('whatsapp')" :href="showApear('whatsapp')">
+
+        <li v-if="showApear('whatsapp') != 'false'">
+          <a :href="showApear('whatsapp')">
             <svg
               width="24"
               height="24"
@@ -219,15 +220,11 @@ const { settings } = storeToRefs(useSettingsStore());
 const showApear = (name) => {
   if (settings.value && settings.value.setting) {
     const val = settings.value?.setting.find((el) => el.key == name)?.value;
-    console.log(val);
     return val ? val : "false";
   }
   return {};
 };
 
-onMounted(() => {
-  console.log(settings.value?.setting);
-});
 const showContact = ref(false);
 </script>
 
