@@ -62,6 +62,4 @@ const updateValue = (value) => {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "./EmailInput.scss";
-</style>
+<style lang="scss" scoped src="./EmailInput.scss"></style>

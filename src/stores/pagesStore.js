@@ -1,4 +1,3 @@
-import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import { mainStore } from "./mainStore";
 import axiosInstance from "./axios_instance";

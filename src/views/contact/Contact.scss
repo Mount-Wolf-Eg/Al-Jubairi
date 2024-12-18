@@ -30,3 +30,24 @@ form {
   flex-direction: column;
   gap: 1rem;
 }
+
+.social-links {
+  img {
+    min-width: 12px;
+    min-height: 20px;
+    filter: brightness(0) saturate(100%) invert(34%) sepia(5%) saturate(10%)
+      hue-rotate(338deg) brightness(97%) contrast(92%);
+  }
+}
+.branch-info {
+  margin-bottom: 1.5rem;
+  h3 {
+    color: var(--col-gray-dark);
+  }
+  a {
+    color: var(--col-light-dark) !important;
+  }
+  .address-link {
+    text-decoration: underline;
+  }
+}
