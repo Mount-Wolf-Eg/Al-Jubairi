@@ -7,9 +7,9 @@
     ></BreadCrump>
     <section class="inside-page d-flex justify-content-center">
       <div class="form-container">
-        <h2 class="form-title">تقدم بطلبك</h2>
+        <h2 class="form-title">{{ $t("form.submit-application") }}</h2>
         <p class="form-description">
-          يرجى ملء النموذج أدناه للحصول على فرصة للإنضمام إلى فريقنا القانوني.
+          {{ $t("form.fil-below") }}
         </p>
         <CommuntiyForm formType="employment" />
       </div>
@@ -22,7 +22,7 @@ import { ref, onMounted } from "vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import CommuntiyForm from "@/reusables/forms/CommunityForm/CommuntiyForm.vue";
 
-const crump = ref([{ name: "التوظيف", rout: "/employment" }]);
+const crump = ref([{ name: "menu.employment", rout: "/employment" }]);
 
 // store
 import { usePageStore } from "@/stores/pagesStore";

@@ -8,11 +8,10 @@
     <section class="inside-page d-flex justify-content-center">
       <div class="form-container">
         <h2 class="form-title">
-          دعم المنشأت متناهية الصغر, دعم المؤسسات الخيرية, التدريب التعاوني
+          {{ $t("form.support") }}
         </h2>
         <p class="form-description">
-          يرجى ملء النموذج أدناه للحصول على معلومات حول خدماتنا القانونية أو
-          لطلب استشارة.
+          {{ $t("form.fill") }}
         </p>
         <CommuntiyForm formType="community" />
       </div>
@@ -25,7 +24,7 @@ import { ref, onMounted } from "vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import CommuntiyForm from "@/reusables/forms/CommunityForm/CommuntiyForm.vue";
 
-const crump = ref([{ name: "المجتمع", rout: "/community" }]);
+const crump = ref([{ name: "menu.community", rout: "/community" }]);
 
 // store
 import { usePageStore } from "@/stores/pagesStore";

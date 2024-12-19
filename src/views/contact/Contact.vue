@@ -24,7 +24,7 @@
           </a>
         </div>
         <h3 v-if="settings?.branches.length > 0" class="mt-5 mb-5 fw-bold">
-          فروعنا:
+          {{ $t("form.branches") }}:
         </h3>
         <div
           v-for="branch in settings?.branches"
@@ -73,7 +73,7 @@ import { useSettingsStore } from "@/stores/settingStore";
 import { usePageStore } from "@/stores/pagesStore";
 import { storeToRefs } from "pinia";
 
-const crump = ref([{ name: "تواصل معنا", rout: "/contact" }]);
+const crump = ref([{ name: "menu.get-Contact", rout: "/contact" }]);
 const pageStore = usePageStore();
 const settingsStore = useSettingsStore();
 const { contact_us } = storeToRefs(pageStore);

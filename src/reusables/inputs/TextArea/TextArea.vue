@@ -11,7 +11,7 @@
     ></textarea>
     <div class="d-flex justify-content-between">
       <span v-if="error" class="text-danger">{{ error }}</span>
-      <p>(250/0) حرفً ابحد أقصى</p>
+      <p>(250/0) {{ $t("form.limit") }}</p>
     </div>
   </div>
 </template>
