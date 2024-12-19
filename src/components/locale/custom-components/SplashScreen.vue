@@ -147,11 +147,45 @@
 
 <style lang="scss" scoped>
 .splash-screen {
+  position: fixed; /* Ensures the splash screen stays in the same position even when scrolling */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 9999 !important;
+
   height: 100vh;
   width: 100vw;
-  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.splash-screen svg {
+  animation: fadeInOut 2s ease-in-out infinite;
+  width: 15%;
+  min-width: 15rem;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 </style>

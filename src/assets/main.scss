@@ -324,7 +324,7 @@ html[dir="ltr"] .read-more-icon svg {
 .main-nav {
   width: 100% !important;
   backdrop-filter: brightness(0.9) blur(16px);
-  z-index: 999;
+  z-index: 500;
 
   .nav-link {
     font-weight: var(--fw-400);
@@ -341,7 +341,7 @@ html[dir="ltr"] .read-more-icon svg {
   .resp-nav {
     width: 100% !important;
     backdrop-filter: brightness(0.9) blur(16px);
-    z-index: 999;
+    z-index: 500;
   }
 
   .navbar-items {
@@ -378,7 +378,7 @@ html[dir="ltr"] .read-more-icon svg {
   position: fixed;
   left: 0;
   bottom: 20%;
-  z-index: 999;
+  z-index: 500;
 
   .social-container {
     cursor: pointer;
