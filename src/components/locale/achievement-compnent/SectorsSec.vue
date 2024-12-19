@@ -1,6 +1,6 @@
 <template>
   <div class="sector-sec">
-    <p class="sectors-title">
+    <p class="sectors-title head-secondary">
       {{ props.secData.title }}
     </p>
     <p

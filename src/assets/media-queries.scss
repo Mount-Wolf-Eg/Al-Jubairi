@@ -473,11 +473,12 @@
     .sectors-title {
       font-size: var(--fs-20);
       line-height: var(--line-36);
+      font-weight: var(--fw-700) !important;
     }
     .sectors-text {
-      font-size: var(--fs-12);
+      font-size: var(--fs-14) !important;
       line-height: var(--line-20);
-      width: 100%;
+      width: 95%;
     }
 
     .sectors-box {
