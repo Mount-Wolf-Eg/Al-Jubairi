@@ -18,7 +18,6 @@
             )"
             :key="setting.id"
             :href="setting.value"
-            target="_blank"
           >
             <img :src="getIcon(setting.key)" alt="Social Icon" />
           </a>
@@ -36,7 +35,6 @@
             <img src="/src/assets/icons/location.svg" />
             <a
               :href="`https://www.google.com/maps?q=${branch.lat},${branch.lng}`"
-              target="_blank"
               class="address-link"
             >
               {{ branch.address }}
