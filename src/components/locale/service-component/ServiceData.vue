@@ -17,11 +17,15 @@
             <div
               class="d-flex flex-column align-items-center gap-3 justify-content-between h-100 p-4"
             >
-              <img
-                :src="item.image?.media"
-                class="service-card--img"
-                :Lalt="item.image?.alt"
-              />
+              <div
+                class="w-100 h-75 d-flex align-items-center justify-content-center"
+              >
+                <img
+                  :src="item.image?.media"
+                  class="service-card--img"
+                  :Lalt="item.image?.alt"
+                />
+              </div>
               <div class="text-center">
                 <p class="service-card--title">{{ item.title }}</p>
               </div>
