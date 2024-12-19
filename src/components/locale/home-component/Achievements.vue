@@ -215,8 +215,7 @@
         <div class="d-flex flex-row">
           <div class="achieve">
             <svg
-              class="sv-icon"
-              style="width: 6rem; height: 6rem"
+              class="sv-icon custom"
               viewBox="0 0 50 44"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
