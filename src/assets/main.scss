@@ -1046,7 +1046,7 @@ html[dir="ltr"] .read-more-icon svg {
       font-size: var(--fs-14);
       font-weight: var(--fw-400);
       line-height: var(--line-24);
-      text-align: justified;
+      text-align: justify;
     }
   }
   .achieve-box {
@@ -1083,6 +1083,7 @@ html[dir="ltr"] .read-more-icon svg {
       align-items: center;
       height: 42.2rem;
       min-width: 50rem;
+      max-width: 55rem;
       border-radius: 0.8rem;
       box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
         rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
@@ -1115,9 +1116,9 @@ html[dir="ltr"] .read-more-icon svg {
           }
         }
         .sector-hover-body {
-          font-size: var(--fs-12);
+          font-size: var(--fs-14);
           font-weight: var(--fw-400);
-          line-height: var(--line-36);
+          line-height: var(--line-24);
           color: var(--col-white);
           text-align: justify;
         }

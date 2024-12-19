@@ -133,6 +133,13 @@
     font-size: var(--fs-12);
     line-height: var(--line-20);
   }
+  .sectors-box {
+    .sector-info {
+      max-width: 50% !important;
+      min-width: 42% !important;
+      margin: 0 auto !important;
+    }
+  }
   // about us
   .about-us-sec {
     .about-us--text {
@@ -483,21 +490,21 @@
 
     .sectors-box {
       margin-top: 2rem;
+      padding: 0 1rem !important;
 
       .sector-info {
         margin-bottom: 2rem;
-        min-width: 100%;
-
+        min-width: 90% !important;
+        margin: 0 auto !important;
         .sector-hover-box {
           .sector-box {
             .sector-hover-title {
               font-size: var(--fs-18);
               line-height: var(--line-36);
-              margin: 0 auto;
             }
           }
           .sector-hover-body {
-            font-size: var(--fs-10);
+            font-size: var(--fs-12);
             line-height: var(--line-20);
             text-align: center;
           }

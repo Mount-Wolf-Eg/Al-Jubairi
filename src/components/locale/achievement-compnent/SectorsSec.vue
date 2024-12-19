@@ -10,7 +10,7 @@
       {{ props.secData.desc }}
     </p>
     <div class="sectors-box container">
-      <div class="row col-12 px-0 mx-auto d-flex justify-content-between gap-5">
+      <div class="row col-12 px-0 mx-auto d-flex justify-content-arround gap-5">
         <div
           class="sector-info col-12 col-md p-0 mx-0 my-3"
           style="flex: 1"
