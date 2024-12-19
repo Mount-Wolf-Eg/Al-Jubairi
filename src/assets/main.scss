@@ -1286,7 +1286,7 @@ footer.full-footer {
 
     .footer-heading {
       font-size: var(--fs-14);
-      color: #8b8b8b;
+      color: var(--col-white);
       font-weight: 600;
       margin-bottom: 3rem;
       line-height: var(--line-20);
@@ -1297,14 +1297,14 @@ footer.full-footer {
     .footer-link--add:link,
     .footer-link,
     .footer-link--add:visited {
-      color: var(--col-white);
+      color: #8a8a8a !important;
     }
 
     .footer-link,
     .footer-link--add:hover,
     .footer-link,
     .footer-link--add:active {
-      color: var(--col-white);
+      color: #8a8a8a !important;
     }
 
     .footer-nav {
@@ -1314,6 +1314,7 @@ footer.full-footer {
       gap: 1.5rem;
       font-size: var(--fs-12);
       font-weight: var(--fw-400);
+      padding: 0;
     }
 
     .logo-col--hint {
