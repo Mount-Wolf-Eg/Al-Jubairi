@@ -2,7 +2,7 @@
   <main class="splash-screen">
     <svg
       style="
-        width: 50%;
+        width: 35%;
         height: auto;
         object-fit: contain;
         object-position: center;

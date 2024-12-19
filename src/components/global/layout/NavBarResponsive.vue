@@ -187,10 +187,11 @@
       aria-labelledby="staticBackdropLabel"
     >
       <img
+        class="resp-nav-img"
         loading="lazy"
         src="/src/assets/images/sm-images/Group.png"
-        style="position: absolute; top: 0; left: 0"
-        alt=""
+        style="position: absolute; top: 0"
+        alt="navbar image"
       />
       <div class="offcanvas-header">
         <button
@@ -453,5 +454,21 @@ const setLanguage = (lan) => {
 <style lang="scss" scoped>
 .resp-menu {
   background-color: var(--col-dark) !important;
+}
+
+html[dir="rtl"] {
+  .resp-nav-img {
+    left: 0 !important;
+  }
+}
+html[dir="ltr"] {
+  .resp-nav-img {
+    right: 0 !important;
+    transform: scaleX(-1);
+  }
+  .btn-close {
+    margin-inline-start: 1rem !important;
+    margin-inline-end: auto !important;
+  }
 }
 </style>
