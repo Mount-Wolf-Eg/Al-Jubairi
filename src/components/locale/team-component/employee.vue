@@ -14,6 +14,7 @@
               object-fit: contain;
               object-position: center;
               max-width: 30rem;
+              border-radius: 0.8rem;
               filter: saturate(0);
             "
             :alt="singleItem.image?.alt"

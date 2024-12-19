@@ -22,9 +22,10 @@
               style="
                 width: 23rem;
                 height: 24.5rem;
-
+                border-radius: 0.8rem;
                 object-fit: contain;
                 object-position: center;
+                overflow: hidden;
               "
               :alt="item?.image?.alt"
             />

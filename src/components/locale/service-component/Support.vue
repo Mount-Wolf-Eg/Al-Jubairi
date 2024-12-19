@@ -24,7 +24,9 @@
               $router.push({ name: 'serviceData', params: { id: item.id } })
             "
           >
-            <p>اعرف المزيد</p>
+            <p>
+              {{ $t("button.know-more") }}
+            </p>
             <div class="read-more-icon">
               <svg
                 width="24"

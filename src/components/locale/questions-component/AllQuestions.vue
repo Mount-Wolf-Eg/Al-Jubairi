@@ -44,7 +44,9 @@
           class="read-more-btn my-3 my-md-5"
           @click="numerOfQuestions = singleSec?.items?.data?.length"
         >
-          <p style="color: var(--col-dark)">اعرف المزيد</p>
+          <p style="color: var(--col-dark)">
+            {{ $t("button.know-more") }}
+          </p>
           <div
             class="read-more-icon"
             style="background-color: var(--col-dark) !important"

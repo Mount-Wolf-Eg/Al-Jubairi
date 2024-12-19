@@ -52,7 +52,9 @@
           </svg>
 
           <p class="achieve--num head-primary">130,000</p>
-          <p class="achieve-text">ساعة إستشارية</p>
+          <p class="achieve-text">
+            {{ $t("achieve.hour") }}
+          </p>
         </div>
         <div class="achieve">
           <svg
@@ -105,7 +107,9 @@
           </svg>
 
           <p class="achieve--num head-primary">345,600</p>
-          <p class="achieve-text">ساعة تدريبية للمحامين</p>
+          <p class="achieve-text">
+            {{ $t("achieve.training") }}
+          </p>
         </div>
         <div class="achieve"></div>
       </div>
@@ -144,8 +148,10 @@
                 </clipPath>
               </defs>
             </svg>
-            <p class="achieve--num head-primary">4 مليار</p>
-            <p class="achieve-text">إجمالي قيمة القضايا</p>
+            <p class="achieve--num head-primary">4 {{ $t("achieve.mil") }}</p>
+            <p class="achieve-text">
+              {{ $t("achieve.case") }}
+            </p>
           </div>
           <div class="achieve">
             <svg
@@ -177,7 +183,9 @@
               </defs>
             </svg>
             <p class="achieve--num head-primary">98.6%</p>
-            <p class="achieve-text">نسبة نجاح القضايا</p>
+            <p class="achieve-text">
+              {{ $t("achieve.success") }}
+            </p>
           </div>
         </div>
         <div class="d-flex flex-row" style="border: 1px solid #fff">
@@ -235,7 +243,9 @@
               </defs>
             </svg>
             <p class="achieve--num head-primary">114,000</p>
-            <p class="achieve-text">ساعة تدريبية للجامعيين</p>
+            <p class="achieve-text">
+              {{ $t("achieve.colledge") }}
+            </p>
           </div>
           <div class="achieve">
             <svg
@@ -267,7 +277,9 @@
               </defs>
             </svg>
             <p class="achieve--num head-primary">50</p>
-            <p class="achieve-text">محاميًا متدربًا</p>
+            <p class="achieve-text">
+              {{ $t("achieve.lawyer") }}
+            </p>
           </div>
         </div>
       </div>
@@ -319,7 +331,9 @@
             </defs>
           </svg>
           <p class="achieve--num head-primary">80</p>
-          <p class="achieve-text">قضية دولية</p>
+          <p class="achieve-text">
+            {{ $t("achieve.global") }}
+          </p>
         </div>
         <div class="achieve">
           <svg
@@ -355,7 +369,9 @@
             </defs>
           </svg>
           <p class="achieve--num head-primary">300</p>
-          <p class="achieve-text">متدرب جامعي</p>
+          <p class="achieve-text">
+            {{ $t("achieve.colled-train") }}
+          </p>
         </div>
         <div class="achieve"></div>
       </div>

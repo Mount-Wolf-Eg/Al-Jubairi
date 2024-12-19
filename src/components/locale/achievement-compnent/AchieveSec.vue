@@ -39,7 +39,9 @@
                 class="read-more-btn my-3 my-md-5"
                 v-if="item.has_items"
               >
-                <p style="color: var(--col-dark)">اعرف المزيد</p>
+                <p style="color: var(--col-dark)">
+                  {{ $t("button.know-more") }}
+                </p>
                 <div
                   class="read-more-icon"
                   style="background-color: var(--col-dark) !important"

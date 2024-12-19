@@ -15,7 +15,7 @@
               type="button"
               data-bs-toggle="collapse"
               :data-bs-target="`#collapse${i}`"
-              aria-expanded="true"
+              aria-expanded="false"
               :aria-controls="`collapse${i}`"
             >
               {{ item.title }}
@@ -28,17 +28,6 @@
           >
             <div class="accordion-body" style="position: relative">
               {{ item.desc }}
-
-              <!-- <button
-                style="width: fit-content; margin: 0; padding: 0"
-                class="accordion-button body-close start-0"
-                aria-label="Close"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapse0"
-                aria-expanded="false"
-                aria-controls="collapse0"
-              ></button> -->
             </div>
           </div>
         </div>

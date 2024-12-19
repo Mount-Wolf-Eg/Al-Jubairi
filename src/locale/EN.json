@@ -65,5 +65,15 @@
     "messagePlaceholder": "Write your message here",
     "media": "cv",
     "required": "Please enter"
+  },
+  "achieve": {
+    "training": "Training Hour for Lawyers",
+    "case": "Total Value of Cases",
+    "success": "Success Rate of Cases",
+    "colledge": "Training Hour for University Students",
+    "lawyer": "Trainee Lawyer",
+    "global": "International Case",
+    "colled-train": "University Trainee",
+    "mil": "Billion"
   }
 }
