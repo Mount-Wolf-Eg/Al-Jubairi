@@ -19,14 +19,19 @@
     transform: rotate(360deg);
   }
 }
-
+.file-label {
+  color: var(--col-dark);
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
 .upload-field {
-  margin: 1rem 0 0;
   position: relative;
-  border-radius: 1.2rem;
-  border: 1px solid #0477be;
-  padding: 0.5rem;
-  background-color: #f4f3f3;
+  padding: 8px 16px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--col-gray-soft);
+  font-size: 14px;
 
   input {
     width: 35% !important;
@@ -36,8 +41,9 @@
     font-size: 0.8rem;
   }
 
-  label {
-    width: 65% !important;
+  .up-label {
+    width: 100% !important;
+    text-align: center;
     cursor: pointer;
     padding: 1rem 0;
   }
