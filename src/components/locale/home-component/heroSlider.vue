@@ -58,7 +58,7 @@
                   {{ item.desc }}
                 </p>
 
-                <router-link to="/contact">
+                <router-link to="/community">
                   <button class="btn-round-primary">
                     {{ $t("button.Book") }}
                   </button>
