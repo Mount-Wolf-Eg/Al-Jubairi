@@ -97,16 +97,16 @@ onMounted(async () => {
 // Function to get the icon URL based on the key
 const getIcon = (key) => {
   const icons = {
-    phone: "../../src/assets/icons/phone.svg",
-    email: "../../src/assets/icons/email-icon.svg",
-    facebook: "../../src/assets/icons/facebook-icon.svg",
-    x: "../../src/assets/icons/x-icon.svg",
-    youtube: "../../src/assets/icons/youtube.svg",
-    tiktok: "../../src/assets/icons/tiktok.svg",
-    instagram: "../../src/assets/icons/instagram.svg",
-    whatsapp: "../../src/assets/icons/whatsapp.svg",
+    phone: "/assets/icons/phone.svg",
+    email: "/assets/icons/email-icon.svg",
+    facebook: "/assets/icons/facebook-icon.svg",
+    x: "/assets/icons/x-icon.svg",
+    youtube: "/assets/icons/youtube.svg",
+    tiktok: "/assets/icons/tiktok.svg",
+    instagram: "/assets/icons/instagram.svg",
+    whatsapp: "/assets/icons/whatsapp.svg",
   };
-  return icons[key] || "../../src/assets/icons/default-icon.svg"; // Default icon if key not found
+  return icons[key] || "/assets/icons/default-icon.svg"; // Default icon if key not found
 };
 
 const getHref = (setting) => {
