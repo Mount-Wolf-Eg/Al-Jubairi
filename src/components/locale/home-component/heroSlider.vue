@@ -57,9 +57,12 @@
                 <p class="hero-desc body-desc-primary">
                   {{ item.desc }}
                 </p>
-                <button class="btn-round-primary">
-                  {{ $t("button.Book") }}
-                </button>
+
+                <router-link to="/contact">
+                  <button class="btn-round-primary">
+                    {{ $t("button.Book") }}
+                  </button>
+                </router-link>
               </div>
             </div>
           </div>

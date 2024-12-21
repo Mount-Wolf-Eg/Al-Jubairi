@@ -17,7 +17,8 @@
               (s) => !['header_logo', 'footer_logo', 'about'].includes(s.key)
             )"
             :key="setting.id"
-            :href="setting.value"
+            :href="getHref(setting)"
+            target="_blank"
           >
             <img :src="getIcon(setting.key)" alt="Social Icon" />
           </a>
@@ -96,16 +97,26 @@ onMounted(async () => {
 // Function to get the icon URL based on the key
 const getIcon = (key) => {
   const icons = {
-    phone: "/src/assets/icons/phone.svg",
-    email: "/src/assets/icons/email-icon.svg",
-    facebook: "/src/assets/icons/facebook-icon.svg",
-    x: "/src/assets/icons/x-icon.svg",
-    youtube: "/src/assets/icons/youtube.svg",
-    tiktok: "/src/assets/icons/tiktok.svg",
-    instagram: "/src/assets/icons/instagram.svg",
-    whatsapp: "/src/assets/icons/whatsapp.svg",
+    phone: "../../src/assets/icons/phone.svg",
+    email: "../../src/assets/icons/email-icon.svg",
+    facebook: "../../src/assets/icons/facebook-icon.svg",
+    x: "../../src/assets/icons/x-icon.svg",
+    youtube: "../../src/assets/icons/youtube.svg",
+    tiktok: "../../src/assets/icons/tiktok.svg",
+    instagram: "../../src/assets/icons/instagram.svg",
+    whatsapp: "../../src/assets/icons/whatsapp.svg",
   };
-  return icons[key] || "/src/assets/icons/default-icon.svg"; // Default icon if key not found
+  return icons[key] || "../../src/assets/icons/default-icon.svg"; // Default icon if key not found
+};
+
+const getHref = (setting) => {
+  if (setting.key === "email") {
+    return `mailto:${setting.value}`;
+  } else if (setting.key === "phone") {
+    return `tel:+${setting.value}`;
+  } else {
+    return setting.value;
+  }
 };
 </script>
 
