@@ -8,7 +8,7 @@
     <div class="inside-page">
       <div class="container">
         <div
-          class="px-5 px-md-0 d-flex flex-column flex-md-row gap-5 justify-content-between align-items-center"
+          class="px-5 px-md-0 d-flex flex-column flex-md-row gap-5 justify-content-between align-items-center flex-wrap"
         >
           <div
             class="employees"
@@ -18,7 +18,7 @@
           >
             <img
               loading="lazy"
-              :src="item?.image?.media"
+              :src="item?.image?.media ?? '/src/assets/icons/logo.svg'"
               style="
                 width: 23rem;
                 height: 24.5rem;
