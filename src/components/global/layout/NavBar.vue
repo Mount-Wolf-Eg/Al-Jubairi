@@ -116,12 +116,22 @@
               :src="
                 settings?.setting.find((el) => el.key == 'header_logo'?.value)
               "
-              style="width: 100%; min-width: 10rem; height: auto"
+              style="
+                width: 100%;
+                min-width: 10rem;
+                max-width: 14rem;
+                height: auto;
+              "
               alt="brand logo"
           /></router-link>
           <router-link v-else class="navbar-brand p-0 m-0" to="/">
             <svg
-              style="width: 100%; min-width: 10rem; height: auto"
+              style="
+                width: 100%;
+                min-width: 10rem;
+                max-width: 14rem;
+                height: auto;
+              "
               viewBox="0 0 241 56"
               :style="{
                 fill:

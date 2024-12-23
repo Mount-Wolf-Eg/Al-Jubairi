@@ -68,6 +68,10 @@
   --line-72: 7.2rem;
 }
 
+p {
+  cursor: context-menu;
+}
+
 *,
 *::before,
 *::after {
@@ -131,12 +135,14 @@ button {
   font-weight: var(--fw-700);
   line-height: var(--line-72);
   letter-spacing: -0.5px;
+  cursor: context-menu;
 }
 
 .head-secondary {
   font-weight: var(--fw-700);
   font-size: var(--fs-32);
   line-height: var(--line-54);
+  cursor: context-menu;
 }
 
 .head-tertiary {
@@ -148,18 +154,21 @@ button {
   line-height: var(--line-27);
   text-align: justify;
   color: var(--col-white);
+  cursor: context-menu;
 }
 .body-desc-secondary {
   font-weight: var(--fw-300);
   line-height: var(--line-27);
   font-size: var(--fs-16);
   text-align: justify;
+  cursor: context-menu;
 }
 .body-desc-tertiary {
   font-weight: var(--fw-400);
   line-height: var(--line-24);
   font-size: var(--fs-14);
   text-align: justify;
+  cursor: context-menu;
 }
 .btn-round-primary {
   padding: 1.3rem 2.2rem;
@@ -184,6 +193,7 @@ button {
     line-height: var(--line-24);
     color: var(--col-white);
     text-decoration: underline;
+    text-underline-offset: 0.5rem;
   }
   .read-more-icon {
     background-color: var(--col-white);
@@ -567,6 +577,7 @@ html[dir="ltr"] .read-more-icon svg {
     line-clamp: 2;
     overflow: hidden;
     -webkit-box-orient: vertical;
+    cursor: context-menu;
   }
 }
 /**********************/
@@ -671,6 +682,7 @@ html[dir="ltr"] .read-more-icon svg {
         font-size: var(--fs-14);
         font-weight: var(--fw-400) !important;
         line-height: var(--line-24);
+        cursor: context-menu;
       }
       p {
         margin: 0;
@@ -767,6 +779,7 @@ html[dir="ltr"] .read-more-icon svg {
     .latest-news--link {
       color: var(--col-dark) !important;
       text-decoration: underline;
+      text-underline-offset: 0.5rem;
       font-size: var(--fs-16);
       font-weight: var(--fw-500);
       line-height: var(--line-27);
@@ -925,6 +938,7 @@ html[dir="ltr"] .read-more-icon svg {
 /*   employees section   */
 /********************/
 .employees {
+  cursor: pointer;
   width: 24.8rem;
   height: 30.1rem;
   background-image: url("/src/assets/images/bg-images/teambg.png");
@@ -954,6 +968,7 @@ html[dir="ltr"] .read-more-icon svg {
       font-weight: var(--fw-600);
       line-height: var(--line-24);
       text-decoration: underline;
+      text-underline-offset: 0.5rem;
     }
     .employees-title {
       text-align: center;
@@ -1357,6 +1372,7 @@ footer.full-footer {
 
     .link {
       text-decoration: underline !important;
+      text-underline-offset: 0.5rem;
     }
   }
 }
@@ -1450,6 +1466,7 @@ footer.resp-footer {
 
     .link {
       text-decoration: underline;
+      text-underline-offset: 0.5rem;
     }
   }
 }

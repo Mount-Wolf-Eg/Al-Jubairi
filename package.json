@@ -20,6 +20,7 @@
     "swiper": "^8.4.7",
     "vue": "^3.5.13",
     "vue-awesome-swiper": "^5.0.1",
+    "vue-countup-v3": "^1.4.2",
     "vue-i18n": "^10.0.3",
     "vue-router": "^4.4.5",
     "vue-tel-input": "^9.2.0",

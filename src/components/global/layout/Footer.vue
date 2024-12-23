@@ -27,9 +27,11 @@
         <p class="footer-text body-desc-secondary">
           {{ $t("footer.footer-text") }}
         </p>
-        <button class="btn-round-primary">
-          {{ $t("button.contact-team") }}
-        </button>
+        <router-link to="/contact" class="btn-round-primary">
+          <button>
+            {{ $t("button.contact-team") }}
+          </button>
+        </router-link>
       </div>
     </div>
     <div class="container">
