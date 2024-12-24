@@ -51,3 +51,6 @@ form {
     text-decoration: underline;
   }
 }
+a[href^="tel:"] {
+  direction: ltr;
+}
