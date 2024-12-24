@@ -8,7 +8,7 @@
     <div class="inside-page">
       <div class="container">
         <div
-          class="px-5 px-md-0 d-flex flex-column flex-md-row gap-5 justify-content-between align-items-center"
+          class="px-5 px-md-0 d-flex flex-column flex-md-row gap-5 justify-content-between align-items-center flex-wrap"
         >
           <div
             class="employees"
@@ -18,7 +18,7 @@
           >
             <img
               loading="lazy"
-              :src="item?.image?.media"
+              :src="item?.image?.media ?? logo"
               style="
                 width: 23rem;
                 height: 24.5rem;
@@ -48,6 +48,7 @@
 import { ref, onMounted } from "vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
+import logo from "/src/assets/icons/logo.svg";
 
 const crump = ref([{ name: "menu.team", rout: "/our-team" }]);
 
