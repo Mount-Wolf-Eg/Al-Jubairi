@@ -57,7 +57,6 @@ onMounted(async () => {
   ) {
     await pageStore.getPageData("privacy");
   }
-  console.log(privacy);
   isLoading.value = false;
 });
 </script>
