@@ -107,14 +107,14 @@
         <span>
           <router-link
             v-if="
-              settings?.setting.find((el) => el.key == 'header_logo'?.value)
+              settings?.setting?.find((el) => el.key == 'header_logo'?.value)
             "
             class="navbar-brand p-0 m-0"
             to="/"
           >
             <img
               :src="
-                settings?.setting.find((el) => el.key == 'header_logo'?.value)
+                settings?.setting?.find((el) => el.key == 'header_logo'?.value)
               "
               style="
                 width: 100%;

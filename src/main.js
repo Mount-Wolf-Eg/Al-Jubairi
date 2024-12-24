@@ -7,9 +7,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap";
 
 // Import Swiper styles
-import "swiper/css"; // Core Swiper styles
-import "swiper/css/navigation"; // Optional: Navigation module styles
-import "swiper/css/pagination"; // Optional: Pagination module styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// vue use
+import { createHead } from "@vueuse/head";
+const head = createHead();
 
 // toastification
 import Toast from "vue-toastification";
@@ -37,6 +41,7 @@ const i18n = createI18n({
 });
 
 app.use(createPinia());
+app.use(head);
 app.use(router);
 app.use(Toast);
 app.use(i18n);

@@ -31,7 +31,6 @@
           :key="branch.id"
           class="branch-info"
         >
-          <h3 class="fw-bold mb-4">{{ branch.title }}</h3>
           <p class="d-flex gap-2 mb-3">
             <img src="/src/assets/icons/location.svg" />
             <a
@@ -41,6 +40,7 @@
               {{ branch.address }}
             </a>
           </p>
+          <h3 class="fw-bold mb-4">{{ branch.title }}</h3>
           <p class="d-flex gap-2">
             <img src="/src/assets/icons/phone.svg" />
             <a :href="`tel:+${branch.phone_code}${branch.phone}`">

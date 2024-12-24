@@ -82,10 +82,6 @@ const props = defineProps({
     Required: false,
   },
 });
-
-const closeAccordion = (i) => {
-  console.log(i);
-};
 </script>
 
 <style lang="scss" scoped></style>
