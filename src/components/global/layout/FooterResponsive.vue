@@ -6,9 +6,9 @@
     >
       <span>
         <img
-          v-if="settings?.setting.find((el) => el.key == 'footer_logo'?.value)"
+          v-if="settings?.setting?.find((el) => el.key == 'footer_logo'?.value)"
           loading="lazy"
-          :src="settings?.setting.find((el) => el.key == 'footer_logo'?.value)"
+          :src="settings?.setting?.find((el) => el.key == 'footer_logo'?.value)"
           style="
             width: 100%;
             height: auto;

@@ -5,6 +5,8 @@ import { useRoute } from "vue-router";
 import { useHead } from "@vueuse/head";
 import SplashScreen from "./components/locale/custom-components/SplashScreen.vue";
 import MainLayout from "./components/global/layout/MainLayout.vue";
+import moment from "moment";
+
 const route = useRoute();
 // store
 import { useSettingsStore } from "./stores/settingStore";
@@ -13,6 +15,8 @@ const isLoading = ref(true);
 
 onBeforeMount(async () => {
   await useSettingsStore().getSettings();
+  let lang = sessionStorage.getItem("lang") ?? "ar";
+  lang == "ar" ? moment.locale("ar-sa") : moment.locale("en-gb");
   isLoading.value = false;
 });
 
@@ -20,6 +24,10 @@ onMounted(() => {
   if (sessionStorage.getItem("lang") == null)
     sessionStorage.setItem("lang", "ar");
 });
+
+import "moment/dist/locale/ar-sa";
+
+// onBeforeMount(() => {});
 
 useHead({
   title: "الصفحة الرئيسية",
