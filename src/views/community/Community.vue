@@ -8,8 +8,11 @@
     <section class="inside-page d-flex justify-content-center">
       <div class="form-container">
         <h2 class="form-title">
-          {{ $t("form.support") }}
+          {{ $t("form.supporttitle") }}
         </h2>
+        <p class="form-description">
+          {{ $t("form.supportdesc") }}
+        </p>
         <p class="form-description">
           {{ $t("form.fill") }}
         </p>
