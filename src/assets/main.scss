@@ -863,6 +863,10 @@ html[dir="ltr"] .read-more-icon svg {
   transition: all 0.3s ease-in-out;
 }
 
+.accordion-button {
+  text-align: start !important;
+}
+
 /**********************/
 /*   clients section   */
 /********************/
