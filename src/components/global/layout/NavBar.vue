@@ -1,9 +1,9 @@
 <template>
   <nav
     class="navbar main-nav navbar-expand-sm p-0"
-    style="position: absolute; top: 0; left: 0"
+    style="position: fixed; top: 0; left: 0"
     :style="{
-      position: route.name === 'home' ? 'absolute' : 'static',
+      position: route.name === 'home' ? 'fixed' : 'static',
       backgroundColor: route.name === 'home' ? '' : 'white',
       color:
         route.name === 'home' ? 'var(--col-white)' : 'var(--col-light-dark)',
