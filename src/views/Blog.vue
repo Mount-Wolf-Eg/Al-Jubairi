@@ -8,7 +8,7 @@
 
     <div class="inside-page">
       <div class="container">
-        <div class="row gap-5 px-0 mx-2 mx-md-0">
+        <div class="row px-0 mx-2 mx-md-0 grid">
           <div
             class="blog-item col-12 p-0 mx-0 my-3"
             v-for="(item, i) in blogs.sections.data[0]?.items?.data"

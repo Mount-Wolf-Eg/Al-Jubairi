@@ -28,7 +28,7 @@
       :error="errors.phone"
     />
     <Select
-      v-if="formType !== 'employment'"
+      v-if="formType === 'community'"
       :select="{
         placeholder: $t('form.inquiryTypePlaceholder'),
         label: $t('form.inquiryType') + ' *',
@@ -93,7 +93,7 @@ const formData = ref({
   lastName: "",
   email: "",
   phone: "",
-  inquiryType: "",
+  inquiryType: "other",
   subject: "",
   message: "",
   media: "",

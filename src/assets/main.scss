@@ -567,6 +567,7 @@ html[dir="ltr"] .read-more-icon svg {
   padding: 7.5rem 0;
   width: 75%;
   .expertise-text {
+    padding-left: 20px;
     font-weight: var(--fw-500);
     font-size: var(--fs-16);
     line-height: var(--line-27);
@@ -1147,6 +1148,7 @@ html[dir="ltr"] .read-more-icon svg {
 /*   blogs section   */
 /********************/
 .blog-item {
+  justify-self: center;
   border-radius: 0.8rem;
   margin-bottom: 5rem;
   overflow: hidden;
@@ -1154,7 +1156,7 @@ html[dir="ltr"] .read-more-icon svg {
   justify-content: center;
   align-items: start;
   height: 56.2rem;
-  // min-width: 35rem;
+  min-width: unset !important;
   max-width: 38.4rem;
   border-radius: 0.8rem;
   margin-bottom: 5rem;
@@ -1494,5 +1496,18 @@ footer.resp-footer {
       display: flex;
       align-items: center;
     }
+  }
+}
+
+.grid {
+  display: grid !important;
+  justify-content: center;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(90%, 1fr));
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+  }
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(auto-fill, minmax(27%, 1fr));
   }
 }
