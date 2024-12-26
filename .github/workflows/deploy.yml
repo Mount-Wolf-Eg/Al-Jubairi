@@ -34,25 +34,29 @@ jobs:
         nvm use v20.7.0
         npm install
         npm run build
-        sudo cp -r dist/* /var/www/html/Al-Jubairi/dist
+        rm -rf /var/www/html/Al-Jubairi/dist
+        mkdir -p /var/www/html/Al-Jubairi/dist
+        cp -r dist/* /var/www/html/Al-Jubairi/dist
         sudo systemctl restart nginx
         EOF
 
-    # Deploy to Production Server
-    - name: Set up SSH for Production
-      if: github.ref == 'refs/heads/main'
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.EC2_SSH_KEY_PROD }}
+    # # Deploy to Production Server
+    # - name: Set up SSH for Production
+    #   if: github.ref == 'refs/heads/main'
+    #   uses: webfactory/ssh-agent@v0.5.3
+    #   with:
+    #     ssh-private-key: ${{ secrets.EC2_SSH_KEY_PROD }}
 
-    - name: Deploy to Production Server
-      if: github.ref == 'refs/heads/main'
-      run: |
-        ssh -o StrictHostKeyChecking=no ec2-user@<PROD_EC2_IP> << 'EOF'
-        cd /var/www/frontend
-        git pull origin main
-        npm install
-        npm run build
-        sudo cp -r dist/* /var/www/html/
-        sudo systemctl restart nginx
-        EOF
+    # - name: Deploy to Production Server
+    #   if: github.ref == 'refs/heads/main'
+    #   run: |
+    #     ssh -o StrictHostKeyChecking=no ec2-user@<PROD_EC2_IP> << 'EOF'
+    #     cd /var/www/frontend
+    #     git pull origin main
+    #     npm install
+    #     npm run build
+    #     rm -rf /var/www/html/Al-Jubairi/dist
+    #     mkdir -p /var/www/html/Al-Jubairi/dist
+    #     cp -r dist/* /var/www/html/Al-Jubairi/dist
+    #     sudo systemctl restart nginx
+    #     EOF
