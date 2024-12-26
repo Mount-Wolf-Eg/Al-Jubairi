@@ -29,6 +29,9 @@ import OurClients from "@/components/locale/home-component/OurClients.vue";
 import SocialData from "@/components/locale/custom-components/SocialData.vue";
 import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
 
+// seo
+import { useHead } from "@vueuse/head";
+
 // store
 import { usePageStore } from "@/stores/pagesStore";
 import { storeToRefs } from "pinia";
@@ -109,5 +112,14 @@ onMounted(async () => {
     await pageStore.getPageData("blogs");
   }
   isLoading.value = false;
+});
+
+useHead({
+  meta: [
+    {
+      name: "description",
+      content: "Your Al-Jubeiri Law Partner",
+    },
+  ],
 });
 </script>
