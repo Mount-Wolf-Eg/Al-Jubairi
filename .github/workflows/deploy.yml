@@ -3,7 +3,7 @@ name: Deploy Aljubairi Web
 on:
   push:
     branches:
-      - main # For production
+      - main   # For production
       - dev # For development
 
 jobs:
@@ -11,29 +11,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Check out the code
-      - name: Checkout code
-        uses: actions/checkout@v3
+    # Check out the code
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      # Deploy to Development Server
-      - name: Deploy to Development
-        if: github.ref == 'refs/heads/dev'
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.MW_TESTING_EC2 }}
-        run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@ec2-18-188-27-139.us-east-2.compute.amazonaws.com << 'EOF'
-          cd /var/www/html/aljubairi-front-turn-back-to-Al-Jubairi/
-          git add .
-          git reset --hard
-          git checkout dev
-          git pull origin dev
-          nvm use v20.7.0
-          npm install
-          npm run build
-          sudo cp -r dist/* /var/www/html/Al-Jubairi/dist
-          sudo systemctl restart nginx
-          EOF
+    # Deploy to Development Server
+    - name: Deploy to Development
+      if: github.ref == 'refs/heads/dev'
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.MW_TESTING_EC2 }}
+      run: |
+        ssh -o StrictHostKeyChecking=no ubuntu@ec2-18-188-27-139.us-east-2.compute.amazonaws.com << 'EOF'
+        cd /var/www/html/aljubairi-front-turn-back-to-Al-Jubairi/
+        git add .
+        git reset --hard
+        git checkout dev
+        git pull origin dev
+        nvm use v20.7.0
+        npm install
+        npm run build
+        sudo cp -r dist/* /var/www/html/Al-Jubairi/dist
+        sudo systemctl restart nginx
+        EOF
 
     # Deploy to Production Server
     # - name: Deploy to Production
