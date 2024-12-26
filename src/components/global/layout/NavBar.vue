@@ -1,9 +1,9 @@
 <template>
   <nav
     class="navbar main-nav navbar-expand-sm p-0"
-    style="position: absolute; top: 0; left: 0"
+    style="position: fixed; top: 0; left: 0"
     :style="{
-      position: route.name === 'home' ? 'absolute' : 'static',
+      position: route.name === 'home' ? 'fixed' : 'static',
       backgroundColor: route.name === 'home' ? '' : 'white',
       color:
         route.name === 'home' ? 'var(--col-white)' : 'var(--col-light-dark)',
@@ -107,21 +107,31 @@
         <span>
           <router-link
             v-if="
-              settings?.setting.find((el) => el.key == 'header_logo'?.value)
+              settings?.setting?.find((el) => el.key == 'header_logo'?.value)
             "
             class="navbar-brand p-0 m-0"
             to="/"
           >
             <img
               :src="
-                settings?.setting.find((el) => el.key == 'header_logo'?.value)
+                settings?.setting?.find((el) => el.key == 'header_logo'?.value)
               "
-              style="width: 100%; min-width: 10rem; height: auto"
+              style="
+                width: 100%;
+                min-width: 10rem;
+                max-width: 14rem;
+                height: auto;
+              "
               alt="brand logo"
           /></router-link>
           <router-link v-else class="navbar-brand p-0 m-0" to="/">
             <svg
-              style="width: 100%; min-width: 10rem; height: auto"
+              style="
+                width: 100%;
+                min-width: 10rem;
+                max-width: 14rem;
+                height: auto;
+              "
               viewBox="0 0 241 56"
               :style="{
                 fill:

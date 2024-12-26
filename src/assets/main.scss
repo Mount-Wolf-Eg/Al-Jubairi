@@ -68,6 +68,10 @@
   --line-72: 7.2rem;
 }
 
+p {
+  cursor: context-menu;
+}
+
 *,
 *::before,
 *::after {
@@ -90,6 +94,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* App Container */
@@ -131,12 +136,14 @@ button {
   font-weight: var(--fw-700);
   line-height: var(--line-72);
   letter-spacing: -0.5px;
+  cursor: context-menu;
 }
 
 .head-secondary {
   font-weight: var(--fw-700);
   font-size: var(--fs-32);
   line-height: var(--line-54);
+  cursor: context-menu;
 }
 
 .head-tertiary {
@@ -148,18 +155,21 @@ button {
   line-height: var(--line-27);
   text-align: justify;
   color: var(--col-white);
+  cursor: context-menu;
 }
 .body-desc-secondary {
   font-weight: var(--fw-300);
   line-height: var(--line-27);
   font-size: var(--fs-16);
   text-align: justify;
+  cursor: context-menu;
 }
 .body-desc-tertiary {
   font-weight: var(--fw-400);
   line-height: var(--line-24);
   font-size: var(--fs-14);
   text-align: justify;
+  cursor: context-menu;
 }
 .btn-round-primary {
   padding: 1.3rem 2.2rem;
@@ -184,6 +194,7 @@ button {
     line-height: var(--line-24);
     color: var(--col-white);
     text-decoration: underline;
+    text-underline-offset: 0.5rem;
   }
   .read-more-icon {
     background-color: var(--col-white);
@@ -556,6 +567,7 @@ html[dir="ltr"] .read-more-icon svg {
   padding: 7.5rem 0;
   width: 75%;
   .expertise-text {
+    padding-left: 20px;
     font-weight: var(--fw-500);
     font-size: var(--fs-16);
     line-height: var(--line-27);
@@ -567,6 +579,7 @@ html[dir="ltr"] .read-more-icon svg {
     line-clamp: 2;
     overflow: hidden;
     -webkit-box-orient: vertical;
+    cursor: context-menu;
   }
 }
 /**********************/
@@ -671,6 +684,7 @@ html[dir="ltr"] .read-more-icon svg {
         font-size: var(--fs-14);
         font-weight: var(--fw-400) !important;
         line-height: var(--line-24);
+        cursor: context-menu;
       }
       p {
         margin: 0;
@@ -767,6 +781,7 @@ html[dir="ltr"] .read-more-icon svg {
     .latest-news--link {
       color: var(--col-dark) !important;
       text-decoration: underline;
+      text-underline-offset: 0.5rem;
       font-size: var(--fs-16);
       font-weight: var(--fw-500);
       line-height: var(--line-27);
@@ -849,6 +864,10 @@ html[dir="ltr"] .read-more-icon svg {
   transition: all 0.3s ease-in-out;
 }
 
+.accordion-button {
+  text-align: start !important;
+}
+
 /**********************/
 /*   clients section   */
 /********************/
@@ -925,6 +944,7 @@ html[dir="ltr"] .read-more-icon svg {
 /*   employees section   */
 /********************/
 .employees {
+  cursor: pointer;
   width: 24.8rem;
   height: 30.1rem;
   background-image: url("/src/assets/images/bg-images/teambg.png");
@@ -954,6 +974,7 @@ html[dir="ltr"] .read-more-icon svg {
       font-weight: var(--fw-600);
       line-height: var(--line-24);
       text-decoration: underline;
+      text-underline-offset: 0.5rem;
     }
     .employees-title {
       text-align: center;
@@ -1131,6 +1152,7 @@ html[dir="ltr"] .read-more-icon svg {
 /*   blogs section   */
 /********************/
 .blog-item {
+  justify-self: center;
   border-radius: 0.8rem;
   margin-bottom: 5rem;
   overflow: hidden;
@@ -1138,7 +1160,7 @@ html[dir="ltr"] .read-more-icon svg {
   justify-content: center;
   align-items: start;
   height: 56.2rem;
-  // min-width: 35rem;
+  min-width: unset !important;
   max-width: 38.4rem;
   border-radius: 0.8rem;
   margin-bottom: 5rem;
@@ -1357,6 +1379,7 @@ footer.full-footer {
 
     .link {
       text-decoration: underline !important;
+      text-underline-offset: 0.5rem;
     }
   }
 }
@@ -1450,6 +1473,7 @@ footer.resp-footer {
 
     .link {
       text-decoration: underline;
+      text-underline-offset: 0.5rem;
     }
   }
 }
@@ -1476,5 +1500,18 @@ footer.resp-footer {
       display: flex;
       align-items: center;
     }
+  }
+}
+
+.grid {
+  display: grid !important;
+  justify-content: center;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(90%, 1fr));
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+  }
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(auto-fill, minmax(27%, 1fr));
   }
 }

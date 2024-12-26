@@ -8,9 +8,9 @@
 
     <div class="inside-page">
       <AboutUsInfo :secData="getSecData('more_about')" />
-      <Achievements />
+      <!-- <Achievements />
       <excellence :secData="getSecData('excellence')" />
-      <OurJourney :secData="getSecData('certificates')" />
+      <OurJourney :secData="getSecData('certificates')" /> -->
     </div>
   </main>
   <main v-else><SplashScreen /></main>

@@ -3,7 +3,7 @@
     <div
       class="resp-nav"
       :style="{
-        position: route.name === 'home' ? 'absolute' : 'static',
+        position: route.name === 'home' ? 'fixed' : 'static',
       }"
       style="top: 0; left: 0"
     >
@@ -13,14 +13,14 @@
         <div>
           <router-link
             v-if="
-              settings?.setting.find((el) => el.key == 'header_logo'?.value)
+              settings?.setting?.find((el) => el.key == 'header_logo'?.value)
             "
             class="navbar-brand"
             to="/"
           >
             <img
               :src="
-                settings?.setting.find((el) => el.key == 'header_logo'?.value)
+                settings?.setting?.find((el) => el.key == 'header_logo'?.value)
               "
               style="
                 width: 13.7rem;

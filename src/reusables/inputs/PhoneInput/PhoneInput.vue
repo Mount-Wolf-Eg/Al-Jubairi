@@ -3,7 +3,8 @@
     <label>{{ label }}</label>
     <vue-tel-input
       v-model="phone"
-      :preferred-countries="['SA', 'US', 'GB']"
+      :auto-default-country="false"
+      :default-country="966"
       :inputOptions="{ placeholder: holder }"
       required
       class="vue-tel-input"

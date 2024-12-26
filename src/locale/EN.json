@@ -65,13 +65,14 @@
     "messagePlaceholder": "Write your message here",
     "media": "cv",
     "required": "Please enter",
-    "support": "Support for micro-enterprises, support for charitable organizations, cooperative training",
+    "supporttitle": "Community support.",
+    "supportdesc  ": "Support for small enterprises, support for charitable institutions, and cooperative training.",
     "fill": "Please fill out the form below to get information about our legal services or to request a consultation.",
     "branches": "our branches",
     "submit-application": "Submit Your Application",
     "fil-below": "Please fill out the form below for a chance to join our legal team.",
     "limit": "Maximum",
-    "uploadCV": "uploadCV"
+    "uploadCV": "Upload CV"
   },
   "achieve": {
     "training": "Training Hour for Lawyers",

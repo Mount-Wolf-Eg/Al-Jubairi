@@ -28,7 +28,7 @@
       :error="errors.phone"
     />
     <Select
-      v-if="formType !== 'employment'"
+      v-if="formType === 'community'"
       :select="{
         placeholder: $t('form.inquiryTypePlaceholder'),
         label: $t('form.inquiryType') + ' *',
@@ -68,7 +68,7 @@
 
 <script setup>
 import { useI18n } from "vue-i18n";
-import { ref, defineProps } from "vue";
+import { ref, defineProps, computed } from "vue";
 import InputField from "@/reusables/inputs/InputField/InputField.vue";
 import TextArea from "@/reusables/inputs/TextArea/TextArea.vue";
 import Select from "@/reusables/inputs/Select/Select.vue";
@@ -93,7 +93,7 @@ const formData = ref({
   lastName: "",
   email: "",
   phone: "",
-  inquiryType: "",
+  inquiryType: "other",
   subject: "",
   message: "",
   media: "",
@@ -112,11 +112,21 @@ const errors = ref({
 
 const isModalVisible = ref(false);
 
-const inquiryTypes = [
-  { value: "suggestion", label: "اقتراح" },
-  { value: "other", label: "أخرى" },
-  { value: "complaint", label: "شكوى" },
-];
+const inquiryTypes = computed(() => {
+  if (props.formType === "community") {
+    return [
+      { value: "freeConsultation", label: "استشارة مجانية" },
+      { value: "microEnterprises", label: "منشآت متناهية الصغر" },
+      { value: "charity", label: "مؤسسة خيرية" },
+      { value: "cooperativeTraining", label: "تدريب تعاوني" },
+    ];
+  }
+  return [
+    { value: "suggestion", label: "اقتراح" },
+    { value: "other", label: "أخرى" },
+    { value: "complaint", label: "شكوى" },
+  ];
+});
 
 const validateForm = () => {
   let valid = true;

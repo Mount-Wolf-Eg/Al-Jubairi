@@ -7,9 +7,9 @@
     >
       <span>
         <img
-          v-if="settings?.setting.find((el) => el.key == 'footer_logo'?.value)"
+          v-if="settings?.setting?.find((el) => el.key == 'footer_logo'?.value)"
           loading="lazy"
-          :src="settings?.setting.find((el) => el.key == 'footer_logo'?.value)"
+          :src="settings?.setting?.find((el) => el.key == 'footer_logo'?.value)"
           style="width: 100%; height: auto; min-height: 300px"
           alt="brand logo"
         />
@@ -27,9 +27,11 @@
         <p class="footer-text body-desc-secondary">
           {{ $t("footer.footer-text") }}
         </p>
-        <button class="btn-round-primary">
-          {{ $t("button.contact-team") }}
-        </button>
+        <router-link to="/contact" class="btn-round-primary">
+          <button>
+            {{ $t("button.contact-team") }}
+          </button>
+        </router-link>
       </div>
     </div>
     <div class="container">
@@ -114,8 +116,12 @@
                 </svg>
               </a>
             </li>
-            <!-- <li v-if="showApear('linkedin') != 'false'">
-              <a class="social-icon"  target="_blank" :href="showApear('linkedin')">
+            <li v-if="showApear('linkedin') != 'false'">
+              <a
+                class="social-icon"
+                target="_blank"
+                :href="showApear('linkedin')"
+              >
                 <svg
                   width="24"
                   height="25"
@@ -129,7 +135,7 @@
                   />
                 </svg>
               </a>
-            </li> -->
+            </li>
             <li v-if="showApear('x') != 'false'">
               <a class="social-icon" target="_blank" :href="showApear('x')">
                 <svg
@@ -232,12 +238,31 @@
                 </svg>
               </a>
             </li>
+
+            <li>
+              <a class="social-icon" href="tel:+966 9200 03772">
+                <svg
+                  style="width: 2.5rem; height: 2.5rem"
+                  viewBox="0 0 18 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.5 3.08333C1.5 10.217 7.28299 16 14.4167 16C14.7385 16 15.0576 15.9882 15.3736 15.9651C15.7362 15.9385 15.9174 15.9253 16.0825 15.8302C16.2192 15.7516 16.3488 15.6121 16.4173 15.47C16.5 15.2985 16.5 15.0984 16.5 14.6983V12.3506C16.5 12.0141 16.5 11.8459 16.4446 11.7016C16.3957 11.5743 16.3163 11.4608 16.2133 11.3713C16.0966 11.27 15.9385 11.2125 15.6223 11.0975L12.95 10.1257C12.5821 9.99196 12.3981 9.92507 12.2236 9.93643C12.0697 9.94644 11.9216 9.99896 11.7958 10.0881C11.6531 10.1893 11.5524 10.3571 11.351 10.6928L10.6667 11.8333C8.45845 10.8333 6.66825 9.04073 5.66667 6.83333L6.80719 6.14902C7.14288 5.94761 7.31072 5.8469 7.41186 5.70422C7.50104 5.5784 7.55356 5.43031 7.56357 5.27642C7.57493 5.10189 7.50804 4.91794 7.37426 4.55004L6.40249 1.87768C6.2875 1.56147 6.23001 1.40336 6.12868 1.28675C6.03918 1.18374 5.92575 1.10429 5.79835 1.05538C5.65413 1 5.4859 1 5.14943 1H2.80168C2.40157 1 2.20151 1 2.02998 1.08271C1.88792 1.15121 1.74845 1.28085 1.66975 1.41753C1.57474 1.58255 1.56146 1.76385 1.53491 2.12644C1.51177 2.44238 1.5 2.76148 1.5 3.08333Z"
+                    stroke="#fff"
+                    stroke-width="1.66667"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </li>
           </ul>
         </div>
 
         <!-- company col -->
         <div class="nav-col">
-          <p class="footer-heading">{{ $t("footer.company") }}</p>
+          <p class="footer-heading">{{ $t("menu.about") }}</p>
 
           <ul class="footer-nav">
             <li>
@@ -260,11 +285,6 @@
                 $t("menu.team")
               }}</router-link>
             </li>
-            <li>
-              <router-link to="/employment" class="footer-link"
-                >{{ $t("menu.employment") }}
-              </router-link>
-            </li>
           </ul>
         </div>
 
@@ -273,6 +293,11 @@
           <p class="footer-heading">{{ $t("footer.more") }}</p>
 
           <ul class="footer-nav">
+            <li>
+              <router-link to="/employment" class="footer-link"
+                >{{ $t("menu.employment") }}
+              </router-link>
+            </li>
             <li>
               <router-link to="/community" class="footer-link"
                 >{{ $t("menu.community") }}
@@ -288,11 +313,11 @@
                 $t("menu.faq")
               }}</router-link>
             </li>
-            <li>
+            <!-- <li>
               <router-link to="/contact" class="footer-link">{{
                 $t("menu.get-Contact")
               }}</router-link>
-            </li>
+            </li> -->
             <!-- <li>
               <router-link to="" class="footer-link">{{
                 $t("menu.summary")

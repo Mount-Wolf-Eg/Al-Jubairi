@@ -8,17 +8,17 @@
     <div class="inside-page">
       <div class="container">
         <div
-          class="px-5 px-md-0 d-flex flex-column flex-md-row gap-5 justify-content-between align-items-center"
+          class="px-5 px-md-0 d-flex flex-column flex-md-row gap-5 justify-content-between align-items-center flex-wrap"
         >
           <div
             class="employees"
             v-for="(item, i) in team_work.sections?.data[0]?.items?.data"
             :key="i"
-            @click="$router.push({ name: 'Employee', params: { id: item.id } })"
+            @click="navigate(item.id)"
           >
             <img
               loading="lazy"
-              :src="item?.image?.media"
+              :src="item?.image?.media ?? avatar"
               style="
                 width: 23rem;
                 height: 24.5rem;
@@ -48,6 +48,10 @@
 import { ref, onMounted } from "vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
+import avatar from "/src/assets/icons/avatar.svg";
+import { useRoute, useRouter } from "vue-router";
+
+const router = useRouter();
 
 const crump = ref([{ name: "menu.team", rout: "/our-team" }]);
 
@@ -84,6 +88,14 @@ onMounted(async () => {
 
   isLoading.value = false;
 });
+
+const navigate = (ID) => {
+  if (ID == 287) {
+    window.location.href = "https://aljubairi.sa";
+  } else {
+    router.push({ name: "Employee", params: { id: ID } });
+  }
+};
 </script>
 <style lang="scss" scoped>
 html[dir="ltr"] .employees-data {
