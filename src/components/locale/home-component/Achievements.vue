@@ -7,20 +7,8 @@
       <div class="achieve-col col-3 my-auto">
         <div class="achieve"></div>
         <div class="achieve">
-          <img
+          <svg
             class="sv-icon"
-<<<<<<< HEAD
-            style="
-              width: 6rem;
-              height: 6rem;
-              object-fit: contain;
-              object-position: calc();
-            "
-            src="/src/assets/images/achieve/achieve2.png"
-            alt="achieve-img"
-          />
-          <p class="achieve--num head-secondary">130,000</p>
-=======
             viewBox="0 0 64 64"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -66,31 +54,63 @@
           <p class="achieve--num head-primary">
             <count-up v-if="isVisible" :end-val="130000"></count-up>
           </p>
->>>>>>> 826c8b8e73870c75eade4cb1ef1882828e091224
           <p class="achieve-text">
             {{ $t("achieve.hour") }}
           </p>
         </div>
         <div class="achieve">
-          <img
+          <svg
             class="sv-icon"
-            style="
-              width: 6rem;
-              height: 6rem;
-              object-fit: contain;
-              object-position: calc();
-            "
-            src="/src/assets/images/achieve/achieve7.png"
-            alt="achieve-img"
-          />
+            style="width: 6rem; height: 6rem"
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_1346_19355)">
+              <path
+                d="M32.3662 28.7097C32.3662 28.4975 32.4723 28.1791 32.4723 27.9668C32.4723 27.9668 32.4723 28.1791 32.3662 28.7097Z"
+                fill="white"
+              />
+              <path
+                d="M30.5595 43.9934C30.5595 46.859 30.5595 49.8308 30.5595 52.6965C30.5595 53.3333 30.5595 53.5456 29.8166 53.2272C25.9957 51.7413 22.1748 50.3615 18.3539 48.8756C17.5048 48.5572 17.1864 48.0265 17.1864 47.1775C17.1864 47.0713 17.1864 46.9652 17.1864 46.859C17.1864 46.3284 17.0802 45.6915 17.1864 45.1609C17.3987 44.524 18.1416 44.9486 18.6723 44.7363C20.1582 44.2056 21.1134 43.1443 21.2195 41.5522C21.3257 40.1725 21.2195 38.7927 21.2195 37.4129C21.1134 35.5025 19.6275 34.1227 17.7171 34.0166C17.1864 34.0166 16.9741 33.8043 17.0802 33.2736C17.0802 32.6368 17.0802 32 17.0802 31.3632C17.0802 30.1957 17.8232 29.665 18.8846 30.0896C22.5993 31.4693 26.2079 32.8491 29.9227 34.2289C30.3472 34.4411 30.4534 34.7595 30.4534 35.0779C30.4534 38.0498 30.4534 40.9154 30.4534 43.8872L30.5595 43.9934Z"
+                fill="white"
+              />
+              <path
+                d="M33.1084 43.8872C33.1084 41.0215 33.1084 38.1558 33.1084 35.3963C33.1084 34.7595 33.2145 34.4411 33.8513 34.2288C37.3538 32.9552 40.8563 31.5754 44.3588 30.3018C45.7386 29.7711 46.4815 30.3018 46.4815 31.7877C46.4815 31.9999 46.4815 32.1061 46.4815 32.3184C46.4815 32.849 46.5877 33.4858 46.4815 34.0165C46.2693 34.4411 45.5263 34.2288 44.9956 34.3349C43.6159 34.7595 42.4484 36.0331 42.3422 37.519C42.3422 38.8988 42.3422 40.2786 42.3422 41.6583C42.3422 43.5688 43.9343 44.9485 45.8447 45.0547C46.3754 45.0547 46.5877 45.2669 46.5877 45.7976C46.5877 48.9817 46.7999 48.5572 44.0404 49.6185C40.7502 50.8922 37.3538 52.0596 34.0636 53.3333C33.4268 53.5456 33.2145 53.5456 33.2145 52.8026C33.2145 49.8308 33.2145 46.9651 33.2145 43.9933L33.1084 43.8872Z"
+                fill="white"
+              />
+              <path
+                d="M38.9478 17.7779C38.9478 21.7049 35.8699 24.889 31.9428 24.889C27.9097 24.889 24.7256 21.7049 24.7256 17.7779C24.7256 13.8508 27.9097 10.6667 31.8367 10.6667C35.7637 10.6667 38.9478 13.7447 39.0539 17.7779H38.9478Z"
+                fill="white"
+              />
+              <path
+                d="M41.5996 28.6037C38.4156 29.7712 35.3376 30.9387 32.2597 32.1062C31.9413 32.1062 31.729 32.2124 31.4106 32.1062C28.3326 30.9387 25.2547 29.7712 22.1768 28.6037C22.389 28.1792 22.8136 27.9669 23.132 27.6485C23.7688 27.1178 24.5117 26.6933 25.2547 26.3749C26.1038 25.9503 26.7406 25.8442 27.6958 26.3749C30.6676 27.8608 33.6394 27.6485 36.5051 26.1626C36.9297 25.9503 37.2481 25.9503 37.7787 26.1626C39.1585 26.7994 40.4321 27.5424 41.5996 28.7099V28.6037Z"
+                fill="white"
+              />
+              <path
+                d="M44.7822 39.5357C44.7822 39.005 44.7822 38.3682 44.7822 37.8375C44.7822 37.3068 45.1006 36.8823 45.6313 36.67C47.754 35.8209 50.089 37.6253 49.7706 39.8541C49.4522 41.9768 47.4356 42.7198 45.6313 42.2952C45.1006 42.1891 44.8884 41.6584 44.7822 41.1277C44.7822 40.5971 44.7822 40.0664 44.7822 39.4296V39.5357Z"
+                fill="white"
+              />
+              <path
+                d="M18.8859 39.5357C18.8859 40.0664 18.8859 40.7032 18.8859 41.2339C18.8859 42.083 18.3552 42.5075 17.5061 42.5075C15.4895 42.6136 14.1097 41.6584 13.8975 39.9602C13.5791 37.7314 15.9141 35.9271 18.0368 36.67C18.5675 36.8823 18.8859 37.3068 18.8859 37.8375C18.8859 38.3682 18.8859 38.8989 18.8859 39.5357Z"
+                fill="white"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_1346_19355">
+                <rect
+                  width="42.6667"
+                  height="42.6667"
+                  fill="white"
+                  transform="translate(10.667 10.6667)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
 
-<<<<<<< HEAD
-          <p class="achieve--num head-secondary">345,600</p>
-=======
           <p class="achieve--num head-primary">
             <count-up v-if="isVisible" :end-val="345600"></count-up>
           </p>
->>>>>>> 826c8b8e73870c75eade4cb1ef1882828e091224
           <p class="achieve-text">
             {{ $t("achieve.training") }}
           </p>
@@ -100,21 +120,8 @@
       <div class="achieve-col col-6">
         <div class="d-flex flex-row">
           <div class="achieve">
-            <img
+            <svg
               class="sv-icon"
-<<<<<<< HEAD
-              style="
-                width: 6rem;
-                height: 6rem;
-                object-fit: contain;
-                object-position: calc();
-              "
-              src="/src/assets/images/achieve/achieve8.png"
-              alt="achieve-img"
-            />
-
-            <p class="achieve--num head-secondary">4 {{ $t("achieve.mil") }}</p>
-=======
               style="width: 6rem; height: 6rem"
               viewBox="0 0 64 64"
               fill="none"
@@ -151,27 +158,13 @@
               <count-up v-if="isVisible" :end-val="4"></count-up>
               {{ $t("achieve.mil") }}
             </p>
->>>>>>> 826c8b8e73870c75eade4cb1ef1882828e091224
             <p class="achieve-text">
               {{ $t("achieve.case") }}
             </p>
           </div>
           <div class="achieve">
-            <img
+            <svg
               class="sv-icon"
-<<<<<<< HEAD
-              style="
-                width: 6rem;
-                height: 6rem;
-                object-fit: contain;
-                object-position: calc();
-              "
-              src="/src/assets/images/achieve/achieve1.png"
-              alt="achieve-img"
-            />
-
-            <p class="achieve--num head-secondary">98.6%</p>
-=======
               style="width: 6rem; height: 6rem"
               viewBox="0 0 64 64"
               fill="none"
@@ -208,7 +201,6 @@
                 :decimal-places="1"
               ></count-up>
             </p>
->>>>>>> 826c8b8e73870c75eade4cb1ef1882828e091224
             <p class="achieve-text">
               {{ $t("achieve.success") }}
             </p>
@@ -240,20 +232,6 @@
         </div>
         <div class="d-flex flex-row">
           <div class="achieve">
-<<<<<<< HEAD
-            <img
-              class="sv-icon"
-              style="
-                width: 6rem;
-                height: 6rem;
-                object-fit: contain;
-                object-position: calc();
-              "
-              src="/src/assets/images/achieve/achieve6.png"
-              alt="achieve-img"
-            />
-            <p class="achieve--num head-secondary">114,000</p>
-=======
             <svg
               class="sv-icon"
               style="width: 6rem; height: 6rem"
@@ -302,27 +280,14 @@
             <p class="achieve--num head-primary">
               <count-up v-if="isVisible" :end-val="80"></count-up>
             </p>
->>>>>>> 826c8b8e73870c75eade4cb1ef1882828e091224
             <p class="achieve-text">
               {{ $t("achieve.global") }}
             </p>
           </div>
 
           <div class="achieve">
-            <img
+            <svg
               class="sv-icon"
-<<<<<<< HEAD
-              style="
-                width: 6rem;
-                height: 6rem;
-                object-fit: contain;
-                object-position: calc();
-              "
-              src="/src/assets/images/achieve/achieve5.png"
-              alt="achieve-img"
-            />
-            <p class="achieve--num head-secondary">50</p>
-=======
               style="width: 6rem; height: 6rem"
               viewBox="0 0 64 64"
               fill="none"
@@ -352,7 +317,6 @@
             <p class="achieve--num head-primary">
               <count-up v-if="isVisible" :end-val="50"></count-up>
             </p>
->>>>>>> 826c8b8e73870c75eade4cb1ef1882828e091224
             <p class="achieve-text">
               {{ $t("achieve.lawyer") }}
             </p>
@@ -363,20 +327,6 @@
         <div class="achieve"></div>
 
         <div class="achieve">
-<<<<<<< HEAD
-          <img
-            class="sv-icon"
-            style="
-              width: 6rem;
-              height: 6rem;
-              object-fit: contain;
-              object-position: calc();
-            "
-            src="/src/assets/images/achieve/achieve3.png"
-            alt="achieve-img"
-          />
-          <p class="achieve--num head-secondary">80</p>
-=======
           <svg
             class="sv-icon custom"
             viewBox="0 0 50 44"
@@ -407,26 +357,13 @@
           <p class="achieve--num head-primary">
             <count-up v-if="isVisible" :end-val="114000"></count-up>
           </p>
->>>>>>> 826c8b8e73870c75eade4cb1ef1882828e091224
           <p class="achieve-text">
             {{ $t("achieve.colledge") }}
           </p>
         </div>
         <div class="achieve">
-          <img
+          <svg
             class="sv-icon"
-<<<<<<< HEAD
-            style="
-              width: 6rem;
-              height: 6rem;
-              object-fit: contain;
-              object-position: calc();
-            "
-            src="/src/assets/images/achieve/achieve4.png"
-            alt="achieve-img"
-          />
-          <p class="achieve--num head-secondary">300</p>
-=======
             style="width: 6rem; height: 6rem"
             viewBox="0 0 64 64"
             fill="none"
@@ -460,7 +397,6 @@
           <p class="achieve--num head-primary">
             <count-up v-if="isVisible" :end-val="300"></count-up>
           </p>
->>>>>>> 826c8b8e73870c75eade4cb1ef1882828e091224
           <p class="achieve-text">
             {{ $t("achieve.colled-train") }}
           </p>

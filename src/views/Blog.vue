@@ -49,6 +49,19 @@
           </div>
         </div>
       </div>
+      <div
+        class="pagination-box d-flex justify-content-center align-items-center"
+      >
+        <vue-awesome-paginate
+          :total-items="paginate.total"
+          v-model="currentPage"
+          :items-per-page="paginate.per_page"
+          :max-pages-shown="5"
+          :show-ending-buttons="true"
+          :show-breakpoint-buttons="false"
+          @click="onClickHandler"
+        />
+      </div>
     </div>
   </main>
   <main v-else><SplashScreen /></main>
@@ -67,9 +80,19 @@ import { usePageStore } from "@/stores/pagesStore";
 import { storeToRefs } from "pinia";
 const pageStore = usePageStore();
 const { blogs } = storeToRefs(pageStore);
-
+const paginate = ref([]);
 const isLoading = ref(true);
-
+// pagination data starts
+const currentPage = ref(1);
+const onClickHandler = async (page) => {
+  router.push({
+    path: route.path,
+    query: {
+      page: page,
+    },
+  });
+  await pageStore.getPageData("blogs", page);
+};
 const getSecData = (sectionType) => {
   if (blogs.value && blogs.value.sections && blogs.value.sections.data) {
     const section = blogs.value.sections.data.find(
@@ -89,6 +112,7 @@ onMounted(async () => {
     await pageStore.getPageData("blogs");
   }
   isLoading.value = false;
+  paginate.value = blogs.value?.sections?.pagination;
 });
 </script>
 <style lang="scss" scoped>
