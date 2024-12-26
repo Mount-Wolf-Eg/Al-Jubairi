@@ -1,62 +1,27 @@
-name: Deploy Aljubairi Web
+name: Deploy Vue.js App
 
 on:
   push:
     branches:
-      - main   # For production
-      - dev    # For development
+      - main   # Production branch
+      - develop # Development branch
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    # Check out the code
+    # Checkout the code
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Deploy to Development Server
-    - name: Set up SSH for Development
-      if: github.ref == 'refs/heads/dev'
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.MW_TESTING_EC2 }}
-
-    - name: Deploy to Development Server
-      if: github.ref == 'refs/heads/dev'
+    # Build the Vue.js app
+    - name: Install and Build Vue.js
       run: |
-        ssh -o StrictHostKeyChecking=no ubuntu@ec2-18-188-27-139.us-east-2.compute.amazonaws.com << 'EOF'
-        cd /var/www/html/aljubairi-front-turn-back-to-Al-Jubairi/
-        git add .
-        git reset --hard
-        git checkout dev
-        git pull origin dev
-        nvm use v20.7.0
-        npm install
-        npm run build
-        rm -rf /var/www/html/Al-Jubairi/dist
-        mkdir -p /var/www/html/Al-Jubairi/dist
-        cp -r dist/* /var/www/html/Al-Jubairi/dist
-        sudo systemctl restart nginx
-        EOF
-
-    # # Deploy to Production Server
-    # - name: Set up SSH for Production
-    #   if: github.ref == 'refs/heads/main'
-    #   uses: webfactory/ssh-agent@v0.5.3
-    #   with:
-    #     ssh-private-key: ${{ secrets.EC2_SSH_KEY_PROD }}
-
-    # - name: Deploy to Production Server
-    #   if: github.ref == 'refs/heads/main'
-    #   run: |
-    #     ssh -o StrictHostKeyChecking=no ec2-user@<PROD_EC2_IP> << 'EOF'
-    #     cd /var/www/frontend
-    #     git pull origin main
-    #     npm install
-    #     npm run build
-    #     rm -rf /var/www/html/Al-Jubairi/dist
-    #     mkdir -p /var/www/html/Al-Jubairi/dist
-    #     cp -r dist/* /var/www/html/Al-Jubairi/dist
-    #     sudo systemctl restart nginx
-    #     EOF
+        set -x
+        whoami
+        echo "echoed whoami .. endeddd"
+        nvm -v
+        echo "echoed nvm -v .. endeddd"
+        npm -v
+        echo "echoed npm -v .. endeddd"
