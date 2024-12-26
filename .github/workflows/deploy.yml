@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main   # For production
-      - dev # For development
+      - dev    # For development
 
 jobs:
   deploy:
@@ -16,11 +16,14 @@ jobs:
       uses: actions/checkout@v3
 
     # Deploy to Development Server
-    - name: Deploy to Development
+    - name: Set up SSH for Development
       if: github.ref == 'refs/heads/dev'
       uses: webfactory/ssh-agent@v0.5.3
       with:
         ssh-private-key: ${{ secrets.MW_TESTING_EC2 }}
+
+    - name: Deploy to Development Server
+      if: github.ref == 'refs/heads/dev'
       run: |
         ssh -o StrictHostKeyChecking=no ubuntu@ec2-18-188-27-139.us-east-2.compute.amazonaws.com << 'EOF'
         cd /var/www/html/aljubairi-front-turn-back-to-Al-Jubairi/
@@ -36,17 +39,20 @@ jobs:
         EOF
 
     # Deploy to Production Server
-    # - name: Deploy to Production
-    #   if: github.ref == 'refs/heads/main'
-    #   uses: webfactory/ssh-agent@v0.5.3
-    #   with:
-    #     ssh-private-key: ${{ secrets.EC2_SSH_KEY_PROD }}
-    #   run: |
-    #     ssh -o StrictHostKeyChecking=no ec2-user@<PROD_EC2_IP> << 'EOF'
-    #     cd /var/www/frontend
-    #     git pull origin main
-    #     npm install
-    #     npm run build
-    #     sudo cp -r dist/* /var/www/html/
-    #     sudo systemctl restart nginx
-    #     EOF
+    - name: Set up SSH for Production
+      if: github.ref == 'refs/heads/main'
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.EC2_SSH_KEY_PROD }}
+
+    - name: Deploy to Production Server
+      if: github.ref == 'refs/heads/main'
+      run: |
+        ssh -o StrictHostKeyChecking=no ec2-user@<PROD_EC2_IP> << 'EOF'
+        cd /var/www/frontend
+        git pull origin main
+        npm install
+        npm run build
+        sudo cp -r dist/* /var/www/html/
+        sudo systemctl restart nginx
+        EOF
