@@ -10,7 +10,9 @@ import "bootstrap";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+// import the package
+import VueAwesomePaginate from "vue-awesome-paginate";
+import "vue-awesome-paginate/dist/style.css";
 // vue use
 import { createHead } from "@vueuse/head";
 const head = createHead();
@@ -45,5 +47,6 @@ app.use(head);
 app.use(router);
 app.use(Toast);
 app.use(i18n);
+app.use(VueAwesomePaginate);
 
 app.mount("#app");

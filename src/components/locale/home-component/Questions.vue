@@ -26,8 +26,7 @@
             class="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body" style="position: relative">
-              {{ item.desc }}
+            <div class="accordion-body" style="position: relative" v-html="item.desc">
             </div>
           </div>
         </div>

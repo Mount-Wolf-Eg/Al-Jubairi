@@ -17,9 +17,8 @@
           :src="item.image?.media"
           :alt="item.image?.alt"
         />
-        <p class="expertise-text">
-          {{ item.desc }}
-        </p>
+        <div class="expertise-text" v-html="item.desc"></div>
+        <!-- {{ item.desc }} -->
       </div>
     </div>
   </div>

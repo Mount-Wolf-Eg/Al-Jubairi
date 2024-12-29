@@ -1,3 +1,17 @@
+.contact-page {
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .contact-info,
+    .form-container {
+      max-width: 100% !important;
+    }
+  }
+}
+
 .inside-page {
   padding: 5rem 1rem;
 }
@@ -11,9 +25,9 @@
 .contact-info {
   padding: 3rem;
   border-radius: 16px;
-  max-width: 500px;
   margin-left: 2rem;
   flex: 1;
+  max-width: 500px;
 }
 .contact-info h2 {
   margin-bottom: 1rem;
@@ -29,6 +43,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-width: 300px;
 }
 
 .social-links {

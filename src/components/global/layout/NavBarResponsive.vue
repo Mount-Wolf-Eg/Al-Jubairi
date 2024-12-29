@@ -3,7 +3,7 @@
     <div
       class="resp-nav"
       :style="{
-        position: route.name === 'home' ? 'absolute' : 'static',
+        position: route.name === 'home' ? 'fixed' : 'static',
       }"
       style="top: 0; left: 0"
     >
