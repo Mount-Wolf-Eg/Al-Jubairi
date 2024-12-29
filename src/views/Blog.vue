@@ -70,16 +70,6 @@ const { blogs } = storeToRefs(pageStore);
 
 const isLoading = ref(true);
 
-const getSecData = (sectionType) => {
-  if (blogs.value && blogs.value.sections && blogs.value.sections.data) {
-    const section = blogs.value.sections.data.find(
-      (sec) => sec.type === sectionType
-    );
-    return section ? section : {};
-  }
-  return {};
-};
-
 onMounted(async () => {
   if (
     !blogs.value ||
