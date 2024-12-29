@@ -1,6 +1,6 @@
 <template>
   <main class="socials">
-    <div class="social-container" style="direction: ltr !important">
+    <!-- <div class="social-container" style="direction: ltr !important">
       <ul>
         <li v-if="showApear('instagram') != 'false'">
           <a
@@ -168,9 +168,9 @@
           </a>
         </li>
       </ul>
-    </div>
+    </div> -->
     <div
-      class="contact-container"
+      class="contact-container mt-0"
       @click="showContact = !showContact"
       style="direction: ltr !important"
     >

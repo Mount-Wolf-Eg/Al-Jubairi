@@ -91,7 +91,7 @@ onMounted(async () => {
 
 const navigate = (ID) => {
   if (ID == 287) {
-    window.location.href = "https://aljubairi.sa";
+    window.open("https://aljubairi.sa", "_blank");
   } else {
     router.push({ name: "Employee", params: { id: ID } });
   }
