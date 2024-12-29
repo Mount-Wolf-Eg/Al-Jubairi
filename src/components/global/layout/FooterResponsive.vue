@@ -1,6 +1,6 @@
 <template>
   <footer class="resp-footer">
-    <div
+    <!-- <div
       class="footer-img"
       :style="{ display: route.name === 'home' ? 'block' : 'none' }"
     >
@@ -40,7 +40,7 @@
           {{ $t("button.contact-team") }}
         </button>
       </div>
-    </div>
+    </div> -->
     <!-- logo col -->
     <div class="footer-col p-5">
       <router-link to="/">

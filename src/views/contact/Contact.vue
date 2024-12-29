@@ -12,7 +12,7 @@
           <p>
             {{ contact_us?.sections?.data?.[0]?.desc }}
           </p>
-          <div class="social-links d-flex flex-wrap align-items-center gap-5">
+          <!-- <div class="social-links d-flex flex-wrap align-items-center gap-5">
             <a
               v-for="setting in settings?.setting?.filter(
                 (s) => !['header_logo', 'footer_logo', 'about'].includes(s.key)
@@ -23,7 +23,7 @@
             >
               <img :src="getIcon(setting.key)" alt="Social Icon" />
             </a>
-          </div>
+          </div> -->
           <h3 v-if="settings?.branches.length > 0" class="mt-5 mb-5 fw-bold">
             {{ $t("form.branches") }}:
           </h3>

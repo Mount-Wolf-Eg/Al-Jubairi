@@ -10,7 +10,6 @@
       <AchieveSec :secData="getSecData('achievement')" />
       <Achievements :secData="getSecData('achievement_statistics')" />
       <SectorsSec :secData="getSecData('sectors')" />
-      <OurClients :secData="getSecData2('clients')" />
     </div>
   </main>
   <main v-else><SplashScreen /></main>
@@ -47,15 +46,6 @@ const getSecData = (sectionType) => {
   }
   return {};
 };
-const getSecData2 = (sectionType) => {
-  if (home.value && home.value.sections && home.value.sections.data) {
-    const section = home.value.sections.data.find(
-      (sec) => sec.type === sectionType
-    );
-    return section ? section : {};
-  }
-  return {};
-};
 
 onMounted(async () => {
   if (
@@ -64,14 +54,6 @@ onMounted(async () => {
     achievement.value.sections.data.length === 0
   ) {
     await pageStore.getPageData("achievement");
-  }
-
-  if (
-    !home.value ||
-    !home.value.sections ||
-    home.value.sections.data.length === 0
-  ) {
-    await pageStore.getPageData("home");
   }
 
   isLoading.value = false;
