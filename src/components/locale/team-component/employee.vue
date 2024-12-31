@@ -41,6 +41,8 @@ import { usePageStore } from "@/stores/pagesStore";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import { storeToRefs } from "pinia";
 import { useRoute, useRouter } from "vue-router";
+import { useHead } from "@vueuse/head";
+
 const route = useRoute();
 const router = useRouter();
 const { singleItem } = storeToRefs(usePageStore());
@@ -69,6 +71,37 @@ onMounted(async () => {
 onBeforeUnmount(() => {
   singleItem.value = "";
 });
+watch(
+  () => singleItem.value,
+  (newVal) => {
+    if (newVal?.metadata) {
+      console.log(newVal?.metadata);
+      useHead({
+        title: newVal?.metadata?.title,
+        meta: [
+          {
+            name: "description",
+            content: newVal?.metadata.description,
+          },
+          { name: "keywords", content: newVal?.metadata.keywords },
+          { name: "og:title", content: newVal?.metadata.title },
+          {
+            name: "og:description",
+            content: newVal?.metadata.description,
+          },
+          { name: "og:type", content: newVal?.metadata.type },
+          { name: "og:image", content: newVal?.metadata.image },
+          { name: "og:url", content: window.location.href },
+          {
+            name: "canonical",
+            content: newVal?.metadata.canonical_tags,
+          },
+        ],
+      });
+    }
+  },
+  { immediate: true }
+);
 </script>
 
 <style lang="scss" scoped></style>

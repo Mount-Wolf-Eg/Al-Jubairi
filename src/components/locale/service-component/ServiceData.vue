@@ -42,6 +42,7 @@
 import { ref, onMounted, onBeforeUnmount, watch } from "vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import { useRoute, useRouter } from "vue-router";
+import { useHead } from "@vueuse/head";
 // store
 import { usePageStore } from "@/stores/pagesStore";
 import { storeToRefs } from "pinia";
@@ -49,7 +50,7 @@ import { storeToRefs } from "pinia";
 const route = useRoute();
 const router = useRouter();
 const pageStore = usePageStore();
-const { singleItem } = storeToRefs(pageStore);
+const { singleItem, services } = storeToRefs(pageStore);
 
 const data = ref("");
 
@@ -72,10 +73,48 @@ onMounted(async () => {
   await usePageStore().getItemData(route.params.id);
   if (singleItem.value.length == 0) router.push({ name: "Achievement" });
   data.value = singleItem.value.title;
+  if (
+    !services.value ||
+    !services.value.sections ||
+    services.value.sections.data.length === 0
+  ) {
+    await pageStore.getPageData("services");
+  }
   isLoading.value = false;
 });
 
 onBeforeUnmount(() => {
   singleItem.value = "";
 });
+watch(
+  () => services.value,
+  (newVal) => {
+    if (newVal?.page?.data?.metadata) {
+      console.log(newVal?.page?.data?.metadata);
+      useHead({
+        title: newVal?.page?.data?.metadata?.title,
+        meta: [
+          {
+            name: "description",
+            content: newVal?.page?.data?.metadata.description,
+          },
+          { name: "keywords", content: newVal?.page?.data?.metadata.keywords },
+          { name: "og:title", content: newVal?.page?.data?.metadata.title },
+          {
+            name: "og:description",
+            content: newVal?.page?.data?.metadata.description,
+          },
+          { name: "og:type", content: newVal?.page?.data?.metadata.type },
+          { name: "og:image", content: newVal?.page?.data?.metadata.image },
+          { name: "og:url", content: window.location.href },
+          {
+            name: "canonical",
+            content: newVal?.page?.data?.metadata.canonical_tags,
+          },
+        ],
+      });
+    }
+  },
+  { immediate: true }
+);
 </script>
