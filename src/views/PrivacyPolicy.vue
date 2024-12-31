@@ -24,8 +24,7 @@
   <main v-else><SplashScreen /></main>
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
-
+import { ref, onMounted, watch } from "vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
 
@@ -34,20 +33,12 @@ const crump = ref([{ name: "terms.conditions", rout: "/privacy-policy" }]);
 // store
 import { usePageStore } from "@/stores/pagesStore";
 import { storeToRefs } from "pinia";
+import { useHead } from "@vueuse/head";
+
 const pageStore = usePageStore();
 const { privacy } = storeToRefs(pageStore);
 
 const isLoading = ref(true);
-
-const getSecData = (sectionType) => {
-  if (privacy.value && privacy.value.sections && privacy.value.sections.data) {
-    const section = privacy.value.sections.data.find(
-      (sec) => sec.type === sectionType
-    );
-    return section ? section : {};
-  }
-  return {};
-};
 
 onMounted(async () => {
   if (
@@ -59,4 +50,36 @@ onMounted(async () => {
   }
   isLoading.value = false;
 });
+
+watch(
+  () => privacy.value,
+  (newVal) => {
+    if (newVal?.page?.data?.metadata) {
+      console.log(newVal?.page?.data?.metadata);
+      useHead({
+        title: newVal?.page?.data?.metadata?.title,
+        meta: [
+          {
+            name: "description",
+            content: newVal?.page?.data?.metadata.description,
+          },
+          { name: "keywords", content: newVal?.page?.data?.metadata.keywords },
+          { name: "og:title", content: newVal?.page?.data?.metadata.title },
+          {
+            name: "og:description",
+            content: newVal?.page?.data?.metadata.description,
+          },
+          { name: "og:type", content: newVal?.page?.data?.metadata.type },
+          { name: "og:image", content: newVal?.page?.data?.metadata.image },
+          { name: "og:url", content: window.location.href },
+          {
+            name: "canonical",
+            content: newVal?.page?.data?.metadata.canonical_tags,
+          },
+        ],
+      });
+    }
+  },
+  { immediate: true }
+);
 </script>

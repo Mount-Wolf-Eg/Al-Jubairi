@@ -16,7 +16,7 @@
   </main>
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import heroSlider from "@/components/locale/home-component/heroSlider.vue";
 import excellence from "@/components/locale/home-component/excellence.vue";
 import AboutUs from "@/components/locale/home-component/AboutUs.vue";
@@ -114,12 +114,35 @@ onMounted(async () => {
   isLoading.value = false;
 });
 
-useHead({
-  meta: [
-    {
-      name: "description",
-      content: "Your Al-Jubeiri Law Partner",
-    },
-  ],
-});
+watch(
+  () => home.value,
+  (newVal) => {
+    if (newVal?.page?.data?.metadata) {
+      console.log(newVal?.page?.data?.metadata);
+      useHead({
+        title: newVal?.page?.data?.metadata?.title,
+        meta: [
+          {
+            name: "description",
+            content: newVal?.page?.data?.metadata.description,
+          },
+          { name: "keywords", content: newVal?.page?.data?.metadata.keywords },
+          { name: "og:title", content: newVal?.page?.data?.metadata.title },
+          {
+            name: "og:description",
+            content: newVal?.page?.data?.metadata.description,
+          },
+          { name: "og:type", content: newVal?.page?.data?.metadata.type },
+          { name: "og:image", content: newVal?.page?.data?.metadata.image },
+          { name: "og:url", content: window.location.href },
+          {
+            name: "canonical",
+            content: newVal?.page?.data?.metadata.canonical_tags,
+          },
+        ],
+      });
+    }
+  },
+  { immediate: true }
+);
 </script>

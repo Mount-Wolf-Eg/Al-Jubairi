@@ -45,10 +45,11 @@
   <main v-else><SplashScreen /></main>
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
 import avatar from "/src/assets/icons/avatar.svg";
+import { useHead } from "@vueuse/head";
 import { useRoute, useRouter } from "vue-router";
 
 const router = useRouter();
@@ -62,20 +63,6 @@ const pageStore = usePageStore();
 const { team_work } = storeToRefs(pageStore);
 
 const isLoading = ref(true);
-
-const getSecData = (sectionType) => {
-  if (
-    team_work.value &&
-    team_work.value.sections &&
-    team_work.value.sections.data
-  ) {
-    const section = team_work.value.sections.data.find(
-      (sec) => sec.type === sectionType
-    );
-    return section ? section : {};
-  }
-  return {};
-};
 
 onMounted(async () => {
   if (
@@ -96,6 +83,38 @@ const navigate = (ID) => {
     router.push({ name: "Employee", params: { id: ID } });
   }
 };
+
+watch(
+  () => team_work.value,
+  (newVal) => {
+    if (newVal?.page?.data?.metadata) {
+      console.log(newVal?.page?.data?.metadata);
+      useHead({
+        title: newVal?.page?.data?.metadata?.title,
+        meta: [
+          {
+            name: "description",
+            content: newVal?.page?.data?.metadata.description,
+          },
+          { name: "keywords", content: newVal?.page?.data?.metadata.keywords },
+          { name: "og:title", content: newVal?.page?.data?.metadata.title },
+          {
+            name: "og:description",
+            content: newVal?.page?.data?.metadata.description,
+          },
+          { name: "og:type", content: newVal?.page?.data?.metadata.type },
+          { name: "og:image", content: newVal?.page?.data?.metadata.image },
+          { name: "og:url", content: window.location.href },
+          {
+            name: "canonical",
+            content: newVal?.page?.data?.metadata.canonical_tags,
+          },
+        ],
+      });
+    }
+  },
+  { immediate: true }
+);
 </script>
 <style lang="scss" scoped>
 html[dir="ltr"] .employees-data {

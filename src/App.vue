@@ -2,7 +2,6 @@
 import { onBeforeMount, onMounted, ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import { useRoute } from "vue-router";
-import { useHead } from "@vueuse/head";
 import SplashScreen from "./components/locale/custom-components/SplashScreen.vue";
 import MainLayout from "./components/global/layout/MainLayout.vue";
 import moment from "moment";
@@ -26,22 +25,6 @@ onMounted(() => {
 });
 
 import "moment/dist/locale/ar-sa";
-
-// onBeforeMount(() => {});
-
-useHead({
-  title: "الصفحة الرئيسية",
-  meta: [
-    {
-      name: "description",
-      content: "الصفحة الرئيسية",
-    },
-    // {
-    //   name: "description",
-    //   content: computed(() => settings.value?.meta?.description),
-    // },
-  ],
-});
 </script>
 <template>
   <main

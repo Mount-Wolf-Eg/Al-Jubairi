@@ -23,7 +23,8 @@
   <section v-else>Loading...</section>
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
+import { useHead } from "@vueuse/head";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import CommuntiyForm from "@/reusables/forms/CommunityForm/CommuntiyForm.vue";
 
@@ -46,6 +47,37 @@ onMounted(async () => {
 
   isLoading.value = false;
 });
+watch(
+  () => community.value,
+  (newVal) => {
+    if (newVal?.page?.data?.metadata) {
+      console.log(newVal?.page?.data?.metadata);
+      useHead({
+        title: newVal?.page?.data?.metadata?.title,
+        meta: [
+          {
+            name: "description",
+            content: newVal?.page?.data?.metadata.description,
+          },
+          { name: "keywords", content: newVal?.page?.data?.metadata.keywords },
+          { name: "og:title", content: newVal?.page?.data?.metadata.title },
+          {
+            name: "og:description",
+            content: newVal?.page?.data?.metadata.description,
+          },
+          { name: "og:type", content: newVal?.page?.data?.metadata.type },
+          { name: "og:image", content: newVal?.page?.data?.metadata.image },
+          { name: "og:url", content: window.location.href },
+          {
+            name: "canonical",
+            content: newVal?.page?.data?.metadata.canonical_tags,
+          },
+        ],
+      });
+    }
+  },
+  { immediate: true }
+);
 </script>
 
 <style lang="scss" src="./Community.scss"></style>

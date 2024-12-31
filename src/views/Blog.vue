@@ -67,7 +67,9 @@
   <main v-else><SplashScreen /></main>
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
+
+import { useHead } from "@vueuse/head";
 import moment from "moment";
 
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
@@ -93,15 +95,6 @@ const onClickHandler = async (page) => {
   });
   await pageStore.getPageData("blogs", page);
 };
-const getSecData = (sectionType) => {
-  if (blogs.value && blogs.value.sections && blogs.value.sections.data) {
-    const section = blogs.value.sections.data.find(
-      (sec) => sec.type === sectionType
-    );
-    return section ? section : {};
-  }
-  return {};
-};
 
 onMounted(async () => {
   if (
@@ -114,6 +107,38 @@ onMounted(async () => {
   isLoading.value = false;
   paginate.value = blogs.value?.sections?.pagination;
 });
+
+watch(
+  () => blogs.value,
+  (newVal) => {
+    if (newVal?.page?.data?.metadata) {
+      console.log(newVal?.page?.data?.metadata);
+      useHead({
+        title: newVal?.page?.data?.metadata?.title,
+        meta: [
+          {
+            name: "description",
+            content: newVal?.page?.data?.metadata.description,
+          },
+          { name: "keywords", content: newVal?.page?.data?.metadata.keywords },
+          { name: "og:title", content: newVal?.page?.data?.metadata.title },
+          {
+            name: "og:description",
+            content: newVal?.page?.data?.metadata.description,
+          },
+          { name: "og:type", content: newVal?.page?.data?.metadata.type },
+          { name: "og:image", content: newVal?.page?.data?.metadata.image },
+          { name: "og:url", content: window.location.href },
+          {
+            name: "canonical",
+            content: newVal?.page?.data?.metadata.canonical_tags,
+          },
+        ],
+      });
+    }
+  },
+  { immediate: true }
+);
 </script>
 <style lang="scss" scoped>
 .blog-item {
