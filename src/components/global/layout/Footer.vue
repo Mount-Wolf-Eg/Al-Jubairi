@@ -1,7 +1,7 @@
 <template>
   <!--                   start footer           -->
   <footer class="full-footer">
-    <div
+    <!-- <div
       class="footer-img"
       :style="{ display: route.name === 'home' ? 'block' : 'none' }"
     >
@@ -33,7 +33,7 @@
           </button>
         </router-link>
       </div>
-    </div>
+    </div> -->
     <div class="container">
       <div class="footer--info grd">
         <!-- logo col -->
