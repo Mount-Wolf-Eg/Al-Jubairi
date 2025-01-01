@@ -1,5 +1,6 @@
 <template>
   <main v-if="!isLoading" class="home-view">
+    <GoogleAd />
     <heroSlider :secData="getSecData('slider')" />
     <excellence :secData="getSecData3('excellence')" />
     <AboutUs :secData="getSecData('more_about')" />
@@ -17,6 +18,7 @@
 </template>
 <script setup>
 import { ref, onMounted, watch } from "vue";
+import GoogleAd from "@/components/GoogleAd.vue";
 import heroSlider from "@/components/locale/home-component/heroSlider.vue";
 import excellence from "@/components/locale/home-component/excellence.vue";
 import AboutUs from "@/components/locale/home-component/AboutUs.vue";
