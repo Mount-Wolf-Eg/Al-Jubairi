@@ -90,7 +90,7 @@ watch(
             content: newVal?.metadata.description,
           },
           { name: "og:type", content: newVal?.metadata.type },
-          { name: "og:image", content: newVal?.metadata.image },
+          // { name: "og:image", content: newVal?.metadata.image },
           { name: "og:url", content: window.location.href },
           {
             name: "canonical",

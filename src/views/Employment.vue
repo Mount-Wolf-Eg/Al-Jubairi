@@ -62,7 +62,7 @@ watch(
             content: newVal?.page?.data?.metadata.description,
           },
           { name: "og:type", content: newVal?.page?.data?.metadata.type },
-          { name: "og:image", content: newVal?.page?.data?.metadata.image },
+          // { name: "og:image", content: newVal?.page?.data?.metadata.image },
           { name: "og:url", content: window.location.href },
           {
             name: "canonical",
