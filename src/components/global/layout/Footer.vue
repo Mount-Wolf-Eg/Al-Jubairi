@@ -351,7 +351,9 @@
       <div class="footer--terms grd grd-2-col w-100">
         <div class="terms-item">
           {{ $t("terms.copyright") }}
-          <a href="https://sw.mount-wolf.com/" class="link">Mount Wolf</a>
+          <a href="https://www.mount-wolf.com/" target="_blank" class="link"
+            >Mount Wolf</a
+          >
         </div>
         <div class="flx-r gap-5" style="margin-inline-start: auto">
           <router-link class="terms-item link" to="/privacy-policy">{{
