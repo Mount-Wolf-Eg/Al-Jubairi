@@ -28,7 +28,7 @@ import { ref, onMounted, watch } from "vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
 
-const crump = ref([{ name: "terms.conditions", rout: "/privacy-policy" }]);
+const crump = ref([{ name: "terms.terms", rout: "/privacy-policy" }]);
 
 // store
 import { usePageStore } from "@/stores/pagesStore";

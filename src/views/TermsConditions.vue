@@ -29,7 +29,7 @@ import { useHead } from "@vueuse/head";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
 
-const crump = ref([{ name: "terms.terms", rout: "/terms-conditions" }]);
+const crump = ref([{ name: "terms.conditions", rout: "/terms-conditions" }]);
 
 // store
 import { usePageStore } from "@/stores/pagesStore";

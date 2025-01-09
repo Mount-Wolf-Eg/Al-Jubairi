@@ -34,10 +34,7 @@
           >
             <p class="d-flex gap-2 mb-3">
               <img src="/src/assets/icons/location.svg" />
-              <a
-                :href="`https://www.google.com/maps?q=${branch.lat},${branch.lng}`"
-                class="address-link"
-              >
+              <a :href="branch?.location" class="address-link">
                 {{ branch.address }}
               </a>
             </p>
@@ -56,6 +53,34 @@
                 {{ branch.additional_phone }}
               </a>
             </p>
+          </div>
+
+          <h3 v-if="showApear('email') != 'false'" class="mt-5 mb-4 fw-bold">
+            {{ $t("menu.get-Contact") }}:
+          </h3>
+          <div v-if="showApear('email') != 'false'">
+            <a
+              v-if="showApear('email')"
+              class="social-icon d-flex gap-3"
+              target="_blank"
+              :href="'mailto:' + showApear('email')"
+            >
+              <svg
+                style="width: 3rem; height: 3rem"
+                viewBox="0 0 18 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.17533 1.99911V1.9987C1.17533 1.35491 1.69639 0.832031 2.33366 0.832031H15.667C16.3075 0.832031 16.8337 1.35817 16.8337 1.9987V11.9987C16.8337 12.6392 16.3075 13.1654 15.667 13.1654H2.33366C1.6932 13.1654 1.16709 12.6393 1.16699 11.9989C1.16699 11.9988 1.16699 11.9988 1.16699 11.9987L1.17533 1.99911ZM15.932 4.08936L16.167 3.94249V3.66536V1.9987V1.09657L15.402 1.5747L9.00033 5.57574L2.59866 1.5747L1.83366 1.09657V1.9987V3.66536V3.94249L2.06866 4.08936L8.73533 8.25603L9.00033 8.42165L9.26533 8.25603L15.932 4.08936Z"
+                  fill="#ACACAC"
+                  stroke="#ACACAC"
+                />
+              </svg>
+              <p style="color: black; cursor: pointer">
+                {{ showApear("email") }}
+              </p>
+            </a>
           </div>
         </div>
         <div class="form-container">
@@ -154,6 +179,13 @@ watch(
   },
   { immediate: true }
 );
+const showApear = (name) => {
+  if (settings.value && settings.value.setting) {
+    const val = settings.value?.setting.find((el) => el.key == name)?.value;
+    return val ? val : "false";
+  }
+  return {};
+};
 </script>
 
 <style lang="scss" src="./Contact.scss"></style>

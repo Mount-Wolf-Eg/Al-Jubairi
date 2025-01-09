@@ -1,39 +1,6 @@
 <template>
   <!--                   start footer           -->
   <footer class="full-footer">
-    <!-- <div
-      class="footer-img"
-      :style="{ display: route.name === 'home' ? 'block' : 'none' }"
-    >
-      <span>
-        <img
-          v-if="settings?.setting?.find((el) => el.key == 'footer_logo'?.value)"
-          loading="lazy"
-          :src="settings?.setting?.find((el) => el.key == 'footer_logo'?.value)"
-          style="width: 100%; height: auto; min-height: 300px"
-          alt="brand logo"
-        />
-        <img
-          v-else
-          loading="lazy"
-          src="/src/assets/images/sm-images/footer.jpg"
-          style="width: 100%; height: auto; min-height: 300px"
-          alt="brand logo"
-        />
-      </span>
-
-      <div class="footer--text">
-        <p class="footer-title head-secondary">{{ $t("button.Book") }}</p>
-        <p class="footer-text body-desc-secondary">
-          {{ $t("footer.footer-text") }}
-        </p>
-        <router-link to="/contact" class="btn-round-primary">
-          <button>
-            {{ $t("button.contact-team") }}
-          </button>
-        </router-link>
-      </div>
-    </div> -->
     <div class="container">
       <div class="footer--info grd">
         <!-- logo col -->
@@ -68,6 +35,27 @@
             {{ $t("footer.footer-desc") }}
           </p>
           <ul class="social-icons">
+            <li v-if="showApear('email') != 'false'">
+              <a
+                v-if="showApear('email')"
+                class="social-icon"
+                target="_blank"
+                :href="'mailto:' + showApear('email')"
+              >
+                <svg
+                  style="width: 3rem; height: 3rem"
+                  viewBox="0 0 18 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.17533 1.99911V1.9987C1.17533 1.35491 1.69639 0.832031 2.33366 0.832031H15.667C16.3075 0.832031 16.8337 1.35817 16.8337 1.9987V11.9987C16.8337 12.6392 16.3075 13.1654 15.667 13.1654H2.33366C1.6932 13.1654 1.16709 12.6393 1.16699 11.9989C1.16699 11.9988 1.16699 11.9988 1.16699 11.9987L1.17533 1.99911ZM15.932 4.08936L16.167 3.94249V3.66536V1.9987V1.09657L15.402 1.5747L9.00033 5.57574L2.59866 1.5747L1.83366 1.09657V1.9987V3.66536V3.94249L2.06866 4.08936L8.73533 8.25603L9.00033 8.42165L9.26533 8.25603L15.932 4.08936Z"
+                    fill="#fff"
+                    stroke="#fff"
+                  />
+                </svg>
+              </a>
+            </li>
             <li v-if="showApear('instagram') != 'false'">
               <a
                 v-if="showApear('instagram')"

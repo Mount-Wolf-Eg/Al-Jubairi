@@ -26,8 +26,25 @@
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-NP4SVCG4");
     </script>
-
-    <title>Al-jubairi Law Firm</title>
+    <!-- bevatel setup -->
+    <script>
+      (function (d, t) {
+        var BASE_URL = "https://chat.bevatel.com";
+        var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src = BASE_URL + "/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+        g.onload = function () {
+          window.socialAppSDK.run({
+            websiteToken: "z6YxBjSxgX9u3iKMRb6dJAop",
+            baseUrl: BASE_URL,
+          });
+        };
+      })(document, "script");
+    </script>
+    <title>AL Jubairi Law Firm - شركة الجبيري للمحاماة</title>
   </head>
   <body>
     <div id="app"></div>
