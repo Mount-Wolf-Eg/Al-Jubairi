@@ -75,7 +75,7 @@ watch(scrollTop, () => {
 }
 .bread-crump,
 .bread-text {
-  transition: all 0.5s cubic-bezier(0.23, -0.01, 1, 0.87);
+  transition: all 0.3s cubic-bezier(0.23, -0.01, 1, 0.87);
 }
 .scrolled {
   z-index: 9999 !important;

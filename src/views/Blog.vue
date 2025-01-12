@@ -68,13 +68,14 @@
 </template>
 <script setup>
 import { ref, onMounted, watch } from "vue";
-
+import { useRoute, useRouter } from "vue-router";
 import { useHead } from "@vueuse/head";
 import moment from "moment";
-
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
 
+const route = useRoute();
+const router = useRouter();
 const crump = ref([{ name: "menu.blog", rout: "/blogs" }]);
 
 // store
@@ -105,7 +106,7 @@ onMounted(async () => {
     await pageStore.getPageData("blogs");
   }
   isLoading.value = false;
-  paginate.value = blogs.value?.sections?.pagination;
+  paginate.value = blogs.value?.sections?.data[0]?.items?.pagination;
 });
 
 watch(
