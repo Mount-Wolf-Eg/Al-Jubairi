@@ -15,7 +15,7 @@
           </li>
         </ol>
       </nav>
-      <div class="bread-text">
+      <div class="bread-text" v-if="scrollTop <= 350">
         <p class="bread-title head-secondary" style="color: var(--col-white)">
           {{ secTitle }}
         </p>
@@ -28,6 +28,8 @@
 </template>
 
 <script setup>
+import { onMounted, onUnmounted, ref, watch } from "vue";
+
 const props = defineProps({
   crump: {
     type: Array,
@@ -42,6 +44,24 @@ const props = defineProps({
     required: false,
   },
 });
+const scrollTop = ref(0);
+const handleScroll = () => {
+  scrollTop.value = window.scrollY || document.documentElement.scrollTop;
+};
+onMounted(() => {
+  handleScroll();
+  window.addEventListener("scroll", handleScroll, { passive: true });
+});
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll, { passive: true });
+});
+watch(scrollTop, () => {
+  if (scrollTop.value > 350 && document.documentElement.scrollHeight > 1500) {
+    document.querySelector(".bread-crump").classList.add("scrolled");
+  } else {
+    document.querySelector(".bread-crump").classList.remove("scrolled");
+  }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -52,5 +72,20 @@ const props = defineProps({
 
 .breadcrumb-item + .breadcrumb-item::before {
   color: var(--bs-breadcrumb-divider-color);
+}
+.bread-crump,
+.bread-text {
+  transition: all 0.5s cubic-bezier(0.23, -0.01, 1, 0.87);
+}
+.scrolled {
+  z-index: 9999 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  width: 100%;
+  padding: 0;
+  border-bottom-right-radius: 1.2rem;
+  border-bottom-left-radius: 1.2rem;
 }
 </style>

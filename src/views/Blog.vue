@@ -112,7 +112,6 @@ watch(
   () => blogs.value,
   (newVal) => {
     if (newVal?.page?.data?.metadata) {
-      console.log(newVal?.page?.data?.metadata);
       useHead({
         title: newVal?.page?.data?.metadata?.title,
         meta: [

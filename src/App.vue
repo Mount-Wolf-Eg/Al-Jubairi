@@ -5,7 +5,21 @@ import { useRoute } from "vue-router";
 import SplashScreen from "./components/locale/custom-components/SplashScreen.vue";
 import MainLayout from "./components/global/layout/MainLayout.vue";
 import moment from "moment";
-
+// seo
+import { useHead } from "@vueuse/head";
+useHead({
+  title: "AL Jubairi Law Firm - شركة الجبيري للمحاماة",
+  meta: [
+    {
+      name: "description",
+      content: "AL Jubairi Law Firm - شركة الجبيري للمحاماة",
+    },
+    {
+      name: "og:title",
+      content: "AL Jubairi Law Firm - شركة الجبيري للمحاماة",
+    },
+  ],
+});
 const route = useRoute();
 // store
 import { useSettingsStore } from "./stores/settingStore";

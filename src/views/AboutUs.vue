@@ -8,9 +8,6 @@
 
     <div class="inside-page">
       <AboutUsInfo :secData="getSecData('more_about')" />
-      <!-- <Achievements />
-      <excellence :secData="getSecData('excellence')" />
-      <OurJourney :secData="getSecData('certificates')" /> -->
     </div>
   </main>
   <main v-else><SplashScreen /></main>
@@ -30,6 +27,7 @@ const crump = ref([{ name: "menu.about-jubairi", rout: "/about" }]);
 // store
 import { usePageStore } from "@/stores/pagesStore";
 import { storeToRefs } from "pinia";
+import { POSITION } from "vue-toastification";
 const pageStore = usePageStore();
 const { about } = storeToRefs(pageStore);
 
@@ -60,7 +58,6 @@ watch(
   () => about.value,
   (newVal) => {
     if (newVal?.page?.data?.metadata) {
-      console.log(newVal?.page?.data?.metadata);
       useHead({
         title: newVal?.page?.data?.metadata?.title,
         meta: [

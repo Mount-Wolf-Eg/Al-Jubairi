@@ -65,7 +65,7 @@ onMounted(async () => {
   if (!route.params.id) router.push({ name: "our-team" });
   await usePageStore().getItemData(route.params.id);
   if (singleItem.value.length == 0) router.push({ name: "our-team" });
-  data.value = singleItem.value.title;
+  data.value = singleItem.value.name;
   isLoading.value = false;
 });
 onBeforeUnmount(() => {
@@ -75,7 +75,6 @@ watch(
   () => singleItem.value,
   (newVal) => {
     if (newVal?.metadata) {
-      console.log(newVal?.metadata);
       useHead({
         title: newVal?.metadata?.title,
         meta: [
