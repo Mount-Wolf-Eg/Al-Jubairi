@@ -11,7 +11,7 @@
         <div class="row px-0 mx-2 mx-md-0 grid">
           <div
             class="blog-item col-12 p-0 mx-0 my-3"
-            v-for="(item, i) in blogs.sections.data[0]?.items?.data"
+            v-for="(item, i) in allItemsData"
             :key="i"
           >
             <div
@@ -53,9 +53,9 @@
         class="pagination-box d-flex justify-content-center align-items-center"
       >
         <vue-awesome-paginate
-          :total-items="paginate.total"
+          :total-items="pagination?.total"
           v-model="currentPage"
-          :items-per-page="paginate.per_page"
+          :items-per-page="pagination?.per_page"
           :max-pages-shown="5"
           :show-ending-buttons="true"
           :show-breakpoint-buttons="false"
@@ -80,10 +80,10 @@ const crump = ref([{ name: "menu.blog", rout: "/blogs" }]);
 
 // store
 import { usePageStore } from "@/stores/pagesStore";
-import { storeToRefs } from "pinia";
 const pageStore = usePageStore();
-const { blogs } = storeToRefs(pageStore);
-const paginate = ref([]);
+import { storeToRefs } from "pinia";
+const { blogs, pagination, allItemsData } = storeToRefs(pageStore);
+
 const isLoading = ref(true);
 // pagination data starts
 const currentPage = ref(1);
@@ -94,7 +94,7 @@ const onClickHandler = async (page) => {
       page: page,
     },
   });
-  await pageStore.getPageData("blogs", page);
+  await pageStore.getAllItems("blogs", page);
 };
 
 onMounted(async () => {
@@ -105,8 +105,9 @@ onMounted(async () => {
   ) {
     await pageStore.getPageData("blogs");
   }
+  await pageStore.getAllItems("blogs", route?.query?.page ?? 1);
+  currentPage.value = pagination?.value?.current_page;
   isLoading.value = false;
-  paginate.value = blogs.value?.sections?.data[0]?.items?.pagination;
 });
 
 watch(

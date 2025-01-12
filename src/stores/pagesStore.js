@@ -17,11 +17,12 @@ export const usePageStore = defineStore("pageStore", {
     privacy: [],
     singleItem: [],
     singleSec: [],
+    allItemsData: [],
+    pagination: [],
   }),
   actions: {
     async getPageData(pageName, num) {
       let loading = true;
-      this.pagination = [];
       await axiosInstance
         .get(
           `${mainStore().apiLink}/website/pages/${pageName}?sections_page=${
@@ -85,6 +86,37 @@ export const usePageStore = defineStore("pageStore", {
             if (errorArray.length > 0 && errorArray[0][0]) {
               errorMessage = errorArray[0][0];
             }
+          }
+          mainStore().showAlert(errorMessage, 2);
+        })
+        .finally(() => {
+          loading = false;
+          return loading;
+        });
+    },
+    async getAllItems(secName, num) {
+      let loading = true;
+
+      await axiosInstance
+        .get(
+          `${mainStore().apiLink}/website/sections/${
+            secName ?? ""
+          }?items_page=${num ?? 1}`
+        )
+        .then((res) => {
+          this.allItemsData = res.data.data.items.data || [];
+          this.pagination = res.data.data.items.pagination;
+        })
+        .catch((err) => {
+          console.log(err);
+          let errorMessage = "Something went wrong, please try again";
+          if (err.response && err.response.data && err.response.data.message) {
+            const errorArray = err.response.data.message;
+            if (errorArray) {
+              errorMessage = err.response.data.message;
+            }
+          } else {
+            errorMessage = err.message;
           }
           mainStore().showAlert(errorMessage, 2);
         })
