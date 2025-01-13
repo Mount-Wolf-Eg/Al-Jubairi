@@ -33,7 +33,9 @@
     </div>
     <div class="more-blogs py-3 px-3 px-md-0">
       <div class="container">
-        <h2 class="head-secondary more-blogs--title mt-3 mb-5">أخبار أخري</h2>
+        <h2 class="head-secondary more-blogs--title mt-3 mb-5">
+          {{ $t("button.know-more") }}
+        </h2>
         <div class="row gap-5 px-0 mx-2 mx-md-0">
           <div
             class="blog-item col-12 col-md p-0 mx-0 my-3"

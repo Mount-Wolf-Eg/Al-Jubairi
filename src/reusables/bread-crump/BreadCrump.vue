@@ -1,7 +1,7 @@
 <template>
-  <div class="bread-crump">
-    <div class="container px-5 px-xl-0">
-      <nav aria-label="breadcrumb ">
+  <div class="bread-crump scrolled">
+    <div class="container px-5 px-xl-0 pt-2 pb-0">
+      <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <router-link to="/">{{ $t("menu.home") }}</router-link>
@@ -15,7 +15,11 @@
           </li>
         </ol>
       </nav>
-      <div class="bread-text" v-if="scrollTop <= 350">
+    </div>
+  </div>
+  <div class="bread-crump pt-0">
+    <div class="container px-5 px-xl-0 pt-0">
+      <div class="bread-text">
         <p class="bread-title head-secondary" style="color: var(--col-white)">
           {{ secTitle }}
         </p>
@@ -44,24 +48,24 @@ const props = defineProps({
     required: false,
   },
 });
-const scrollTop = ref(0);
-const handleScroll = () => {
-  scrollTop.value = window.scrollY || document.documentElement.scrollTop;
-};
-onMounted(() => {
-  handleScroll();
-  window.addEventListener("scroll", handleScroll, { passive: true });
-});
-onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll, { passive: true });
-});
-watch(scrollTop, () => {
-  if (scrollTop.value > 350 && document.documentElement.scrollHeight > 1500) {
-    document.querySelector(".bread-crump").classList.add("scrolled");
-  } else {
-    document.querySelector(".bread-crump").classList.remove("scrolled");
-  }
-});
+// const scrollTop = ref(0);
+// const handleScroll = () => {
+//   scrollTop.value = window.scrollY || document.documentElement.scrollTop;
+// };
+// onMounted(() => {
+//   handleScroll();
+//   window.addEventListener("scroll", handleScroll, { passive: true });
+// });
+// onUnmounted(() => {
+//   window.removeEventListener("scroll", handleScroll, { passive: true });
+// });
+// watch(scrollTop, () => {
+//   if (scrollTop.value > 350 && document.documentElement.scrollHeight > 1500) {
+//     document.querySelector(".bread-crump").classList.add("scrolled");
+//   } else {
+//     document.querySelector(".bread-crump").classList.remove("scrolled");
+//   }
+// });
 </script>
 
 <style lang="scss" scoped>
@@ -79,13 +83,13 @@ watch(scrollTop, () => {
 }
 .scrolled {
   z-index: 9999 !important;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
-  background-color: #000;
+  padding: 1rem 0;
   width: 100%;
-  padding: 0;
   border-bottom-right-radius: 1.2rem;
   border-bottom-left-radius: 1.2rem;
+  background-color: #151516;
 }
 </style>
