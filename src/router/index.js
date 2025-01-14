@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
-
+import { useInsightsStore } from "@/stores/insightsStore";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
+      path: "/home",
       name: "home",
       component: () => import("@/views/HomeView.vue"),
       meta: {
@@ -166,9 +166,11 @@ const router = createRouter({
     return { top: 0, behavior: "smooth" };
   },
 });
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
+  // console.log(window.location.origin + to.path);
   document.title = to.meta.title;
   next();
+  await useInsightsStore().sendRoute(to.path);
 });
 
 export default router;

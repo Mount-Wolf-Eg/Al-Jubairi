@@ -5,7 +5,7 @@
       <div class="footer--info grd">
         <!-- logo col -->
         <div class="logo-col">
-          <router-link to="/">
+          <router-link to="/home">
             <svg
               width="64"
               height="65"
@@ -254,7 +254,7 @@
 
           <ul class="footer-nav">
             <li>
-              <router-link to="/" class="footer-link">{{
+              <router-link to="/home" class="footer-link">{{
                 $t("menu.home")
               }}</router-link>
             </li>

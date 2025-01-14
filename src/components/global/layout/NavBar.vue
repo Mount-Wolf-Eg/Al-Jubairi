@@ -110,7 +110,7 @@
               settings?.setting?.find((el) => el.key == 'header_logo'?.value)
             "
             class="navbar-brand p-0 m-0"
-            to="/"
+            to="/home"
           >
             <img
               :src="
@@ -124,7 +124,7 @@
               "
               alt="brand logo"
           /></router-link>
-          <router-link v-else class="navbar-brand p-0 m-0" to="/">
+          <router-link v-else class="navbar-brand p-0 m-0" to="/home">
             <svg
               style="
                 width: 100%;

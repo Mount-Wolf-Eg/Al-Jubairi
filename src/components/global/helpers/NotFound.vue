@@ -15,7 +15,7 @@
           border-radius: 0.9rem;
           padding: 1rem;
         "
-        to="/"
+        to="/home"
         >Return to home</router-link
       >
     </div>
