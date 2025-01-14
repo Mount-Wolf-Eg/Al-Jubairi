@@ -170,7 +170,9 @@ router.beforeEach(async (to, from, next) => {
   // console.log(window.location.origin + to.path);
   document.title = to.meta.title;
   next();
-  await useInsightsStore().sendRoute(to.path);
+  if (to.name != "Not-found") {
+    await useInsightsStore().sendRoute(to.path);
+  }
 });
 
 export default router;
