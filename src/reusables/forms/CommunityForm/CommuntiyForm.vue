@@ -27,8 +27,8 @@
       :countryCode="true"
       :error="errors.phone"
     />
+    <!-- v-if="formType === 'community'" -->
     <Select
-      v-if="formType === 'community'"
       :select="{
         placeholder: $t('form.inquiryTypePlaceholder'),
         label: $t('form.inquiryType') + ' *',
