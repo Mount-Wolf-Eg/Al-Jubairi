@@ -4,7 +4,7 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <router-link to="/home">{{ $t("menu.home") }}</router-link>
+            <router-link to="/">{{ $t("menu.home") }}</router-link>
           </li>
           <li class="breadcrumb-item" v-for="(item, i) in crump" :key="i">
             <router-link :to="item.rout">{{

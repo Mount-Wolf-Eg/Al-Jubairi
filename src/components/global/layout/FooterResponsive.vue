@@ -1,7 +1,7 @@
 <template>
   <footer class="resp-footer">
     <div class="footer-col p-5">
-      <router-link to="/home">
+      <router-link to="/">
         <svg
           width="64"
           height="65"
@@ -54,7 +54,7 @@
           </button>
           <ul id="demo3" class="collapse" style="list-style: none">
             <li>
-              <router-link to="/home" class="nav-sub-item mt-4 pb-4">{{
+              <router-link to="/" class="nav-sub-item mt-4 pb-4">{{
                 $t("menu.home")
               }}</router-link>
             </li>

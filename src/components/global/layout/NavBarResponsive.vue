@@ -16,7 +16,7 @@
               settings?.setting?.find((el) => el.key == 'header_logo'?.value)
             "
             class="navbar-brand"
-            to="/home"
+            to="/"
           >
             <img
               :src="
@@ -31,7 +31,7 @@
               alt="brand logo"
             />
           </router-link>
-          <router-link v-else class="navbar-brand" to="/home"
+          <router-link v-else class="navbar-brand" to="/"
             ><svg
               style="width: 13.7rem; height: 3.2rem"
               viewBox="0 0 241 56"
@@ -214,7 +214,7 @@
       <div class="offcanvas-body">
         <ul class="navbar-items">
           <li>
-            <router-link class="nav-link" to="/home">
+            <router-link class="nav-link" to="/">
               <span data-bs-dismiss="offcanvas" aria-label="Close">
                 {{ $t("menu.home") }}
               </span>
