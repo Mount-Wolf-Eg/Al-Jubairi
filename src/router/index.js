@@ -170,7 +170,14 @@ router.beforeEach(async (to, from, next) => {
   document.title = to.meta.title;
   next();
   if (to.name != "Not-found") {
-    await useInsightsStore().sendRoute(to.path);
+    fetch("https://api.ipify.org?format=json")
+      .then((response) => response.json())
+      .then(async (data) => {
+        await useInsightsStore().sendRoute(to.path, data.ip);
+      })
+      .catch((error) => {
+        console.error("Error fetching IP address:", error);
+      });
   }
 });
 

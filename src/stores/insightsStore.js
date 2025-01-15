@@ -8,14 +8,14 @@ export const useInsightsStore = defineStore("insightsStore", {
     error: null,
   }),
   actions: {
-    async sendRoute(path) {
+    async sendRoute(path, ip) {
       this.loading = true;
       this.error = null;
 
       try {
         const response = await axiosInstance.post(
           `${mainStore().apiLink}/general/log-api`,
-          { front_route: path }
+          { front_route: path, device_ip: ip }
         );
         // return response.data;
       } catch (err) {

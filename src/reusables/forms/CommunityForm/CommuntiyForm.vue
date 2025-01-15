@@ -30,8 +30,16 @@
     <!-- v-if="formType === 'community'" -->
     <Select
       :select="{
-        placeholder: $t('form.inquiryTypePlaceholder'),
-        label: $t('form.inquiryType') + ' *',
+        placeholder: `${
+          props.formType === 'community'
+            ? $t('form.inquiryTypePlaceholder')
+            : $t('form.contactTypePlaceholder')
+        }`,
+        label: `${
+          props.formType === 'community'
+            ? $t('form.inquiryType') + ' *'
+            : $t('form.conatctType') + ' *'
+        }`,
         options: inquiryTypes,
         change: (val) => {
           formData.inquiryType = val;
@@ -123,8 +131,8 @@ const inquiryTypes = computed(() => {
   }
   return [
     { value: "suggestion", label: "اقتراح" },
-    { value: "other", label: "أخرى" },
     { value: "complaint", label: "شكوى" },
+    { value: "other", label: "أخرى" },
   ];
 });
 
