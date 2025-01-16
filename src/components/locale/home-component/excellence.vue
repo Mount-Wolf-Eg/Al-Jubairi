@@ -7,7 +7,6 @@
       v-for="(item, i) in props.secData.items?.data?.slice(0, 3)"
       :key="i"
     >
-      <!-- style="max-width: 6.4rem; max-height: 6.4rem; width: 100%;background-color: blue; height: auto" -->
       <img
         loading="lazy"
         style="max-height: 6.4rem; max-width: 9rem; height: 100%; width: auto"
