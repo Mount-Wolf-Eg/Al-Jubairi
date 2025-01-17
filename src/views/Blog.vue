@@ -57,7 +57,7 @@
           v-model="currentPage"
           :items-per-page="pagination?.per_page"
           :max-pages-shown="5"
-          :show-ending-buttons="true"
+          :show-ending-buttons="false"
           :show-breakpoint-buttons="false"
           @click="onClickHandler"
         />

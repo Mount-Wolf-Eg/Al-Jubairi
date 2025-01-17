@@ -1524,12 +1524,13 @@ footer.resp-footer {
 
 .paginate-buttons {
   font-size: 1.5rem;
-  height: 4rem;
-  width: 4rem;
+  height: 3.5rem;
+  width: 3.5rem;
   cursor: pointer;
+  border-radius: 0.8rem;
   background-color: rgb(242, 242, 242);
   border: 1px solid rgb(217, 217, 217);
-  color: black;
+  color: #151516;
 }
 
 .paginate-buttons:hover {
@@ -1537,7 +1538,7 @@ footer.resp-footer {
 }
 
 .active-page {
-  background-color: #3498db;
+  background-color: #151516;
 
   border: 1px solid #3498db;
 
