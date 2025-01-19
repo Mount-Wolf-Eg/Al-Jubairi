@@ -15,6 +15,7 @@ export const usePageStore = defineStore("pageStore", {
     contact_us: [],
     terms: [],
     privacy: [],
+    suggestions: [],
     singleItem: [],
     singleSec: [],
     allItemsData: [],

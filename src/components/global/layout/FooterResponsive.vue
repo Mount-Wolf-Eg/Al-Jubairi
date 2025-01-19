@@ -381,6 +381,9 @@
         <router-link class="terms-item link" to="/terms-conditions">{{
           $t("terms.conditions")
         }}</router-link>
+        <router-link class="terms-item link" to="/suggestions-complaints">{{
+          $t("terms.suggest")
+        }}</router-link>
       </div>
       <div class="terms-item">
         {{ $t("terms.copyright") }}

@@ -38,7 +38,7 @@
                 {{ branch.address }}
               </a>
             </p>
-            <h3 class="fw-bold mb-4">{{ branch.title }}</h3>
+            <h4 class="fw-bold mb-4">{{ branch.title }}</h4>
             <p class="d-flex gap-2">
               <img src="/src/assets/icons/phone.svg" />
               <a :href="`tel:+${branch.phone_code}${branch.phone}`">
@@ -55,9 +55,9 @@
             </p>
           </div>
 
-          <h3 v-if="showApear('email') != 'false'" class="mt-5 mb-4 fw-bold">
+          <h4 v-if="showApear('email') != 'false'" class="mt-5 mb-4 fw-bold">
             {{ $t("menu.get-Contact") }}:
-          </h3>
+          </h4>
           <div v-if="showApear('email') != 'false'">
             <a
               v-if="showApear('email')"

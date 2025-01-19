@@ -15,11 +15,11 @@
     <div class="about-us--text d-none d-md-block">
       <img
         loading="lazy"
-        src="/src/assets/images/sm-images/Group.png"
+        src="/src/assets/images/sm-images/about.svg"
         style="
           position: absolute;
           top: 0;
-          left: 0;
+          left: 15px;
           width: 50%;
           max-width: 20rem;
           height: auto;
@@ -27,6 +27,7 @@
         "
         alt=""
       />
+
       <div class="about-us--content">
         <p class="about-us-title head-secondary">
           {{ props.secData.items.data[0].title }}
@@ -69,7 +70,7 @@
     <img
       loading="lazy"
       class="d-block d-md-none"
-      src="/src/assets/images/sm-images/Group.png"
+      src="/src/assets/images/sm-images/about.svg"
       style="position: absolute; top: 0; left: 20px; width: 30%; height: auto"
       alt=""
     />

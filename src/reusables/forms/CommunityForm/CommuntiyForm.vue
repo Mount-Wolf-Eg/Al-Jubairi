@@ -27,8 +27,9 @@
       :countryCode="true"
       :error="errors.phone"
     />
-    <!-- v-if="formType === 'community'" -->
+    <!--  -->
     <Select
+      v-if="formType === 'community' || formType === 'suggest'"
       :select="{
         placeholder: `${
           props.formType === 'community'

@@ -344,6 +344,9 @@ html[dir="ltr"] .read-more-icon svg {
     padding: 0;
   }
 }
+html[dir="ltr"] .nav-link {
+  font-weight: var(--fw-500);
+}
 
 /**********************/
 /*   responsive nav  */
@@ -957,7 +960,8 @@ html[dir="ltr"] .read-more-icon svg {
     position: absolute;
     right: 0;
     bottom: 0;
-    background-color: #151516;
+    background-color: #8a8a8a;
+    // background-color: #151516;
     width: 22rem;
     min-height: 8.1rem;
     border-radius: 2rem 2rem 2rem 0;
@@ -975,6 +979,7 @@ html[dir="ltr"] .read-more-icon svg {
       line-height: var(--line-24);
       text-decoration: underline;
       text-underline-offset: 0.5rem;
+      cursor: pointer;
     }
     .employees-title {
       text-align: center;
@@ -982,6 +987,7 @@ html[dir="ltr"] .read-more-icon svg {
       width: fit-content;
       font-size: var(--fs-12);
       line-height: var(--line-15);
+      cursor: pointer;
     }
   }
 }
@@ -1379,7 +1385,10 @@ footer.full-footer {
 
     .link {
       text-decoration: underline !important;
-      text-underline-offset: 0.5rem;
+      text-underline-offset: 0.4rem;
+      &.mw {
+        font-size: var(--fs-10);
+      }
     }
   }
 }

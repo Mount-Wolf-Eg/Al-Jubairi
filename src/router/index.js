@@ -136,6 +136,14 @@ const router = createRouter({
         title: "Privacy-Policy",
       },
     },
+    {
+      path: "/suggestions-complaints",
+      name: "Suggestions",
+      component: () => import("@/views/suggestions/Suggestions.vue"),
+      meta: {
+        title: "Suggestions And Complaints",
+      },
+    },
     // {
     //   path: "/nested",
     //   name: "Nested",
