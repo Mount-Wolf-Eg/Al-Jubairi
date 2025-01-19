@@ -1,7 +1,7 @@
 <template>
   <nav
     class="navbar main-nav navbar-expand-sm p-0"
-    style="position: fixed; top: 0; left: 0"
+    style="position: fixed; top: 0; left: 0; z-index: 999 !important"
     :style="{
       position: route.name === 'home' ? 'fixed' : 'static',
       backgroundColor: route.name === 'home' ? '' : 'white',

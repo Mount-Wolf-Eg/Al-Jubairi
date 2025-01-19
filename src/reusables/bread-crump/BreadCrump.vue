@@ -82,7 +82,7 @@ const props = defineProps({
   transition: all 0.3s cubic-bezier(0.23, -0.01, 1, 0.87);
 }
 .scrolled {
-  z-index: 9999 !important;
+  z-index: 995 !important;
   position: sticky;
   top: 0;
   left: 0;
