@@ -372,7 +372,7 @@
     </div>
     <div class="footer-resp--terms">
       <div
-        class="d-flex flex-row justify-content-center gap-5 align-items-center"
+        class="d-flex flex-row justify-content-around flex-wrap align-items-center gap-3"
         style="margin: 1rem 0"
       >
         <router-link class="terms-item link" to="/privacy-policy">{{

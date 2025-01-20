@@ -189,10 +189,11 @@
       <img
         class="resp-nav-img"
         loading="lazy"
-        src="/src/assets/images/sm-images/Group.png"
-        style="position: absolute; top: 0"
+        src="/src/assets/images/sm-images/about.svg"
+        style="position: absolute; top: 0; width: 30%; height: auto"
         alt="navbar image"
       />
+
       <div class="offcanvas-header">
         <button
           type="button"

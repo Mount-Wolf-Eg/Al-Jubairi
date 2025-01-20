@@ -343,7 +343,7 @@
             >Mount Wolf</a
           >
         </div>
-        <div class="flx-r gap-3 gap-md-5" style="margin-inline-start: auto">
+        <div class="flx-r gap-2 gap-md-5" style="margin-inline-start: auto">
           <router-link class="terms-item link" to="/privacy-policy">{{
             $t("terms.terms")
           }}</router-link>
