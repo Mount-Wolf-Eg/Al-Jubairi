@@ -1,5 +1,5 @@
 <template>
-  <div class="questions-sec px-5 px-md-0">
+  <div class="questions-sec px-3">
     <p class="questions-sec--title head-secondary text-center">
       {{ props.secData.title }}
     </p>
@@ -26,8 +26,11 @@
             class="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body" style="position: relative" v-html="item.desc">
-            </div>
+            <div
+              class="accordion-body"
+              style="position: relative"
+              v-html="item.desc"
+            ></div>
           </div>
         </div>
       </div>
