@@ -38,7 +38,9 @@
                 {{ branch.address }}
               </a>
             </p>
-            <h4 class="fw-bold mb-4">{{ branch.title }}</h4>
+            <h4 class="fw-bold mb-4" style="cursor: context-menu">
+              {{ branch.title }}
+            </h4>
             <p class="d-flex gap-2">
               <img src="/src/assets/icons/phone.svg" />
               <a :href="`tel:+${branch.phone_code}${branch.phone}`">
