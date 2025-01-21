@@ -371,7 +371,7 @@ html[dir="ltr"] .nav-link {
   .resp-nav {
     width: 100% !important;
     backdrop-filter: brightness(0.9) blur(16px);
-    z-index: 500;
+    z-index: 997;
   }
 
   .navbar-items {
@@ -674,6 +674,9 @@ html[dir="ltr"] .nav-link {
       }
     }
   }
+}
+html[dir="ltr"] .parralax-text {
+  left: 10%;
 }
 /**********************/
 /*  achievements section */

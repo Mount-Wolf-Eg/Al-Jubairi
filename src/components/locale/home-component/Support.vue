@@ -14,8 +14,8 @@
         v-for="(item, i) in props.secData.items?.data?.slice(0, 3)"
         :key="i"
       >
+        <!-- loading="lazy" -->
         <img
-          loading="lazy"
           :src="item.image?.media"
           style="width: 100%; object-fit: cover; object-position: center"
           :alt="item.image?.alt"
