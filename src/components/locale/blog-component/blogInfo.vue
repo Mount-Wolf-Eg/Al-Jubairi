@@ -61,7 +61,7 @@
                   :alt="item.image?.alt"
                 />
               </div>
-              <div class="blog-text p-4">
+              <div class="blog-text p-4 pt-1">
                 <p class="blog-date">
                   {{ moment(new Date(item.created_at)).format("LL") }}
                 </p>
