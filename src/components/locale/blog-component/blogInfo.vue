@@ -1,21 +1,19 @@
 <template>
   <main v-if="!isLoading" class="employee-view">
+    <BreadCrump :crump="crump" :secTitle="''" :secDesc="''"></BreadCrump>
     <div class="container">
-      <BreadCrump :crump="crump" :secTitle="''" :secDesc="''"></BreadCrump>
-
       <div class="row mx-0 px-3 px-md-0 gap-5">
         <div class="container p-0">
           <img
             loading="lazy"
             :src="singleItem.image?.media"
             style="
-              width: 100%;
-              height: auto;
-              object-fit: cover;
-              object-position: top;
-              max-height: 60rem !important;
+              object-fit: contain;
+              max-height: 81rem !important;
               border-radius: 0.8rem;
+              width: 100% !important;
             "
+            class="mx-auto"
             :alt="singleItem.image?.alt"
           />
         </div>

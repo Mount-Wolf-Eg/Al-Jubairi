@@ -15,7 +15,8 @@
             :key="i"
           >
             <div
-              class="blog-content w-100 h-100"
+              class="blog-content w-100"
+              style="height: 50rem"
               @click="
                 $router.push({ name: 'BlogDetail', params: { id: item.id } })
               "
@@ -23,12 +24,7 @@
               <div class="blog-img">
                 <img
                   :src="item.image?.media"
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    object-position: top;
-                  "
+                  style="height: 27rem; object-fit: contain"
                   :alt="item.image?.alt"
                 />
               </div>

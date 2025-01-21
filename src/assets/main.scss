@@ -1199,19 +1199,20 @@ html[dir="ltr"] .parralax-text {
 /********************/
 .blog-item {
   justify-self: center;
-  border-radius: 0.8rem;
   margin-bottom: 5rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: start;
-  height: 56.2rem;
+  // height: 56.2rem;
+  max-height: 50rem !important;
   min-width: unset !important;
   max-width: 38.4rem;
-  border-radius: 0.8rem;
   margin-bottom: 5rem;
   .blog-img {
-    height: 60%;
+    height: 27rem;
+    border-radius: 1.2rem !important;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
