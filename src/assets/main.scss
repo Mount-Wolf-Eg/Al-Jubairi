@@ -664,6 +664,7 @@ html[dir="ltr"] .nav-link {
       img {
         position: relative;
         height: 70rem;
+        filter: brightness(70%) blur(1px);
       }
       .parralax-text {
         position: absolute;
