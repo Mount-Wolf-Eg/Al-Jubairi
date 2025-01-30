@@ -330,7 +330,7 @@
             </router-link>
           </li>
 
-          <li>
+          <li class="lang-box">
             <ul class="p-0">
               <button
                 type="button"
@@ -390,6 +390,7 @@
                   margin-top: -1rem;
                   margin-bottom: 1rem;
                   padding-inline-start: 2rem !important;
+                  list-style: none;
                 "
               >
                 <li
@@ -460,6 +461,22 @@ const setLanguage = (lan) => {
 html[dir="rtl"] {
   .resp-nav-img {
     left: 0 !important;
+  }
+  .lang-box {
+    ul {
+      button {
+        margin-right: auto;
+      }
+      #demo1 {
+        li {
+          list-style: decimal;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-end;
+        }
+      }
+    }
   }
 }
 html[dir="ltr"] {

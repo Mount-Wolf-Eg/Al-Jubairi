@@ -3,7 +3,7 @@
   "menu": {
     "home": "Home",
     "about": "About Us",
-    "about-jubairi": "About Al-Jubairi",
+    "about-jubairi": "About Al Jubairi",
     "services": "Services",
     "team": "Team",
     "achievements": "Achievements",
@@ -21,7 +21,7 @@
     "submit": "Submit",
     "cancel": "Cancel",
     "Book": "Book your legal consultations",
-    "know-more": "Know More",
+    "know-more": "Learn More",
     "show-all": "Show All News",
     "contact-team": "Contact Our Team"
   },
@@ -38,15 +38,15 @@
   },
   "footer": {
     "footer-text": "We are committed to continuing to develop and improve our services, and to provide legal advice to our clients. We would be delighted to serve you and your business needs.",
-    "footer-desc": "At Al-Jubairi Law Firm, we have achieved a prestigious position in providing legal services, based on our vision that combines strict adherence to legal standards and adherence to human values, which reflects our approach to achieving justice and meeting the needs of our clients with professionalism and ethics.",
+    "footer-desc": "At Al Jubairi Law Firm, we have achieved a prestigious position in providing legal services, based on our vision that combines strict adherence to legal standards and adherence to human values, which reflects our approach to achieving justice and meeting the needs of our clients with professionalism and ethics.",
     "company": "Company",
     "more": "Explore more",
     "Services": "Services"
   },
   "terms": {
-    "terms": "privacy policy",
+    "terms": "Privacy Policy",
     "suggest": "Complaints and Suggestions",
-    "conditions": "terms & conditions",
+    "conditions": "Terms & Conditions",
     "copyright": "© 2025 All Rights Reserved - By"
   },
   "form": {
@@ -78,6 +78,7 @@
     "uploadCV": "Upload CV"
   },
   "achieve": {
+    "hour": "Consulting Hours",
     "training": "Training Hour for Lawyers",
     "case": "Total Value of Cases",
     "success": "Success Rate of Cases",
