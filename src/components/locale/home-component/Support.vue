@@ -21,8 +21,16 @@
           :alt="item.image?.alt"
         />
         <div class="parralax-text">
-          <p class="parralax-title head-secondary">{{ item.title }}</p>
-          <p class="parralax-parag body-desc-secondary">
+          <p
+            class="parralax-title head-secondary"
+            style="font-weight: bold !important"
+          >
+            {{ item.title }}
+          </p>
+          <p
+            class="parralax-parag body-desc-secondary"
+            style="font-weight: bold !important"
+          >
             {{ item.desc }}
           </p>
           <button
