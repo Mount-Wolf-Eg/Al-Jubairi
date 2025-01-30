@@ -554,6 +554,9 @@
       width: 90% !important;
     }
   }
+  html[dir="ltr"] .parralax-text {
+    left: 0;
+  }
 }
 
 /**************************/

@@ -276,6 +276,9 @@ html[dir="ltr"] .read-more-icon svg {
     color: var(--col-light-dark) !important;
   }
 }
+html[dir="ltr"] .dropdown-menu {
+  left: -73px !important;
+}
 
 /* Flexbox Utilities */
 .flx-c {
