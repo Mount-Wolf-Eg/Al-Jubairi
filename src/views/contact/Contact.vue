@@ -85,7 +85,7 @@
             </a>
           </div>
         </div>
-        <div class="form-container">
+        <div class="form-container px-4 px-md-5">
           <CommuntiyForm formType="contact_us" />
         </div>
       </div>

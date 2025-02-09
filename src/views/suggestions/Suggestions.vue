@@ -7,7 +7,7 @@
     ></BreadCrump>
     <section class="inside-page">
       <div class="container contact-page">
-        <div class="form-container mx-auto">
+        <div class="form-container px-4 px-md-5 mx-auto">
           <CommuntiyForm formType="suggest" />
         </div>
       </div>

@@ -6,7 +6,7 @@
       :secDesc="jobs?.page?.data?.desc"
     ></BreadCrump>
     <section class="inside-page d-flex justify-content-center">
-      <div class="form-container">
+      <div class="form-container px-4 px-md-5">
         <h2 class="form-title">{{ $t("form.submit-application") }}</h2>
         <p class="form-description">
           {{ $t("form.fil-below") }}
