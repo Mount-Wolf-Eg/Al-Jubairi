@@ -75,7 +75,10 @@
     "submit-application": "Submit Your Application",
     "fil-below": "Please fill out the form below for a chance to join our legal team.",
     "limit": "Maximum",
-    "uploadCV": "Upload CV"
+    "uploadCV": "Upload CV",
+    "suggestion": "Suggestion",
+    "complaint": "Complaint",
+    "other": "Others"
   },
   "achieve": {
     "hour": "Consulting Hours",

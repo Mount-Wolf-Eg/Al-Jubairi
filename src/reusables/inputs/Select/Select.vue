@@ -14,7 +14,9 @@
         :key="option.value"
         :value="option.value"
       >
-        {{ option.label }}
+        {{
+          select.typ === "suggest" ? $t(`form.${option.label}`) : option.label
+        }}
       </option>
     </select>
     <span v-if="error" class="text-danger">{{ error }}</span>

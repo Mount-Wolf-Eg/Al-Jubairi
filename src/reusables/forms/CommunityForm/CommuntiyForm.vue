@@ -31,6 +31,7 @@
     <Select
       v-if="formType === 'community' || formType === 'suggest'"
       :select="{
+        typ: formType,
         placeholder: `${
           props.formType === 'community'
             ? $t('form.inquiryTypePlaceholder')
@@ -131,9 +132,9 @@ const inquiryTypes = computed(() => {
     ];
   }
   return [
-    { value: "suggestion", label: "اقتراح" },
-    { value: "complaint", label: "شكوى" },
-    { value: "other", label: "أخرى" },
+    { value: "suggestion", label: "suggestion" },
+    { value: "complaint", label: "complaint" },
+    { value: "other", label: "other" },
   ];
 });
 
