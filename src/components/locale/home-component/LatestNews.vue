@@ -30,7 +30,7 @@
         </div>
         </p>
         <button @click="
-          $router.push({ name: 'BlogDetail', params: {blogName: 'blogggggggggggggggggggg', id: props.secData?.items?.data?.slice(-1)[0]?.id } })
+          $router.push({ name: 'BlogDetail', params: {blogName: 'blogInfo', id: props.secData?.items?.data?.slice(-1)[0]?.id } })
           " class="latest-news--link">{{ $t("button.know-more") }}</button>
       </div>
     </div>
