@@ -11,10 +11,8 @@ const route = useRoute();
 const isLoading = ref(true);
 
 // Load environment variables
-const baseUrlEn =
-  import.meta.env.VITE_BASE_URL_EN || "https://aljubairi.diaamagdi.com/en/";
-const baseUrlAr =
-  import.meta.env.VITE_BASE_URL_AR || "https://aljubairi.diaamagdi.com/ar/";
+const baseUrlEn = import.meta.env.VITE_API_BASE_URL + "/en/";
+const baseUrlAr = import.meta.env.VITE_API_BASE_URL + "/ar/";
 
 // Detect the current language from session storage or default to Arabic
 const currentLang = sessionStorage.getItem("lang") || "ar";
@@ -34,7 +32,6 @@ useHead({
   link: [
     { rel: "alternate", hreflang: "en", href: baseUrlEn },
     { rel: "alternate", hreflang: "ar", href: baseUrlAr },
-    { rel: "alternate", hreflang: "x-default", href: baseUrlEn }, // Default to English
   ],
 });
 

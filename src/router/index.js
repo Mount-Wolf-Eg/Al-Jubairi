@@ -103,7 +103,8 @@ const router = createRouter({
       },
     },
     {
-      path: "/blog-data/:id",
+      // path: "/blog-data/:id",
+      path: "/:blogName/:id",
       name: "BlogDetail",
       component: () =>
         import("@/components/locale/blog-component/blogInfo.vue"),

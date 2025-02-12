@@ -46,7 +46,10 @@
             <div
               class="blog-content w-100 h-100"
               @click="
-                $router.push({ name: 'BlogDetail', params: { id: item.id } })
+                $router.push({
+                  name: 'BlogDetail',
+                  params: { blogName: 'blog-info', id: item.id },
+                })
               "
             >
               <div class="blog-img">
