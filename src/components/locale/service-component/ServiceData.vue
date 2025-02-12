@@ -21,6 +21,7 @@
                 class="w-100 h-75 d-flex align-items-center justify-content-center"
               >
                 <img
+                  loading="lazy"
                   :src="item.image?.media"
                   class="service-card--img"
                   :Lalt="item.image?.alt"

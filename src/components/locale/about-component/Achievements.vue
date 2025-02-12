@@ -8,6 +8,7 @@
         <div class="achieve"></div>
         <div class="achieve">
           <img
+            loading="lazy"
             class="sv-icon"
             style="
               width: 6rem;
@@ -25,6 +26,7 @@
         </div>
         <div class="achieve">
           <img
+            loading="lazy"
             class="sv-icon"
             style="
               width: 6rem;
@@ -47,6 +49,7 @@
         <div class="d-flex flex-row">
           <div class="achieve">
             <img
+              loading="lazy"
               class="sv-icon"
               style="
                 width: 6rem;
@@ -65,6 +68,7 @@
           </div>
           <div class="achieve">
             <img
+              loading="lazy"
               class="sv-icon"
               style="
                 width: 6rem;
@@ -110,6 +114,7 @@
           <div class="achieve">
             <img
               class="sv-icon"
+              loading="lazy"
               style="
                 width: 6rem;
                 height: 6rem;
@@ -126,6 +131,7 @@
           </div>
           <div class="achieve">
             <img
+              loading="lazy"
               class="sv-icon"
               style="
                 width: 6rem;
@@ -147,6 +153,7 @@
         <div class="achieve"></div>
         <div class="achieve">
           <img
+            loading="lazy"
             class="sv-icon"
             style="
               width: 6rem;
@@ -164,6 +171,7 @@
         </div>
         <div class="achieve">
           <img
+            loading="lazy"
             class="sv-icon"
             style="
               width: 6rem;

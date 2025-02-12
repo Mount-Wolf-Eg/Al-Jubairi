@@ -17,7 +17,7 @@
           v-for="(item, i) in props.secData?.items?.data"
           :key="i"
         >
-          <img :src="item.image?.media" :alt="item.image?.alt" />
+          <img loading="lazy" :src="item.image?.media" :alt="item.image?.alt" />
           <div class="sector-hover-box">
             <div class="sector-box">
               <p class="sector-hover-title">{{ item.title }}</p>

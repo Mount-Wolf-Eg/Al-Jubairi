@@ -18,6 +18,7 @@
               class="d-flex flex-column flex-md-row align-items-center gap-3 gap-md-3 px-3 px-md-3 justify-content-start"
             >
               <img
+                loading="lazy"
                 :src="item.image?.media"
                 class="achieve-card--img"
                 :Lalt="item.image?.alt"

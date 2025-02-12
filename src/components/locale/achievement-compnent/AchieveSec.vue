@@ -16,6 +16,7 @@
           <div v-for="(item, i) in secData?.items?.data" :key="i">
             <div class="achieve p-2 p-md-5">
               <img
+                loading="lazy"
                 style="
                   width: 12rem;
                   height: auto;

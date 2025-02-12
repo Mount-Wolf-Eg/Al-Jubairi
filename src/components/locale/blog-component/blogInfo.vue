@@ -21,9 +21,9 @@
           <p class="main-date">
             {{ moment(new Date(singleItem.created_at)).format("LL") }}
           </p>
-          <p class="employee-name head-secondary">
+          <h1 class="employee-name head-secondary">
             {{ singleItem.title }}
-          </p>
+          </h1>
 
           <div class="html-content text-editor" v-html="singleItem.desc"></div>
         </div>
@@ -51,6 +51,7 @@
             >
               <div class="blog-img">
                 <img
+                  loading="lazy"
                   :src="item.image?.media"
                   style="
                     width: 100%;

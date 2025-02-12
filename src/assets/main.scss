@@ -131,7 +131,7 @@ a:visited {
   display: inline-block;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: var(--col-white) !important;
+  color: var(--col-gray);
 }
 
 /* Form Elements */
@@ -741,12 +741,24 @@ html[dir="ltr"] .parralax-text {
 /**********************/
 /*   latest section   */
 /********************/
+.text-editor {
+  a:link,
+  a:visited {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: rgba(0, 0, 99, 0.87);
+    &:hover {
+      color: rgb(0, 0, 255);
+    }
+  }
+}
 .latest-news-sec {
   padding: 5rem 0;
   .latest-news-sec--title {
     color: var(--col-dark);
     margin-bottom: 5rem;
   }
+
   .text-editor {
     ol,
     ul {

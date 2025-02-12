@@ -33,7 +33,7 @@
             class="branch-info"
           >
             <p class="d-flex gap-2 mb-3">
-              <img src="/src/assets/icons/location.svg" />
+              <img loading="lazy" src="/src/assets/icons/location.svg" />
               <a :href="branch?.location" class="address-link">
                 {{ branch.address }}
               </a>
@@ -42,7 +42,7 @@
               {{ branch.title }}
             </h4>
             <p class="d-flex gap-2">
-              <img src="/src/assets/icons/phone.svg" />
+              <img loading="lazy" src="/src/assets/icons/phone.svg" />
               <a :href="`tel:+${branch.phone_code}${branch.phone}`">
                 +{{ branch.phone_code }} {{ branch.phone }}
               </a>

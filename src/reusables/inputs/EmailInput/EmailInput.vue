@@ -5,6 +5,7 @@
     }}</label>
     <div class="input-container">
       <img
+        loading="lazy"
         src="/src/assets/icons/email-icon.svg"
         alt="Email Icon"
         class="email-icon"

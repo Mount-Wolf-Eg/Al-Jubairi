@@ -16,6 +16,7 @@
       >
         <!-- loading="lazy" -->
         <img
+          loading="lazy"
           :src="item.image?.media"
           style="width: 100%; object-fit: cover; object-position: center"
           :alt="item.image?.alt"

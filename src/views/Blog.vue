@@ -23,6 +23,7 @@
             >
               <div class="blog-img">
                 <img
+                  loading="lazy"
                   :src="item.image?.media"
                   style="height: 27rem; object-fit: contain"
                   :alt="item.image?.alt"
