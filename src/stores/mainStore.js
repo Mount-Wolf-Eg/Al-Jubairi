@@ -2,7 +2,8 @@ import { defineStore } from "pinia";
 import { useToast } from "vue-toastification";
 
 // testing url
-const mainDomain = "https://aljubairi.diaamagdi.com/api";
+// const mainDomain = "https://aljubairi.diaamagdi.com/api";
+const mainDomain = import.meta.env.VITE_API_BASE_URL;
 // const mainDomain = "https://api.aljubairi.com/api";
 
 export const mainStore = defineStore("mainStore", {

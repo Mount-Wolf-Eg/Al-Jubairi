@@ -1,12 +1,24 @@
 <script setup>
 import { onBeforeMount, onMounted, ref } from "vue";
-import { RouterLink, RouterView } from "vue-router";
 import { useRoute } from "vue-router";
 import SplashScreen from "./components/locale/custom-components/SplashScreen.vue";
 import MainLayout from "./components/global/layout/MainLayout.vue";
 import moment from "moment";
-// seo
 import { useHead } from "@vueuse/head";
+import { useSettingsStore } from "./stores/settingStore";
+
+const route = useRoute();
+const isLoading = ref(true);
+
+// Load environment variables
+const baseUrlEn =
+  import.meta.env.VITE_BASE_URL_EN || "https://aljubairi.diaamagdi.com/en/";
+const baseUrlAr =
+  import.meta.env.VITE_BASE_URL_AR || "https://aljubairi.diaamagdi.com/ar/";
+
+// Detect the current language from session storage or default to Arabic
+const currentLang = sessionStorage.getItem("lang") || "ar";
+
 useHead({
   title: "AL Jubairi Law Firm - شركة الجبيري للمحاماة",
   meta: [
@@ -19,27 +31,26 @@ useHead({
       content: "AL Jubairi Law Firm - شركة الجبيري للمحاماة",
     },
   ],
+  link: [
+    { rel: "alternate", hreflang: "en", href: baseUrlEn },
+    { rel: "alternate", hreflang: "ar", href: baseUrlAr },
+    { rel: "alternate", hreflang: "x-default", href: baseUrlEn }, // Default to English
+  ],
 });
-const route = useRoute();
-// store
-import { useSettingsStore } from "./stores/settingStore";
-
-const isLoading = ref(true);
 
 onBeforeMount(async () => {
   await useSettingsStore().getSettings();
-  let lang = sessionStorage.getItem("lang") ?? "ar";
-  lang == "ar" ? moment.locale("ar-sa") : moment.locale("en-gb");
+  currentLang === "ar" ? moment.locale("ar-sa") : moment.locale("en-gb");
   isLoading.value = false;
 });
 
 onMounted(() => {
-  if (sessionStorage.getItem("lang") == null)
-    sessionStorage.setItem("lang", "ar");
+  if (!sessionStorage.getItem("lang")) sessionStorage.setItem("lang", "ar");
 });
 
 import "moment/dist/locale/ar-sa";
 </script>
+
 <template>
   <main
     v-if="!isLoading"
