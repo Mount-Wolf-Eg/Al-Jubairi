@@ -94,6 +94,7 @@ html[dir="rtl"] {
   *::before,
   *::after {
     font-family: "Noto Kufi Arabic", sans-serif;
+    font-display: swap;
   }
 }
 html[dir="ltr"] {
@@ -101,6 +102,7 @@ html[dir="ltr"] {
   *::before,
   *::after {
     font-family: "Raleway", serif;
+    font-display: swap;
   }
 }
 
@@ -1337,6 +1339,7 @@ html[dir="ltr"] .parralax-text {
 /*   footer section   */
 /********************/
 footer.full-footer {
+  min-width: 100px;
   position: relative;
   background-color: #151516;
   .footer-img {

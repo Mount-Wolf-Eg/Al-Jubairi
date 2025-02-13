@@ -10,7 +10,7 @@
         object-fit: cover;
         object-position: center;
       "
-      alt=""
+      alt="about image"
     />
     <div class="about-us--text d-none d-md-block">
       <img
@@ -25,7 +25,7 @@
           height: auto;
           max-height: 50%;
         "
-        alt=""
+        alt="about image"
       />
 
       <div class="about-us--content">
