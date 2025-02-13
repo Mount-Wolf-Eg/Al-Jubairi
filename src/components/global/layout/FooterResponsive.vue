@@ -1,7 +1,7 @@
 <template>
   <footer class="resp-footer">
     <div class="footer-col p-5">
-      <router-link to="/">
+      <router-link to="/" aria-label="al jubairi logo">
         <svg
           width="64"
           height="65"
@@ -182,6 +182,7 @@
       <ul class="social-icons flx-r flex-wrap" style="list-style: none">
         <li v-if="showApear('email') != 'false'">
           <a
+            aria-label="social icons"
             v-if="showApear('email')"
             class="social-icon"
             target="_blank"
@@ -203,6 +204,7 @@
         </li>
         <li v-if="showApear('instagram') != 'false'">
           <a
+            aria-label="social icons"
             v-if="showApear('instagram')"
             class="social-icon"
             target="_blank"
@@ -234,6 +236,7 @@
             class="social-icon"
             target="_blank"
             href="https://www.linkedin.com/company/aljubairi/posts/?feedView=all"
+            aria-label="social icons"
           >
             <svg
               width="24"
@@ -250,7 +253,12 @@
           </a>
         </li>
         <li v-if="showApear('linkedin') != 'false'">
-          <a class="social-icon" target="_blank" :href="showApear('linkedin')">
+          <a
+            class="social-icon"
+            target="_blank"
+            :href="showApear('linkedin')"
+            aria-label="social icons"
+          >
             <svg
               width="24"
               height="25"
@@ -266,7 +274,12 @@
           </a>
         </li>
         <li v-if="showApear('x') != 'false'">
-          <a class="social-icon" target="_blank" :href="showApear('x')">
+          <a
+            class="social-icon"
+            target="_blank"
+            :href="showApear('x')"
+            aria-label="social icons"
+          >
             <svg
               width="24"
               height="25"
@@ -282,7 +295,12 @@
           </a>
         </li>
         <li v-if="showApear('tiktok') != 'false'">
-          <a class="social-icon" target="_blank" :href="showApear('tiktok')">
+          <a
+            class="social-icon"
+            target="_blank"
+            :href="showApear('tiktok')"
+            aria-label="social icons"
+          >
             <svg
               width="24"
               height="25"
@@ -299,7 +317,12 @@
         </li>
 
         <li v-if="showApear('youtube') != 'false'">
-          <a class="social-icon" target="_blank" :href="showApear('youtube')">
+          <a
+            class="social-icon"
+            target="_blank"
+            :href="showApear('youtube')"
+            aria-label="social icons"
+          >
             <svg
               width="24"
               height="25"
@@ -316,7 +339,12 @@
         </li>
 
         <li v-if="showApear('whatsapp') != 'false'">
-          <a class="social-icon" target="_blank" :href="showApear('whatsapp')">
+          <a
+            class="social-icon"
+            target="_blank"
+            :href="showApear('whatsapp')"
+            aria-label="social icons"
+          >
             <svg
               width="24"
               height="24"
@@ -336,7 +364,12 @@
           </a>
         </li>
         <li v-if="showApear('facebook') != 'false'">
-          <a class="social-icon" target="_blank" :href="showApear('facebook')">
+          <a
+            class="social-icon"
+            target="_blank"
+            :href="showApear('facebook')"
+            aria-label="social icons"
+          >
             <svg
               width="24"
               height="24"
@@ -351,7 +384,11 @@
           </a>
         </li>
         <li>
-          <a class="social-icon" href="tel:+966 9200 03772">
+          <a
+            class="social-icon"
+            href="tel:+966 9200 03772"
+            aria-label="social icons"
+          >
             <svg
               style="width: 2.5rem; height: 2.5rem"
               viewBox="0 0 18 17"

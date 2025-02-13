@@ -5,7 +5,7 @@
       <div class="footer--info grd">
         <!-- logo col -->
         <div class="logo-col">
-          <router-link to="/">
+          <router-link to="/" aria-label="al jubairi logo">
             <svg
               width="64"
               height="65"
@@ -37,6 +37,7 @@
           <ul class="social-icons">
             <li v-if="showApear('email') != 'false'">
               <a
+                aria-label="social icons"
                 v-if="showApear('email')"
                 class="social-icon"
                 target="_blank"
@@ -58,6 +59,7 @@
             </li>
             <li v-if="showApear('instagram') != 'false'">
               <a
+                aria-label="social icons"
                 v-if="showApear('instagram')"
                 class="social-icon"
                 target="_blank"
@@ -86,6 +88,7 @@
             </li>
             <li>
               <a
+                aria-label="social icons"
                 class="social-icon"
                 target="_blank"
                 href="https://www.linkedin.com/company/aljubairi/posts/?feedView=all"
@@ -106,6 +109,7 @@
             </li>
             <li v-if="showApear('linkedin') != 'false'">
               <a
+                aria-label="social icons"
                 class="social-icon"
                 target="_blank"
                 :href="showApear('linkedin')"
@@ -125,7 +129,12 @@
               </a>
             </li>
             <li v-if="showApear('x') != 'false'">
-              <a class="social-icon" target="_blank" :href="showApear('x')">
+              <a
+                aria-label="social icons"
+                class="social-icon"
+                target="_blank"
+                :href="showApear('x')"
+              >
                 <svg
                   width="24"
                   height="25"
@@ -142,6 +151,7 @@
             </li>
             <li v-if="showApear('tiktok') != 'false'">
               <a
+                aria-label="social icons"
                 class="social-icon"
                 target="_blank"
                 :href="showApear('tiktok')"
@@ -163,6 +173,7 @@
 
             <li v-if="showApear('youtube') != 'false'">
               <a
+                aria-label="social icons"
                 class="social-icon"
                 target="_blank"
                 :href="showApear('youtube')"
@@ -184,6 +195,7 @@
 
             <li v-if="showApear('whatsapp') != 'false'">
               <a
+                aria-label="social icons"
                 class="social-icon"
                 target="_blank"
                 :href="showApear('whatsapp')"
@@ -209,6 +221,7 @@
 
             <li v-if="showApear('facebook') != 'false'">
               <a
+                aria-label="social icons"
                 class="social-icon"
                 target="_blank"
                 :href="showApear('facebook')"
@@ -228,7 +241,11 @@
             </li>
 
             <li>
-              <a class="social-icon" href="tel:+966 9200 03772">
+              <a
+                aria-label="social icons"
+                class="social-icon"
+                href="tel:+966 9200 03772"
+              >
                 <svg
                   style="width: 2.5rem; height: 2.5rem"
                   viewBox="0 0 18 17"
@@ -339,7 +356,11 @@
       <div class="footer--terms grd grd-2-col w-100">
         <div class="terms-item">
           {{ $t("terms.copyright") }}
-          <a href="https://www.mount-wolf.com/" target="_blank" class="link mw"
+          <a
+            href="https://www.mount-wolf.com/"
+            target="_blank"
+            class="link mw"
+            style="color: #a6a6a6 !important"
             >Mount Wolf</a
           >
         </div>

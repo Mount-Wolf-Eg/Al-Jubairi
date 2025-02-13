@@ -59,7 +59,7 @@
                 </p>
 
                 <router-link to="/contact">
-                  <button class="btn-round-primary">
+                  <button class="btn-round">
                     {{ $t("button.Book") }}
                   </button>
                 </router-link>

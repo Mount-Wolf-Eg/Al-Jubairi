@@ -12,6 +12,7 @@
       >
         <div>
           <router-link
+            aria-label="al jubairi logo"
             v-if="
               settings?.setting?.find((el) => el.key == 'header_logo'?.value)
             "
@@ -31,7 +32,11 @@
               alt="brand logo"
             />
           </router-link>
-          <router-link v-else class="navbar-brand" to="/"
+          <router-link
+            v-else
+            class="navbar-brand"
+            to="/"
+            aria-label="al jubairi logo"
             ><svg
               style="width: 13.7rem; height: 3.2rem"
               viewBox="0 0 241 56"
@@ -157,6 +162,7 @@
         <button
           class="btn"
           type="button"
+          aria-label="offcanvas-btn"
           data-bs-toggle="offcanvas"
           data-bs-target="#staticBackdrop"
           aria-controls="staticBackdrop"

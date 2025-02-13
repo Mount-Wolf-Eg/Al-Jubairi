@@ -338,7 +338,7 @@ html[dir="ltr"] .dropdown-menu {
   font-size: var(--fs-16);
   line-height: var(--line-27);
 }
-.btn-round-primary {
+.btn-round {
   padding: 1rem 2rem;
   border-radius: 1000px;
   font-weight: var(--fw-400);
@@ -347,7 +347,6 @@ html[dir="ltr"] .dropdown-menu {
   text-align: center;
   color: #1c1c1a;
   background-color: var(--col-white);
-  margin: 1rem 0 0;
 }
 
 /* Navbar */
@@ -801,7 +800,7 @@ html[dir="ltr"] .parralax-text {
       font-weight: var(--fw-400);
       font-size: var(--fs-12);
       line-height: var(--line-20);
-      color: var(--col-gray-dark);
+      color: #545454;
     }
     .latest-news-text--title {
       font-weight: var(--fw-700);
