@@ -7,15 +7,26 @@
       class="latest-news-box d-flex flex-column flex-md-row justify-content-between align-items-start gap-5 px-5 px-md-0">
       <div style="flex: 0.5; border-radius: 0.8rem; overflow: hidden"
         class="flex-r w-100 align-items-center justify-content-center ">
-        <img loading="lazy" :src="props.secData?.items?.data?.slice(-1)[0]?.image?.media" 
-        width="100%"
-        height="auto"
+        <!-- <img loading="lazy" :src="props.secData?.items?.data?.slice(-1)[0]?.image?.media" 
         style="
             width: 100%;
             height: auto;
             object-fit: cover;
             object-position: center;
-          " :alt="props.secData?.items?.data?.slice(-1)[0]?.image?.alt" />
+          " :alt="props.secData?.items?.data?.slice(-1)[0]?.image?.alt" /> -->
+          <img 
+  loading="lazy" 
+  :src="props.secData?.items?.data?.slice(-1)[0]?.image?.media"
+  :alt="props.secData?.items?.data?.slice(-1)[0]?.image?.alt"
+  :width="props.secData?.items?.data?.slice(-1)[0]?.image?.width || 800" 
+  :height="props.secData?.items?.data?.slice(-1)[0]?.image?.height || 450"
+  style="
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  "
+/>
       </div>
       <div class="latest-news-text mt-auto flx-c align-items-start justify-content-end" style="flex: 1">
         <p class="date">

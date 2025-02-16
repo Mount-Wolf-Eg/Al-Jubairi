@@ -44,7 +44,7 @@
               class="d-flex justify-content-center align-items-center"
               style="width: 23.6rem; height: 12rem"
             >
-              <img
+              <!-- <img
                 loading="lazy"
                 :src="slide.image?.media"
                 style="
@@ -54,6 +54,20 @@
                   object-position: center;
                 "
                 :alt="slide.image?.alt"
+              /> -->
+              <img
+                loading="lazy"
+                :src="slide.image?.media"
+                :alt="slide.image?.alt"
+                :width="slide.image?.width || 300"
+                :height="slide.image?.height || 240"
+                style="
+                  height: auto;
+                  width: auto;
+                  max-height: 80%;
+                  object-fit: contain;
+                  object-position: center;
+                "
               />
             </div>
           </div>

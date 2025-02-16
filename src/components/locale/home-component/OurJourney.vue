@@ -11,7 +11,7 @@
         v-for="(item, i) in props.secData.items?.data?.slice(0, 6)"
         :key="i"
       >
-        <img
+        <!-- <img
           loading="lazy"
           :src="item.image?.media"
           width="auto"
@@ -25,6 +25,21 @@
             object-position: center;
           "
           :alt="item.image?.alt"
+        /> -->
+        <img
+          loading="lazy"
+          :src="item.image?.media"
+          :alt="item.image?.alt"
+          :width="item.image?.width || 144"
+          :height="item.image?.height || 185"
+          style="
+            max-width: 9rem;
+            max-height: 11.6rem;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+          "
         />
       </div>
     </div>
