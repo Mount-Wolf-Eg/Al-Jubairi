@@ -91,7 +91,7 @@ const faqSchema = computed(() => {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: props.secData.items.data.slice(0, 3).map((item) => ({
+    mainEntity: props?.secData?.items.data.slice(0, 3).map((item) => ({
       "@type": "Question",
       name: item.title,
       acceptedAnswer: {

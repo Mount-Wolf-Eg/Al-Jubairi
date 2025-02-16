@@ -3,7 +3,7 @@
     <div class="support-parralax px-5 px-md-0" style="position: relative">
       <div
         class="parralax-img"
-        v-for="(item, i) in props.secData.items.data"
+        v-for="(item, i) in props.secData?.items?.data"
         :key="i"
       >
         <img

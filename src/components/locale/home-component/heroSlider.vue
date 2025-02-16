@@ -32,13 +32,12 @@
         :centered-slides="true"
       >
         <swiper-slide
-          v-for="(item, i) in props.secData.items.data"
+          v-for="(item, i) in props?.secData?.items?.data"
           :key="i"
           class="slide h-100"
         >
           <div class="slider-box h-100 row">
             <img
-              v-if="item.image?.media"
               loading="lazy"
               :src="item.image?.media"
               style="
@@ -50,18 +49,7 @@
               "
               :alt="item.image?.alt"
             />
-            <img
-              v-else
-              src="/src/assets/images/sm-images/footerResp.jpg"
-              style="
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-                filter: brightness(0.7);
-              "
-              :alt="item.image?.alt"
-            />
+
             <div class="hero-text">
               <div class="hero-text-box">
                 <p class="hero-title head-primary">

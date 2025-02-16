@@ -30,10 +30,10 @@
 
       <div class="about-us--content">
         <p class="about-us-title head-secondary">
-          {{ props.secData.items.data[0].title }}
+          {{ props.secData?.items?.data[0].title }}
         </p>
         <p class="about-us-parag body-desc-secondary">
-          {{ props.secData.items.data[0].desc }}
+          {{ props.secData?.items?.data[0].desc }}
         </p>
         <button class="read-more-btn" @click="$router.push({ name: 'About' })">
           <p>{{ $t("button.know-more") }}</p>
@@ -76,10 +76,10 @@
     />
     <div class="about-us--content d-block d-md-none">
       <p class="about-us-title head-secondary">
-        {{ props.secData.items.data[0].title }}
+        {{ props.secData?.items?.data[0].title }}
       </p>
       <p class="about-us-parag body-desc-secondary">
-        {{ props.secData.items.data[0].desc }}
+        {{ props.secData?.items?.data[0].desc }}
       </p>
       <button class="read-more-btn" @click="$router.push({ name: 'About' })">
         <p>{{ $t("button.know-more") }}</p>

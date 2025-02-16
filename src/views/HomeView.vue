@@ -17,26 +17,51 @@
   </main>
 </template>
 <script setup>
-import { ref, onMounted, watch } from "vue";
-import GoogleAd from "@/components/GoogleAd.vue";
-import heroSlider from "@/components/locale/home-component/heroSlider.vue";
-import excellence from "@/components/locale/home-component/excellence.vue";
-import AboutUs from "@/components/locale/home-component/AboutUs.vue";
-import Support from "@/components/locale/home-component/Support.vue";
-import Achievements from "@/components/locale/home-component/Achievements.vue";
-import OurJourney from "@/components/locale/home-component/OurJourney.vue";
-import LatestNews from "@/components/locale/home-component/LatestNews.vue";
-import Questions from "@/components/locale/home-component/Questions.vue";
-import OurClients from "@/components/locale/home-component/OurClients.vue";
-import SocialData from "@/components/locale/custom-components/SocialData.vue";
-import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
-
-// seo
+import { ref, onMounted, watch, defineAsyncComponent } from "vue";
 import { useHead } from "@vueuse/head";
-
-// store
 import { usePageStore } from "@/stores/pagesStore";
 import { storeToRefs } from "pinia";
+
+const GoogleAd = defineAsyncComponent(() =>
+  import("@/components/GoogleAd.vue")
+);
+const heroSlider = defineAsyncComponent(() =>
+  import("@/components/locale/home-component/heroSlider.vue")
+);
+const excellence = defineAsyncComponent(() =>
+  import("@/components/locale/home-component/excellence.vue")
+);
+const AboutUs = defineAsyncComponent(() =>
+  import("@/components/locale/home-component/AboutUs.vue")
+);
+const Support = defineAsyncComponent(() =>
+  import("@/components/locale/home-component/Support.vue")
+);
+const Achievements = defineAsyncComponent(() =>
+  import("@/components/locale/home-component/Achievements.vue")
+);
+const OurJourney = defineAsyncComponent(() =>
+  import("@/components/locale/home-component/OurJourney.vue")
+);
+const LatestNews = defineAsyncComponent(() =>
+  import("@/components/locale/home-component/LatestNews.vue")
+);
+const Questions = defineAsyncComponent(() =>
+  import("@/components/locale/home-component/Questions.vue")
+);
+const OurClients = defineAsyncComponent(() =>
+  import("@/components/locale/home-component/OurClients.vue")
+);
+const SocialData = defineAsyncComponent(() =>
+  import("@/components/locale/custom-components/SocialData.vue")
+);
+const SplashScreen = defineAsyncComponent(() =>
+  import("@/components/locale/custom-components/SplashScreen.vue")
+);
+
+// seo
+
+// store
 const pageStore = usePageStore();
 const { home, services, about, blogs } = storeToRefs(pageStore);
 
