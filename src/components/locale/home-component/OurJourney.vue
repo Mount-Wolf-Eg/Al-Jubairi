@@ -14,6 +14,8 @@
         <img
           loading="lazy"
           :src="item.image?.media"
+          width="auto"
+          height="100%"
           style="
             max-width: 9rem;
             max-height: 11.6rem;

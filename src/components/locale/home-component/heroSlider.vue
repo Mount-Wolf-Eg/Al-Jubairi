@@ -38,8 +38,21 @@
         >
           <div class="slider-box h-100 row">
             <img
+              v-if="item.image?.media"
               loading="lazy"
               :src="item.image?.media"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                filter: brightness(0.7);
+              "
+              :alt="item.image?.alt"
+            />
+            <img
+              v-else
+              src="/src/assets/images/sm-images/footerResp.jpg"
               style="
                 width: 100%;
                 height: 100%;

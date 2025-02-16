@@ -8,6 +8,7 @@
         <div
           class="accordion-item"
           v-for="(item, i) in props.secData.items?.data?.slice(0, 3)"
+          :key="i"
         >
           <h2 class="accordion-header">
             <button
@@ -73,16 +74,47 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { computed, watchEffect } from "vue";
+import { useHead } from "@vueuse/head";
 
 const props = defineProps({
   secData: {
     type: Object,
-    default: () => {
-      return {};
-    },
-    Required: false,
+    default: () => ({}),
+    required: false,
   },
+});
+
+// Compute FAQ schema dynamically
+const faqSchema = computed(() => {
+  if (!props.secData.items?.data) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: props.secData.items.data.slice(0, 3).map((item) => ({
+      "@type": "Question",
+      name: item.title,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.desc.replace(/(<([^>]+)>)/gi, ""), // Remove HTML tags
+      },
+    })),
+  };
+});
+
+// Watch for changes and update head dynamically
+watchEffect(() => {
+  if (faqSchema.value) {
+    useHead({
+      script: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(faqSchema.value),
+        },
+      ],
+    });
+  }
 });
 </script>
 

@@ -7,7 +7,10 @@
       class="latest-news-box d-flex flex-column flex-md-row justify-content-between align-items-start gap-5 px-5 px-md-0">
       <div style="flex: 0.5; border-radius: 0.8rem; overflow: hidden"
         class="flex-r w-100 align-items-center justify-content-center ">
-        <img loading="lazy" :src="props.secData?.items?.data?.slice(-1)[0]?.image?.media" style="
+        <img loading="lazy" :src="props.secData?.items?.data?.slice(-1)[0]?.image?.media" 
+        width="100%"
+        height="auto"
+        style="
             width: 100%;
             height: auto;
             object-fit: cover;
