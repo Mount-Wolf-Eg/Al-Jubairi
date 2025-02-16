@@ -73,11 +73,6 @@
                 {{ $t("menu.team") }}</router-link
               >
             </li>
-            <!-- <li>
-              <router-link to="/employment" class="nav-sub-item pb-4"
-                >{{ $t("menu.employment") }}
-              </router-link>
-            </li> -->
           </ul>
         </li>
       </ul>
@@ -124,17 +119,6 @@
                 {{ $t("menu.faq") }}
               </router-link>
             </li>
-            <!-- <li>
-              <router-link to="/contact" class="nav-sub-item mt-4 pb-4"
-                >{{ $t("menu.get-Contact") }}
-              </router-link>
-            </li>
-             -->
-            <!-- <li>
-              <router-link to="" class="nav-sub-item mt-4 pb-4"
-                >{{ $t("menu.summary") }}
-              </router-link>
-            </li> -->
           </ul>
         </li>
       </ul>
