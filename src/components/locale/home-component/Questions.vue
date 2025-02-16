@@ -85,7 +85,6 @@ const props = defineProps({
   },
 });
 
-// Compute FAQ schema dynamically
 const faqSchema = computed(() => {
   if (!props.secData.items?.data) return null;
 
@@ -97,13 +96,12 @@ const faqSchema = computed(() => {
       name: item.title,
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.desc.replace(/(<([^>]+)>)/gi, ""), // Remove HTML tags
+        text: item.desc.replace(/(<([^>]+)>)/gi, ""),
       },
     })),
   };
 });
 
-// Watch for changes and update head dynamically
 watchEffect(() => {
   if (faqSchema.value) {
     useHead({
