@@ -58,7 +58,7 @@
                   {{ item.desc }}
                 </p>
 
-                <router-link to="/contact">
+                <router-link to="/contact" v-if="item?.desc">
                   <button class="btn-round">
                     {{ $t("button.Book") }}
                   </button>
