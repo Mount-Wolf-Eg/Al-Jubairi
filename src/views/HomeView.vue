@@ -59,9 +59,7 @@ const SplashScreen = defineAsyncComponent(() =>
   import("@/components/locale/custom-components/SplashScreen.vue")
 );
 
-// seo
-
-// store
+// storee
 const pageStore = usePageStore();
 const { home, services, about, blogs } = storeToRefs(pageStore);
 
