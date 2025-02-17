@@ -2,8 +2,10 @@ import "./assets/main.scss";
 import "./assets/media-queries.scss";
 import "normalize.css";
 
-// bootstrap
+// Import Bootstrap CSS and JS
 import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 import "bootstrap";
 
 // Import Swiper styles

@@ -2,7 +2,7 @@
   <main v-if="!isLoading" class="employee-view">
     <BreadCrump :crump="crump" :secTitle="''" :secDesc="''"></BreadCrump>
     <div class="container">
-      <div class="row mx-0 px-3 px-md-0 gap-5">
+      <div class="row mx-0 px-3 px-md-0 gap-2 gap-md-5">
         <div class="container p-0">
           <img
             loading="lazy"
@@ -17,7 +17,44 @@
             :alt="singleItem.image?.alt"
           />
         </div>
-        <div class="col-12">
+        <div class="col-1 col-md-2" style="position: relative">
+          <div
+            id="navbar-example3"
+            class="h-auto flex-row align-items-stretch border-end w-100"
+            style="position: sticky; top: 100px; right: 0"
+          >
+            <div class="nav nav-pills flex-column">
+              <a
+                v-for="(item, i) in scrollSpy"
+                :key="i"
+                :href="`#${Object.keys(item)[0]}`"
+                class="spy-link"
+                style="word-break: break-all"
+                :class="`spy-${Object.keys(item)[0]}`"
+              >
+                <span class="d-none d-md-block">
+                  {{ item[Object.keys(item)[0]] }}
+                </span>
+                <span class="d-block d-md-none">{{ i }}</span>
+              </a>
+
+              <a class="spy-link" href="#see-more">
+                <span class="d-none d-md-block">
+                  {{ $t("button.know-more") }}
+                </span>
+                <span class="d-block d-md-none">&#x2193;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col scrollspy-example-2"
+          style="word-break: break-all"
+          data-bs-spy="scroll"
+          data-bs-target="#navbar-example3"
+          data-bs-smooth-scroll="true"
+          tabindex="0"
+        >
           <p class="main-date">
             {{ moment(new Date(singleItem.created_at)).format("LL") }}
           </p>
@@ -29,7 +66,10 @@
         </div>
       </div>
     </div>
-    <div class="more-blogs py-3 px-3 px-md-0">
+
+    <!-- more blogs -->
+
+    <div class="more-blogs py-3 px-3 px-md-0" id="see-more">
       <div class="container">
         <h2 class="head-secondary more-blogs--title mt-3 mb-5">
           {{ $t("button.know-more") }}
@@ -125,7 +165,7 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref, watch } from "vue";
+import { onBeforeUnmount, onMounted, ref, watch, nextTick } from "vue";
 import { usePageStore } from "@/stores/pagesStore";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import { storeToRefs } from "pinia";
@@ -138,6 +178,7 @@ const router = useRouter();
 const { singleItem, blogs } = storeToRefs(usePageStore());
 const isLoading = ref(true);
 const data = ref("");
+const scrollSpy = ref([]);
 
 const crump = ref([
   { name: "menu.blog", rout: "/blogs" },
@@ -150,13 +191,23 @@ watch(data, (newData) => {
     { name: newData, rout: "/about" },
   ];
 });
+let observer;
 
 onMounted(async () => {
-  if (!route.params.id) router.push({ name: "Blogs" });
+  if (!route.params.id) {
+    router.push({ name: "Blogs" });
+    return; // Return early if there's no route parameter
+  }
+
   await usePageStore().getItemData(route.params.id);
 
-  if (singleItem.value.length == 0) router.push({ name: "Blogs" });
+  // Ensure there's data
+  if (!singleItem.value || singleItem.value.length === 0) {
+    router.push({ name: "Blogs" });
+    return;
+  }
 
+  // Ensure blogs data exists
   if (
     !blogs.value ||
     !blogs.value.sections ||
@@ -164,12 +215,59 @@ onMounted(async () => {
   ) {
     await usePageStore().getPageData("blogs");
   }
-  data.value = singleItem.value.title;
 
+  data.value = singleItem.value.title;
   isLoading.value = false;
-});
-onBeforeUnmount(() => {
-  singleItem.value = "";
+
+  await nextTick();
+
+  // Select headings to observe
+  let headings = document.querySelectorAll(
+    ".scrollspy-example-2 h2, .scrollspy-example-2 h3, .scrollspy-example-2 h4, .scrollspy-example-2 h5, .scrollspy-example-2 h6"
+  );
+  scrollSpy.value = [];
+
+  let first = 0;
+  // Convert NodeList to array and set IDs for headings
+  let headingsArray = Array.from(headings);
+  headingsArray.forEach((el) => {
+    el.id = `item${first++}`; // Assign unique IDs
+    scrollSpy.value.push({ [el.id]: el.innerHTML });
+  });
+
+  // Create IntersectionObserver
+  observer = new IntersectionObserver(
+    (entries) => {
+      let lastVisibleEntry = null;
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.7) {
+          lastVisibleEntry = entry;
+        }
+      });
+
+      if (lastVisibleEntry) {
+        document.querySelectorAll(".spy-link").forEach((link) => {
+          link.classList.remove("active-spy");
+        });
+
+        const activeLink = document.querySelector(
+          `.spy-${lastVisibleEntry.target.id}`
+        );
+        if (activeLink) {
+          activeLink.classList.add("active-spy");
+        }
+      }
+    },
+    {
+      threshold: 0.7,
+    }
+  );
+
+  // Observe each heading
+  headingsArray.forEach((heading) => {
+    observer.observe(heading);
+  });
 });
 
 watch(
@@ -208,6 +306,23 @@ watch(
   },
   { immediate: true }
 );
+onBeforeUnmount(() => {
+  singleItem.value = "";
+  if (observer) {
+    observer.disconnect(); // Clean up the observer
+  }
+});
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.spy-link {
+  padding: 0.5rem;
+  font-size: var(--fs-12);
+  font-weight: bold;
+}
+.active-spy {
+  color: #000 !important;
+  background-color: #ddd !important; // Change the background color for active state
+  font-weight: bold;
+}
+</style>
