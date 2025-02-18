@@ -8,18 +8,28 @@
 
     <div class="inside-page">
       <div class="container">
-        <SearchInput
-          :selected="{
-            page: 'blogs',
-            routeName: 'BlogDetail',
-            slug: 'blogInfo',
-          }"
-          v-model="keyword"
-        ></SearchInput>
+        <div class="d-flex align-items-center justify-content-center gap-5">
+          <category
+            :selected="{
+              page: 'blogs',
+              routeName: 'BlogDetail',
+              slug: 'blogInfo',
+            }"
+            v-model="keyword"
+          ></category>
+          <SearchInput
+            :selected="{
+              page: 'blogs',
+              routeName: 'BlogDetail',
+              slug: 'blogInfo',
+            }"
+            v-model="categ"
+          ></SearchInput>
+        </div>
         <div class="row px-0 mx-2 mx-md-0 grid">
           <div
             class="blog-item col-12 p-0 mx-0 my-3"
-            v-for="(item, i) in allItemsData"
+            v-for="(item, i) in childItems"
             :key="i"
           >
             <div
@@ -32,7 +42,7 @@
                 })
               "
             >
-              <div class="blog-img">
+              <div class="blog-img border">
                 <img
                   loading="lazy"
                   :src="item.image?.media"
@@ -61,7 +71,7 @@
         class="pagination-box d-flex justify-content-center align-items-center"
       >
         <vue-awesome-paginate
-          :total-items="pagination?.total"
+          :total-items="pagination?.total ?? 1"
           v-model="currentPage"
           :items-per-page="pagination?.per_page"
           :max-pages-shown="5"
@@ -81,6 +91,7 @@ import { useRoute, useRouter } from "vue-router";
 import SearchInput from "@/reusables/search/SearchInput.vue";
 import { useHead } from "@vueuse/head";
 import moment from "moment";
+import category from "@/components/locale/blog-component/category.vue";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
 import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue";
 
@@ -88,12 +99,13 @@ const route = useRoute();
 const router = useRouter();
 const crump = ref([{ name: "menu.blog", rout: "/blogs" }]);
 const keyword = ref("");
+const categ = ref("");
 
 // store
 import { usePageStore } from "@/stores/pagesStore";
 const pageStore = usePageStore();
 import { storeToRefs } from "pinia";
-const { blogs, pagination, allItemsData } = storeToRefs(pageStore);
+const { blogs, pagination, allItemsData, childItems } = storeToRefs(pageStore);
 
 const isLoading = ref(true);
 const currentPage = ref(1);
@@ -104,7 +116,7 @@ const onClickHandler = async (page) => {
       page: page,
     },
   });
-  await pageStore.getAllItems("blogs", page);
+  await pageStore.getChildItems("blogs", page);
 };
 
 onMounted(async () => {
@@ -115,8 +127,9 @@ onMounted(async () => {
   ) {
     await pageStore.getPageData("blogs");
   }
-  await pageStore.getAllItems("blogs", route?.query?.page ?? 1);
-  currentPage.value = pagination?.value?.current_page;
+  // await pageStore.getAllItems("blogs", route?.query?.page ?? 1);
+  await pageStore.getChildItems("blogs");
+  currentPage.value = pagination?.value?.current_page ?? 1;
   isLoading.value = false;
   await nextTick();
 
@@ -137,7 +150,6 @@ onMounted(async () => {
       scrollSpy.push({ [el.id]: headingText });
     }
   });
-  console.log(scrollSpy);
 });
 
 watch(

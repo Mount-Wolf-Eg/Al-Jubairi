@@ -20,6 +20,8 @@ export const usePageStore = defineStore("pageStore", {
     singleSec: [],
     allItemsData: [],
     pagination: [],
+    parentItems: [],
+    childItems: [],
   }),
   actions: {
     async getPageData(pageName, num) {
@@ -107,6 +109,64 @@ export const usePageStore = defineStore("pageStore", {
         .then((res) => {
           this.allItemsData = res.data.data.items.data || [];
           this.pagination = res.data.data.items.pagination;
+        })
+        .catch((err) => {
+          console.log(err);
+          let errorMessage = "Something went wrong, please try again";
+          if (err.response && err.response.data && err.response.data.message) {
+            const errorArray = err.response.data.message;
+            if (errorArray) {
+              errorMessage = err.response.data.message;
+            }
+          } else {
+            errorMessage = err.message;
+          }
+          mainStore().showAlert(errorMessage, 2);
+        })
+        .finally(() => {
+          loading = false;
+          return loading;
+        });
+    },
+    async getChildItems(sec, num) {
+      let loading = true;
+
+      await axiosInstance
+        .get(
+          `${
+            mainStore().apiLink
+          }/website/sections/${sec}/child-items?items_page=${num ?? 1}`
+        )
+        .then((res) => {
+          this.childItems = res.data.data;
+          this.pagination = res.data.data.pagination;
+        })
+        .catch((err) => {
+          console.log(err);
+          let errorMessage = "Something went wrong, please try again";
+          if (err.response && err.response.data && err.response.data.message) {
+            const errorArray = err.response.data.message;
+            if (errorArray) {
+              errorMessage = err.response.data.message;
+            }
+          } else {
+            errorMessage = err.message;
+          }
+          mainStore().showAlert(errorMessage, 2);
+        })
+        .finally(() => {
+          loading = false;
+          return loading;
+        });
+    },
+    async getParentItems(sec) {
+      let loading = true;
+
+      await axiosInstance
+        .get(`${mainStore().apiLink}/website/sections/${sec}/parent-items`)
+        .then((res) => {
+          this.parentItems = res.data.data;
+          this.pagination = res.data.data.pagination;
         })
         .catch((err) => {
           console.log(err);

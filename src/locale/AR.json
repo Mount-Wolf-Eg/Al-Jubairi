@@ -20,7 +20,8 @@
   "search": {
     "search": "بحث فى",
     "blogs": "المدونات",
-    "services": "الخدمات"
+    "services": "الخدمات",
+    "category": "جميع الفئات"
   },
   "button": {
     "submit": "إرسال",

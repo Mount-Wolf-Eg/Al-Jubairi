@@ -4,23 +4,24 @@
       <input
         type="text"
         :value="modelValue"
+        @focus="getAllCategory"
         @input="$emit('update:modelValue', $event.target.value)"
-        :placeholder="`${$t('search.search')} ${$t(`search.${selected.page}`)}`"
+        :placeholder="$t('search.category')"
       />
       <button class="clear-btn" @click="$emit('update:modelValue', '')">
         &#x2716;
       </button>
     </div>
-    <div class="drop-down" v-if="modelValue.length">
+    <div class="drop-down" v-if="show">
       <div
         class="item fruit"
-        v-for="(item, i) in filtered"
+        v-for="(item, i) in filteredItems"
         :key="i"
         @click="selectItem(item)"
       >
-        {{ item?.title }}
+        {{ item.title }}
       </div>
-      <div class="item error" v-if="filtered.length === 0">
+      <div class="item error" v-if="filteredItems.length === 0">
         <p>No results found!</p>
       </div>
     </div>
@@ -28,44 +29,42 @@
 </template>
 
 <script setup>
-import { watch, ref, onMounted, onUnmounted } from "vue";
-import { useFilterStore } from "@/stores/filterStore";
+import { ref, computed, onMounted, onUnmounted } from "vue";
+import { usePageStore } from "@/stores/pagesStore";
 import { storeToRefs } from "pinia";
-import { useRouter } from "vue-router";
+
+const pageStore = usePageStore();
+const { parentItems } = storeToRefs(pageStore);
+const show = ref(false);
+const searchBox = ref(null);
 
 const props = defineProps({
-  selected: { type: Object, required: true, default: {} },
-  modelValue: { type: String, required: false, default: "" },
+  modelValue: { type: String, default: "" },
 });
 
 const emit = defineEmits(["update:modelValue"]);
 
-const { filtered } = storeToRefs(useFilterStore());
-const searchBox = ref(null);
-const router = useRouter();
-
-const fetchFilteredResults = async () => {
-  if (props.modelValue.length) {
-    await useFilterStore().getFiltered(props.selected.page, props.modelValue);
-  } else {
-    filtered.value = [];
-  }
+const getAllCategory = async () => {
+  show.value = true;
+  await pageStore.getParentItems("blogs");
 };
 
+const filteredItems = computed(() => {
+  if (!props.modelValue) return parentItems.value;
+  return parentItems.value.filter((el) =>
+    el.title.toLowerCase().includes(props.modelValue.toLowerCase())
+  );
+});
+
 const selectItem = (item) => {
-  router.push({
-    name: props.selected?.routeName,
-    params: {
-      blogName: item?.slug ?? props.selected?.slug,
-      id: item?.parent?.id ?? item?.id,
-    },
-  });
-  emit("update:modelValue", "");
+  emit("update:modelValue", item.title);
+  console.log(item.id);
+  show.value = false; // Close dropdown on selection
 };
 
 const handleClickOutside = (event) => {
   if (searchBox.value && !searchBox.value.contains(event.target)) {
-    emit("update:modelValue", "");
+    show.value = false;
   }
 };
 
@@ -76,10 +75,7 @@ onMounted(() => {
 onUnmounted(() => {
   document.removeEventListener("click", handleClickOutside);
 });
-
-watch(() => props.modelValue, fetchFilteredResults);
 </script>
-
 <style lang="scss" scoped>
 * {
   padding: 0;

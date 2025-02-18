@@ -20,7 +20,8 @@
   "search": {
     "search": "Search at",
     "blogs": "Blogs",
-    "services": "Services"
+    "services": "Services",
+    "category": "All Categories"
   },
   "button": {
     "submit": "Submit",
