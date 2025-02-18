@@ -126,6 +126,6 @@ input {
 }
 
 .error {
-  background-color: tomato;
+  background-color: #eee;
 }
 </style>
