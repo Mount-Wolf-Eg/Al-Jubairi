@@ -17,6 +17,11 @@
     "blog-name": "Blog Name",
     "lawyer-name": "Lawyer's name"
   },
+  "search": {
+    "search": "Search at",
+    "blogs": "Blogs",
+    "services": "Services"
+  },
   "button": {
     "submit": "Submit",
     "cancel": "Cancel",

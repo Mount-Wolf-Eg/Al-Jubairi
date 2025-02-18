@@ -17,6 +17,11 @@
     "blog-name": "اسم المدونة",
     "lawyer-name": "اسم المحامى"
   },
+  "search": {
+    "search": "بحث فى",
+    "blogs": "المدونات",
+    "services": "الخدمات"
+  },
   "button": {
     "submit": "إرسال",
     "cancel": "إلغاء",

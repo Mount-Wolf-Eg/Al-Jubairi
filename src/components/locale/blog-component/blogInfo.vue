@@ -166,8 +166,8 @@
 
 <script setup>
 import { onBeforeUnmount, onMounted, ref, watch, nextTick } from "vue";
-import { usePageStore } from "@/stores/pagesStore";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
+import { usePageStore } from "@/stores/pagesStore";
 import { storeToRefs } from "pinia";
 import moment from "moment";
 import { useRoute, useRouter } from "vue-router";

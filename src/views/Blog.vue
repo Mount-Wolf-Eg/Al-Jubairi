@@ -8,6 +8,14 @@
 
     <div class="inside-page">
       <div class="container">
+        <SearchInput
+          :selected="{
+            page: 'blogs',
+            routeName: 'BlogDetail',
+            slug: 'blogInfo',
+          }"
+          v-model="keyword"
+        ></SearchInput>
         <div class="row px-0 mx-2 mx-md-0 grid">
           <div
             class="blog-item col-12 p-0 mx-0 my-3"
@@ -69,6 +77,7 @@
 <script setup>
 import { ref, onMounted, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import SearchInput from "@/reusables/search/SearchInput.vue";
 import { useHead } from "@vueuse/head";
 import moment from "moment";
 import BreadCrump from "@/reusables/bread-crump/BreadCrump.vue";
@@ -77,6 +86,7 @@ import SplashScreen from "@/components/locale/custom-components/SplashScreen.vue
 const route = useRoute();
 const router = useRouter();
 const crump = ref([{ name: "menu.blog", rout: "/blogs" }]);
+const keyword = ref("");
 
 // store
 import { usePageStore } from "@/stores/pagesStore";

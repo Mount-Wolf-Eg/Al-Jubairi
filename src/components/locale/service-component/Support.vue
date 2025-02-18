@@ -1,5 +1,13 @@
 <template>
   <div class="support-sec container px-0">
+    <SearchInput
+      :selected="{
+        page: 'services',
+        routeName: 'serviceData',
+        slug: 'serviceData',
+      }"
+      v-model="keyword"
+    ></SearchInput>
     <div class="support-parralax px-5 px-md-0" style="position: relative">
       <div
         class="parralax-img"
@@ -61,7 +69,9 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+import SearchInput from "@/reusables/search/SearchInput.vue";
+const keyword = ref("");
 
 const props = defineProps({
   secData: {
