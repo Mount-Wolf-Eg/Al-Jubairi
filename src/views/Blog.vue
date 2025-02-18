@@ -74,8 +74,9 @@
   </main>
   <main v-else><SplashScreen /></main>
 </template>
+
 <script setup>
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted, watch, nextTick } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import SearchInput from "@/reusables/search/SearchInput.vue";
 import { useHead } from "@vueuse/head";
@@ -95,7 +96,6 @@ import { storeToRefs } from "pinia";
 const { blogs, pagination, allItemsData } = storeToRefs(pageStore);
 
 const isLoading = ref(true);
-// pagination data starts
 const currentPage = ref(1);
 const onClickHandler = async (page) => {
   router.push({
@@ -118,6 +118,26 @@ onMounted(async () => {
   await pageStore.getAllItems("blogs", route?.query?.page ?? 1);
   currentPage.value = pagination?.value?.current_page;
   isLoading.value = false;
+  await nextTick();
+
+  let headings = document.querySelectorAll(
+    ".blog-desc h2, .blog-desc h3, .blog-desc h4, .blog-desc h5, .blog-desc h6"
+  );
+  let scrollSpy = [];
+  let first = 0;
+  let headingsArray = Array.from(headings);
+
+  headingsArray.forEach((el) => {
+    el.id = `item${first++}`;
+    const headingText = el.innerHTML;
+    const strongText = el.querySelector("strong");
+    if (strongText) {
+      scrollSpy.push({ [el.id]: strongText.innerHTML });
+    } else {
+      scrollSpy.push({ [el.id]: headingText });
+    }
+  });
+  console.log(scrollSpy);
 });
 
 watch(
@@ -138,7 +158,6 @@ watch(
             content: newVal?.page?.data?.metadata.description,
           },
           { name: "og:type", content: newVal?.page?.data?.metadata.type },
-          // { name: "og:image", content: newVal?.page?.data?.metadata.image },
           { name: "og:url", content: window.location.href },
           {
             name: "canonical",
@@ -151,6 +170,7 @@ watch(
   { immediate: true }
 );
 </script>
+
 <style lang="scss" scoped>
 .blog-item {
   width: 38.4rem !important;
