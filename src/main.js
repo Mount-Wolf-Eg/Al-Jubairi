@@ -4,7 +4,6 @@ import "normalize.css";
 
 // Import Bootstrap CSS and JS
 import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import "bootstrap";
 
