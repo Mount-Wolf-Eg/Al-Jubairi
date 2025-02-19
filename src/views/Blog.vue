@@ -8,7 +8,9 @@
 
     <div class="inside-page">
       <div class="container">
-        <div class="d-flex align-items-center justify-content-center gap-5">
+        <div
+          class="d-flex align-items-center justify-content-center flex-wrap flex-md-nowrap gap-0 gap-md-5"
+        >
           <category
             v-model="keyword"
             @parentId="getChildBlogs($event)"
