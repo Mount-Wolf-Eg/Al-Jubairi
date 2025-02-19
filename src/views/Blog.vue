@@ -8,14 +8,12 @@
 
     <div class="inside-page">
       <div class="container">
-        <div class="d-flex align-items-center justify-content-center gap-5">
+        <div
+          class="d-flex align-items-center justify-content-center flex-wrap flex-md-nowrap gap-0 gap-md-5"
+        >
           <category
-            :selected="{
-              page: 'blogs',
-              routeName: 'BlogDetail',
-              slug: 'blogInfo',
-            }"
-            v-model="keyword"
+            v-model="categ"
+            @parentId="getChildBlogs($event)"
           ></category>
           <SearchInput
             :selected="{
@@ -23,10 +21,10 @@
               routeName: 'BlogDetail',
               slug: 'blogInfo',
             }"
-            v-model="categ"
+            v-model="keyword"
           ></SearchInput>
         </div>
-        <div class="row px-0 mx-2 mx-md-0 grid">
+        <div class="row px-0 mx-2 mx-md-0 grid" v-if="childItems.length">
           <div
             class="blog-item col-12 p-0 mx-0 my-3"
             v-for="(item, i) in childItems"
@@ -65,6 +63,9 @@
               </div>
             </div>
           </div>
+        </div>
+        <div v-else class="alert alert-warning" role="alert">
+          ⚠️ No data available for the selected items.
         </div>
       </div>
       <div
@@ -105,7 +106,7 @@ const categ = ref("");
 import { usePageStore } from "@/stores/pagesStore";
 const pageStore = usePageStore();
 import { storeToRefs } from "pinia";
-const { blogs, pagination, allItemsData, childItems } = storeToRefs(pageStore);
+const { blogs, pagination, singleItem, childItems } = storeToRefs(pageStore);
 
 const isLoading = ref(true);
 const currentPage = ref(1);
@@ -131,25 +132,6 @@ onMounted(async () => {
   await pageStore.getChildItems("blogs");
   currentPage.value = pagination?.value?.current_page ?? 1;
   isLoading.value = false;
-  await nextTick();
-
-  let headings = document.querySelectorAll(
-    ".blog-desc h2, .blog-desc h3, .blog-desc h4, .blog-desc h5, .blog-desc h6"
-  );
-  let scrollSpy = [];
-  let first = 0;
-  let headingsArray = Array.from(headings);
-
-  headingsArray.forEach((el) => {
-    el.id = `item${first++}`;
-    const headingText = el.innerHTML;
-    const strongText = el.querySelector("strong");
-    if (strongText) {
-      scrollSpy.push({ [el.id]: strongText.innerHTML });
-    } else {
-      scrollSpy.push({ [el.id]: headingText });
-    }
-  });
 });
 
 watch(
@@ -181,6 +163,14 @@ watch(
   },
   { immediate: true }
 );
+const getChildBlogs = async (id) => {
+  if (id) {
+    await pageStore.getItemData(id);
+    childItems.value = singleItem.value?.items;
+  } else {
+    await pageStore.getChildItems("blogs");
+  }
+};
 </script>
 
 <style lang="scss" scoped>

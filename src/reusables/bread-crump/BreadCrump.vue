@@ -20,9 +20,9 @@
   <div class="bread-crump pt-0">
     <div class="container px-5 px-xl-0 pt-0">
       <div class="bread-text">
-        <p class="bread-title head-secondary" style="color: var(--col-white)">
+        <h1 class="bread-title head-secondary" style="color: var(--col-white)">
           {{ secTitle }}
-        </p>
+        </h1>
         <p class="bread-desc body-desc-primary mx-auto">
           {{ secDesc }}
         </p>

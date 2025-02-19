@@ -7,13 +7,15 @@ export const useFilterStore = defineStore("filterStore", {
     filtered: [],
   }),
   actions: {
-    async getFiltered(type, keyword) {
+    async getFiltered(type, keyword, isParent) {
       let loading = true;
       await axiosInstance
         .get(
           `${
             mainStore().apiLink
-          }/website/search?page_type=${type}&keyword=${keyword}`
+          }/website/search?page_type=${type}&keyword=${keyword}&isParent=${
+            isParent ?? true
+          }`
         )
         .then((res) => {
           this.filtered = res.data.data;

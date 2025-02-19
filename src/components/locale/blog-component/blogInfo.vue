@@ -58,9 +58,9 @@
           <p class="main-date">
             {{ moment(new Date(singleItem.created_at)).format("LL") }}
           </p>
-          <h1 class="employee-name head-secondary">
+          <h2 class="employee-name head-secondary">
             {{ singleItem.title }}
-          </h1>
+          </h2>
 
           <div class="html-content text-editor" v-html="singleItem.desc"></div>
         </div>
@@ -77,10 +77,7 @@
         <div class="row gap-5 px-0 mx-2 mx-md-0">
           <div
             class="blog-item col-12 col-md p-0 mx-0 my-3"
-            v-for="(item, i) in blogs.sections?.data[0]?.items?.data?.slice(
-              0,
-              2
-            )"
+            v-for="(item, i) in childItems?.slice(0, 2)"
             :key="i"
           >
             <div
@@ -175,7 +172,7 @@ import { useHead } from "@vueuse/head";
 
 const route = useRoute();
 const router = useRouter();
-const { singleItem, blogs } = storeToRefs(usePageStore());
+const { singleItem, blogs, childItems } = storeToRefs(usePageStore());
 const isLoading = ref(true);
 const data = ref("");
 const scrollSpy = ref([]);
@@ -196,18 +193,16 @@ let observer;
 onMounted(async () => {
   if (!route.params.id) {
     router.push({ name: "Blogs" });
-    return; // Return early if there's no route parameter
+    return;
   }
 
   await usePageStore().getItemData(route.params.id);
 
-  // Ensure there's data
   if (!singleItem.value || singleItem.value.length === 0) {
     router.push({ name: "Blogs" });
     return;
   }
 
-  // Ensure blogs data exists
   if (
     !blogs.value ||
     !blogs.value.sections ||
@@ -215,27 +210,31 @@ onMounted(async () => {
   ) {
     await usePageStore().getPageData("blogs");
   }
+  await usePageStore().getChildItems("blogs");
 
   data.value = singleItem.value.title;
   isLoading.value = false;
 
   await nextTick();
 
-  // Select headings to observe
   let headings = document.querySelectorAll(
     ".scrollspy-example-2 h2, .scrollspy-example-2 h3, .scrollspy-example-2 h4, .scrollspy-example-2 h5, .scrollspy-example-2 h6"
   );
   scrollSpy.value = [];
-
   let first = 0;
-  // Convert NodeList to array and set IDs for headings
   let headingsArray = Array.from(headings);
+
   headingsArray.forEach((el) => {
-    el.id = `item${first++}`; // Assign unique IDs
-    scrollSpy.value.push({ [el.id]: el.innerHTML });
+    el.id = `item${first++}`;
+    const headingText = el.innerHTML;
+    const strongText = el.querySelector("strong");
+    if (strongText) {
+      scrollSpy.value.push({ [el.id]: strongText.innerHTML });
+    } else {
+      scrollSpy.value.push({ [el.id]: headingText });
+    }
   });
 
-  // Create IntersectionObserver
   observer = new IntersectionObserver(
     (entries) => {
       let lastVisibleEntry = null;

@@ -46,7 +46,11 @@ const router = useRouter();
 
 const fetchFilteredResults = async () => {
   if (props.modelValue.length) {
-    await useFilterStore().getFiltered(props.selected.page, props.modelValue);
+    await useFilterStore().getFiltered(
+      props.selected.page,
+      props.modelValue,
+      false
+    );
   } else {
     filtered.value = [];
   }
