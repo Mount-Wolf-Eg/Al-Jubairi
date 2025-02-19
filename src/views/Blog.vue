@@ -12,7 +12,7 @@
           class="d-flex align-items-center justify-content-center flex-wrap flex-md-nowrap gap-0 gap-md-5"
         >
           <category
-            v-model="keyword"
+            v-model="categ"
             @parentId="getChildBlogs($event)"
           ></category>
           <SearchInput
@@ -21,7 +21,7 @@
               routeName: 'BlogDetail',
               slug: 'blogInfo',
             }"
-            v-model="categ"
+            v-model="keyword"
           ></SearchInput>
         </div>
         <div class="row px-0 mx-2 mx-md-0 grid" v-if="childItems.length">
@@ -132,25 +132,6 @@ onMounted(async () => {
   await pageStore.getChildItems("blogs");
   currentPage.value = pagination?.value?.current_page ?? 1;
   isLoading.value = false;
-  await nextTick();
-
-  let headings = document.querySelectorAll(
-    ".blog-desc h2, .blog-desc h3, .blog-desc h4, .blog-desc h5, .blog-desc h6"
-  );
-  let scrollSpy = [];
-  let first = 0;
-  let headingsArray = Array.from(headings);
-
-  headingsArray.forEach((el) => {
-    el.id = `item${first++}`;
-    const headingText = el.innerHTML;
-    const strongText = el.querySelector("strong");
-    if (strongText) {
-      scrollSpy.push({ [el.id]: strongText.innerHTML });
-    } else {
-      scrollSpy.push({ [el.id]: headingText });
-    }
-  });
 });
 
 watch(
