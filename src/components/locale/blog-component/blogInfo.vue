@@ -58,9 +58,9 @@
           <p class="main-date">
             {{ moment(new Date(singleItem.created_at)).format("LL") }}
           </p>
-          <h1 class="employee-name head-secondary">
+          <h2 class="employee-name head-secondary">
             {{ singleItem.title }}
-          </h1>
+          </h2>
 
           <div class="html-content text-editor" v-html="singleItem.desc"></div>
         </div>
@@ -196,18 +196,16 @@ let observer;
 onMounted(async () => {
   if (!route.params.id) {
     router.push({ name: "Blogs" });
-    return; // Return early if there's no route parameter
+    return;
   }
 
   await usePageStore().getItemData(route.params.id);
 
-  // Ensure there's data
   if (!singleItem.value || singleItem.value.length === 0) {
     router.push({ name: "Blogs" });
     return;
   }
 
-  // Ensure blogs data exists
   if (
     !blogs.value ||
     !blogs.value.sections ||
@@ -221,21 +219,24 @@ onMounted(async () => {
 
   await nextTick();
 
-  // Select headings to observe
   let headings = document.querySelectorAll(
     ".scrollspy-example-2 h2, .scrollspy-example-2 h3, .scrollspy-example-2 h4, .scrollspy-example-2 h5, .scrollspy-example-2 h6"
   );
   scrollSpy.value = [];
-
   let first = 0;
-  // Convert NodeList to array and set IDs for headings
   let headingsArray = Array.from(headings);
+
   headingsArray.forEach((el) => {
-    el.id = `item${first++}`; // Assign unique IDs
-    scrollSpy.value.push({ [el.id]: el.innerHTML });
+    el.id = `item${first++}`;
+    const headingText = el.innerHTML;
+    const strongText = el.querySelector("strong");
+    if (strongText) {
+      scrollSpy.value.push({ [el.id]: strongText.innerHTML });
+    } else {
+      scrollSpy.value.push({ [el.id]: headingText });
+    }
   });
 
-  // Create IntersectionObserver
   observer = new IntersectionObserver(
     (entries) => {
       let lastVisibleEntry = null;
