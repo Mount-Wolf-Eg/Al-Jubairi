@@ -8,7 +8,10 @@
         @input="$emit('update:modelValue', $event.target.value)"
         :placeholder="$t('search.category')"
       />
-      <button class="clear-btn" @click="$emit('update:modelValue', '')">
+      <button
+        class="clear-btn"
+        @click="$emit('update:modelValue', ''), $emit('parentId', '')"
+      >
         &#x2716;
       </button>
     </div>
@@ -42,7 +45,7 @@ const props = defineProps({
   modelValue: { type: String, default: "" },
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue", "parentId"]);
 
 const getAllCategory = async () => {
   show.value = true;
@@ -58,7 +61,7 @@ const filteredItems = computed(() => {
 
 const selectItem = (item) => {
   emit("update:modelValue", item.title);
-  console.log(item.id);
+  emit("parentId", item.id);
   show.value = false; // Close dropdown on selection
 };
 
