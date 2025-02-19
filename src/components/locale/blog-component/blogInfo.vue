@@ -77,10 +77,7 @@
         <div class="row gap-5 px-0 mx-2 mx-md-0">
           <div
             class="blog-item col-12 col-md p-0 mx-0 my-3"
-            v-for="(item, i) in blogs.sections?.data[0]?.items?.data?.slice(
-              0,
-              2
-            )"
+            v-for="(item, i) in childItems?.slice(0, 2)"
             :key="i"
           >
             <div
@@ -175,7 +172,7 @@ import { useHead } from "@vueuse/head";
 
 const route = useRoute();
 const router = useRouter();
-const { singleItem, blogs } = storeToRefs(usePageStore());
+const { singleItem, blogs, childItems } = storeToRefs(usePageStore());
 const isLoading = ref(true);
 const data = ref("");
 const scrollSpy = ref([]);
@@ -213,6 +210,7 @@ onMounted(async () => {
   ) {
     await usePageStore().getPageData("blogs");
   }
+  await usePageStore().getChildItems("blogs");
 
   data.value = singleItem.value.title;
   isLoading.value = false;
