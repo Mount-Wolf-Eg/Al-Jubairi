@@ -21,7 +21,8 @@
     "search": "Search at",
     "blogs": "Blogs",
     "services": "Services",
-    "category": "All Categories"
+    "category": "All Categories",
+    "noData": "No results found!"
   },
   "button": {
     "submit": "Submit",

@@ -21,7 +21,7 @@
         {{ item?.title }}
       </div>
       <div class="item error" v-if="filtered.length === 0">
-        <p>No results found!</p>
+        <p>{{ $t("search.noData") }}</p>
       </div>
     </div>
   </div>
@@ -61,7 +61,7 @@ const selectItem = (item) => {
     name: props.selected?.routeName,
     params: {
       blogName: item?.slug ?? props.selected?.slug,
-      id: item?.parent?.id ?? item?.id,
+      id: item?.id,
     },
   });
   emit("update:modelValue", "");

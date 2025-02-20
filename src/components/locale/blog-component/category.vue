@@ -25,7 +25,7 @@
         {{ item.title }}
       </div>
       <div class="item error" v-if="filteredItems.length === 0">
-        <p>No results found!</p>
+        <p>{{ $t("search.noData") }}</p>
       </div>
     </div>
   </div>

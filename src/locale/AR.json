@@ -21,7 +21,8 @@
     "search": "بحث فى",
     "blogs": "المدونات",
     "services": "الخدمات",
-    "category": "جميع الفئات"
+    "category": "جميع الفئات",
+    "noData": "لا توجد نتائج"
   },
   "button": {
     "submit": "إرسال",

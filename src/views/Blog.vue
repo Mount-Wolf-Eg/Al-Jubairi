@@ -65,7 +65,7 @@
           </div>
         </div>
         <div v-else class="alert alert-warning" role="alert">
-          ⚠️ No data available for the selected items.
+          ⚠️{{ $t("search.noData") }}
         </div>
       </div>
       <div
