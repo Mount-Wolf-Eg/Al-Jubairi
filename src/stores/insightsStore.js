@@ -26,7 +26,7 @@ export const useInsightsStore = defineStore("insightsStore", {
             this.error = errorArray[0][0];
           }
         }
-        mainStore().showAlert(this.error, 2);
+        // mainStore().showAlert(this.error, 2);
       } finally {
         this.loading = false;
       }
