@@ -17,39 +17,37 @@
             :alt="singleItem.image?.alt"
           />
         </div>
-        <div class="col-1 col-md-2" style="position: relative">
+        <div class="col-12 col-md-2" style="position: relative">
           <div
             id="navbar-example3"
-            class="h-auto flex-row align-items-stretch border-end w-100"
+            class="h-auto flex-row align-items-stretch border-end w-100 nav-container"
             style="position: sticky; top: 100px; right: 0"
           >
-            <div class="nav nav-pills flex-column">
+            <div class="nav nav-pills flex-nowrap flex-row flex-md-column">
               <a
                 v-for="(item, i) in scrollSpy"
                 :key="i"
                 :href="`#${Object.keys(item)[0]}`"
                 class="spy-link"
-                style="word-break: break-all"
+                style="overflow-wrap: break-word"
                 :class="`spy-${Object.keys(item)[0]}`"
               >
-                <span class="d-none d-md-block">
+                <span>
                   {{ item[Object.keys(item)[0]] }}
                 </span>
-                <span class="d-block d-md-none">{{ i }}</span>
               </a>
 
               <a class="spy-link" href="#see-more">
-                <span class="d-none d-md-block">
+                <span>
                   {{ $t("button.know-more") }}
                 </span>
-                <span class="d-block d-md-none">&#x2193;</span>
               </a>
             </div>
           </div>
         </div>
         <div
           class="col scrollspy-example-2"
-          style="word-break: break-all"
+          style="overflow-wrap: break-word"
           data-bs-spy="scroll"
           data-bs-target="#navbar-example3"
           data-bs-smooth-scroll="true"
@@ -216,10 +214,8 @@ onMounted(async () => {
   isLoading.value = false;
 
   await nextTick();
-
-  let headings = document.querySelectorAll(
-    ".scrollspy-example-2 h2, .scrollspy-example-2 h3, .scrollspy-example-2 h4, .scrollspy-example-2 h5, .scrollspy-example-2 h6"
-  );
+  // , .scrollspy-example-2 h3, .scrollspy-example-2 h4, .scrollspy-example-2 h5, .scrollspy-example-2 h6
+  let headings = document.querySelectorAll(".scrollspy-example-2 h2");
   scrollSpy.value = [];
   let first = 0;
   let headingsArray = Array.from(headings);
@@ -318,10 +314,32 @@ onBeforeUnmount(() => {
   padding: 0.5rem;
   font-size: var(--fs-12);
   font-weight: bold;
+  @media (max-width: 767.98px) {
+    flex: 0 0 auto;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+  }
 }
 .active-spy {
   color: #000 !important;
   background-color: #ddd !important; // Change the background color for active state
   font-weight: bold;
+}
+.nav-container {
+  @media (max-width: 767.98px) {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+  }
 }
 </style>
