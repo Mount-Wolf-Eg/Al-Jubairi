@@ -72,9 +72,9 @@
         class="pagination-box d-flex justify-content-center align-items-center"
       >
         <vue-awesome-paginate
-          :total-items="pagination?.total ?? 1"
+          :total-items="childPagination?.total ?? 1"
           v-model="currentPage"
-          :items-per-page="pagination?.per_page"
+          :items-per-page="childPagination?.per_page"
           :max-pages-shown="5"
           :show-ending-buttons="false"
           :show-breakpoint-buttons="false"
@@ -106,7 +106,8 @@ const categ = ref("");
 import { usePageStore } from "@/stores/pagesStore";
 const pageStore = usePageStore();
 import { storeToRefs } from "pinia";
-const { blogs, pagination, singleItem, childItems } = storeToRefs(pageStore);
+const { blogs, childPagination, singleItem, childItems } =
+  storeToRefs(pageStore);
 
 const isLoading = ref(true);
 const currentPage = ref(1);
@@ -130,7 +131,7 @@ onMounted(async () => {
   }
   // await pageStore.getAllItems("blogs", route?.query?.page ?? 1);
   await pageStore.getChildItems("blogs");
-  currentPage.value = pagination?.value?.current_page ?? 1;
+  currentPage.value = childPagination?.value?.current_page ?? 1;
   isLoading.value = false;
 });
 

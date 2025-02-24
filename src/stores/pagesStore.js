@@ -20,6 +20,7 @@ export const usePageStore = defineStore("pageStore", {
     singleSec: [],
     allItemsData: [],
     pagination: [],
+    childPagination: [],
     parentItems: [],
     childItems: [],
   }),
@@ -139,7 +140,7 @@ export const usePageStore = defineStore("pageStore", {
         )
         .then((res) => {
           this.childItems = res.data.data;
-          this.pagination = res.data.data.pagination;
+          this.childPagination = res.data.pagination;
         })
         .catch((err) => {
           console.log(err);
