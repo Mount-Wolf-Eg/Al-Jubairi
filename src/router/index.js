@@ -182,7 +182,10 @@ router.beforeEach(async (to, from, next) => {
     fetch("https://api.ipify.org?format=json")
       .then((response) => response.json())
       .then(async (data) => {
-        await useInsightsStore().sendRoute(to.path, data.ip);
+        await useInsightsStore().sendRoute(
+          decodeURIComponent(to.path),
+          data.ip
+        );
       })
       .catch((error) => {
         console.error("Error fetching IP address:", error);
