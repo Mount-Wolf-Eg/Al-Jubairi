@@ -23,7 +23,7 @@
             class="h-auto flex-row align-items-stretch border-end w-100 nav-container"
             style="position: sticky; top: 100px; right: 0"
           >
-            <div class="nav nav-pills flex-nowrap flex-row flex-md-column">
+            <div class="nav nav-pills flex-nowrap flex-column">
               <a
                 v-for="(item, i) in scrollSpy"
                 :key="i"
