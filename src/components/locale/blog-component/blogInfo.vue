@@ -215,7 +215,9 @@ onMounted(async () => {
 
   await nextTick();
   // , .scrollspy-example-2 h3, .scrollspy-example-2 h4, .scrollspy-example-2 h5, .scrollspy-example-2 h6
-  let headings = document.querySelectorAll(".scrollspy-example-2 h2");
+  let headings = document.querySelectorAll(
+    ".scrollspy-example-2 h1 , .scrollspy-example-2 h2"
+  );
   scrollSpy.value = [];
   let first = 0;
   let headingsArray = Array.from(headings);
