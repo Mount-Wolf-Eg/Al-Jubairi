@@ -56,9 +56,9 @@
           <p class="main-date">
             {{ moment(new Date(singleItem.created_at)).format("LL") }}
           </p>
-          <h2 class="employee-name head-secondary">
+          <h1 class="employee-name head-secondary">
             {{ singleItem.title }}
-          </h2>
+          </h1>
 
           <div class="html-content text-editor" v-html="singleItem.desc"></div>
         </div>
