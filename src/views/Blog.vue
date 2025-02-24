@@ -36,7 +36,11 @@
               @click="
                 $router.push({
                   name: 'BlogDetail',
-                  params: { blogName: item.slug ?? 'blogInfo', id: item.id },
+
+                  params: {
+                    blogName: encodeURIComponent(item.slug || 'blogInfo'),
+                    id: item.id,
+                  },
                 })
               "
             >

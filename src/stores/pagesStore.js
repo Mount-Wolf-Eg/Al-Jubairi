@@ -134,9 +134,9 @@ export const usePageStore = defineStore("pageStore", {
 
       await axiosInstance
         .get(
-          `${
-            mainStore().apiLink
-          }/website/sections/${sec}/child-items?items_page=${num ?? 1}`
+          `${mainStore().apiLink}/website/sections/${sec}/child-items?page=${
+            num ?? 1
+          }`
         )
         .then((res) => {
           this.childItems = res.data.data;

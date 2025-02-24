@@ -56,7 +56,10 @@
           <p class="main-date">
             {{ moment(new Date(singleItem.created_at)).format("LL") }}
           </p>
-          <h1 class="employee-name head-secondary">
+          <h1
+            class="employee-name head-secondary"
+            style="overflow-wrap: break-word !important"
+          >
             {{ singleItem.title }}
           </h1>
 
